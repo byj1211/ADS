@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1197</width>
+    <height>769</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>管理员界面</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(58, 58,58);
+QLineEdit{
+	color:white;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>1181</width>
+      <height>721</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="2" column="0">
+      <spacer name="verticalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="1" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,8,2,6,1">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetFixedSize</enum>
+       </property>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="lb_title">
+         <property name="styleSheet">
+          <string notr="true">font-family:Arial;
+                                            font-size:50px;
+                                            background-color:rgb(0,0,0);
+                                            color:rgb(255, 255, 255);
+                                            padding:30px;
+                                            border-radius:10px;
+                                        </string>
+         </property>
+         <property name="text">
+          <string>辅助动力装置电子控制试验主菜单</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="lb_subtitle">
+         <property name="styleSheet">
+          <string notr="true">color: #ffffff;
+                                            background-color: rgb(40,40, 60);
+                                            border-radius:5px;
+                                            text-align:center;
+                                            font-size:40px;
+                                            font-family:Arial;
+                                            padding: 5px;
+                                            width:200px;
+                                            border-radius:10px;
+                                        </string>
+         </property>
+         <property name="text">
+          <string>管理员</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item row="4" column="0">
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="5" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,2,1,2,1,2,1,2,1,2,1">
+       <property name="topMargin">
+        <number>10</number>
+       </property>
+       <property name="bottomMargin">
+        <number>10</number>
+       </property>
+       <item>
+        <spacer name="horizontalSpacer_10">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Minimum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pb_createUser">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+                                            color: #ffffff;
+                                            background-color: rgb(0,0, 0);
+                                            border-radius:5px;
+                                            text-align:center;
+                                            font-size:18pt;
+                                            font-family:Arial;
+                                            border:2px solid rgb(67,83,140);
+                                            height:400px;
+                                            }
+                                            QPushButton:hover{
+                                            font-size:20pt;
+                                            font-weight:bold;
+                                            border-width:4px;
+                                            border-radius:10px;
+                                            }
+                                            QPushButton:disabled {
+                                            background-color:rgb(205,205,205);
+                                            color:rgb(0,0,0);
+                                            }
+                                        </string>
+         </property>
+         <property name="text">
+          <string>创建用户</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Minimum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pb_inspectProtect">
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+                                            color: #ffffff;
+                                            background-color: rgb(0,0, 0);
+                                            border-radius:5px;
+                                            text-align:center;
+                                            font-size:18pt;
+                                            font-family:Arial;
+                                            border:2px solid rgb(67,83,140);
+                                            height:400px;
+                                            }
+                                            QPushButton:hover{
+                                            font-size:20pt;
+                                            font-weight:bold;
+                                            border-width:4px;
+                                            border-radius:10px;
+                                            }
+                                            QPushButton:disabled {
+                                            background-color:rgb(205,205,205);
+                                            color:rgb(0,0,0);
+                                            }
+                                        </string>
+         </property>
+         <property name="text">
+          <string>设备自检
+&amp;&amp;
+保护设定
+ </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_5">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Minimum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pb_autoTest">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+                                            color: #ffffff;
+                                            background-color: rgb(0,0, 0);
+                                            border-radius:5px;
+                                            text-align:center;
+                                            font-size:18pt;
+                                            font-family:Arial;
+                                            border:2px solid rgb(67,83,140);
+                                            height:400px;
+                                            }
+                                            QPushButton:hover{
+                                            font-size:20pt;
+                                            font-weight:bold;
+                                            border-width:4px;
+                                            border-radius:10px;
+                                            }
+                                            QPushButton:disabled {
+                                            background-color:rgb(205,205,205);
+                                            color:rgb(0,0,0);
+                                            }
+                                        </string>
+         </property>
+         <property name="text">
+          <string>硬件
+自动测试</string>
+         </property>
+         <property name="default">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_6">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Minimum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pb_manualTest">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+                                            color: #ffffff;
+                                            background-color: rgb(0,0, 0);
+                                            border-radius:5px;
+                                            text-align:center;
+                                            font-size:18pt;
+                                            font-family:Arial;
+                                            border:2px solid rgb(67,83,140);
+                                            height:400px;
+                                            }
+                                            QPushButton:hover{
+                                            font-size:20pt;
+                                            font-weight:bold;
+                                            border-width:4px;
+                                            border-radius:10px;
+                                            }
+                                            QPushButton:disabled {
+                                            background-color:rgb(205,205,205);
+                                            color:rgb(0,0,0);
+
+                                            }
+                                        </string>
+         </property>
+         <property name="text">
+          <string>手动测试</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_8">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Minimum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pb_testReport">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+                                            color: #ffffff;
+                                            background-color: rgb(0,0, 0);
+                                            border-radius:5px;
+                                            text-align:center;
+                                            font-size:18pt;
+                                            font-family:Arial;
+                                            border:2px solid rgb(67,83,140);
+                                            height:400px;
+                                            }
+                                            QPushButton:hover{
+                                            font-size:20pt;
+                                            font-weight:bold;
+                                            border-width:4px;
+                                            border-radius:10px;
+                                            }
+                                            QPushButton:disabled {
+                                            background-color:rgb(205,205,205);
+                                            color:rgb(0,0,0);
+                                            }
+                                        </string>
+         </property>
+         <property name="text">
+          <string>测试报告</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_11">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Minimum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label">
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(0,0,0);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <spacer name="verticalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pb_createUser</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>on_clicked_pb_createUser()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>163</x>
+     <y>410</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>247</x>
+     <y>484</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pb_inspectProtect</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>on_clicked_pb_inspectProtect()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>426</x>
+     <y>423</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>497</x>
+     <y>442</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pb_autoTest</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>on_clicked_autoTest()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>632</x>
+     <y>419</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>722</x>
+     <y>438</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pb_manualTest</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>on_clicked_manualTest()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>847</x>
+     <y>441</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>945</x>
+     <y>456</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pb_testReport</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>on_clicked_pb_testReport()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1070</x>
+     <y>536</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1160</x>
+     <y>539</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>on_clicked_pb_createUser()</slot>
+  <slot>on_clicked_pb_inspectProtect()</slot>
+  <slot>on_clicked_autoTest()</slot>
+  <slot>on_clicked_manualTest()</slot>
+  <slot>on_clicked_pb_testReport()</slot>
+ </slots>
+</ui>

@@ -1,0 +1,10 @@
+2023-09-21 14:51:12,642 - AutoTestQThread.py do_DI_Test() [line:28] INFO - Change to DITest
+2023-09-21 14:51:13,646 - AutoTestQThread.py do_DI_Test() [line:31] INFO - DI Test start
+2023-09-21 14:51:13,647 - AutoTestQThread.py do_DI_Test() [line:52] INFO - DI testing channel 0, testValue 0
+2023-09-21 14:51:13,650 - Control_autoTest.py do_DI_test_FE() [line:131] DEBUG - chan0 : 0 : AA 55 08 05 00 00 00 F4   DKIN1:地  DKIN3:地  DKIN5:地  DKIN2:地  DKIN4:地  DKIN6:地
+2023-09-21 14:51:14,661 - AutoTestQThread.py do_DI_Test() [line:52] INFO - DI testing channel 0, testValue 1
+2023-09-21 14:51:14,663 - Control_autoTest.py do_DI_test_FE() [line:131] DEBUG - chan0 : 1 : AA 55 08 05 00 01 00 F3   DKIN1:开  DKIN3:开  DKIN5:开  DKIN2:开  DKIN4:开  DKIN6:开
+2023-09-21 14:51:15,677 - AutoTestQThread.py do_DI_Test() [line:56] INFO - Interrupt DI Test!
+2023-09-21 14:51:15,683 - AutoTestQThread.py do_DO_Test() [line:88] INFO - Interrupt DO Test!
+2023-09-21 14:51:15,683 - AutoTestQThread.py do_AI_Test() [line:118] INFO - Interrupt AI Test!
+2023-09-21 14:51:15,683 - AutoTestQThread.py do_AO_Test() [line:149] INFO - Interrupt AO Test!

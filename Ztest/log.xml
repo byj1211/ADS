@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xs:element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="TestResults">
+		<xs:annotation>
+			<xs:documentation>测试描述</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Personnel" type="Personal">
+					<xs:annotation>
+						<xs:documentation/>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ResultSet" type="TestGroup"/>
+				<xs:element name="TestStation">
+					<xs:annotation>
+						<xs:documentation>本元素用于描述测试时测试环境的状态</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Parts">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Part" type="Part" minOccurs="1" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Manufacturer" type="Manufacturer"/>
+						</xs:sequence>
+						<xs:attribute name="name" type="NonBlankString" use="required"/>
+						<xs:attribute name="NameID" type="NonBlankString" use="required"/>
+						<xs:attribute name="SerialNumber" type="NonBlankString" use="required"/>
+						<xs:attribute name="TypeID" type="NonBlankString" use="required"/>
+						<xs:attribute name="Version" type="NonBlankString" use="required"/>
+						<xs:attribute name="Calibration" type="xs:dateTime" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="UUT">
+					<xs:annotation>
+						<xs:documentation>本元素用于描述参与测试的被测设备的信息</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Parts" type="Parts" minOccurs="0"/>
+						</xs:sequence>
+						<xs:attribute name="SerialNumber" use="required"/>
+						<xs:attribute name="name" use="required"/>
+						<xs:attribute name="ID" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Site" type="Organization"/>
+				<xs:element name="TestProgram" type="TestProgram"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>

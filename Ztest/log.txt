@@ -1,0 +1,12 @@
+2023-09-22 17:21:20,941 - DEBUG - This is a debug message
+2023-09-22 17:21:20,941 - INFO - This is an info message
+2023-09-22 17:21:20,942 - WARNING - This is a warning message
+2023-09-22 17:21:20,942 - ERROR - This is an error message
+2023-09-22 17:33:16,774 - DEBUG - This is a debug message
+2023-09-22 17:33:16,775 - INFO - This is an info message
+2023-09-22 17:33:16,775 - WARNING - This is a warning message
+2023-09-22 17:33:16,775 - ERROR - This is an error message
+2023-09-22 17:54:03,044 - DEBUG - This is a debug message
+2023-09-22 17:54:03,044 - INFO - This is an info message
+2023-09-22 17:54:03,044 - WARNING - This is a warning message
+2023-09-22 17:54:03,044 - ERROR - This is an error message

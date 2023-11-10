@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 (http://www.altova.com) by  () -->
+<!-- This example is referenced in IEEE Std 1636.1-2018,"IEEE Standard for Software Interface for Maintenance Information 
+Collection and Analysis (SIMICA): Exchanging Test Results and Session Information via the extensible Markup Language (XML)"
+Copyright (c) 2017 Institute of Electrical and Electronics Engineers, Inc. USE AT YOUR OWN RISK-->
+<?xml-stylesheet type="text/xsl" href="trml.xsl"?>
+<TestResults xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///E:/21%e5%ae%a4%e5%b7%a5%e4%bd%9c/21%e5%ae%a4%e5%b7%a5%e4%bd%9c/%e6%a0%87%e5%87%86/%e6%a0%87%e5%87%86/IEEE1636/1636.1-2018_downloads/1636.1-2018_downloads/%e6%b5%8b%e8%af%95%e8%ae%be%e5%a4%87%e8%a7%84%e8%8c%83V3.2.xsd">
+	<ResultSet>
+		<TestSummory Session="所检试验-低温工作" ID="8988888" endDateTime="2017-09-07T19:08:41" startDateTime="2017-09-07T18:08:46">
+			<Outcome value="Failed"/>
+			<Record NumofRuns="2" name="试验过程记录" RunTime="1:13:56" TotalTime="2:00:00" TotalCaseNum="-" PassNum="31" FailNum="5"/>
+			<Record NumofRuns="1" name="验收测试过程记录" RunTime="-" TotalTime="-" TotalCaseNum="95" PassNum="31" FailNum="5"/>
+		</TestSummory>
+	</ResultSet>
+	<TestStation name="xx项目测试平台" NameID="HJSJ01332" TypeID="18S2.311.222" SerialNumber="OXD110" Version="V1.0" Calibration="2017-04-07T10:08:25">
+		<Parts>
+			<Part name="平台操作系统" Version="Win7" SerialNumber="1215641" nameID="12323131" TypeID="FDFS"/>
+		</Parts>
+		<Manufacturer/>
+	</TestStation>
+	<UUT name="XXX项目" ID="18S2.302.224" SerialNumber="201704235002" UutType="分系统" TypeID="SJD-XX">
+		<Parts>
+			<Part name="机箱" Version="A" SerialNumber="1215641" nameID="18S2.302.11" TypeID="HJSJ9899"/>
+			<Part name="电源" Version="A" SerialNumber="1215641" nameID="18S2.302.11" TypeID="HJSJ9899"/>
+			<Part name="FPGA软件" Version="A" SerialNumber="1215641" nameID="18S2.302.11" TypeID="HJSJ9899"/>
+			<Part name="驻留软件" Version="A" SerialNumber="1215641" nameID="18S2.302.11" TypeID="HJSJ9899"/>
+		</Parts>
+	</UUT>
+	<Site name="631"/>
+	<TestProgram name="XX项目测试程序" TypeID="HJSJ00-" nameID="18S2.222.22" Version="V1.0">
+		<TestProcedures>
+			<TestProcedure ID="222" Developer="张三" name="A429Test.py" DevTime="2017-04-07T10:08:25" Version="V1.0"/>
+		</TestProcedures>
+	</TestProgram>
+</TestResults>

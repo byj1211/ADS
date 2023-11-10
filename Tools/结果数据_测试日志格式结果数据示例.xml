@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2013 (http://www.altova.com) by  () -->
+<!-- This example is referenced in IEEE Std 1636.1-2018,"IEEE Standard for Software Interface for Maintenance Information 
+Collection and Analysis (SIMICA): Exchanging Test Results and Session Information via the extensible Markup Language (XML)"
+Copyright (c) 2017 Institute of Electrical and Electronics Engineers, Inc. USE AT YOUR OWN RISK-->
+<?xml-stylesheet type="text/xsl" href="trml.xsl"?>
+<TestResults xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///E:/21%e5%ae%a4%e5%b7%a5%e4%bd%9c/21%e5%ae%a4%e5%b7%a5%e4%bd%9c/%e6%a0%87%e5%87%86/%e6%a0%87%e5%87%86/IEEE1636/1636.1-2018_downloads/1636.1-2018_downloads/%e6%b5%8b%e8%af%95%e8%ae%be%e5%a4%87%e8%a7%84%e8%8c%83V3.2.xsd">
+	<Personnel>
+		<SystemOperator ID="zzsupport" name="zzsupport"/>
+		<CustomerRepresentative ID="ffff" name="ffff"/>
+		<QualityAssurance ID="DDDD" name="DDDD"/>
+	</Personnel>
+	<ResultSet ID="1" name="机电管理计算机测试">
+		<Outcome value="Passed"/>
+		<TestGroup name="地开输入测试" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+			<Outcome value="Passed"/>
+			<TestGroup name="地开输入1" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="R=500" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=500" ID="1_1">
+						<TestData Name="R=500" Direction="Input" InputValue="500" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+						<TestData Name="R=500" Direction="Output" InputValue="500" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+					</TestResult>
+				</Test>
+				<Test name="V=4" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="V=4" ID="1_1">
+						<TestData Name="V=4" Direction="Input" InputValue="4" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+						<TestData Name="V=4" Direction="Output" InputValue="4" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+					</TestResult>
+				</Test>
+				<Test name="R=100k" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=100k" ID="1_1">
+						<TestData Name="R=100k" Direction="Input" InputValue="100k" LowerLimit="2" UpperLimit="2" ActualValue="2"/>
+						<TestData Name="R=100k" Direction="Output" InputValue="100k" LowerLimit="2" UpperLimit="2" ActualValue="2"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="地开输入2" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="R=500" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=500" ID="1_1">
+						<TestData Name="R=500" Direction="Input" InputValue="500" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+						<TestData Name="R=500" Direction="Output" InputValue="500" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+					</TestResult>
+				</Test>
+				<Test name="V=4" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="V=4" ID="1_1">
+						<TestData Name="V=4" Direction="Input" InputValue="4" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+						<TestData Name="V=4" Direction="Output" InputValue="4" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+					</TestResult>
+				</Test>
+				<Test name="R=100k" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=100k" ID="1_1">
+						<TestData Name="R=100k" Direction="Input" InputValue="100k" LowerLimit="2" UpperLimit="2" ActualValue="2"/>
+						<TestData Name="R=100k" Direction="Output" InputValue="100k" LowerLimit="2" UpperLimit="2" ActualValue="2"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="地开输入3" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="R=500" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=500" ID="1_1">
+						<TestData Name="R=500" Direction="Input" InputValue="500" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+						<TestData Name="R=500" Direction="Output" InputValue="500" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+					</TestResult>
+				</Test>
+				<Test name="V=4" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="V=4" ID="1_1">
+						<TestData Name="V=4" Direction="Input" InputValue="4" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+						<TestData Name="V=4" Direction="Output" InputValue="4" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+					</TestResult>
+				</Test>
+				<Test name="R=100k" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=100k" ID="1_1">
+						<TestData Name="R=100k" Direction="Input" InputValue="100k" LowerLimit="2" UpperLimit="2" ActualValue="2"/>
+						<TestData Name="R=100k" Direction="Output" InputValue="100k" LowerLimit="2" UpperLimit="2" ActualValue="2"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+		</TestGroup>
+		<TestGroup name="28V开输入测试" ID="1_2" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+			<Outcome value="Passed"/>
+			<TestGroup name="28V开输入1" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="V=16" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="V=16" ID="1_1">
+						<TestData Name="V=16" Direction="Input" InputValue="16" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+						<TestData Name="V=16" Direction="Output" InputValue="16" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+					</TestResult>
+				</Test>
+				<Test name="V=32" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="V=32" ID="1_1">
+						<TestData Name="V=32" Direction="Input" InputValue="32" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+						<TestData Name="V=32" Direction="Output" InputValue="32" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+					</TestResult>
+				</Test>
+				<Test name="R=100k" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=100k" ID="1_1">
+						<TestData Name="R=100k" Direction="Input" InputValue="100k" LowerLimit="2" UpperLimit="2" ActualValue="2"/>
+						<TestData Name="R=100k" Direction="Output" InputValue="100k" LowerLimit="2" UpperLimit="2" ActualValue="2"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="28V开输入2" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="V=16" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="V=16" ID="1_1">
+						<TestData Name="V=16" Direction="Input" InputValue="16" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+						<TestData Name="V=16" Direction="Output" InputValue="16" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+					</TestResult>
+				</Test>
+				<Test name="V=32" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="V=32" ID="1_1">
+						<TestData Name="V=32" Direction="Input" InputValue="32" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+						<TestData Name="V=32" Direction="Output" InputValue="32" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+					</TestResult>
+				</Test>
+				<Test name="R=100k" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=100k" ID="1_1">
+						<TestData Name="R=100k" Direction="Input" InputValue="100k" LowerLimit="2" UpperLimit="2" ActualValue="2"/>
+						<TestData Name="R=100k" Direction="Output" InputValue="100k" LowerLimit="2" UpperLimit="2" ActualValue="2"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="28V开输入3" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="V=16" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="V=16" ID="1_1">
+						<TestData Name="V=16" Direction="Input" InputValue="16" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+						<TestData Name="V=16" Direction="Output" InputValue="16" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+					</TestResult>
+				</Test>
+				<Test name="V=32" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="V=32" ID="1_1">
+						<TestData Name="V=32" Direction="Input" InputValue="32" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+						<TestData Name="V=32" Direction="Output" InputValue="32" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+					</TestResult>
+				</Test>
+				<Test name="R=100k" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=100k" ID="1_1">
+						<TestData Name="R=100k" Direction="Input" InputValue="100k" LowerLimit="2" UpperLimit="2" ActualValue="2"/>
+						<TestData Name="R=100k" Direction="Output" InputValue="100k" LowerLimit="2" UpperLimit="2" ActualValue="2"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+		</TestGroup>
+		<TestGroup name="4-20mA采集" ID="1_2" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+			<Outcome value="Passed"/>
+			<TestGroup name="4-20mA_1" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="I=1mA" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="I=1mA" ID="1_1">
+						<TestData Name="I=1mA" Direction="Input" InputValue="1mA" LowerLimit="0" UpperLimit="0" ActualValue="0"/>
+						<TestData Name="I=1mA" Direction="Output" InputValue="1mA" LowerLimit="0" UpperLimit="0" ActualValue="0"/>
+					</TestResult>
+				</Test>
+				<Test name="I=4mA" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="I=4mA" ID="1_1">
+						<TestData Name="I=4mA" Direction="Input" InputValue="4mA" LowerLimit="-0.2" UpperLimit="0.2" ActualValue="0"/>
+						<TestData Name="I=4mA" Direction="Output" InputValue="4mA" LowerLimit="-0.2" UpperLimit="0.2" ActualValue="0"/>
+					</TestResult>
+				</Test>
+				<Test name="I=7mA" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="I=7mA" ID="1_1">
+						<TestData Name="I=7mA" Direction="Input" InputValue="7mA" LowerLimit="6.3" UpperLimit="6.7" ActualValue="6.5"/>
+						<TestData Name="I=7mA" Direction="Output" InputValue="7mA" LowerLimit="6.3" UpperLimit="6.7" ActualValue="6.5"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="4-20mA_2" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="I=4mA" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="I=4mA" ID="1_1">
+						<TestData Name="I=4mA" Direction="Input" InputValue="4mA" LowerLimit="390" UpperLimit="410" ActualValue="402"/>
+						<TestData Name="I=4mA" Direction="Output" InputValue="4mA" LowerLimit="390" UpperLimit="410" ActualValue="402"/>
+					</TestResult>
+				</Test>
+				<Test name="I=7mA" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="I=7mA" ID="1_1">
+						<TestData Name="I=7mA" Direction="Input" InputValue="7mA" LowerLimit="690" UpperLimit="710" ActualValue="701"/>
+						<TestData Name="I=7mA" Direction="Output" InputValue="7mA" LowerLimit="690" UpperLimit="710" ActualValue="701"/>
+					</TestResult>
+				</Test>
+				<Test name="I=10mA" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="I=10mA" ID="1_1">
+						<TestData Name="I=10mA" Direction="Input" InputValue="10mA" LowerLimit="990" UpperLimit="1010" ActualValue="1001"/>
+						<TestData Name="I=10mA" Direction="Output" InputValue="10mA" LowerLimit="990" UpperLimit="1010" ActualValue="1001"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="4-20mA_3" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="I=4mA" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="I=4mA" ID="1_1">
+						<TestData Name="I=4mA" Direction="Input" InputValue="4mA" LowerLimit="390" UpperLimit="410" ActualValue="401"/>
+						<TestData Name="I=4mA" Direction="Output" InputValue="4mA" LowerLimit="390" UpperLimit="410" ActualValue="401"/>
+					</TestResult>
+				</Test>
+				<Test name="I=7mA" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="I=7mA" ID="1_1">
+						<TestData Name="I=7mA" Direction="Input" InputValue="7mA" LowerLimit="690" UpperLimit="710" ActualValue="701"/>
+						<TestData Name="I=7mA" Direction="Output" InputValue="7mA" LowerLimit="690" UpperLimit="710" ActualValue="701"/>
+					</TestResult>
+				</Test>
+				<Test name="I=10mA" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="I=10mA" ID="1_1">
+						<TestData Name="I=10mA" Direction="Input" InputValue="10mA" LowerLimit="990" UpperLimit="1010" ActualValue="1001"/>
+						<TestData Name="I=10mA" Direction="Output" InputValue="10mA" LowerLimit="990" UpperLimit="1010" ActualValue="1001"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+		</TestGroup>
+		<TestGroup name="PT1000采集" ID="1_2" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+			<Outcome value="Passed"/>
+			<TestGroup name="PT1000_1_1" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="R=643" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=643" ID="1_1">
+						<TestData Name="R=643" Direction="Input" InputValue="643" LowerLimit="-91.7" UpperLimit="-88.3" ActualValue="-90"/>
+						<TestData Name="R=643" Direction="Output" InputValue="643" LowerLimit="-91.7" UpperLimit="-88.3" ActualValue="-90"/>
+					</TestResult>
+				</Test>
+				<Test name="R=901.9" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=901.9" ID="1_1">
+						<TestData Name="R=901.9" Direction="Input" InputValue="901.9" LowerLimit="-26.7" UpperLimit="-23.3" ActualValue="-25.6"/>
+						<TestData Name="R=901.9" Direction="Output" InputValue="901.9" LowerLimit="-26.7" UpperLimit="-23.3" ActualValue="-25.6"/>
+					</TestResult>
+				</Test>
+				<Test name="R=1000" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=1000" ID="1_1">
+						<TestData Name="R=1000" Direction="Input" InputValue="1000" LowerLimit="-1.7" UpperLimit="1.7" ActualValue="-0.5"/>
+						<TestData Name="R=1000" Direction="Output" InputValue="1000" LowerLimit="-1.7" UpperLimit="1.7" ActualValue="-0.5"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="PT1000_1_2" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="R=643" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=643" ID="1_1">
+						<TestData Name="R=643" Direction="Input" InputValue="643" LowerLimit="-91.7" UpperLimit="-88.3" ActualValue="-90"/>
+						<TestData Name="R=643" Direction="Output" InputValue="643" LowerLimit="-91.7" UpperLimit="-88.3" ActualValue="-90"/>
+					</TestResult>
+				</Test>
+				<Test name="R=901.9" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=901.9" ID="1_1">
+						<TestData Name="R=901.9" Direction="Input" InputValue="901.9" LowerLimit="-26.7" UpperLimit="-23.3" ActualValue="-26.2"/>
+						<TestData Name="R=901.9" Direction="Output" InputValue="901.9" LowerLimit="-26.7" UpperLimit="-23.3" ActualValue="-26.2"/>
+					</TestResult>
+				</Test>
+				<Test name="R=1000" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=1000" ID="1_1">
+						<TestData Name="R=1000" Direction="Input" InputValue="1000" LowerLimit="-1.7" UpperLimit="1.7" ActualValue="-1.1"/>
+						<TestData Name="R=1000" Direction="Output" InputValue="1000" LowerLimit="-1.7" UpperLimit="1.7" ActualValue="-1.1"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="PT1000_1_3" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="R=783.2" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=783.2" ID="1_1">
+						<TestData Name="R=783.2" Direction="Input" InputValue="783.2" LowerLimit="-56.7" UpperLimit="-53.3" ActualValue="-55"/>
+						<TestData Name="R=783.2" Direction="Output" InputValue="783.2" LowerLimit="-56.7" UpperLimit="-53.3" ActualValue="-55"/>
+					</TestResult>
+				</Test>
+				<Test name="R=901.9" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=901.9" ID="1_1">
+						<TestData Name="R=901.9" Direction="Input" InputValue="901.9" LowerLimit="-26.7" UpperLimit="-23.3" ActualValue="-26.2"/>
+						<TestData Name="R=901.9" Direction="Output" InputValue="901.9" LowerLimit="-26.7" UpperLimit="-23.3" ActualValue="-26.2"/>
+					</TestResult>
+				</Test>
+				<Test name="R=1000" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=1000" ID="1_1">
+						<TestData Name="R=1000" Direction="Input" InputValue="1000" LowerLimit="-1.7" UpperLimit="1.7" ActualValue="-1"/>
+						<TestData Name="R=1000" Direction="Output" InputValue="1000" LowerLimit="-1.7" UpperLimit="1.7" ActualValue="-1"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+		</TestGroup>
+		<TestGroup name="电阻/900～1700采集" ID="1_2" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+			<Outcome value="Passed"/>
+			<TestGroup name="PT1000_1_7" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="R=200" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=200" ID="1_1">
+						<TestData Name="R=200" Direction="Input" InputValue="200" LowerLimit="194" UpperLimit="206" ActualValue="197"/>
+						<TestData Name="R=200" Direction="Output" InputValue="200" LowerLimit="194" UpperLimit="206" ActualValue="197"/>
+					</TestResult>
+				</Test>
+				<Test name="R=1000" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=1000" ID="1_1">
+						<TestData Name="R=1000" Direction="Input" InputValue="1000" LowerLimit="994" UpperLimit="1006" ActualValue="997"/>
+						<TestData Name="R=1000" Direction="Output" InputValue="1000" LowerLimit="994" UpperLimit="1006" ActualValue="997"/>
+					</TestResult>
+				</Test>
+				<Test name="R=1500" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=1500" ID="1_1">
+						<TestData Name="R=1500" Direction="Input" InputValue="1500" LowerLimit="1494" UpperLimit="1506" ActualValue="1497"/>
+						<TestData Name="R=1500" Direction="Output" InputValue="1500" LowerLimit="1494" UpperLimit="1506" ActualValue="1497"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="PT1000_1_8" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="R=200" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=200" ID="1_1">
+						<TestData Name="R=200" Direction="Input" InputValue="200" LowerLimit="-0.2" UpperLimit="0.1" ActualValue="0"/>
+						<TestData Name="R=200" Direction="Output" InputValue="200" LowerLimit="-0.2" UpperLimit="0.1" ActualValue="0"/>
+					</TestResult>
+				</Test>
+				<Test name="R=1000" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=1000" ID="1_1">
+						<TestData Name="R=1000" Direction="Input" InputValue="1000" LowerLimit="26.1" UpperLimit="26.5" ActualValue="26.2"/>
+						<TestData Name="R=1000" Direction="Output" InputValue="1000" LowerLimit="26.1" UpperLimit="26.5" ActualValue="26.2"/>
+					</TestResult>
+				</Test>
+				<Test name="R=1500" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=1500" ID="1_1">
+						<TestData Name="R=1500" Direction="Input" InputValue="1500" LowerLimit="42.6" UpperLimit="43" ActualValue="42.7"/>
+						<TestData Name="R=1500" Direction="Output" InputValue="1500" LowerLimit="42.6" UpperLimit="43" ActualValue="42.7"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+		</TestGroup>
+		<TestGroup name="0～10V模拟量采集" ID="1_2" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+			<Outcome value="Passed"/>
+			<TestGroup name="0-10V_1" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="V=0" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="V=0" ID="1_1">
+						<TestData Name="V=0" Direction="Input" InputValue="0" LowerLimit="-1" UpperLimit="1" ActualValue="0"/>
+						<TestData Name="V=0" Direction="Output" InputValue="0" LowerLimit="-1" UpperLimit="1" ActualValue="0"/>
+					</TestResult>
+				</Test>
+				<Test name="V=2" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="V=2" ID="1_1">
+						<TestData Name="V=2" Direction="Input" InputValue="2" LowerLimit="-1" UpperLimit="1" ActualValue="0"/>
+						<TestData Name="V=2" Direction="Output" InputValue="2" LowerLimit="-1" UpperLimit="1" ActualValue="0"/>
+					</TestResult>
+				</Test>
+				<Test name="V=4" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="V=4" ID="1_1">
+						<TestData Name="V=4" Direction="Input" InputValue="4" LowerLimit="28" UpperLimit="31" ActualValue="29"/>
+						<TestData Name="V=4" Direction="Output" InputValue="4" LowerLimit="28" UpperLimit="31" ActualValue="29"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="0-10V_2" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="V=0" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="V=0" ID="1_1">
+						<TestData Name="V=0" Direction="Input" InputValue="0" LowerLimit="-5" UpperLimit="5" ActualValue="0"/>
+						<TestData Name="V=0" Direction="Output" InputValue="0" LowerLimit="-5" UpperLimit="5" ActualValue="0"/>
+					</TestResult>
+				</Test>
+				<Test name="V=3" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="V=3" ID="1_1">
+						<TestData Name="V=3" Direction="Input" InputValue="3" LowerLimit="295" UpperLimit="305" ActualValue="295"/>
+						<TestData Name="V=3" Direction="Output" InputValue="3" LowerLimit="295" UpperLimit="305" ActualValue="295"/>
+					</TestResult>
+				</Test>
+				<Test name="V=5" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="V=5" ID="1_1">
+						<TestData Name="V=5" Direction="Input" InputValue="5" LowerLimit="495" UpperLimit="505" ActualValue="495"/>
+						<TestData Name="V=5" Direction="Output" InputValue="5" LowerLimit="495" UpperLimit="505" ActualValue="495"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="0-10V_3" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="V=0" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="V=0" ID="1_1">
+						<TestData Name="V=0" Direction="Input" InputValue="0" LowerLimit="-5" UpperLimit="5" ActualValue="0"/>
+						<TestData Name="V=0" Direction="Output" InputValue="0" LowerLimit="-5" UpperLimit="5" ActualValue="0"/>
+					</TestResult>
+				</Test>
+				<Test name="V=3" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="V=3" ID="1_1">
+						<TestData Name="V=3" Direction="Input" InputValue="3" LowerLimit="295" UpperLimit="305" ActualValue="297"/>
+						<TestData Name="V=3" Direction="Output" InputValue="3" LowerLimit="295" UpperLimit="305" ActualValue="297"/>
+					</TestResult>
+				</Test>
+				<Test name="V=5" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="V=5" ID="1_1">
+						<TestData Name="V=5" Direction="Input" InputValue="5" LowerLimit="495" UpperLimit="505" ActualValue="497"/>
+						<TestData Name="V=5" Direction="Output" InputValue="5" LowerLimit="495" UpperLimit="505" ActualValue="497"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+		</TestGroup>
+		<TestGroup name="地开输出" ID="1_2" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+			<Outcome value="Passed"/>
+			<TestGroup name="地开输出指令2" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="cmd=3" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="cmd=3" ID="1_1">
+						<TestData Name="cmd=3" Direction="Input" InputValue="cmd=3" LowerLimit="none" UpperLimit="1" ActualValue="0.11"/>
+						<TestData Name="cmd=3" Direction="Output" InputValue="cmd=3" LowerLimit="none" UpperLimit="1" ActualValue="0.11"/>
+					</TestResult>
+				</Test>
+				<Test name="cmd=2" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="cmd=2" ID="1_1">
+						<TestData Name="cmd=2" Direction="Input" InputValue="cmd=2" LowerLimit="27" UpperLimit="29" ActualValue="27.95"/>
+						<TestData Name="cmd=2" Direction="Output" InputValue="cmd=2" LowerLimit="27" UpperLimit="29" ActualValue="27.95"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="地开输出指令3" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="cmd=3" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="cmd=3" ID="1_1">
+						<TestData Name="cmd=3" Direction="Input" InputValue="cmd=3" LowerLimit="none" UpperLimit="1" ActualValue="0.13"/>
+						<TestData Name="cmd=3" Direction="Output" InputValue="cmd=3" LowerLimit="none" UpperLimit="1" ActualValue="0.13"/>
+					</TestResult>
+				</Test>
+				<Test name="cmd=2" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="cmd=2" ID="1_1">
+						<TestData Name="cmd=2" Direction="Input" InputValue="cmd=2" LowerLimit="27" UpperLimit="29" ActualValue="27.95"/>
+						<TestData Name="cmd=2" Direction="Output" InputValue="cmd=2" LowerLimit="27" UpperLimit="29" ActualValue="27.95"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="地开输出指令4" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="cmd=3" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="cmd=3" ID="1_1">
+						<TestData Name="cmd=3" Direction="Input" InputValue="cmd=3" LowerLimit="none" UpperLimit="1" ActualValue="0.15"/>
+						<TestData Name="cmd=3" Direction="Output" InputValue="cmd=3" LowerLimit="none" UpperLimit="1" ActualValue="0.15"/>
+					</TestResult>
+				</Test>
+				<Test name="cmd=2" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="cmd=2" ID="1_1">
+						<TestData Name="cmd=2" Direction="Input" InputValue="cmd=2" LowerLimit="27" UpperLimit="29" ActualValue="27.96"/>
+						<TestData Name="cmd=2" Direction="Output" InputValue="cmd=2" LowerLimit="27" UpperLimit="29" ActualValue="27.96"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+		</TestGroup>
+		<TestGroup name="电阻门限开关" ID="1_2" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+			<Outcome value="Passed"/>
+			<TestGroup name="电阻开关门限输入1" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="100" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="100" ID="1_1">
+						<TestData Name="100" Direction="Input" InputValue="100" LowerLimit="90" UpperLimit="110" ActualValue="99"/>
+						<TestData Name="100" Direction="Output" InputValue="100" LowerLimit="90" UpperLimit="110" ActualValue="99"/>
+					</TestResult>
+				</Test>
+				<Test name="200" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="200" ID="1_1">
+						<TestData Name="200" Direction="Input" InputValue="200" LowerLimit="190" UpperLimit="210" ActualValue="199"/>
+						<TestData Name="200" Direction="Output" InputValue="200" LowerLimit="190" UpperLimit="210" ActualValue="199"/>
+					</TestResult>
+				</Test>
+				<Test name="1000" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="1000" ID="1_1">
+						<TestData Name="1000" Direction="Input" InputValue="1000" LowerLimit="990" UpperLimit="1010" ActualValue="998"/>
+						<TestData Name="1000" Direction="Output" InputValue="1000" LowerLimit="990" UpperLimit="1010" ActualValue="998"/>
+					</TestResult>
+				</Test>
+				<Test name="2200" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="2200" ID="1_1">
+						<TestData Name="2200" Direction="Input" InputValue="2200" LowerLimit="2190" UpperLimit="2210" ActualValue="2199"/>
+						<TestData Name="2200" Direction="Output" InputValue="2200" LowerLimit="2190" UpperLimit="2210" ActualValue="2199"/>
+					</TestResult>
+				</Test>
+				<Test name="3000" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="3000" ID="1_1">
+						<TestData Name="3000" Direction="Input" InputValue="3000" LowerLimit="2590" UpperLimit="2610" ActualValue="2598"/>
+						<TestData Name="3000" Direction="Output" InputValue="3000" LowerLimit="2590" UpperLimit="2610" ActualValue="2598"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+		</TestGroup>
+		<TestGroup name="28v/开离散量输出" ID="1_2" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+			<Outcome value="Passed"/>
+			<TestGroup name="28V/开输出接口1" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="cmd=3" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="cmd=3" ID="1_1">
+						<TestData Name="cmd=3" Direction="Input" InputValue="cmd=3" LowerLimit="26" UpperLimit="none" ActualValue="27.55"/>
+						<TestData Name="cmd=3" Direction="Output" InputValue="cmd=3" LowerLimit="26" UpperLimit="none" ActualValue="27.55"/>
+					</TestResult>
+				</Test>
+				<Test name="cmd=2" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="cmd=2" ID="1_1">
+						<TestData Name="cmd=2" Direction="Input" InputValue="cmd=2" LowerLimit="none" UpperLimit="5" ActualValue="0.05"/>
+						<TestData Name="cmd=2" Direction="Output" InputValue="cmd=2" LowerLimit="none" UpperLimit="5" ActualValue="0.05"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+		</TestGroup>
+		<TestGroup name="28V/5mA输出" ID="1_2" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+			<Outcome value="Passed"/>
+			<TestGroup name="28V/5mA输出1" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="不用激励" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="不用激励" ID="1_1">
+						<TestData Name="不用激励" Direction="Input" InputValue="不用激励" LowerLimit="26" UpperLimit="none" ActualValue="27.38"/>
+						<TestData Name="不用激励" Direction="Output" InputValue="不用激励" LowerLimit="26" UpperLimit="none" ActualValue="27.38"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="28V/5mA输出2" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="不用激励" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=100k" ID="1_1">
+						<TestData Name="R=100k" Direction="Input" InputValue="1-R=100k" LowerLimit="26" UpperLimit="30" ActualValue="28.01"/>
+						<TestData Name="R=100k" Direction="Output" InputValue="1-R=100k" LowerLimit="26" UpperLimit="30" ActualValue="28.01"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+		</TestGroup>
+		<TestGroup name="防冰" ID="1_2" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+			<Outcome value="Passed"/>
+			<TestGroup name="左发短舱结冰0" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="R=100k" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="V=4" ID="1_1">
+						<TestData Name="V=4" Direction="Input" InputValue="1-V=4" LowerLimit="-0.5" UpperLimit="2.5" ActualValue="0.91"/>
+						<TestData Name="V=4" Direction="Output" InputValue="1-V=4" LowerLimit="-0.5" UpperLimit="2.5" ActualValue="0.91"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="左发短舱结冰1" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="V=4" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=100k" ID="1_1">
+						<TestData Name="R=100k" Direction="Input" InputValue="1-R=100k" LowerLimit="26" UpperLimit="30" ActualValue="28.01"/>
+						<TestData Name="R=100k" Direction="Output" InputValue="1-R=100k" LowerLimit="26" UpperLimit="30" ActualValue="28.01"/>
+					</TestResult>
+				</Test>
+				<Test name="R=100k" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="V=4" ID="1_1">
+						<TestData Name="V=4" Direction="Input" InputValue="2-V=4" LowerLimit="-0.5" UpperLimit="2.5" ActualValue="0.91"/>
+						<TestData Name="V=4" Direction="Output" InputValue="2-V=4" LowerLimit="-0.5" UpperLimit="2.5" ActualValue="0.91"/>
+					</TestResult>
+				</Test>
+				<Test name="V=4" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=100k" ID="1_1">
+						<TestData Name="R=100k" Direction="Input" InputValue="2-R=100k" LowerLimit="-0.5" UpperLimit="2.5" ActualValue="1.14"/>
+						<TestData Name="R=100k" Direction="Output" InputValue="2-R=100k" LowerLimit="-0.5" UpperLimit="2.5" ActualValue="1.14"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="左发短舱结冰2" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="R=100k" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="1" ID="1_1">
+						<TestData Name="1" Direction="Input" InputValue="1" LowerLimit="1" UpperLimit="1" ActualValue="1"/>
+						<TestData Name="1" Direction="Output" InputValue="1" LowerLimit="1" UpperLimit="1" ActualValue="1"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+		</TestGroup>
+		<TestGroup name="点灯逻辑" ID="1_2" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+			<Outcome value="Passed"/>
+			<TestGroup name="左机翼展开上锁" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="1" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="V=4" ID="1_1">
+						<TestData Name="V=4" Direction="Input" InputValue="4" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+						<TestData Name="V=4" Direction="Output" InputValue="4" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="地开输入32" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="V=4" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="R=100k" ID="1_1">
+						<TestData Name="R=100k" Direction="Input" InputValue="100k" LowerLimit="2" UpperLimit="2" ActualValue="2"/>
+						<TestData Name="R=100k" Direction="Output" InputValue="100k" LowerLimit="2" UpperLimit="2" ActualValue="2"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="地开输入33" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="R=100k" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="2" ID="1_1">
+						<TestData Name="2" Direction="Input" InputValue="2" LowerLimit="26" UpperLimit="30" ActualValue="28.01"/>
+						<TestData Name="2" Direction="Output" InputValue="2" LowerLimit="26" UpperLimit="30" ActualValue="28.01"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="地开输出2" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="2" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="3/2" ID="1_1">
+						<TestData Name="3/2" Direction="Input" InputValue="3/2" LowerLimit="-0.5" UpperLimit="2.5" ActualValue="0.91"/>
+						<TestData Name="3/2" Direction="Output" InputValue="3/2" LowerLimit="-0.5" UpperLimit="2.5" ActualValue="0.91"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="左机翼展开上锁" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="2" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="1" ID="1_1">
+						<TestData Name="1" Direction="Input" InputValue="1" LowerLimit="1" UpperLimit="1" ActualValue="1"/>
+						<TestData Name="1" Direction="Output" InputValue="1" LowerLimit="1" UpperLimit="1" ActualValue="1"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="地开输出2" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="3/2" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="2" ID="1_1">
+						<TestData Name="2" Direction="Input" InputValue="2" LowerLimit="26" UpperLimit="30" ActualValue="28.01"/>
+						<TestData Name="2" Direction="Output" InputValue="2" LowerLimit="26" UpperLimit="30" ActualValue="28.01"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="左机翼展开上锁" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="1" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="3" ID="1_1">
+						<TestData Name="3" Direction="Input" InputValue="3" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+						<TestData Name="3" Direction="Output" InputValue="3" LowerLimit="3" UpperLimit="3" ActualValue="3"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="地开输出2" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="2" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="3/2" ID="1_1">
+						<TestData Name="3/2" Direction="Input" InputValue="3/2" LowerLimit="-0.5" UpperLimit="2.5" ActualValue="0.91"/>
+						<TestData Name="3/2" Direction="Output" InputValue="3/2" LowerLimit="-0.5" UpperLimit="2.5" ActualValue="0.91"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="左机翼展开上锁" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="3" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="3/2" ID="1_1">
+						<TestData Name="3/2" Direction="Input" InputValue="3/2" LowerLimit="-0.5" UpperLimit="2.5" ActualValue="0.91"/>
+						<TestData Name="3/2" Direction="Output" InputValue="3/2" LowerLimit="-0.5" UpperLimit="2.5" ActualValue="0.91"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+			<TestGroup name="地开输出2" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+				<Outcome value="Passed"/>
+				<Test name="3/2" ID="1_1" startDateTime="2023-03-06T10:40:21" endDateTime="2023-03-06T11:42:31" CycleNum="1">
+					<Outcome value="Passed"/>
+					<TestResult name="3/2" ID="1_1">
+						<TestData Name="3/2" Direction="Input" InputValue="3/2" LowerLimit="-0.5" UpperLimit="2.5" ActualValue="0.91"/>
+						<TestData Name="3/2" Direction="Output" InputValue="3/2" LowerLimit="-0.5" UpperLimit="2.5" ActualValue="0.91"/>
+					</TestResult>
+				</Test>
+			</TestGroup>
+		</TestGroup>
+		<TestSummory Session="所检试验-低温工作" ID="8988888" endDateTime="2017-09-07T19:08:41" startDateTime="2017-09-07T18:08:46">
+			<Outcome value="Failed"/>
+			<Records NumofRuns="2" name="地开输入测试" PassNum="2" FailNum="0">
+				<Records NumofRuns="2" name="地开输入1" PassNum="2" FailNum="0">
+					<Record NumofRuns="2" name="R" PassNum="2" FailNum="0"/>
+					<Record NumofRuns="2" name="V1" PassNum="2" FailNum="0"/>
+					<Record NumofRuns="2" name="V2" PassNum="2" FailNum="0"/>
+				</Records>
+				<Records NumofRuns="2" name="地开输入2" PassNum="2" FailNum="0">
+					<Record NumofRuns="2" name="R" PassNum="2" FailNum="0"/>
+					<Record NumofRuns="2" name="V1" PassNum="2" FailNum="0"/>
+					<Record NumofRuns="2" name="V2" PassNum="2" FailNum="0"/>
+				</Records>
+			</Records>
+			<Records NumofRuns="2" name="28V开输入测试" PassNum="1" FailNum="1">
+				<Records NumofRuns="2" name="28V开输入1" PassNum="1" FailNum="1">
+					<Record NumofRuns="2" name="R" PassNum="2" FailNum="0"/>
+					<Record NumofRuns="2" name="V1" PassNum="1" FailNum="1"/>
+					<Record NumofRuns="2" name="V2" PassNum="2" FailNum="0"/>
+				</Records>
+				<Records NumofRuns="2" name="28V开输入2" PassNum="2" FailNum="0">
+					<Record NumofRuns="2" name="R" PassNum="2" FailNum="0"/>
+					<Record NumofRuns="2" name="V1" PassNum="2" FailNum="0"/>
+					<Record NumofRuns="2" name="V2" PassNum="2" FailNum="0"/>
+				</Records>
+			</Records>
+		</TestSummory>
+		<SessionAction ID="20" name="Remove_UUT_DC_Power" startDateTime="2017-09-07T18:08:41" endDateTime="2017-09-07T18:08:46">
+			<ActionOutcome value="Done"/>
+			<Events>
+				<Event ID="777" name="正常供电" source="电源">
+					<Message>供电28V</Message>
+				</Event>
+			</Events>
+		</SessionAction>
+	</ResultSet>
+	<TestStation name="xx项目测试平台" NameID="HJSJ01332" TypeID="18S2.311.222" SerialNumber="OXD110" Version="V1.0" Calibration="2017-04-07T10:08:25">
+		<Parts>
+			<Part name="平台操作系统" Version="Win7" SerialNumber="1215641" nameID="12323131" TypeID="FDFS"/>
+		</Parts>
+		<Manufacturer/>
+	</TestStation>
+	<UUT name="XXX项目" ID="18S2.302.224" SerialNumber="201704235002" UutType="分系统" TypeID="SJD-XX">
+		<Parts>
+			<Part name="机箱" Version="A" SerialNumber="1215641" nameID="18S2.302.11" TypeID="HJSJ9899"/>
+			<Part name="电源" Version="A" SerialNumber="1215641" nameID="18S2.302.11" TypeID="HJSJ9899"/>
+			<Part name="FPGA软件" Version="A" SerialNumber="1215641" nameID="18S2.302.11" TypeID="HJSJ9899"/>
+			<Part name="驻留软件" Version="A" SerialNumber="1215641" nameID="18S2.302.11" TypeID="HJSJ9899"/>
+		</Parts>
+	</UUT>
+	<Site name="631"/>
+	<TestProgram name="XX项目测试程序" TypeID="HJSJ00-" nameID="18S2.222.22" Version="V1.0">
+		<TestProcedures>
+			<TestProcedure ID="222" Developer="张三" name="A429Test.py" DevTime="2017-04-07T10:08:25" Version="V1.0"/>
+		</TestProcedures>
+	</TestProgram>
+</TestResults>

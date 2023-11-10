@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xs:element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="TestResults">
+  <xs:annotation>
+    <xs:documentation>测试描述</xs:documentation>
+  </xs:annotation>
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="Personnel" type="Personal">
+        <xs:complexType name="SystemOperator" type="Person">
+          <xs:attribute name="ID">1</xs:attribute>
+          <xs:attribute name="name">1</xs:attribute>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ResultSet" type="TestGroup">
+        <xs:complexType name="TestGroup">
+          <xs:complexType name="Test">
+            <xs:attribute name="ID" type="NonBlankString" use="required">ID-1</xs:attribute>
+            <xs:attribute name="startDateTime" type="dateTime" use="required">startDateTime-1</xs:attribute>
+            <xs:attribute name="CycleNum" type="NonBlankString" use="required">1</xs:attribute>
+            <xs:complexType name="outCome">
+              <xs:simpleType name="value" type="OutcomeValue" use="required">Passed</xs:simpleType>
+            </xs:complexType>
+            <xs:complexType name="testResult">
+              <xs:sequence>
+                <xs:element name="TestLimits" minOccurs="0">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="Limits" type="Limit" minOccurs="1" maxOccurs="unbounded">
+                        <xs:complexType name="Limit">
+                          <xs:sequence>
+                            <xs:sequence name="SingleLimit" minOccurs="1" maxOccurs="unbounded">
+                              <xs:complexType>
+                                <xs:sequence>
+                                  <xs:element name="Data" type="Data" minOccurs="1" maxOccurs="unbounded">
+                                    <xs:complexType name="Data">
+                                      <xs:attribute name="name" type="NonBlankString" use="required">name2-1</xs:attribute>
+                                      <xs:attribute name="type" type="NonBlankString" use="required">type2-1</xs:attribute>
+                                      <xs:attribute name="direction" type="NonBlankString" use="required">direction2</xs:attribute>
+                                      <xs:attribute name="upperLimit" type="NonBlankString" use="required">upperLimit2</xs:attribute>
+                                    </xs:complexType>
+                                  </xs:element>
+                                </xs:sequence>
+                                <xs:attribute name="comparator" use="required">comparator1</xs:attribute>
+                              </xs:complexType>
+                            </xs:sequence>
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+              <xs:attribute name="ID" type="NonBlankString" use="required">id3-1</xs:attribute>
+              <xs:attribute name="name" use="required">name3-1</xs:attribute>
+            </xs:complexType>
+          </xs:complexType>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TestStation">
+        <xs:annotation>
+          <xs:documentation>本元素用于描述测试时测试环境的状态</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Parts">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Part" type="Part" minOccurs="1" maxOccurs="unbounded">
+                    <xs:attribute name="NameID" type="NonBlankString" use="required">NameID-1</xs:attribute>
+                    <xs:attribute name="Name" type="NonBlankString" use="required">Name-1</xs:attribute>
+                    <xs:attribute name="SerialNumber" type="NonBlankString" use="required">SerialNumber-1</xs:attribute>
+                    <xs:attribute name="TypeID" type="NonBlankString" use="required">TypeID-1</xs:attribute>
+                    <xs:attribute name="Version" type="NonBlankString" use="required">Version-1</xs:attribute>
+                    <xs:attribute name="Calibration" type="NonBlankString" use="required">Calibration-1</xs:attribute>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UUT">
+        <xs:annotation>
+          <xs:documentation>本元素用于描述参与测试的被测设备的信息</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Parts">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Part" type="Part" minOccurs="1" maxOccurs="unbounded">
+                    <xs:attribute name="NameID" type="NonBlankString" use="required">NameID-1</xs:attribute>
+                    <xs:attribute name="Name" type="NonBlankString" use="required">Name-1</xs:attribute>
+                    <xs:attribute name="SerialNumber" type="NonBlankString" use="required">SerialNumber-1</xs:attribute>
+                    <xs:attribute name="TypeID" type="NonBlankString" use="required">TypeID-1</xs:attribute>
+                    <xs:attribute name="Version" type="NonBlankString" use="required">Version-1</xs:attribute>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Site" type="Organization">
+        <xs:complexType name="Organization">
+          <xs:string name="name" use="required">Organization_name-1</xs:string>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="TestProgram">
+        <xs:annotation>
+          <xs:documentation>产生结果数据的测试程序，定义待定</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="TestProcedures">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="TestProcedure" type="TestProcedure" minOccurs="1" maxOccurs="unbounded">
+                  <xs:complexType name="TestProcedure">
+                    <xs:attribute name="name" type="NonBlankString" use="required">TestProcedure_name</xs:attribute>
+                    <xs:attribute name="ID" type="NonBlankString" use="required">TestProcedure_ID</xs:attribute>
+                    <xs:attribute name="Version" type="NonBlankString" use="required">TestProcedure_Version</xs:attribute>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute name="NameID" type="NonBlankString" use="required">NameID-1</xs:attribute>
+        <xs:attribute name="Name" type="NonBlankString" use="required">Name-1</xs:attribute>
+        <xs:attribute name="Version" type="NonBlankString" use="required">Version-1</xs:attribute>
+        <xs:attribute name="Publish" type="NonBlankString" use="required">Publish-1</xs:attribute>
+      </xs:complexType>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
