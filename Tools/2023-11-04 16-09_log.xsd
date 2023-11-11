@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <xs:element xmlns:xs="http://www.w3.org/2001/XMLSchema" name="TestResults">
   <xs:annotation>
-    <xs:documentation>测试描述</xs:documentation>
+    <xs:documentation>测试描述123</xs:documentation>
   </xs:annotation>
   <xs:complexType>
     <xs:sequence>
