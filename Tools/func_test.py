@@ -1,7 +1,8 @@
 import logging
 import inspect
+import threading
 import time
-
+import datetime
 from Tools import command as cd
 from Tools.DevicesPools import ACPower, DCPower1, DCPower2, Multimeter, SignalGenerator
 from Tools.Interfaces import JDK23
@@ -10,8 +11,11 @@ from Tools.delay import delay
 # global delay_com = "COM7"
 # global delay_baudrate=115200
 logging.basicConfig(level=logging.INFO)
-
+from Tools.delay import delay_data
 class func_all_test:
+    '''
+    执行自动测试的所有设备
+    '''
     def __init__(self):
         pass
         self.test=autoTest_func()
@@ -34,7 +38,7 @@ class func_all_test:
                 self.delay_channl_num = ["0", "1", "2", "3", "4"]  # 这里指的是需要以及有继电器操作的支路通道号
 
             except Exception as e:
-                logging.INFO("DI_func初始化出现错误" + e)
+                logging.info("DI_func初始化出现错误" + e)
                 logging.error(e)
                 print("DI_func出现错误" + e)
 
@@ -179,10 +183,10 @@ class autoTest_func:
             self.devices["dc2"].connect()
             self.devices["meter"].connect()
             self.devices["generator"].connect()
-            self.power_supply()
-            self.devices_init()
+
+
         except Exception as e:
-            logging.INFO("auto_Test出现错误" + e)
+            logging.info("auto_Test出现错误" + e)
             logging.error(e)
             print("auto_Test出现错误" + e)
 
@@ -196,11 +200,22 @@ class autoTest_func:
         '''
         self.devices["dc2"].write(cd.dc_ITCH.OUTP_mode+"VOLT")
         self.devices["dc2"].write(cd.dc_ITCH.set_curr_range+"0.001")  #设置电流输出量程为1mA（由于电源输出功率恒定）
-
-
-    def devices_init(self):
+    def all_devices_output(self,state):
+        state1=self.check_str(state)
+        self.set_equip_state("ac",state)
+        self.set_equip_state("dc1",state)
+        self.set_equip_state("dc2",state)
+        self.devices["generator"].write(cd.signal_generator.channel_c1_outp+state1)
+    def set_equip_state(self,name:str,state):
+        name1=self.check_str(name)
+        state1=self.check_str(state)
+        if name == "generator":
+            self.devices["generator"].write(cd.signal_generator.channel_c1_outp + state1)
+        else:
+            self.devices[name1].write(cd.output+state1)
+    def devices_init_autoTest(self):
         '''
-        对设备的初始化操作，比如:
+        对自动测试设备的初始化操作，比如:
         1.面板锁定，禁止手动操作
         2.设置为远程操控
 
@@ -215,10 +230,34 @@ class autoTest_func:
             # self.devices["dc2"].write(cd.dc_ITCH.A_range)
             self.devices["meter"].write(cd.SYST_query)
             self.devices["generator"].connect()  #目前暂无禁用面板操作
+            self.all_devices_output(0)
         except Exception as e:
             logging.info("设备初始化出现问题{}".format(e))
             logging.error(e)
+    def query_power_CURR(self,name:str):
+        name=self.check_str(name)
+        device=self.devices[name]
+        if name=="ac":
+            volt_re=device.query(cd.ac_kikusui.query_curr)
+        else:
+            volt_re=device.query(cd.query_curr)
+        return convert_current(volt_re)
+    def query_power_VOLT(self,name:str):
+        name=self.check_str(name)
+        device=self.devices[name]
+        if name=="ac":
+            volt_re=device.query(cd.ac_kikusui.query_volt)
+        else:
+            volt_re=device.query(cd.query_volt)
+        return convert_voltage(volt_re)
+    def query_115_freq(self):
+        a=self.devices["ac"].query(cd.ac_kikusui.query_freq)
+        return convert_frequency_unit(a)
+    def query_generator_data(self):
 
+        a=self.devices["generator"].query(cd.signal_generator.query_c1,1)
+        frq, amp = convert_generator_data(a)
+        return frq,amp
     def set_equip_output_state(self,name:str,state:int):
         '''
         改变指定某台设备的输出状态，
@@ -226,10 +265,17 @@ class autoTest_func:
         :param state: 1表示输出打开，0表示输出关闭
         :return:
         '''
-        if state==1:
-            self.devices[name].write(cd.output_on)
-        elif state==0:
-            self.devices[name].write(cd.output_off)
+        try:
+            if name=="":
+                logging.info("euip name have error in equip output on")
+                return
+            if state==1:
+                self.devices[name].write(cd.output_on)
+            elif state==0:
+                self.devices[name].write(cd.output_off)
+        except Exception as e:
+            logging.info("have occur error{} in output on".format(e))
+            logging.error(e)
 
     def meas_curr(self):
         """
@@ -330,8 +376,28 @@ class autoTest_func:
             return re
         except Exception as e:
             logging.error(f"{current_function} 出现错误: {e}")
-            logging.INFO(f"{current_function} 出现错误: {e}")
+            logging.info(f"{current_function} 出现错误: {e}")
 
+def convert_generator_data(response):
+    '''
+
+    :param response:
+    :return:
+    '''
+    try:
+        if response==None:
+            return None,None
+        frq_index = response.find("FRQ")  # 查找FRQ的索引位置
+        amp_index = response.find("AMP")  # 查找AMP的索引位置
+
+        frq = response[frq_index + 4:amp_index - 1].split(",")[0]  # 提取FRQ后面的数据
+        amp = response[amp_index + 4:].split(",")[0]  # 提取AMP后面的数据，并使用逗号进行分割后取第一个元素
+        frq=frq.split("HZ")[0]
+        amp=amp.split("V")[0]
+        return [frq, amp]
+    except Exception as e:
+        logging.info("genrator data switch have error {}".format(e))
+        logging.error(e)
 #delay串口的波特率于232串口的波特率不一样是否OK
 def convert_voltage(voltage):
     voltage = str(voltage)
@@ -340,42 +406,38 @@ def convert_voltage(voltage):
         voltage_main = float(voltage_parts[0])
         voltage_exponent = int(voltage_parts[1])
         if voltage_exponent >= -3:
-            voltage_unit = 'V'
+            voltage_unit = ''
             voltage_main *= 10**voltage_exponent
         elif voltage_exponent >= -6:
-            voltage_unit = 'mV'
+            voltage_unit = 'm'
             voltage_main *= 10**(voltage_exponent + 3)
         else:
-            voltage_unit = 'uV'
+            voltage_unit = 'u'
             voltage_main *= 10**(voltage_exponent + 6)
         return str(round(voltage_main,3)) + voltage_unit
     else:
-        return voltage + "V"
+        return voltage + ""
+
+def convert_current(current):
+    voltage = str(current)
+    if 'E' in voltage:
+        voltage_parts = voltage.split('E')
+        voltage_main = float(voltage_parts[0])
+        voltage_exponent = int(voltage_parts[1])
+        if voltage_exponent >= -3:
+            voltage_unit = ''
+            voltage_main *= 10**voltage_exponent
+        elif voltage_exponent >= -6:
+            voltage_unit = 'm'
+            voltage_main *= 10**(voltage_exponent + 3)
+        else:
+            voltage_unit = 'u'
+            voltage_main *= 10**(voltage_exponent + 6)
+        return str(round(voltage_main,3)) + voltage_unit
+    else:
+        return voltage + ""
 
 
-
-class delay_data:
-    '''
-    类是实现进行某个测试项对应操作的继电器通道，有疑问看电路原理图
-    '''
-    DI_0 = [36,42,43,37,47,45]
-    DI_1 = [39,40,35,37,33,46,48]
-    DI_2 = [19,18,20,22,21,17]
-    DI_3 = [26,23,24]
-    DI_4 = [25]
-    #注意：启动监视器1、2的继电器编号是错的，硬件上没有通道5的  Flash写能
-
-    DI_5 = []
-    DI = {}
-    DI["0"] = DI_0
-    DI["1"] = DI_1
-    DI["2"] = DI_2
-    DI["3"] = DI_3
-    DI["4"] = DI_4
-    DI["5"] = DI_5
-#chan表示通道，delay_num是继电器的卡号
-#结构为 chan:delay_num
-    AI={"0":15,"1":16,"2":14,"3":9,"4":10,"5":13,"6":11,"7":12,"15":41,"16":42}
 
 #对发给被测件的数据报和被测件返回的数据包进行对比
 class compare:
@@ -495,7 +557,7 @@ class DI(func_all_test):
         #     # return result  #result是True  False，表明测试是否成功
         #     # logging.info("DI测试中{}通道的{}测试结果是{}".format(chan,choice,result))
         except Exception as e:
-            logging.INFO("DI执行出现错误 {}".format(e))
+            logging.info("DI执行出现错误 {}".format(e))
             logging.error(e)
             return e
 
@@ -512,7 +574,7 @@ class AI(func_all_test):
             self.type_freq=[15,16]
             self.test.AI_device_init()
         except Exception as e:
-            logging.INFO("AI_func出现错误"+e)
+            logging.info("AI_func出现错误"+e)
             logging.error(e)
             print("AI_func出现错误"+e)
     # def set_freq_sine_test(self,choice):
@@ -594,7 +656,7 @@ class AO(func_all_test):
             current_function = inspect.currentframe().f_code.co_name
         except Exception as e:
             logging.error(f"{current_function} 出现错误: {e}")
-            logging.INFO(f"{current_function} 出现错误: {e}")
+            logging.info(f"{current_function} 出现错误: {e}")
 
     def test_channel(self,chan,choice):
         '''
@@ -633,14 +695,120 @@ def convert_mv_to_V(volt,unit):
     return volt_con
 
 
-if __name__ == '__main__':
-    b=func_all_test()
-    a =AI(b)
-    for chan in [15, 16]:
-        for choice in JDK23.AITest.CHES['{:02X}'.format(chan)]["tpvs"]:
-            index = JDK23.AITest.CHES['{:02X}'.format(chan)]["tpvs"].index(str(choice))
-            v_pp = JDK23.AITest.CHES['{:02X}'.format(chan)]['v_pp'][index]
-            print(index, choice, v_pp)
+from PyQt5.QtCore import QThread, QTimer,pyqtSignal
+import pyvisa
 
-            a.test_channel(chan,choice)
+class ThreadPowerOn(QThread):
+    signal_power_on = pyqtSignal(dict)
+    signal_ac115=pyqtSignal(list)
+    signal_dc28=pyqtSignal(list)
+    signal_signal_generator=pyqtSignal(list)
+    signal_test_dc28=pyqtSignal(list)
+    signal_send_data_UI=pyqtSignal(str,str)
+    finish = pyqtSignal()
+
+    def __init__(self,autoTest_func1):
+        super().__init__()
+        self.is_running = False
+        self.aoto_test=autoTest_func1
+        # self.autoTest_func=autoTest_func()
+        # self.aoto_test.devices_init_autoTest()
+        self.data_return={"ac115_volt":"","ac115_curr":"","ac115_freq":"","dc28_volt":"",
+                          "dc28_curr":"","ac_volt":"","ac_freq":"","dc_volt":"","dc_curr":""}
+    def start_thread(self):
+        self.is_running = True
+        print("启动")
+        self.start()
+        # print(datetime.datetime.now())
+        # self.run()
+
+    def run(self):
+        while self.is_running:
+            print(self.is_running)
+            self.get_power_volt()
+            # self.signal_power_on.emit(self.data_return)
             time.sleep(0.1)
+            # self.timer = QTimer()
+            # self.timer.timeout.connect(self.check_output)
+            # self.timer.start(500)  # 500ms间隔
+            # self.exec_()
+
+    def get_power_volt(self):
+        print("123")
+        self.signal_send_data_UI.emit("ac115_volt",self.aoto_test.query_power_VOLT("ac"))
+        self.signal_send_data_UI.emit("ac115_freq",self.aoto_test.query_115_freq())
+        self.signal_send_data_UI.emit("ac115_curr",self.aoto_test.query_power_CURR("ac"))
+        self.signal_send_data_UI.emit("dc28_volt",self.aoto_test.query_power_VOLT("dc1"))
+        self.signal_send_data_UI.emit("dc28_curr",self.aoto_test.query_power_CURR("dc1"))
+
+        self.signal_send_data_UI.emit("dc_volt",self.aoto_test.query_power_VOLT("dc2"))
+        self.signal_send_data_UI.emit("dc_curr",self.aoto_test.query_power_CURR("dc2"))
+        freq,amp=self.aoto_test.query_generator_data()
+        self.signal_send_data_UI.emit("ac_freq",freq)
+        self.signal_send_data_UI.emit("ac_volt",amp)
+
+
+        # self.data_return["ac115_volt"]=self.aoto_test.query_power_VOLT("ac")
+        # self.data_return["ac115_freq"]=self.aoto_test.query_115_freq()
+        #
+        # self.data_return["dc28_volt"]=self.aoto_test.query_power_VOLT("dc1")
+        # self.data_return["dc28_curr"]=self.aoto_test.query_power_CURR("dc1")
+        # self.data_return["dc_volt"]=self.aoto_test.query_power_VOLT("dc2")
+        # self.data_return["dc_curr"]=self.aoto_test.query_power_CURR("dc2")
+        # self.data_return["ac_volt"]=self.aoto_test.query_power_CURR("ac")
+        # self.data_return["ac_freq"],self.data_return["ac_volt"]=self.aoto_test.query_generator_data()
+        # self.signal_ac115.emit([self.data_return["ac115_volt"],self.data_return["ac115_freq"]])
+        # self.signal_dc28.emit([self.data_return["dc28_volt"],self.data_return["dc28_curr"]])
+        # self.signal_signal_generator.emit([self.aoto_test.query_generator_data()])
+        # self.signal_test_dc28.emit([self.data_return["dc_volt"],self.data_return["dc_curr"]])
+    def check_output(self):
+        try:
+            if not self.is_running:
+                # self.quit()
+                self.stop_timer()# 停止事件循环
+            # 在这里编写询问设备当前输出电压的代码逻辑
+            else:
+                self.get_power_volt()  # 假设有一个名为get_voltage的函数获取电压值
+                # self.signal_power_on.emit(self.data_return)
+        except Exception as e:
+            logging.info("power on have error{}".format(e))
+            logging.error(e)
+    def stop_timer(self):
+        if self.timer is not None:
+            self.timer.stop()
+            self.timer = None
+    def stop(self):
+        self.finish.emit()
+        self.is_running = False
+        # super().terminate()
+        re=pyvisa.ResourceManager().list_resources()
+        print(re)
+        # self.stop_timer()
+def convert_frequency_unit(value):
+    try:
+        units = ['', 'k', 'M', 'G']
+        magnitude = 0
+        value=float(value)
+        while value >= 1000 and magnitude < len(units)-1:
+            value /= 1000
+            magnitude += 1
+
+        return "{}{}".format(value, units[magnitude])
+    except Exception as e:
+        print(e)
+if __name__ == '__main__':
+
+    a=ThreadPowerOn()
+    # a.start_thread()
+
+    a.start_thread()
+    # b=func_all_test()
+    # a =AI(b)
+    # for chan in [15, 16]:
+    #     for choice in JDK23.AITest.CHES['{:02X}'.format(chan)]["tpvs"]:
+    #         index = JDK23.AITest.CHES['{:02X}'.format(chan)]["tpvs"].index(str(choice))
+    #         v_pp = JDK23.AITest.CHES['{:02X}'.format(chan)]['v_pp'][index]
+    #         print(index, choice, v_pp)
+    #
+    #         a.test_channel(chan,choice)
+    #         time.sleep(0.1)

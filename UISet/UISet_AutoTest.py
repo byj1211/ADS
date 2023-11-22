@@ -14,6 +14,7 @@ class AutoTestWindow(QMainWindow, Ui_MainWindow):
         # 全屏显示
         self.showMaximized()
 
+
         # 隐藏send按钮
         self.pb_auto_con_insSend.setVisible(False)
         self.pb_auto_di_insSend.setVisible(False)

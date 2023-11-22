@@ -5,10 +5,12 @@ class DAQ970A:
     Read_CH12_VOLT = 'MEAS:VOLT:DC? 100, (@112)'
 
 #-----------------------------以下是JDK需要的指令--------------------------------
-
+output="OUTP "
 output_on="OUTP ON"
 output_off="OUTP OFF"
 SYST_query = "*IDN?"
+query_volt = "MEAS:VOLT?"
+query_curr = "MEAS:CURR?"
 class dc_ITCH:
     SYST_com_IT2806 = "ASRL16::INSTR"
     SYST_query = "*IDN?"
@@ -33,10 +35,14 @@ class ac_kikusui:
     set_ac115="VOLT 115"
     set_freq400="FREQ 400"
     local_button_lock="SYST:KLOC 1"
-
+    query_volt="MEAS:VOLT:AC?"
+    query_freq="MEAS:FREQ?"
+    query_curr="MEASure:CURRent:DC?"
 class dc_kikusui:
     set_dc_28="VOLT 28"
     set_dc="VOLT "
+    query_volt="MEAS:VOLT?"
+    query_curr="MEAS:CURR?"
     local_button_lock="SYST:KLOC 1"
 class Multimeter:
     set_command_standard="CMDS RIGOL"
@@ -65,6 +71,7 @@ class signal_generator:
     channel_c1_phase="C1:BSWV PHSE,0"
     channel_c1_open="C1:OUTP ON"
     channel_c1_off="C1:OUTP OFF"
+    channel_c1_outp="C1:OUTP "
     query_c1="C1:BSWV?"
 class PowerSupply:
     Mode = 'SYST:CONF:NOUT '

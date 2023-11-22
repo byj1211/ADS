@@ -14,15 +14,35 @@ class ManualTestWindow(QMainWindow, UI.Ui_MainWindow):
         self.showMaximized()
         self.pb_auto_test.setVisible(False)
 
+        self.button_click=False
+        # 绑定电源上电的按钮
+        self.PushButton_115.setEnabled(True)
+        self.PushButton_115.setCheckable(True)
+        self.PushButton_115.toggled.connect(self.on_clicked_pb_115_test)
+
+        self.PushButton_28.setEnabled(True)
+        self.PushButton_28.setCheckable(True)
+        self.PushButton_28.toggled.connect(self.on_clicked_pb_115_test)
+        self.PushButton_signal_generaor.setEnabled(True)
+        self.PushButton_signal_generaor.setCheckable(True)
+        self.PushButton_signal_generaor.toggled.connect(self.on_clicked_pb_115_test)
+        self.PushButton_28_test.setEnabled(True)
+        self.PushButton_28_test.setCheckable(True)
+        self.PushButton_28_test.toggled.connect(self.on_clicked_pb_115_test)
+        # self.PushButton_115.clicked.connect(self.on_clicked_pb_115_test)
+        # self.PushButton_28.clicked.connect(self.on_clicked_pb_man_test)
+        # self.PushButton_signal_generaor.clicked.connect(self.on_clicked_pb_man_test)
+        # self.PushButton_28_test.clicked.connect(self.on_clicked_pb_man_test)
+
         # 启动器默认为开
         self.pb_auto_di_28VKIN5_2.click()
         self.pb_auto_di_28VDIN2_2.click()
 
-        # 下拉框文本居中
-        self.cm_auto_ai_AIN_PT100_1.lineEdit().setAlignment(Qt.AlignCenter)
-        self.cm_auto_ai_AIN_PT100_2.lineEdit().setAlignment(Qt.AlignCenter)
-        self.cm_auto_ai_AIN_PT100_3.lineEdit().setAlignment(Qt.AlignCenter)
-        self.cm_auto_ai_AIN_CTSENSOR.lineEdit().setAlignment(Qt.AlignCenter)
+        # # 下拉框文本居中
+        self.cm_auto_ai_AIN_PT100_9.lineEdit().setAlignment(Qt.AlignCenter)
+        self.cm_auto_ai_AIN_PT100_8.lineEdit().setAlignment(Qt.AlignCenter)
+        self.cm_auto_ai_AIN_PT100_7.lineEdit().setAlignment(Qt.AlignCenter)
+        self.cm_auto_ai_AIN_CTSENSOR_3.lineEdit().setAlignment(Qt.AlignCenter)
 
         # 设置控制测试表格的列宽
         self.auto_cor_ins_table.setColumnWidth(0, 100)
@@ -39,12 +59,95 @@ class ManualTestWindow(QMainWindow, UI.Ui_MainWindow):
                 item = self.auto_cor_ins_table.item(row, col)
                 item.setFlags(item.flags() & ~Qt.ItemIsEditable)
 
-    # 设置TEST ON按钮点击切换文本、颜色
-    def on_clicked_pb_man_test(self):
-        if self.sender().isChecked():
-            self.sender().setText('TEST\nOFF')
+        self.AI_button = {"esc_5vdc_0": [self.pushButton_2,self.dsb_auto_ai_AIN_EDT_3,self.le_auto_ai_AIN_EDTr_3],
+                          "speedChange_5vdv_1": [self.pushButton_3,self.dsb_auto_ai_AIN_NVT_3,self.le_auto_ai_AIN_NVTr_3],
+                          "ivoltMon_28vdc_2": [self.pushButton_4,self.dsb_auto_ai_AIN_SVM_3,self.le_auto_ai_AIN_SVMr_3],
+                         "exhaustTem1_mvdc_3": [self.pushButton_5,self.dsb_auto_ai_AIN_KTM_15,self.le_auto_ai_AIN_KTM_1r_3],
+                          "exhaustTem2_mvdc_4": [self.pushButton_6,self.dsb_auto_ai_AIN_KTM_13,self.le_auto_ai_AIN_KTM_2r_3],
+                          "envirPressSen_mvdc_5": [self.pushButton_7,self.dsb_auto_ai_AIN_KTM_12,self.le_auto_ai_AIN_KTM_3r_3],
+                          "totalPressSensor_mvdc_6": [self.pushButton_8,self.dsb_auto_ai_AIN_KTM_11,self.le_auto_ai_AIN_KTM_4r_3],
+                          "differentPressSensor_mvdc_7": [self.pushButton_9,self.dsb_auto_ai_AIN_KTM_14,self.le_auto_ai_AIN_KTM_5r_3],
+                          "oilTem_r_8": [self.pushButton_12,self.cm_auto_ai_AIN_PT100_9,self.le_auto_ai_AIN_PT100_1r_3],
+                          "apuTem_r_9": [self.pushButton_10,self.cm_auto_ai_AIN_PT100_8,self.le_auto_ai_AIN_PT100_2r_3],
+                          "fuelTem_r_10": [self.pushButton_11,self.cm_auto_ai_AIN_PT100_7,self.le_auto_ai_AIN_PT100_3r_3],
+                          "coldConpenstateTem_r_11": [self.pushButton_13,self.cm_auto_ai_AIN_CTSENSOR_3,self.le_auto_ai_AIN_CTSENSORr_3],
+                          "scvLvdt_ac_12": [self.pushButton_17,self.le_auto_ai_SCVIN_3,self.le_auto_ai_SCVOUT_3],
+                          "igvLvdt_ac_13": [self.pushButton_19,self.le_auto_ai_IGV_IN_3,self.le_auto_ai_IGVOUT_3],
+                          "fcuRvdt_ac_14": [self.pushButton_21,self.le_auto_ai_RVDTIN_3,self.le_auto_ai_RVDTOUT_3],
+                          "speed1_ac_15": [self.pushButton_14,self.dsb_auto_ai_AIN_FRE_N1_6,self.le_auto_ai_AIN_FRE_N1r_3],
+                          "speed1_ac_16": [self.pushButton_15,self.dsb_auto_ai_AIN_FRE_N1_5,self.le_auto_ai_AIN_FRE_N2r_3]
+                          }
+        self.DI_button={
+
+        }
+        self.AI_set_linedit={0:self.dsb_auto_ai_AIN_EDT_3,1:self.dsb_auto_ai_AIN_NVT_3}
+    def set_single_buttonOff_stylesheet(self,bt):
+        current_style = bt.styleSheet()
+        new_style = f"{current_style} QPushButton {{ background-color: transparent; }}"
+        for key, button in self.AI_button.items():
+            button.setCheckable(True)
+            # 禁用所有标签页
+        for i in range(self.auto_tabWidget.count()):
+            self.auto_tabWidget.setTabEnabled(i, True)
+        bt.setStyleSheet(new_style)
+        bt.setChecked(False)
+        bt.setCheckable(True)
+    def AI_button_style_change(self, checked):
+        current_style = self.sender().styleSheet()
+        if checked:
+            new_style = f"{current_style} QPushButton {{ background-color: #c23616; color:white}}"
+            self.sender().setStyleSheet(new_style)
+            # 禁用剩余的按钮
+            for key, button in self.AI_button.items():
+                if button != self.sender():
+                    button.setCheckable(False)
+            # 禁用所有标签页
+            for i in range(self.auto_tabWidget.count()):
+                if i==4:
+                    continue
+                self.auto_tabWidget.setTabEnabled(i, False)
+
         else:
-            self.sender().setText('TEST\nON')
+            new_style = f"{current_style} QPushButton {{ background-color: transparent; }}"
+            for key, button in self.AI_button.items():
+                button.setCheckable(True)
+            # 禁用所有标签页
+            for i in range(self.auto_tabWidget.count()):
+                self.auto_tabWidget.setTabEnabled(i, True)
+        self.sender().setStyleSheet(new_style)
+    # 设置TEST ON按钮点击切换文本、颜色
+    def on_clicked_pb_115_test(self,checked):
+        print("have get into"+str(checked))
+        current_style = self.sender().styleSheet()
+        if checked:
+                new_style = f"{current_style} QPushButton {{ background-color: red; color:white}}"
+                self.sender().setText('Output\nON')
+                self.sender().setStyleSheet(new_style)
+
+        else:
+                self.sender().setText('Output\nOFF')
+                new_style = f"{current_style} QPushButton {{ background-color: white; color:black}}"
+                self.button_click = False
+        self.sender().setStyleSheet(new_style)
+        # def on_clicked_pb_115_test(self):
+        # current_style = self.sender().styleSheet()
+        # if not self.button_click:
+        #     if self.sender().isChecked():
+        #         # self.sender().setChecked(True)
+        #         new_style = f"{current_style} QPushButton {{ background-color: red; color:white}}"
+        #
+        #         # self.sender().setStyleSheet("QPushButton{\n"
+        #         #               "        background-color: #ff6345;\n"
+        #         #               "}\n")
+        #         self.sender().setText('Output\nON')
+        #         self.button_click = True
+        #     else:
+        #         print("no clicked")
+        # else:
+        #     self.sender().setText('Output\nOFF')
+        #     new_style = f"{current_style} QPushButton {{ background-color: white; color:black}}"
+        #     self.button_click = False
+        # self.sender().setStyleSheet(new_style)
 
     # 开关按钮
     def switch(self):

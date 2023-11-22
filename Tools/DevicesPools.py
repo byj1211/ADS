@@ -340,18 +340,18 @@ class SignalGenerator:
             logging.info("{} can't write to...".format(self.name))
             logging.error(ex)
 
-    def query(self, msg):
+    def query(self, msg, timeout):
         try:
             if not self.resource:
                 self.connect()
+            self.resource.timeout = timeout
             response = self.resource.query(msg).strip()
             logging.info("{} receive : '{}'".format(self.name, msg))
-
-
             return response
 
         except Exception as ex:
             logging.info("{} can't query to...".format(self.name))
+            logging.info("")
             logging.error(ex)
 
     def deviceInfo(self):

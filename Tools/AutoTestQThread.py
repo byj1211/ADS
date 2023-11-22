@@ -6,6 +6,7 @@ from Tools.func_test import func_all_test
 from Tools.Interfaces import JDK23
 from Tools.func_test import DO,AI,AO,DI
 logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
 from Tools.AI_demo import do_AI_test_FUNC
 
 

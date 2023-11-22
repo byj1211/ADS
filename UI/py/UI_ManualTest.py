@@ -14,14 +14,25 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1630, 1154)
+        MainWindow.resize(1932, 1408)
+        MainWindow.setMinimumSize(QtCore.QSize(0, 47))
+        font = QtGui.QFont()
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        MainWindow.setFont(font)
         MainWindow.setStyleSheet("background-color: rgb(58, 58,58);\n"
 "color: rgb(255, 255, 255);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.horizontalLayout_17 = QtWidgets.QHBoxLayout(self.centralwidget)
-        self.horizontalLayout_17.setObjectName("horizontalLayout_17")
+        self.horizontalLayout_8 = QtWidgets.QHBoxLayout(self.centralwidget)
+        self.horizontalLayout_8.setObjectName("horizontalLayout_8")
         self.frame_2 = QtWidgets.QFrame(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.frame_2.sizePolicy().hasHeightForWidth())
+        self.frame_2.setSizePolicy(sizePolicy)
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
@@ -57,35 +68,13 @@ class Ui_MainWindow(object):
 "}")
         self.pb_auto_open_item.setObjectName("pb_auto_open_item")
         self.gridLayout.addWidget(self.pb_auto_open_item, 0, 0, 1, 1)
-        self.pb_auto_close_item = QtWidgets.QPushButton(self.frame_2)
-        self.pb_auto_close_item.setStyleSheet("QPushButton{\n"
-"background-color:rgb(33,37,43);\n"
-"color:white;\n"
-"font: 14pt \"Arial\";\n"
-"border:3px solid rgb(29,63,91);\n"
-"border-radius:5px;\n"
-"padding-right:20px;\n"
-"padding-left:20px;\n"
-"padding-top:5px;\n"
-"padding-bottom:5px;\n"
-"}\n"
-"QPushButton:hover{\n"
-"font-size:17pt;\n"
-"font-weight:bold;\n"
-"border-width:4px;\n"
-"border-radius:5px;\n"
-"padding-right:0px;\n"
-"padding-left:0px;\n"
-"padding-top:5px;\n"
-"padding-bottom:5px;\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"color:rgb(85, 170, 255);\n"
-"}")
-        self.pb_auto_close_item.setObjectName("pb_auto_close_item")
-        self.gridLayout.addWidget(self.pb_auto_close_item, 1, 0, 1, 1)
         self.test_auto_treeWidget = QtWidgets.QTreeWidget(self.frame_2)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.test_auto_treeWidget.sizePolicy().hasHeightForWidth())
+        self.test_auto_treeWidget.setSizePolicy(sizePolicy)
+        self.test_auto_treeWidget.setStyleSheet("background-color: rgb(50, 49, 48);")
         self.test_auto_treeWidget.setObjectName("test_auto_treeWidget")
         brush = QtGui.QBrush(QtGui.QColor(0, 0, 0))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -157,8 +146,36 @@ class Ui_MainWindow(object):
         item_1 = QtWidgets.QTreeWidgetItem(item_0)
         item_1 = QtWidgets.QTreeWidgetItem(item_0)
         self.gridLayout.addWidget(self.test_auto_treeWidget, 2, 0, 1, 1)
+        self.pb_auto_close_item = QtWidgets.QPushButton(self.frame_2)
+        self.pb_auto_close_item.setStyleSheet("QPushButton{\n"
+"background-color:rgb(33,37,43);\n"
+"color:white;\n"
+"font: 14pt \"Arial\";\n"
+"border:3px solid rgb(29,63,91);\n"
+"border-radius:5px;\n"
+"padding-right:20px;\n"
+"padding-left:20px;\n"
+"padding-top:5px;\n"
+"padding-bottom:5px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"font-size:17pt;\n"
+"font-weight:bold;\n"
+"border-width:4px;\n"
+"border-radius:5px;\n"
+"padding-right:0px;\n"
+"padding-left:0px;\n"
+"padding-top:5px;\n"
+"padding-bottom:5px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"color:rgb(85, 170, 255);\n"
+"}")
+        self.pb_auto_close_item.setObjectName("pb_auto_close_item")
+        self.gridLayout.addWidget(self.pb_auto_close_item, 1, 0, 1, 1)
         self.verticalLayout_37.addLayout(self.gridLayout)
-        self.horizontalLayout_17.addWidget(self.frame_2)
+        self.horizontalLayout_8.addWidget(self.frame_2)
         self.frame = QtWidgets.QFrame(self.centralwidget)
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -179,6 +196,13 @@ class Ui_MainWindow(object):
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_43.addItem(spacerItem1)
         self.pb_auto_test = QtWidgets.QPushButton(self.frame)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pb_auto_test.sizePolicy().hasHeightForWidth())
+        self.pb_auto_test.setSizePolicy(sizePolicy)
+        self.pb_auto_test.setMinimumSize(QtCore.QSize(0, 68))
+        self.pb_auto_test.setMaximumSize(QtCore.QSize(16777215, 50))
         self.pb_auto_test.setStyleSheet("\n"
 "QPushButton:checked{background-color:rgb(33,37,43);color:red;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
 "\n"
@@ -190,6 +214,9 @@ class Ui_MainWindow(object):
         self.pb_auto_test.setObjectName("pb_auto_test")
         self.horizontalLayout_43.addWidget(self.pb_auto_test)
         self.verticalLayout_39.addLayout(self.horizontalLayout_43)
+        self.PixmapLabel = PixmapLabel(self.frame)
+        self.PixmapLabel.setObjectName("PixmapLabel")
+        self.verticalLayout_39.addWidget(self.PixmapLabel)
         self.auto_tabWidget = QtWidgets.QTabWidget(self.frame)
         self.auto_tabWidget.setStyleSheet("QTabBar::tab{\n"
 "    background-color: rgb(58, 58,58);\n"
@@ -200,9 +227,1883 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QTabBar::tab:selected{\n"
-"    background-color: blue;\n"
+"    background-color: ;\n"
+"    background-color: rgb(0, 119, 223);\n"
+"    border-radius: 15px;\n"
 "}")
         self.auto_tabWidget.setObjectName("auto_tabWidget")
+        self.tab_8 = QtWidgets.QWidget()
+        self.tab_8.setObjectName("tab_8")
+        self.verticalLayout_88 = QtWidgets.QVBoxLayout(self.tab_8)
+        self.verticalLayout_88.setObjectName("verticalLayout_88")
+        self.widget_4 = QtWidgets.QWidget(self.tab_8)
+        self.widget_4.setObjectName("widget_4")
+        self.verticalLayout_98 = QtWidgets.QVBoxLayout(self.widget_4)
+        self.verticalLayout_98.setObjectName("verticalLayout_98")
+        self.widget_5 = QtWidgets.QWidget(self.widget_4)
+        self.widget_5.setStyleSheet("background-color:#323130;")
+        self.widget_5.setObjectName("widget_5")
+        self.verticalLayout_89 = QtWidgets.QVBoxLayout(self.widget_5)
+        self.verticalLayout_89.setObjectName("verticalLayout_89")
+        spacerItem2 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_89.addItem(spacerItem2)
+        self.widget_6 = QtWidgets.QWidget(self.widget_5)
+        self.widget_6.setObjectName("widget_6")
+        self.horizontalLayout_22 = QtWidgets.QHBoxLayout(self.widget_6)
+        self.horizontalLayout_22.setObjectName("horizontalLayout_22")
+        self.verticalLayout_90 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_90.setObjectName("verticalLayout_90")
+        self.horizontalLayout_23 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_23.setObjectName("horizontalLayout_23")
+        self.label_4 = QtWidgets.QLabel(self.widget_6)
+        self.label_4.setMinimumSize(QtCore.QSize(0, 45))
+        self.label_4.setMaximumSize(QtCore.QSize(16777215, 45))
+        self.label_4.setStyleSheet("color:white;\n"
+"background-color: rgb(127, 140, 141);\n"
+"\n"
+"\n"
+"\n"
+"font: 75 14pt \"Arial\";\n"
+"    border-radius: 15px;\n"
+"padding :2px")
+        self.label_4.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_4.setObjectName("label_4")
+        self.horizontalLayout_23.addWidget(self.label_4, 0, QtCore.Qt.AlignHCenter)
+        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_23.addItem(spacerItem3)
+        spacerItem4 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.horizontalLayout_23.addItem(spacerItem4)
+        self.verticalLayout_90.addLayout(self.horizontalLayout_23)
+        spacerItem5 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_90.addItem(spacerItem5)
+        self.horizontalLayout_24 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_24.setObjectName("horizontalLayout_24")
+        self.label_260 = QtWidgets.QLabel(self.widget_6)
+        self.label_260.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_260.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_260.setObjectName("label_260")
+        self.horizontalLayout_24.addWidget(self.label_260)
+        self.le_man_115v_vIN_2 = QtWidgets.QLineEdit(self.widget_6)
+        self.le_man_115v_vIN_2.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_man_115v_vIN_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_man_115v_vIN_2.setReadOnly(False)
+        self.le_man_115v_vIN_2.setObjectName("le_man_115v_vIN_2")
+        self.horizontalLayout_24.addWidget(self.le_man_115v_vIN_2)
+        self.label_238 = QtWidgets.QLabel(self.widget_6)
+        self.label_238.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_238.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_238.setObjectName("label_238")
+        self.horizontalLayout_24.addWidget(self.label_238)
+        spacerItem6 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_24.addItem(spacerItem6)
+        self.label_261 = QtWidgets.QLabel(self.widget_6)
+        self.label_261.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_261.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_261.setObjectName("label_261")
+        self.horizontalLayout_24.addWidget(self.label_261)
+        self.le_man_115v_cIN_2 = QtWidgets.QLineEdit(self.widget_6)
+        self.le_man_115v_cIN_2.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_man_115v_cIN_2.setText("")
+        self.le_man_115v_cIN_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_man_115v_cIN_2.setReadOnly(False)
+        self.le_man_115v_cIN_2.setObjectName("le_man_115v_cIN_2")
+        self.horizontalLayout_24.addWidget(self.le_man_115v_cIN_2)
+        self.label_239 = QtWidgets.QLabel(self.widget_6)
+        self.label_239.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_239.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_239.setObjectName("label_239")
+        self.horizontalLayout_24.addWidget(self.label_239)
+        spacerItem7 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_24.addItem(spacerItem7)
+        self.label_262 = QtWidgets.QLabel(self.widget_6)
+        self.label_262.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_262.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_262.setObjectName("label_262")
+        self.horizontalLayout_24.addWidget(self.label_262)
+        self.le_man_115v_fIN_2 = QtWidgets.QLineEdit(self.widget_6)
+        self.le_man_115v_fIN_2.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_man_115v_fIN_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_man_115v_fIN_2.setReadOnly(False)
+        self.le_man_115v_fIN_2.setObjectName("le_man_115v_fIN_2")
+        self.horizontalLayout_24.addWidget(self.le_man_115v_fIN_2)
+        self.label_240 = QtWidgets.QLabel(self.widget_6)
+        self.label_240.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_240.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_240.setObjectName("label_240")
+        self.horizontalLayout_24.addWidget(self.label_240)
+        self.verticalLayout_90.addLayout(self.horizontalLayout_24)
+        self.horizontalLayout_25 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_25.setObjectName("horizontalLayout_25")
+        self.label_270 = QtWidgets.QLabel(self.widget_6)
+        self.label_270.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_270.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_270.setObjectName("label_270")
+        self.horizontalLayout_25.addWidget(self.label_270)
+        self.le_man_115v_vOUT_2 = QtWidgets.QLineEdit(self.widget_6)
+        self.le_man_115v_vOUT_2.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_man_115v_vOUT_2.setText("")
+        self.le_man_115v_vOUT_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_man_115v_vOUT_2.setReadOnly(True)
+        self.le_man_115v_vOUT_2.setObjectName("le_man_115v_vOUT_2")
+        self.horizontalLayout_25.addWidget(self.le_man_115v_vOUT_2)
+        self.label_248 = QtWidgets.QLabel(self.widget_6)
+        self.label_248.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_248.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_248.setObjectName("label_248")
+        self.horizontalLayout_25.addWidget(self.label_248)
+        spacerItem8 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_25.addItem(spacerItem8)
+        self.label_271 = QtWidgets.QLabel(self.widget_6)
+        self.label_271.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_271.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_271.setObjectName("label_271")
+        self.horizontalLayout_25.addWidget(self.label_271)
+        self.le_man_115v_cOUT_2 = QtWidgets.QLineEdit(self.widget_6)
+        self.le_man_115v_cOUT_2.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_man_115v_cOUT_2.setText("")
+        self.le_man_115v_cOUT_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_man_115v_cOUT_2.setReadOnly(True)
+        self.le_man_115v_cOUT_2.setObjectName("le_man_115v_cOUT_2")
+        self.horizontalLayout_25.addWidget(self.le_man_115v_cOUT_2)
+        self.label_249 = QtWidgets.QLabel(self.widget_6)
+        self.label_249.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_249.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_249.setObjectName("label_249")
+        self.horizontalLayout_25.addWidget(self.label_249)
+        spacerItem9 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_25.addItem(spacerItem9)
+        self.label_272 = QtWidgets.QLabel(self.widget_6)
+        self.label_272.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_272.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_272.setObjectName("label_272")
+        self.horizontalLayout_25.addWidget(self.label_272)
+        self.le_man_115v_fOUT_2 = QtWidgets.QLineEdit(self.widget_6)
+        self.le_man_115v_fOUT_2.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_man_115v_fOUT_2.setText("")
+        self.le_man_115v_fOUT_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_man_115v_fOUT_2.setReadOnly(True)
+        self.le_man_115v_fOUT_2.setObjectName("le_man_115v_fOUT_2")
+        self.horizontalLayout_25.addWidget(self.le_man_115v_fOUT_2)
+        self.label_250 = QtWidgets.QLabel(self.widget_6)
+        self.label_250.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_250.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_250.setObjectName("label_250")
+        self.horizontalLayout_25.addWidget(self.label_250)
+        self.verticalLayout_90.addLayout(self.horizontalLayout_25)
+        self.horizontalLayout_22.addLayout(self.verticalLayout_90)
+        spacerItem10 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_22.addItem(spacerItem10)
+        self.PushButton_115 = PushButton(self.widget_6)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.PushButton_115.sizePolicy().hasHeightForWidth())
+        self.PushButton_115.setSizePolicy(sizePolicy)
+        self.PushButton_115.setMinimumSize(QtCore.QSize(100, 60))
+        self.PushButton_115.setMaximumSize(QtCore.QSize(100, 60))
+        font = QtGui.QFont()
+        font.setPointSize(8)
+        font.setBold(False)
+        font.setWeight(50)
+        self.PushButton_115.setFont(font)
+        self.PushButton_115.setStyleSheet("PushButton, ToolButton, ToggleButton, ToggleToolButton {\n"
+"    color: black;\n"
+"    background: rgba(255, 255, 255, 0.7);\n"
+"    background-color: rgb(255, 255, 255);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.073);\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.183);\n"
+"    border-radius: 5px;\n"
+"    /* font: 14px \'Segoe UI\', \'Microsoft YaHei\'; */\n"
+"    padding: 5px 12px 6px 12px;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"ToolButton {\n"
+"    padding: 5px 9px 6px 8px;\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=false] {\n"
+"    padding: 5px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=true] {\n"
+"    padding: 5px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"DropDownToolButton, PrimaryDropDownToolButton {\n"
+"    padding: 5px 31px 6px 8px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=false],\n"
+"PrimaryDropDownPushButton[hasIcon=false] {\n"
+"    padding: 5px 31px 6px 12px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=true],\n"
+"PrimaryDropDownPushButton[hasIcon=true] {\n"
+"    padding: 5px 31px 6px 36px;\n"
+"}\n"
+"\n"
+"PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover {\n"
+"    background: rgba(249, 249, 249, 0.5);\n"
+"}\n"
+"\n"
+"PushButton:pressed, ToolButton:pressed, ToggleButton:pressed, ToggleToolButton:pressed {\n"
+"    color: rgba(0, 0, 0, 0.63);\n"
+"    background: rgba(249, 249, 249, 0.3);\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.073);\n"
+"}\n"
+"\n"
+"PushButton:disabled, ToolButton:disabled, ToggleButton:disabled, ToggleToolButton:disabled {\n"
+"    color: rgba(0, 0, 0, 0.36);\n"
+"    background: rgba(249, 249, 249, 0.3);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.06);\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.06);\n"
+"}\n"
+"\n"
+"\n"
+"PrimaryPushButton,\n"
+"PrimaryToolButton,\n"
+"ToggleButton:checked,\n"
+"ToggleToolButton:checked {\n"
+"    color: white;\n"
+"    background-color: #009faa;\n"
+"    border: 1px solid #00a7b3;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"PrimaryPushButton:hover,\n"
+"PrimaryToolButton:hover,\n"
+"ToggleButton:checked:hover,\n"
+"ToggleToolButton:checked:hover {\n"
+"    background-color: #00a7b3;\n"
+"    border: 1px solid #2daab3;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"PrimaryPushButton:pressed,\n"
+"PrimaryToolButton:pressed,\n"
+"ToggleButton:checked:pressed,\n"
+"ToggleToolButton:checked:pressed {\n"
+"    color: rgba(255, 255, 255, 0.63);\n"
+"    background-color: #3eabb3;\n"
+"    border: 1px solid #3eabb3;\n"
+"}\n"
+"\n"
+"PrimaryPushButton:disabled,\n"
+"PrimaryToolButton:disabled,\n"
+"ToggleButton:checked:disabled,\n"
+"ToggleToolButton:checked:disabled {\n"
+"    color: rgba(255, 255, 255, 0.9);\n"
+"    background-color: rgb(205, 205, 205);\n"
+"    border: 1px solid rgb(205, 205, 205);\n"
+"}\n"
+"\n"
+"SplitDropButton,\n"
+"PrimarySplitDropButton {\n"
+"    border-left: none;\n"
+"    border-top-left-radius: 0;\n"
+"    border-bottom-left-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton,\n"
+"#splitToolButton,\n"
+"#primarySplitPushButton,\n"
+"#primarySplitToolButton {\n"
+"    border-top-right-radius: 0;\n"
+"    border-bottom-right-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton:pressed,\n"
+"#splitToolButton:pressed,\n"
+"SplitDropButton:pressed {\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.183);\n"
+"}\n"
+"\n"
+"PrimarySplitDropButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton, #primarySplitToolButton {\n"
+"    border-right: 1px solid #3eabb3;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton:pressed, #primarySplitToolButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"HyperlinkButton {\n"
+"    /* font: 14px \'Segoe UI\', \'Microsoft YaHei\'; */\n"
+"    padding: 6px 12px 6px 12px;\n"
+"    color: #009faa;\n"
+"    border: none;\n"
+"    border-radius: 6px;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=false] {\n"
+"    padding: 6px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=true] {\n"
+"    padding: 6px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"HyperlinkButton:hover {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 10);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:pressed {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:disabled {\n"
+"    color: rgba(0, 0, 0, 0.43);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"\n"
+"RadioButton {\n"
+"    min-height: 24px;\n"
+"    max-height: 24px;\n"
+"    background-color: transparent;\n"
+"    font: 14px \'Segoe UI\', \'Microsoft YaHei\', \'PingFang SC\';\n"
+"    color: black;\n"
+"}\n"
+"\n"
+"RadioButton::indicator {\n"
+"    width: 18px;\n"
+"    height: 18px;\n"
+"    border-radius: 11px;\n"
+"    border: 2px solid #999999;\n"
+"    background-color: rgba(0, 0, 0, 5);\n"
+"    margin-right: 4px;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:hover {\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:pressed {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(225, 224, 223),\n"
+"            stop:1 rgb(225, 224, 223));\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked {\n"
+"    height: 22px;\n"
+"    width: 22px;\n"
+"    border: none;\n"
+"    border-radius: 11px;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:hover {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(255, 255, 255),\n"
+"            stop:0.7 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:pressed {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton:disabled {\n"
+"    color: rgba(0, 0, 0, 110);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled:checked {\n"
+"    border: none;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgba(0, 0, 0, 0.2169),\n"
+"            stop:1 rgba(0, 0, 0, 0.2169));\n"
+"}\n"
+"\n"
+"TransparentToolButton,\n"
+"TransparentToggleToolButton,\n"
+"TransparentDropDownToolButton,\n"
+"TransparentPushButton,\n"
+"TransparentDropDownPushButton,\n"
+"TransparentTogglePushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    margin: 0;\n"
+"}\n"
+"\n"
+"TransparentToolButton:hover,\n"
+"TransparentToggleToolButton:hover,\n"
+"TransparentDropDownToolButton:hover,\n"
+"TransparentPushButton:hover,\n"
+"TransparentDropDownPushButton:hover,\n"
+"TransparentTogglePushButton:hover {\n"
+"    background-color: rgba(0, 0, 0, 9);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:pressed,\n"
+"TransparentToggleToolButton:pressed,\n"
+"TransparentDropDownToolButton:pressed,\n"
+"TransparentPushButton:pressed,\n"
+"TransparentDropDownPushButton:pressed,\n"
+"TransparentTogglePushButton:pressed {\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:disabled,\n"
+"TransparentToggleToolButton:disabled,\n"
+"TransparentDropDownToolButton:disabled,\n"
+"TransprentPushButton:disabled,\n"
+"TransparentDropDownPushButton:disabled,\n"
+"TransprentTogglePushButton:disabled {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"\n"
+"PillPushButton,\n"
+"PillPushButton:hover,\n"
+"PillPushButton:pressed,\n"
+"PillPushButton:disabled,\n"
+"PillPushButton:checked,\n"
+"PillPushButton:checked:hover,\n"
+"PillPushButton:checked:pressed,\n"
+"PillPushButton:disabled:checked,\n"
+"PillToolButton,\n"
+"PillToolButton:hover,\n"
+"PillToolButton:pressed,\n"
+"PillToolButton:disabled,\n"
+"PillToolButton:checked,\n"
+"PillToolButton:checked:hover,\n"
+"PillToolButton:checked:pressed,\n"
+"PillToolButton:disabled:checked {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"")
+        self.PushButton_115.setObjectName("PushButton_115")
+        self.horizontalLayout_22.addWidget(self.PushButton_115)
+        self.verticalLayout_89.addWidget(self.widget_6)
+        spacerItem11 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_89.addItem(spacerItem11)
+        self.widget_7 = QtWidgets.QWidget(self.widget_5)
+        self.widget_7.setObjectName("widget_7")
+        self.horizontalLayout_26 = QtWidgets.QHBoxLayout(self.widget_7)
+        self.horizontalLayout_26.setObjectName("horizontalLayout_26")
+        self.verticalLayout_91 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_91.setObjectName("verticalLayout_91")
+        self.label_29 = QtWidgets.QLabel(self.widget_7)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_29.sizePolicy().hasHeightForWidth())
+        self.label_29.setSizePolicy(sizePolicy)
+        self.label_29.setMaximumSize(QtCore.QSize(16777215, 45))
+        self.label_29.setSizeIncrement(QtCore.QSize(0, 45))
+        self.label_29.setStyleSheet("color:white;\n"
+"background-color: rgb(225, 223, 221);\n"
+"color: rgb(0, 0, 0);\n"
+"background-color: rgb(225, 223, 221);\n"
+"font: 75 14pt \"Arial\";\n"
+"    border-radius: 15px;\n"
+"padding:10px")
+        self.label_29.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_29.setObjectName("label_29")
+        self.verticalLayout_91.addWidget(self.label_29)
+        spacerItem12 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_91.addItem(spacerItem12)
+        self.horizontalLayout_27 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_27.setObjectName("horizontalLayout_27")
+        self.label_273 = QtWidgets.QLabel(self.widget_7)
+        self.label_273.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_273.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_273.setObjectName("label_273")
+        self.horizontalLayout_27.addWidget(self.label_273)
+        self.le_man_28v_vIN_2 = QtWidgets.QLineEdit(self.widget_7)
+        self.le_man_28v_vIN_2.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_man_28v_vIN_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_man_28v_vIN_2.setReadOnly(False)
+        self.le_man_28v_vIN_2.setObjectName("le_man_28v_vIN_2")
+        self.horizontalLayout_27.addWidget(self.le_man_28v_vIN_2)
+        self.label_251 = QtWidgets.QLabel(self.widget_7)
+        self.label_251.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_251.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_251.setObjectName("label_251")
+        self.horizontalLayout_27.addWidget(self.label_251)
+        spacerItem13 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_27.addItem(spacerItem13)
+        self.label_274 = QtWidgets.QLabel(self.widget_7)
+        self.label_274.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_274.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_274.setObjectName("label_274")
+        self.horizontalLayout_27.addWidget(self.label_274)
+        self.le_man_28v_cIN_2 = QtWidgets.QLineEdit(self.widget_7)
+        self.le_man_28v_cIN_2.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_man_28v_cIN_2.setText("")
+        self.le_man_28v_cIN_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_man_28v_cIN_2.setReadOnly(False)
+        self.le_man_28v_cIN_2.setObjectName("le_man_28v_cIN_2")
+        self.horizontalLayout_27.addWidget(self.le_man_28v_cIN_2)
+        self.label_252 = QtWidgets.QLabel(self.widget_7)
+        self.label_252.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_252.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_252.setObjectName("label_252")
+        self.horizontalLayout_27.addWidget(self.label_252)
+        self.verticalLayout_91.addLayout(self.horizontalLayout_27)
+        self.horizontalLayout_28 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_28.setObjectName("horizontalLayout_28")
+        self.label_275 = QtWidgets.QLabel(self.widget_7)
+        self.label_275.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_275.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_275.setObjectName("label_275")
+        self.horizontalLayout_28.addWidget(self.label_275)
+        self.le_man_28v_vOUT_2 = QtWidgets.QLineEdit(self.widget_7)
+        self.le_man_28v_vOUT_2.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_man_28v_vOUT_2.setText("")
+        self.le_man_28v_vOUT_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_man_28v_vOUT_2.setReadOnly(True)
+        self.le_man_28v_vOUT_2.setObjectName("le_man_28v_vOUT_2")
+        self.horizontalLayout_28.addWidget(self.le_man_28v_vOUT_2)
+        self.label_253 = QtWidgets.QLabel(self.widget_7)
+        self.label_253.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_253.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_253.setObjectName("label_253")
+        self.horizontalLayout_28.addWidget(self.label_253)
+        spacerItem14 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_28.addItem(spacerItem14)
+        self.label_276 = QtWidgets.QLabel(self.widget_7)
+        self.label_276.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_276.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_276.setObjectName("label_276")
+        self.horizontalLayout_28.addWidget(self.label_276)
+        self.le_man_28v_cOUT_2 = QtWidgets.QLineEdit(self.widget_7)
+        self.le_man_28v_cOUT_2.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_man_28v_cOUT_2.setText("")
+        self.le_man_28v_cOUT_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_man_28v_cOUT_2.setReadOnly(True)
+        self.le_man_28v_cOUT_2.setObjectName("le_man_28v_cOUT_2")
+        self.horizontalLayout_28.addWidget(self.le_man_28v_cOUT_2)
+        self.label_254 = QtWidgets.QLabel(self.widget_7)
+        self.label_254.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_254.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_254.setObjectName("label_254")
+        self.horizontalLayout_28.addWidget(self.label_254)
+        self.verticalLayout_91.addLayout(self.horizontalLayout_28)
+        self.horizontalLayout_26.addLayout(self.verticalLayout_91)
+        spacerItem15 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_26.addItem(spacerItem15)
+        self.PushButton_28 = PushButton(self.widget_7)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.PushButton_28.sizePolicy().hasHeightForWidth())
+        self.PushButton_28.setSizePolicy(sizePolicy)
+        self.PushButton_28.setMinimumSize(QtCore.QSize(100, 60))
+        self.PushButton_28.setMaximumSize(QtCore.QSize(100, 60))
+        self.PushButton_28.setStyleSheet("PushButton, ToolButton, ToggleButton, ToggleToolButton {\n"
+"    color: black;\n"
+"    background: rgba(255, 255, 255, 0.7);\n"
+"    background-color: rgb(255, 255, 255);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.073);\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.183);\n"
+"    border-radius: 5px;\n"
+"    /* font: 14px \'Segoe UI\', \'Microsoft YaHei\'; */\n"
+"    padding: 5px 12px 6px 12px;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"ToolButton {\n"
+"    padding: 5px 9px 6px 8px;\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=false] {\n"
+"    padding: 5px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=true] {\n"
+"    padding: 5px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"DropDownToolButton, PrimaryDropDownToolButton {\n"
+"    padding: 5px 31px 6px 8px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=false],\n"
+"PrimaryDropDownPushButton[hasIcon=false] {\n"
+"    padding: 5px 31px 6px 12px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=true],\n"
+"PrimaryDropDownPushButton[hasIcon=true] {\n"
+"    padding: 5px 31px 6px 36px;\n"
+"}\n"
+"\n"
+"PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover {\n"
+"    background: rgba(249, 249, 249, 0.5);\n"
+"}\n"
+"\n"
+"PushButton:pressed, ToolButton:pressed, ToggleButton:pressed, ToggleToolButton:pressed {\n"
+"    color: rgba(0, 0, 0, 0.63);\n"
+"    background: rgba(249, 249, 249, 0.3);\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.073);\n"
+"}\n"
+"\n"
+"PushButton:disabled, ToolButton:disabled, ToggleButton:disabled, ToggleToolButton:disabled {\n"
+"    color: rgba(0, 0, 0, 0.36);\n"
+"    background: rgba(249, 249, 249, 0.3);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.06);\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.06);\n"
+"}\n"
+"\n"
+"\n"
+"PrimaryPushButton,\n"
+"PrimaryToolButton,\n"
+"ToggleButton:checked,\n"
+"ToggleToolButton:checked {\n"
+"    color: white;\n"
+"    background-color: #009faa;\n"
+"    border: 1px solid #00a7b3;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"PrimaryPushButton:hover,\n"
+"PrimaryToolButton:hover,\n"
+"ToggleButton:checked:hover,\n"
+"ToggleToolButton:checked:hover {\n"
+"    background-color: #00a7b3;\n"
+"    border: 1px solid #2daab3;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"PrimaryPushButton:pressed,\n"
+"PrimaryToolButton:pressed,\n"
+"ToggleButton:checked:pressed,\n"
+"ToggleToolButton:checked:pressed {\n"
+"    color: rgba(255, 255, 255, 0.63);\n"
+"    background-color: #3eabb3;\n"
+"    border: 1px solid #3eabb3;\n"
+"}\n"
+"\n"
+"PrimaryPushButton:disabled,\n"
+"PrimaryToolButton:disabled,\n"
+"ToggleButton:checked:disabled,\n"
+"ToggleToolButton:checked:disabled {\n"
+"    color: rgba(255, 255, 255, 0.9);\n"
+"    background-color: rgb(205, 205, 205);\n"
+"    border: 1px solid rgb(205, 205, 205);\n"
+"}\n"
+"\n"
+"SplitDropButton,\n"
+"PrimarySplitDropButton {\n"
+"    border-left: none;\n"
+"    border-top-left-radius: 0;\n"
+"    border-bottom-left-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton,\n"
+"#splitToolButton,\n"
+"#primarySplitPushButton,\n"
+"#primarySplitToolButton {\n"
+"    border-top-right-radius: 0;\n"
+"    border-bottom-right-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton:pressed,\n"
+"#splitToolButton:pressed,\n"
+"SplitDropButton:pressed {\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.183);\n"
+"}\n"
+"\n"
+"PrimarySplitDropButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton, #primarySplitToolButton {\n"
+"    border-right: 1px solid #3eabb3;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton:pressed, #primarySplitToolButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"HyperlinkButton {\n"
+"    /* font: 14px \'Segoe UI\', \'Microsoft YaHei\'; */\n"
+"    padding: 6px 12px 6px 12px;\n"
+"    color: #009faa;\n"
+"    border: none;\n"
+"    border-radius: 6px;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=false] {\n"
+"    padding: 6px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=true] {\n"
+"    padding: 6px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"HyperlinkButton:hover {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 10);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:pressed {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:disabled {\n"
+"    color: rgba(0, 0, 0, 0.43);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"\n"
+"RadioButton {\n"
+"    min-height: 24px;\n"
+"    max-height: 24px;\n"
+"    background-color: transparent;\n"
+"    font: 14px \'Segoe UI\', \'Microsoft YaHei\', \'PingFang SC\';\n"
+"    color: black;\n"
+"}\n"
+"\n"
+"RadioButton::indicator {\n"
+"    width: 18px;\n"
+"    height: 18px;\n"
+"    border-radius: 11px;\n"
+"    border: 2px solid #999999;\n"
+"    background-color: rgba(0, 0, 0, 5);\n"
+"    margin-right: 4px;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:hover {\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:pressed {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(225, 224, 223),\n"
+"            stop:1 rgb(225, 224, 223));\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked {\n"
+"    height: 22px;\n"
+"    width: 22px;\n"
+"    border: none;\n"
+"    border-radius: 11px;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:hover {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(255, 255, 255),\n"
+"            stop:0.7 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:pressed {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton:disabled {\n"
+"    color: rgba(0, 0, 0, 110);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled:checked {\n"
+"    border: none;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgba(0, 0, 0, 0.2169),\n"
+"            stop:1 rgba(0, 0, 0, 0.2169));\n"
+"}\n"
+"\n"
+"TransparentToolButton,\n"
+"TransparentToggleToolButton,\n"
+"TransparentDropDownToolButton,\n"
+"TransparentPushButton,\n"
+"TransparentDropDownPushButton,\n"
+"TransparentTogglePushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    margin: 0;\n"
+"}\n"
+"\n"
+"TransparentToolButton:hover,\n"
+"TransparentToggleToolButton:hover,\n"
+"TransparentDropDownToolButton:hover,\n"
+"TransparentPushButton:hover,\n"
+"TransparentDropDownPushButton:hover,\n"
+"TransparentTogglePushButton:hover {\n"
+"    background-color: rgba(0, 0, 0, 9);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:pressed,\n"
+"TransparentToggleToolButton:pressed,\n"
+"TransparentDropDownToolButton:pressed,\n"
+"TransparentPushButton:pressed,\n"
+"TransparentDropDownPushButton:pressed,\n"
+"TransparentTogglePushButton:pressed {\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:disabled,\n"
+"TransparentToggleToolButton:disabled,\n"
+"TransparentDropDownToolButton:disabled,\n"
+"TransprentPushButton:disabled,\n"
+"TransparentDropDownPushButton:disabled,\n"
+"TransprentTogglePushButton:disabled {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"\n"
+"PillPushButton,\n"
+"PillPushButton:hover,\n"
+"PillPushButton:pressed,\n"
+"PillPushButton:disabled,\n"
+"PillPushButton:checked,\n"
+"PillPushButton:checked:hover,\n"
+"PillPushButton:checked:pressed,\n"
+"PillPushButton:disabled:checked,\n"
+"PillToolButton,\n"
+"PillToolButton:hover,\n"
+"PillToolButton:pressed,\n"
+"PillToolButton:disabled,\n"
+"PillToolButton:checked,\n"
+"PillToolButton:checked:hover,\n"
+"PillToolButton:checked:pressed,\n"
+"PillToolButton:disabled:checked {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"")
+        self.PushButton_28.setObjectName("PushButton_28")
+        self.horizontalLayout_26.addWidget(self.PushButton_28)
+        self.verticalLayout_89.addWidget(self.widget_7)
+        spacerItem16 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_89.addItem(spacerItem16)
+        self.widget_8 = QtWidgets.QWidget(self.widget_5)
+        self.widget_8.setObjectName("widget_8")
+        self.verticalLayout_92 = QtWidgets.QVBoxLayout(self.widget_8)
+        self.verticalLayout_92.setObjectName("verticalLayout_92")
+        self.horizontalLayout_29 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_29.setObjectName("horizontalLayout_29")
+        self.verticalLayout_93 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_93.setObjectName("verticalLayout_93")
+        self.label_6 = QtWidgets.QLabel(self.widget_8)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_6.sizePolicy().hasHeightForWidth())
+        self.label_6.setSizePolicy(sizePolicy)
+        self.label_6.setMinimumSize(QtCore.QSize(0, 45))
+        self.label_6.setMaximumSize(QtCore.QSize(16777215, 45))
+        self.label_6.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"color:white;\n"
+"background-color: rgb(225, 223, 221);\n"
+"color: rgb(0, 0, 0);\n"
+"background-color: rgb(225, 223, 221);\n"
+"font: 75 14pt \"Arial\";\n"
+"color:white;\n"
+"background-color: rgb(225, 223, 221);\n"
+"color: rgb(0, 0, 0);\n"
+"background-color: rgb(225, 223, 221);\n"
+"font: 75 14pt \"Arial\";\n"
+"    border-radius: 15px;\n"
+"padding :2px")
+        self.label_6.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_6.setObjectName("label_6")
+        self.verticalLayout_93.addWidget(self.label_6)
+        spacerItem17 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_93.addItem(spacerItem17)
+        self.horizontalLayout_30 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_30.setObjectName("horizontalLayout_30")
+        self.label_291 = QtWidgets.QLabel(self.widget_8)
+        self.label_291.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_291.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_291.setObjectName("label_291")
+        self.horizontalLayout_30.addWidget(self.label_291)
+        self.le_man_speed_ampIN_2 = QtWidgets.QLineEdit(self.widget_8)
+        self.le_man_speed_ampIN_2.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_man_speed_ampIN_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_man_speed_ampIN_2.setReadOnly(False)
+        self.le_man_speed_ampIN_2.setObjectName("le_man_speed_ampIN_2")
+        self.horizontalLayout_30.addWidget(self.le_man_speed_ampIN_2)
+        self.label_292 = QtWidgets.QLabel(self.widget_8)
+        self.label_292.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_292.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_292.setObjectName("label_292")
+        self.horizontalLayout_30.addWidget(self.label_292)
+        spacerItem18 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_30.addItem(spacerItem18)
+        self.label_293 = QtWidgets.QLabel(self.widget_8)
+        self.label_293.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_293.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_293.setObjectName("label_293")
+        self.horizontalLayout_30.addWidget(self.label_293)
+        self.le_man_speed_fIN_2 = QtWidgets.QLineEdit(self.widget_8)
+        self.le_man_speed_fIN_2.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_man_speed_fIN_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_man_speed_fIN_2.setReadOnly(False)
+        self.le_man_speed_fIN_2.setObjectName("le_man_speed_fIN_2")
+        self.horizontalLayout_30.addWidget(self.le_man_speed_fIN_2)
+        self.label_294 = QtWidgets.QLabel(self.widget_8)
+        self.label_294.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_294.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_294.setObjectName("label_294")
+        self.horizontalLayout_30.addWidget(self.label_294)
+        self.verticalLayout_93.addLayout(self.horizontalLayout_30)
+        self.horizontalLayout_31 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_31.setObjectName("horizontalLayout_31")
+        self.label_295 = QtWidgets.QLabel(self.widget_8)
+        self.label_295.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_295.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_295.setObjectName("label_295")
+        self.horizontalLayout_31.addWidget(self.label_295)
+        self.le_man_speed_ampOUT_2 = QtWidgets.QLineEdit(self.widget_8)
+        self.le_man_speed_ampOUT_2.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_man_speed_ampOUT_2.setText("")
+        self.le_man_speed_ampOUT_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_man_speed_ampOUT_2.setReadOnly(True)
+        self.le_man_speed_ampOUT_2.setObjectName("le_man_speed_ampOUT_2")
+        self.horizontalLayout_31.addWidget(self.le_man_speed_ampOUT_2)
+        self.label_296 = QtWidgets.QLabel(self.widget_8)
+        self.label_296.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_296.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_296.setObjectName("label_296")
+        self.horizontalLayout_31.addWidget(self.label_296)
+        spacerItem19 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_31.addItem(spacerItem19)
+        self.label_297 = QtWidgets.QLabel(self.widget_8)
+        self.label_297.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_297.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_297.setObjectName("label_297")
+        self.horizontalLayout_31.addWidget(self.label_297)
+        self.le_man_speed_fOUT_2 = QtWidgets.QLineEdit(self.widget_8)
+        self.le_man_speed_fOUT_2.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_man_speed_fOUT_2.setText("")
+        self.le_man_speed_fOUT_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_man_speed_fOUT_2.setReadOnly(True)
+        self.le_man_speed_fOUT_2.setObjectName("le_man_speed_fOUT_2")
+        self.horizontalLayout_31.addWidget(self.le_man_speed_fOUT_2)
+        self.label_298 = QtWidgets.QLabel(self.widget_8)
+        self.label_298.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_298.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_298.setObjectName("label_298")
+        self.horizontalLayout_31.addWidget(self.label_298)
+        self.verticalLayout_93.addLayout(self.horizontalLayout_31)
+        self.horizontalLayout_29.addLayout(self.verticalLayout_93)
+        spacerItem20 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_29.addItem(spacerItem20)
+        self.PushButton_signal_generaor = PushButton(self.widget_8)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.PushButton_signal_generaor.sizePolicy().hasHeightForWidth())
+        self.PushButton_signal_generaor.setSizePolicy(sizePolicy)
+        self.PushButton_signal_generaor.setMinimumSize(QtCore.QSize(100, 60))
+        self.PushButton_signal_generaor.setMaximumSize(QtCore.QSize(100, 60))
+        self.PushButton_signal_generaor.setStyleSheet("PushButton, ToolButton, ToggleButton, ToggleToolButton {\n"
+"    color: black;\n"
+"    background: rgba(255, 255, 255, 0.7);\n"
+"    background-color: rgb(255, 255, 255);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.073);\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.183);\n"
+"    border-radius: 5px;\n"
+"    /* font: 14px \'Segoe UI\', \'Microsoft YaHei\'; */\n"
+"    padding: 5px 12px 6px 12px;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"ToolButton {\n"
+"    padding: 5px 9px 6px 8px;\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=false] {\n"
+"    padding: 5px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=true] {\n"
+"    padding: 5px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"DropDownToolButton, PrimaryDropDownToolButton {\n"
+"    padding: 5px 31px 6px 8px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=false],\n"
+"PrimaryDropDownPushButton[hasIcon=false] {\n"
+"    padding: 5px 31px 6px 12px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=true],\n"
+"PrimaryDropDownPushButton[hasIcon=true] {\n"
+"    padding: 5px 31px 6px 36px;\n"
+"}\n"
+"\n"
+"PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover {\n"
+"    background: rgba(249, 249, 249, 0.5);\n"
+"}\n"
+"\n"
+"PushButton:pressed, ToolButton:pressed, ToggleButton:pressed, ToggleToolButton:pressed {\n"
+"    color: rgba(0, 0, 0, 0.63);\n"
+"    background: rgba(249, 249, 249, 0.3);\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.073);\n"
+"}\n"
+"\n"
+"PushButton:disabled, ToolButton:disabled, ToggleButton:disabled, ToggleToolButton:disabled {\n"
+"    color: rgba(0, 0, 0, 0.36);\n"
+"    background: rgba(249, 249, 249, 0.3);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.06);\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.06);\n"
+"}\n"
+"\n"
+"\n"
+"PrimaryPushButton,\n"
+"PrimaryToolButton,\n"
+"ToggleButton:checked,\n"
+"ToggleToolButton:checked {\n"
+"    color: white;\n"
+"    background-color: #009faa;\n"
+"    border: 1px solid #00a7b3;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"PrimaryPushButton:hover,\n"
+"PrimaryToolButton:hover,\n"
+"ToggleButton:checked:hover,\n"
+"ToggleToolButton:checked:hover {\n"
+"    background-color: #00a7b3;\n"
+"    border: 1px solid #2daab3;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"PrimaryPushButton:pressed,\n"
+"PrimaryToolButton:pressed,\n"
+"ToggleButton:checked:pressed,\n"
+"ToggleToolButton:checked:pressed {\n"
+"    color: rgba(255, 255, 255, 0.63);\n"
+"    background-color: #3eabb3;\n"
+"    border: 1px solid #3eabb3;\n"
+"}\n"
+"\n"
+"PrimaryPushButton:disabled,\n"
+"PrimaryToolButton:disabled,\n"
+"ToggleButton:checked:disabled,\n"
+"ToggleToolButton:checked:disabled {\n"
+"    color: rgba(255, 255, 255, 0.9);\n"
+"    background-color: rgb(205, 205, 205);\n"
+"    border: 1px solid rgb(205, 205, 205);\n"
+"}\n"
+"\n"
+"SplitDropButton,\n"
+"PrimarySplitDropButton {\n"
+"    border-left: none;\n"
+"    border-top-left-radius: 0;\n"
+"    border-bottom-left-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton,\n"
+"#splitToolButton,\n"
+"#primarySplitPushButton,\n"
+"#primarySplitToolButton {\n"
+"    border-top-right-radius: 0;\n"
+"    border-bottom-right-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton:pressed,\n"
+"#splitToolButton:pressed,\n"
+"SplitDropButton:pressed {\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.183);\n"
+"}\n"
+"\n"
+"PrimarySplitDropButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton, #primarySplitToolButton {\n"
+"    border-right: 1px solid #3eabb3;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton:pressed, #primarySplitToolButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"HyperlinkButton {\n"
+"    /* font: 14px \'Segoe UI\', \'Microsoft YaHei\'; */\n"
+"    padding: 6px 12px 6px 12px;\n"
+"    color: #009faa;\n"
+"    border: none;\n"
+"    border-radius: 6px;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=false] {\n"
+"    padding: 6px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=true] {\n"
+"    padding: 6px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"HyperlinkButton:hover {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 10);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:pressed {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:disabled {\n"
+"    color: rgba(0, 0, 0, 0.43);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"\n"
+"RadioButton {\n"
+"    min-height: 24px;\n"
+"    max-height: 24px;\n"
+"    background-color: transparent;\n"
+"    font: 14px \'Segoe UI\', \'Microsoft YaHei\', \'PingFang SC\';\n"
+"    color: black;\n"
+"}\n"
+"\n"
+"RadioButton::indicator {\n"
+"    width: 18px;\n"
+"    height: 18px;\n"
+"    border-radius: 11px;\n"
+"    border: 2px solid #999999;\n"
+"    background-color: rgba(0, 0, 0, 5);\n"
+"    margin-right: 4px;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:hover {\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:pressed {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(225, 224, 223),\n"
+"            stop:1 rgb(225, 224, 223));\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked {\n"
+"    height: 22px;\n"
+"    width: 22px;\n"
+"    border: none;\n"
+"    border-radius: 11px;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:hover {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(255, 255, 255),\n"
+"            stop:0.7 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:pressed {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton:disabled {\n"
+"    color: rgba(0, 0, 0, 110);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled:checked {\n"
+"    border: none;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgba(0, 0, 0, 0.2169),\n"
+"            stop:1 rgba(0, 0, 0, 0.2169));\n"
+"}\n"
+"\n"
+"TransparentToolButton,\n"
+"TransparentToggleToolButton,\n"
+"TransparentDropDownToolButton,\n"
+"TransparentPushButton,\n"
+"TransparentDropDownPushButton,\n"
+"TransparentTogglePushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    margin: 0;\n"
+"}\n"
+"\n"
+"TransparentToolButton:hover,\n"
+"TransparentToggleToolButton:hover,\n"
+"TransparentDropDownToolButton:hover,\n"
+"TransparentPushButton:hover,\n"
+"TransparentDropDownPushButton:hover,\n"
+"TransparentTogglePushButton:hover {\n"
+"    background-color: rgba(0, 0, 0, 9);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:pressed,\n"
+"TransparentToggleToolButton:pressed,\n"
+"TransparentDropDownToolButton:pressed,\n"
+"TransparentPushButton:pressed,\n"
+"TransparentDropDownPushButton:pressed,\n"
+"TransparentTogglePushButton:pressed {\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:disabled,\n"
+"TransparentToggleToolButton:disabled,\n"
+"TransparentDropDownToolButton:disabled,\n"
+"TransprentPushButton:disabled,\n"
+"TransparentDropDownPushButton:disabled,\n"
+"TransprentTogglePushButton:disabled {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"\n"
+"PillPushButton,\n"
+"PillPushButton:hover,\n"
+"PillPushButton:pressed,\n"
+"PillPushButton:disabled,\n"
+"PillPushButton:checked,\n"
+"PillPushButton:checked:hover,\n"
+"PillPushButton:checked:pressed,\n"
+"PillPushButton:disabled:checked,\n"
+"PillToolButton,\n"
+"PillToolButton:hover,\n"
+"PillToolButton:pressed,\n"
+"PillToolButton:disabled,\n"
+"PillToolButton:checked,\n"
+"PillToolButton:checked:hover,\n"
+"PillToolButton:checked:pressed,\n"
+"PillToolButton:disabled:checked {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"")
+        self.PushButton_signal_generaor.setObjectName("PushButton_signal_generaor")
+        self.horizontalLayout_29.addWidget(self.PushButton_signal_generaor)
+        self.verticalLayout_92.addLayout(self.horizontalLayout_29)
+        self.verticalLayout_89.addWidget(self.widget_8)
+        spacerItem21 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_89.addItem(spacerItem21)
+        self.widget_9 = QtWidgets.QWidget(self.widget_5)
+        self.widget_9.setObjectName("widget_9")
+        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.widget_9)
+        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
+        self.verticalLayout_27 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_27.setObjectName("verticalLayout_27")
+        self.label_7 = QtWidgets.QLabel(self.widget_9)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_7.sizePolicy().hasHeightForWidth())
+        self.label_7.setSizePolicy(sizePolicy)
+        self.label_7.setMinimumSize(QtCore.QSize(0, 45))
+        self.label_7.setMaximumSize(QtCore.QSize(16777215, 45))
+        self.label_7.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"color:white;\n"
+"background-color: rgb(225, 223, 221);\n"
+"color: rgb(0, 0, 0);\n"
+"background-color: rgb(225, 223, 221);\n"
+"font: 75 14pt \"Arial\";\n"
+"color:white;\n"
+"background-color: rgb(225, 223, 221);\n"
+"color: rgb(0, 0, 0);\n"
+"background-color: rgb(225, 223, 221);\n"
+"font: 75 14pt \"Arial\";\n"
+"    border-radius: 15px;\n"
+"padding :2px")
+        self.label_7.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_7.setObjectName("label_7")
+        self.verticalLayout_27.addWidget(self.label_7)
+        spacerItem22 = QtWidgets.QSpacerItem(20, 38, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_27.addItem(spacerItem22)
+        self.horizontalLayout_33 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_33.setObjectName("horizontalLayout_33")
+        self.label_299 = QtWidgets.QLabel(self.widget_9)
+        self.label_299.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_299.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_299.setObjectName("label_299")
+        self.horizontalLayout_33.addWidget(self.label_299)
+        self.le_man_speed_ampIN_3 = QtWidgets.QLineEdit(self.widget_9)
+        self.le_man_speed_ampIN_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_man_speed_ampIN_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_man_speed_ampIN_3.setReadOnly(False)
+        self.le_man_speed_ampIN_3.setObjectName("le_man_speed_ampIN_3")
+        self.horizontalLayout_33.addWidget(self.le_man_speed_ampIN_3)
+        self.label_300 = QtWidgets.QLabel(self.widget_9)
+        self.label_300.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_300.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_300.setObjectName("label_300")
+        self.horizontalLayout_33.addWidget(self.label_300)
+        spacerItem23 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_33.addItem(spacerItem23)
+        self.label_277 = QtWidgets.QLabel(self.widget_9)
+        self.label_277.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_277.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_277.setObjectName("label_277")
+        self.horizontalLayout_33.addWidget(self.label_277)
+        self.le_man_28v_cIN_3 = QtWidgets.QLineEdit(self.widget_9)
+        self.le_man_28v_cIN_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_man_28v_cIN_3.setText("")
+        self.le_man_28v_cIN_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_man_28v_cIN_3.setReadOnly(False)
+        self.le_man_28v_cIN_3.setObjectName("le_man_28v_cIN_3")
+        self.horizontalLayout_33.addWidget(self.le_man_28v_cIN_3)
+        self.label_255 = QtWidgets.QLabel(self.widget_9)
+        self.label_255.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_255.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_255.setObjectName("label_255")
+        self.horizontalLayout_33.addWidget(self.label_255)
+        self.verticalLayout_27.addLayout(self.horizontalLayout_33)
+        self.horizontalLayout_34 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_34.setObjectName("horizontalLayout_34")
+        self.label_303 = QtWidgets.QLabel(self.widget_9)
+        self.label_303.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_303.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_303.setObjectName("label_303")
+        self.horizontalLayout_34.addWidget(self.label_303)
+        self.test_28_v_read = QtWidgets.QLineEdit(self.widget_9)
+        self.test_28_v_read.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.test_28_v_read.setText("")
+        self.test_28_v_read.setAlignment(QtCore.Qt.AlignCenter)
+        self.test_28_v_read.setReadOnly(True)
+        self.test_28_v_read.setObjectName("test_28_v_read")
+        self.horizontalLayout_34.addWidget(self.test_28_v_read)
+        self.label_304 = QtWidgets.QLabel(self.widget_9)
+        self.label_304.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_304.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_304.setObjectName("label_304")
+        self.horizontalLayout_34.addWidget(self.label_304)
+        spacerItem24 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_34.addItem(spacerItem24)
+        self.label_278 = QtWidgets.QLabel(self.widget_9)
+        self.label_278.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_278.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_278.setObjectName("label_278")
+        self.horizontalLayout_34.addWidget(self.label_278)
+        self.test_28_c_read = QtWidgets.QLineEdit(self.widget_9)
+        self.test_28_c_read.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.test_28_c_read.setText("")
+        self.test_28_c_read.setAlignment(QtCore.Qt.AlignCenter)
+        self.test_28_c_read.setReadOnly(True)
+        self.test_28_c_read.setObjectName("test_28_c_read")
+        self.horizontalLayout_34.addWidget(self.test_28_c_read)
+        self.label_256 = QtWidgets.QLabel(self.widget_9)
+        self.label_256.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_256.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_256.setObjectName("label_256")
+        self.horizontalLayout_34.addWidget(self.label_256)
+        self.verticalLayout_27.addLayout(self.horizontalLayout_34)
+        self.horizontalLayout_5.addLayout(self.verticalLayout_27)
+        spacerItem25 = QtWidgets.QSpacerItem(586, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_5.addItem(spacerItem25)
+        self.PushButton_28_test = PushButton(self.widget_9)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.PushButton_28_test.sizePolicy().hasHeightForWidth())
+        self.PushButton_28_test.setSizePolicy(sizePolicy)
+        self.PushButton_28_test.setMinimumSize(QtCore.QSize(100, 60))
+        self.PushButton_28_test.setMaximumSize(QtCore.QSize(100, 60))
+        self.PushButton_28_test.setStyleSheet("PushButton, ToolButton, ToggleButton, ToggleToolButton {\n"
+"    color: black;\n"
+"    background: rgba(255, 255, 255, 0.7);\n"
+"    background-color: rgb(255, 255, 255);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.073);\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.183);\n"
+"    border-radius: 5px;\n"
+"    /* font: 14px \'Segoe UI\', \'Microsoft YaHei\'; */\n"
+"    padding: 5px 12px 6px 12px;\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"ToolButton {\n"
+"    padding: 5px 9px 6px 8px;\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=false] {\n"
+"    padding: 5px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"PushButton[hasIcon=true] {\n"
+"    padding: 5px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"DropDownToolButton, PrimaryDropDownToolButton {\n"
+"    padding: 5px 31px 6px 8px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=false],\n"
+"PrimaryDropDownPushButton[hasIcon=false] {\n"
+"    padding: 5px 31px 6px 12px;\n"
+"}\n"
+"\n"
+"DropDownPushButton[hasIcon=true],\n"
+"PrimaryDropDownPushButton[hasIcon=true] {\n"
+"    padding: 5px 31px 6px 36px;\n"
+"}\n"
+"\n"
+"PushButton:hover, ToolButton:hover, ToggleButton:hover, ToggleToolButton:hover {\n"
+"    background: rgba(249, 249, 249, 0.5);\n"
+"}\n"
+"\n"
+"PushButton:pressed, ToolButton:pressed, ToggleButton:pressed, ToggleToolButton:pressed {\n"
+"    color: rgba(0, 0, 0, 0.63);\n"
+"    background: rgba(249, 249, 249, 0.3);\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.073);\n"
+"}\n"
+"\n"
+"PushButton:disabled, ToolButton:disabled, ToggleButton:disabled, ToggleToolButton:disabled {\n"
+"    color: rgba(0, 0, 0, 0.36);\n"
+"    background: rgba(249, 249, 249, 0.3);\n"
+"    border: 1px solid rgba(0, 0, 0, 0.06);\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.06);\n"
+"}\n"
+"\n"
+"\n"
+"PrimaryPushButton,\n"
+"PrimaryToolButton,\n"
+"ToggleButton:checked,\n"
+"ToggleToolButton:checked {\n"
+"    color: white;\n"
+"    background-color: #009faa;\n"
+"    border: 1px solid #00a7b3;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"PrimaryPushButton:hover,\n"
+"PrimaryToolButton:hover,\n"
+"ToggleButton:checked:hover,\n"
+"ToggleToolButton:checked:hover {\n"
+"    background-color: #00a7b3;\n"
+"    border: 1px solid #2daab3;\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"PrimaryPushButton:pressed,\n"
+"PrimaryToolButton:pressed,\n"
+"ToggleButton:checked:pressed,\n"
+"ToggleToolButton:checked:pressed {\n"
+"    color: rgba(255, 255, 255, 0.63);\n"
+"    background-color: #3eabb3;\n"
+"    border: 1px solid #3eabb3;\n"
+"}\n"
+"\n"
+"PrimaryPushButton:disabled,\n"
+"PrimaryToolButton:disabled,\n"
+"ToggleButton:checked:disabled,\n"
+"ToggleToolButton:checked:disabled {\n"
+"    color: rgba(255, 255, 255, 0.9);\n"
+"    background-color: rgb(205, 205, 205);\n"
+"    border: 1px solid rgb(205, 205, 205);\n"
+"}\n"
+"\n"
+"SplitDropButton,\n"
+"PrimarySplitDropButton {\n"
+"    border-left: none;\n"
+"    border-top-left-radius: 0;\n"
+"    border-bottom-left-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton,\n"
+"#splitToolButton,\n"
+"#primarySplitPushButton,\n"
+"#primarySplitToolButton {\n"
+"    border-top-right-radius: 0;\n"
+"    border-bottom-right-radius: 0;\n"
+"}\n"
+"\n"
+"#splitPushButton:pressed,\n"
+"#splitToolButton:pressed,\n"
+"SplitDropButton:pressed {\n"
+"    border-bottom: 1px solid rgba(0, 0, 0, 0.183);\n"
+"}\n"
+"\n"
+"PrimarySplitDropButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton, #primarySplitToolButton {\n"
+"    border-right: 1px solid #3eabb3;\n"
+"}\n"
+"\n"
+"#primarySplitPushButton:pressed, #primarySplitToolButton:pressed {\n"
+"    border-bottom: 1px solid #007780;\n"
+"}\n"
+"\n"
+"HyperlinkButton {\n"
+"    /* font: 14px \'Segoe UI\', \'Microsoft YaHei\'; */\n"
+"    padding: 6px 12px 6px 12px;\n"
+"    color: #009faa;\n"
+"    border: none;\n"
+"    border-radius: 6px;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=false] {\n"
+"    padding: 6px 12px 6px 12px;\n"
+"}\n"
+"\n"
+"HyperlinkButton[hasIcon=true] {\n"
+"    padding: 6px 12px 6px 36px;\n"
+"}\n"
+"\n"
+"HyperlinkButton:hover {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 10);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:pressed {\n"
+"    color: #009faa;\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"HyperlinkButton:disabled {\n"
+"    color: rgba(0, 0, 0, 0.43);\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"\n"
+"RadioButton {\n"
+"    min-height: 24px;\n"
+"    max-height: 24px;\n"
+"    background-color: transparent;\n"
+"    font: 14px \'Segoe UI\', \'Microsoft YaHei\', \'PingFang SC\';\n"
+"    color: black;\n"
+"}\n"
+"\n"
+"RadioButton::indicator {\n"
+"    width: 18px;\n"
+"    height: 18px;\n"
+"    border-radius: 11px;\n"
+"    border: 2px solid #999999;\n"
+"    background-color: rgba(0, 0, 0, 5);\n"
+"    margin-right: 4px;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:hover {\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:pressed {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(225, 224, 223),\n"
+"            stop:1 rgb(225, 224, 223));\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked {\n"
+"    height: 22px;\n"
+"    width: 22px;\n"
+"    border: none;\n"
+"    border-radius: 11px;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:hover {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.6 rgb(255, 255, 255),\n"
+"            stop:0.7 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:checked:pressed {\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 #009faa,\n"
+"            stop:1 #009faa);\n"
+"}\n"
+"\n"
+"RadioButton:disabled {\n"
+"    color: rgba(0, 0, 0, 110);\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled {\n"
+"    border: 2px solid #bbbbbb;\n"
+"    background-color: transparent;\n"
+"}\n"
+"\n"
+"RadioButton::indicator:disabled:checked {\n"
+"    border: none;\n"
+"    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,\n"
+"            stop:0 rgb(255, 255, 255),\n"
+"            stop:0.5 rgb(255, 255, 255),\n"
+"            stop:0.6 rgba(0, 0, 0, 0.2169),\n"
+"            stop:1 rgba(0, 0, 0, 0.2169));\n"
+"}\n"
+"\n"
+"TransparentToolButton,\n"
+"TransparentToggleToolButton,\n"
+"TransparentDropDownToolButton,\n"
+"TransparentPushButton,\n"
+"TransparentDropDownPushButton,\n"
+"TransparentTogglePushButton {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    margin: 0;\n"
+"}\n"
+"\n"
+"TransparentToolButton:hover,\n"
+"TransparentToggleToolButton:hover,\n"
+"TransparentDropDownToolButton:hover,\n"
+"TransparentPushButton:hover,\n"
+"TransparentDropDownPushButton:hover,\n"
+"TransparentTogglePushButton:hover {\n"
+"    background-color: rgba(0, 0, 0, 9);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:pressed,\n"
+"TransparentToggleToolButton:pressed,\n"
+"TransparentDropDownToolButton:pressed,\n"
+"TransparentPushButton:pressed,\n"
+"TransparentDropDownPushButton:pressed,\n"
+"TransparentTogglePushButton:pressed {\n"
+"    background-color: rgba(0, 0, 0, 6);\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"TransparentToolButton:disabled,\n"
+"TransparentToggleToolButton:disabled,\n"
+"TransparentDropDownToolButton:disabled,\n"
+"TransprentPushButton:disabled,\n"
+"TransparentDropDownPushButton:disabled,\n"
+"TransprentTogglePushButton:disabled {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"\n"
+"PillPushButton,\n"
+"PillPushButton:hover,\n"
+"PillPushButton:pressed,\n"
+"PillPushButton:disabled,\n"
+"PillPushButton:checked,\n"
+"PillPushButton:checked:hover,\n"
+"PillPushButton:checked:pressed,\n"
+"PillPushButton:disabled:checked,\n"
+"PillToolButton,\n"
+"PillToolButton:hover,\n"
+"PillToolButton:pressed,\n"
+"PillToolButton:disabled,\n"
+"PillToolButton:checked,\n"
+"PillToolButton:checked:hover,\n"
+"PillToolButton:checked:pressed,\n"
+"PillToolButton:disabled:checked {\n"
+"    background-color: transparent;\n"
+"    border: none;\n"
+"}\n"
+"")
+        self.PushButton_28_test.setObjectName("PushButton_28_test")
+        self.horizontalLayout_5.addWidget(self.PushButton_28_test)
+        self.verticalLayout_89.addWidget(self.widget_9)
+        self.widget_10 = QtWidgets.QWidget(self.widget_5)
+        self.widget_10.setObjectName("widget_10")
+        self.verticalLayout_96 = QtWidgets.QVBoxLayout(self.widget_10)
+        self.verticalLayout_96.setObjectName("verticalLayout_96")
+        self.verticalLayout_89.addWidget(self.widget_10)
+        spacerItem26 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_89.addItem(spacerItem26)
+        self.verticalLayout_98.addWidget(self.widget_5)
+        self.verticalLayout_88.addWidget(self.widget_4)
+        self.auto_tabWidget.addTab(self.tab_8, "")
         self.tab = QtWidgets.QWidget()
         self.tab.setObjectName("tab")
         self.horizontalLayout_18 = QtWidgets.QHBoxLayout(self.tab)
@@ -211,24 +2112,8 @@ class Ui_MainWindow(object):
         self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_3.setObjectName("frame_3")
-        self.horizontalLayout_46 = QtWidgets.QHBoxLayout(self.frame_3)
-        self.horizontalLayout_46.setObjectName("horizontalLayout_46")
-        self.verticalLayout_43 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_43.setObjectName("verticalLayout_43")
-        self.label_61 = QtWidgets.QLabel(self.frame_3)
-        font = QtGui.QFont()
-        font.setFamily("Arial")
-        font.setPointSize(16)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(9)
-        self.label_61.setFont(font)
-        self.label_61.setStyleSheet("color:white;\n"
-"font: 75 16pt \"Arial\";")
-        self.label_61.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.label_61.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_61.setObjectName("label_61")
-        self.verticalLayout_43.addWidget(self.label_61)
+        self.verticalLayout_34 = QtWidgets.QVBoxLayout(self.frame_3)
+        self.verticalLayout_34.setObjectName("verticalLayout_34")
         self.auto_cor_ins_table = QtWidgets.QTableWidget(self.frame_3)
         font = QtGui.QFont()
         font.setPointSize(11)
@@ -489,7 +2374,7 @@ class Ui_MainWindow(object):
         item.setTextAlignment(QtCore.Qt.AlignCenter)
         self.auto_cor_ins_table.setItem(10, 3, item)
         self.auto_cor_ins_table.horizontalHeader().setDefaultSectionSize(365)
-        self.verticalLayout_43.addWidget(self.auto_cor_ins_table)
+        self.verticalLayout_34.addWidget(self.auto_cor_ins_table)
         self.verticalLayout_36 = QtWidgets.QVBoxLayout()
         self.verticalLayout_36.setObjectName("verticalLayout_36")
         self.gridLayout_9 = QtWidgets.QGridLayout()
@@ -537,8 +2422,8 @@ class Ui_MainWindow(object):
         self.le_auto_con_po8V_O.setAlignment(QtCore.Qt.AlignCenter)
         self.le_auto_con_po8V_O.setObjectName("le_auto_con_po8V_O")
         self.gridLayout_9.addWidget(self.le_auto_con_po8V_O, 0, 9, 1, 1)
-        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_9.addItem(spacerItem2, 0, 3, 1, 1)
+        spacerItem27 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_9.addItem(spacerItem27, 0, 3, 1, 1)
         self.label_160 = QtWidgets.QLabel(self.frame_3)
         self.label_160.setStyleSheet("color:white;\n"
 "font: 75 14pt \"Arial\";")
@@ -551,8 +2436,8 @@ class Ui_MainWindow(object):
         self.label_155.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_155.setObjectName("label_155")
         self.gridLayout_9.addWidget(self.label_155, 2, 8, 1, 1)
-        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_9.addItem(spacerItem3, 0, 7, 1, 1)
+        spacerItem28 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_9.addItem(spacerItem28, 0, 7, 1, 1)
         self.le_auto_con_power = QtWidgets.QLineEdit(self.frame_3)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -579,8 +2464,8 @@ class Ui_MainWindow(object):
         self.le_auto_con_po15V_I.setAlignment(QtCore.Qt.AlignCenter)
         self.le_auto_con_po15V_I.setObjectName("le_auto_con_po15V_I")
         self.gridLayout_9.addWidget(self.le_auto_con_po15V_I, 0, 5, 1, 1)
-        spacerItem4 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_9.addItem(spacerItem4, 1, 0, 1, 1)
+        spacerItem29 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_9.addItem(spacerItem29, 1, 0, 1, 1)
         self.label_150 = QtWidgets.QLabel(self.frame_3)
         self.label_150.setStyleSheet("color:white;\n"
 "font: 75 14pt \"Arial\";")
@@ -613,8 +2498,8 @@ class Ui_MainWindow(object):
         self.label_152.setAlignment(QtCore.Qt.AlignCenter)
         self.label_152.setObjectName("label_152")
         self.gridLayout_9.addWidget(self.label_152, 0, 10, 1, 1)
-        spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_9.addItem(spacerItem5, 0, 11, 1, 1)
+        spacerItem30 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_9.addItem(spacerItem30, 0, 11, 1, 1)
         self.label_148 = QtWidgets.QLabel(self.frame_3)
         self.label_148.setStyleSheet("color:white;\n"
 "font: 75 14pt \"Arial\";")
@@ -672,16 +2557,14 @@ class Ui_MainWindow(object):
         self.label_158.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_158.setObjectName("label_158")
         self.gridLayout_9.addWidget(self.label_158, 0, 4, 1, 1)
-        spacerItem6 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_9.addItem(spacerItem6, 3, 0, 1, 1)
+        spacerItem31 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_9.addItem(spacerItem31, 3, 0, 1, 1)
         self.verticalLayout_36.addLayout(self.gridLayout_9)
-        spacerItem7 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_36.addItem(spacerItem7)
-        self.verticalLayout_43.addLayout(self.verticalLayout_36)
-        self.verticalLayout_42 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_42.setObjectName("verticalLayout_42")
-        self.horizontalLayout_45 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_45.setObjectName("horizontalLayout_45")
+        spacerItem32 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_36.addItem(spacerItem32)
+        self.verticalLayout_34.addLayout(self.verticalLayout_36)
+        self.horizontalLayout_6 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_6.setObjectName("horizontalLayout_6")
         self.verticalLayout_38 = QtWidgets.QVBoxLayout()
         self.verticalLayout_38.setObjectName("verticalLayout_38")
         self.label_8 = QtWidgets.QLabel(self.frame_3)
@@ -690,52 +2573,38 @@ class Ui_MainWindow(object):
         self.label_8.setObjectName("label_8")
         self.verticalLayout_38.addWidget(self.label_8)
         self.pte_auto_con_ins_I = QtWidgets.QPlainTextEdit(self.frame_3)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pte_auto_con_ins_I.sizePolicy().hasHeightForWidth())
+        self.pte_auto_con_ins_I.setSizePolicy(sizePolicy)
         self.pte_auto_con_ins_I.setStyleSheet("color:white;\n"
 "background-color: rgb(0, 0, 0);\n"
 "font: 65 14pt \"Arial\";")
         self.pte_auto_con_ins_I.setObjectName("pte_auto_con_ins_I")
         self.verticalLayout_38.addWidget(self.pte_auto_con_ins_I)
-        spacerItem8 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_38.addItem(spacerItem8)
-        self.horizontalLayout_45.addLayout(self.verticalLayout_38)
-        self.pb_auto_con_insSend = QtWidgets.QPushButton(self.frame_3)
-        self.pb_auto_con_insSend.setStyleSheet("\n"
-"QPushButton:checked{background-color:rgb(33,37,43);color:red;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
-"\n"
-"\n"
-"\n"
-"QPushButton{background-color:rgb(33,37,43);color:white;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
-"\n"
-"QPushButton:hover{font-weight:bold;background-color:rgb(33,37,43);color:white;font: 16pt \"Arial\";border:3px solid rgb(39,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
-"\n"
-"\n"
-"QPushButton:pressed{color: red;}")
-        self.pb_auto_con_insSend.setCheckable(False)
-        self.pb_auto_con_insSend.setObjectName("pb_auto_con_insSend")
-        self.horizontalLayout_45.addWidget(self.pb_auto_con_insSend)
-        self.verticalLayout_42.addLayout(self.horizontalLayout_45)
-        self.verticalLayout_40 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_40.setObjectName("verticalLayout_40")
+        self.horizontalLayout_6.addLayout(self.verticalLayout_38)
+        self.verticalLayout_28 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_28.setObjectName("verticalLayout_28")
         self.label_15 = QtWidgets.QLabel(self.frame_3)
         self.label_15.setStyleSheet("color:white;\n"
 "font: 75 14pt \"Arial\";")
         self.label_15.setObjectName("label_15")
-        self.verticalLayout_40.addWidget(self.label_15)
+        self.verticalLayout_28.addWidget(self.label_15)
         self.pte_auto_con_ins_O = QtWidgets.QPlainTextEdit(self.frame_3)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pte_auto_con_ins_O.sizePolicy().hasHeightForWidth())
+        self.pte_auto_con_ins_O.setSizePolicy(sizePolicy)
         self.pte_auto_con_ins_O.setStyleSheet("color:white;\n"
 "background-color: rgb(0, 0, 0);\n"
 "font: 65 14pt \"Arial\";")
         self.pte_auto_con_ins_O.setReadOnly(True)
         self.pte_auto_con_ins_O.setObjectName("pte_auto_con_ins_O")
-        self.verticalLayout_40.addWidget(self.pte_auto_con_ins_O)
-        spacerItem9 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_40.addItem(spacerItem9)
-        self.verticalLayout_42.addLayout(self.verticalLayout_40)
-        self.verticalLayout_43.addLayout(self.verticalLayout_42)
-        self.verticalLayout_43.setStretch(0, 1)
-        self.verticalLayout_43.setStretch(1, 5)
-        self.verticalLayout_43.setStretch(3, 1)
-        self.horizontalLayout_46.addLayout(self.verticalLayout_43)
+        self.verticalLayout_28.addWidget(self.pte_auto_con_ins_O)
+        self.horizontalLayout_6.addLayout(self.verticalLayout_28)
+        self.verticalLayout_34.addLayout(self.horizontalLayout_6)
         self.horizontalLayout_18.addWidget(self.frame_3)
         self.auto_tabWidget.addTab(self.tab, "")
         self.tab_2 = QtWidgets.QWidget()
@@ -744,38 +2613,302 @@ class Ui_MainWindow(object):
         self.horizontalLayout_21.setObjectName("horizontalLayout_21")
         self.verticalLayout_149 = QtWidgets.QVBoxLayout()
         self.verticalLayout_149.setObjectName("verticalLayout_149")
-        spacerItem10 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_149.addItem(spacerItem10)
-        self.label_62 = QtWidgets.QLabel(self.tab_2)
-        font = QtGui.QFont()
-        font.setFamily("Arial")
-        font.setPointSize(16)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(9)
-        self.label_62.setFont(font)
-        self.label_62.setStyleSheet("color:white;\n"
-"font: 75 16pt \"Arial\";")
-        self.label_62.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_62.setObjectName("label_62")
-        self.verticalLayout_149.addWidget(self.label_62)
+        spacerItem33 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_149.addItem(spacerItem33)
         self.gridLayout_2 = QtWidgets.QGridLayout()
         self.gridLayout_2.setObjectName("gridLayout_2")
+        self.verticalLayout_148 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_148.setObjectName("verticalLayout_148")
+        self.label_162 = QtWidgets.QLabel(self.tab_2)
+        self.label_162.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_162.setObjectName("label_162")
+        self.verticalLayout_148.addWidget(self.label_162)
+        spacerItem34 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_148.addItem(spacerItem34)
+        self.horizontalLayout_15 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_15.setObjectName("horizontalLayout_15")
+        spacerItem35 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_15.addItem(spacerItem35)
+        self.verticalLayout_62 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_62.setObjectName("verticalLayout_62")
+        spacerItem36 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_62.addItem(spacerItem36)
+        self.label_79 = QtWidgets.QLabel(self.tab_2)
+        self.label_79.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_79.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_79.setObjectName("label_79")
+        self.verticalLayout_62.addWidget(self.label_79)
+        self.btn_auto_di_28VKIN1 = QtWidgets.QPushButton(self.tab_2)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_auto_di_28VKIN1.sizePolicy().hasHeightForWidth())
+        self.btn_auto_di_28VKIN1.setSizePolicy(sizePolicy)
+        self.btn_auto_di_28VKIN1.setMinimumSize(QtCore.QSize(110, 0))
+        self.btn_auto_di_28VKIN1.setMaximumSize(QtCore.QSize(110, 16777215))
+        self.btn_auto_di_28VKIN1.setStyleSheet("QPushButton{\n"
+"text-align : left;background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, \n"
+"stop:0 white, stop:0.495 white, stop:0.505 red, \n"
+"stop:1 red);color:black;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);               border-radius:10px;padding-right:15px;padding-left:20px;padding-top:5px;padding-bottom:5px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"color:rgb(85, 170, 255);\n"
+"}")
+        self.btn_auto_di_28VKIN1.setCheckable(True)
+        self.btn_auto_di_28VKIN1.setAutoExclusive(False)
+        self.btn_auto_di_28VKIN1.setObjectName("btn_auto_di_28VKIN1")
+        self.verticalLayout_62.addWidget(self.btn_auto_di_28VKIN1)
+        spacerItem37 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_62.addItem(spacerItem37)
+        self.horizontalLayout_15.addLayout(self.verticalLayout_62)
+        spacerItem38 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_15.addItem(spacerItem38)
+        self.verticalLayout_63 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_63.setObjectName("verticalLayout_63")
+        spacerItem39 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_63.addItem(spacerItem39)
+        self.label_82 = QtWidgets.QLabel(self.tab_2)
+        self.label_82.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_82.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_82.setObjectName("label_82")
+        self.verticalLayout_63.addWidget(self.label_82)
+        self.btn_auto_di_28VKIN2 = QtWidgets.QPushButton(self.tab_2)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_auto_di_28VKIN2.sizePolicy().hasHeightForWidth())
+        self.btn_auto_di_28VKIN2.setSizePolicy(sizePolicy)
+        self.btn_auto_di_28VKIN2.setMinimumSize(QtCore.QSize(110, 0))
+        self.btn_auto_di_28VKIN2.setMaximumSize(QtCore.QSize(110, 16777215))
+        self.btn_auto_di_28VKIN2.setStyleSheet("QPushButton{\n"
+"text-align : left;background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, \n"
+"stop:0 white, stop:0.495 white, stop:0.505 red, \n"
+"stop:1 red);color:black;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);               border-radius:10px;padding-right:15px;padding-left:20px;padding-top:5px;padding-bottom:5px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"color:rgb(85, 170, 255);\n"
+"}")
+        self.btn_auto_di_28VKIN2.setCheckable(True)
+        self.btn_auto_di_28VKIN2.setAutoExclusive(False)
+        self.btn_auto_di_28VKIN2.setObjectName("btn_auto_di_28VKIN2")
+        self.verticalLayout_63.addWidget(self.btn_auto_di_28VKIN2)
+        spacerItem40 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_63.addItem(spacerItem40)
+        self.horizontalLayout_15.addLayout(self.verticalLayout_63)
+        spacerItem41 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_15.addItem(spacerItem41)
+        self.verticalLayout_69 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_69.setObjectName("verticalLayout_69")
+        spacerItem42 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_69.addItem(spacerItem42)
+        self.label_83 = QtWidgets.QLabel(self.tab_2)
+        self.label_83.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_83.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_83.setObjectName("label_83")
+        self.verticalLayout_69.addWidget(self.label_83)
+        self.btn_auto_di_28VKIN3 = QtWidgets.QPushButton(self.tab_2)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_auto_di_28VKIN3.sizePolicy().hasHeightForWidth())
+        self.btn_auto_di_28VKIN3.setSizePolicy(sizePolicy)
+        self.btn_auto_di_28VKIN3.setMinimumSize(QtCore.QSize(110, 0))
+        self.btn_auto_di_28VKIN3.setMaximumSize(QtCore.QSize(110, 16777215))
+        self.btn_auto_di_28VKIN3.setStyleSheet("QPushButton{\n"
+"text-align : left;background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, \n"
+"stop:0 white, stop:0.495 white, stop:0.505 red, \n"
+"stop:1 red);color:black;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);               border-radius:10px;padding-right:15px;padding-left:20px;padding-top:5px;padding-bottom:5px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"color:rgb(85, 170, 255);\n"
+"}")
+        self.btn_auto_di_28VKIN3.setCheckable(True)
+        self.btn_auto_di_28VKIN3.setAutoExclusive(False)
+        self.btn_auto_di_28VKIN3.setObjectName("btn_auto_di_28VKIN3")
+        self.verticalLayout_69.addWidget(self.btn_auto_di_28VKIN3)
+        spacerItem43 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_69.addItem(spacerItem43)
+        self.horizontalLayout_15.addLayout(self.verticalLayout_69)
+        spacerItem44 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_15.addItem(spacerItem44)
+        self.verticalLayout_64 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_64.setObjectName("verticalLayout_64")
+        spacerItem45 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_64.addItem(spacerItem45)
+        self.label_80 = QtWidgets.QLabel(self.tab_2)
+        self.label_80.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_80.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_80.setObjectName("label_80")
+        self.verticalLayout_64.addWidget(self.label_80)
+        self.btn_auto_di_28VDIN1 = QtWidgets.QPushButton(self.tab_2)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_auto_di_28VDIN1.sizePolicy().hasHeightForWidth())
+        self.btn_auto_di_28VDIN1.setSizePolicy(sizePolicy)
+        self.btn_auto_di_28VDIN1.setMinimumSize(QtCore.QSize(110, 0))
+        self.btn_auto_di_28VDIN1.setMaximumSize(QtCore.QSize(110, 16777215))
+        self.btn_auto_di_28VDIN1.setStyleSheet("QPushButton{\n"
+"text-align : left;background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, \n"
+"stop:0 white, stop:0.495 white, stop:0.505 red, \n"
+"stop:1 red);color:black;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);               border-radius:10px;padding-right:15px;padding-left:20px;padding-top:5px;padding-bottom:5px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"color:rgb(85, 170, 255);\n"
+"}")
+        self.btn_auto_di_28VDIN1.setCheckable(True)
+        self.btn_auto_di_28VDIN1.setAutoExclusive(True)
+        self.btn_auto_di_28VDIN1.setObjectName("btn_auto_di_28VDIN1")
+        self.verticalLayout_64.addWidget(self.btn_auto_di_28VDIN1)
+        spacerItem46 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_64.addItem(spacerItem46)
+        self.horizontalLayout_15.addLayout(self.verticalLayout_64)
+        spacerItem47 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_15.addItem(spacerItem47)
+        self.verticalLayout_147 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_147.setObjectName("verticalLayout_147")
+        spacerItem48 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_147.addItem(spacerItem48)
+        self.label_81 = QtWidgets.QLabel(self.tab_2)
+        self.label_81.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_81.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_81.setObjectName("label_81")
+        self.verticalLayout_147.addWidget(self.label_81)
+        self.btn_auto_di_28VKIN4 = QtWidgets.QPushButton(self.tab_2)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_auto_di_28VKIN4.sizePolicy().hasHeightForWidth())
+        self.btn_auto_di_28VKIN4.setSizePolicy(sizePolicy)
+        self.btn_auto_di_28VKIN4.setMinimumSize(QtCore.QSize(110, 0))
+        self.btn_auto_di_28VKIN4.setMaximumSize(QtCore.QSize(110, 16777215))
+        self.btn_auto_di_28VKIN4.setStyleSheet("QPushButton{\n"
+"text-align : left;background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, \n"
+"stop:0 white, stop:0.495 white, stop:0.505 red, \n"
+"stop:1 red);color:black;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);               border-radius:10px;padding-right:15px;padding-left:20px;padding-top:5px;padding-bottom:5px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"color:rgb(85, 170, 255);\n"
+"}")
+        self.btn_auto_di_28VKIN4.setCheckable(True)
+        self.btn_auto_di_28VKIN4.setAutoExclusive(False)
+        self.btn_auto_di_28VKIN4.setObjectName("btn_auto_di_28VKIN4")
+        self.verticalLayout_147.addWidget(self.btn_auto_di_28VKIN4)
+        spacerItem49 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_147.addItem(spacerItem49)
+        self.horizontalLayout_15.addLayout(self.verticalLayout_147)
+        spacerItem50 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_15.addItem(spacerItem50)
+        self.verticalLayout_148.addLayout(self.horizontalLayout_15)
+        self.gridLayout_2.addLayout(self.verticalLayout_148, 1, 0, 1, 1)
+        self.verticalLayout_68 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_68.setObjectName("verticalLayout_68")
+        self.label_161 = QtWidgets.QLabel(self.tab_2)
+        self.label_161.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_161.setObjectName("label_161")
+        self.verticalLayout_68.addWidget(self.label_161)
+        spacerItem51 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_68.addItem(spacerItem51)
+        self.horizontalLayout_38 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_38.setObjectName("horizontalLayout_38")
+        spacerItem52 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_38.addItem(spacerItem52)
+        self.verticalLayout_66 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_66.setObjectName("verticalLayout_66")
+        spacerItem53 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_66.addItem(spacerItem53)
+        self.label_84 = QtWidgets.QLabel(self.tab_2)
+        self.label_84.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_84.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_84.setObjectName("label_84")
+        self.verticalLayout_66.addWidget(self.label_84)
+        self.btn_auto_di_28VDIN4 = QtWidgets.QPushButton(self.tab_2)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_auto_di_28VDIN4.sizePolicy().hasHeightForWidth())
+        self.btn_auto_di_28VDIN4.setSizePolicy(sizePolicy)
+        self.btn_auto_di_28VDIN4.setMinimumSize(QtCore.QSize(110, 0))
+        self.btn_auto_di_28VDIN4.setMaximumSize(QtCore.QSize(110, 16777215))
+        self.btn_auto_di_28VDIN4.setStyleSheet("QPushButton{\n"
+"text-align : left;background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, \n"
+"stop:0 white, stop:0.495 white, stop:0.505 red, \n"
+"stop:1 red);color:black;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);               border-radius:10px;padding-right:15px;padding-left:20px;padding-top:5px;padding-bottom:5px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"color:rgb(85, 170, 255);\n"
+"}")
+        self.btn_auto_di_28VDIN4.setCheckable(True)
+        self.btn_auto_di_28VDIN4.setAutoExclusive(False)
+        self.btn_auto_di_28VDIN4.setObjectName("btn_auto_di_28VDIN4")
+        self.verticalLayout_66.addWidget(self.btn_auto_di_28VDIN4)
+        spacerItem54 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_66.addItem(spacerItem54)
+        self.horizontalLayout_38.addLayout(self.verticalLayout_66)
+        spacerItem55 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_38.addItem(spacerItem55)
+        self.verticalLayout_67 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_67.setObjectName("verticalLayout_67")
+        spacerItem56 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_67.addItem(spacerItem56)
+        self.label_85 = QtWidgets.QLabel(self.tab_2)
+        self.label_85.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_85.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_85.setObjectName("label_85")
+        self.verticalLayout_67.addWidget(self.label_85)
+        self.btn_auto_di_28VDIN3 = QtWidgets.QPushButton(self.tab_2)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_auto_di_28VDIN3.sizePolicy().hasHeightForWidth())
+        self.btn_auto_di_28VDIN3.setSizePolicy(sizePolicy)
+        self.btn_auto_di_28VDIN3.setMinimumSize(QtCore.QSize(110, 0))
+        self.btn_auto_di_28VDIN3.setMaximumSize(QtCore.QSize(110, 16777215))
+        self.btn_auto_di_28VDIN3.setStyleSheet("QPushButton{\n"
+"text-align : left;background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, \n"
+"stop:0 white, stop:0.495 white, stop:0.505 red, \n"
+"stop:1 red);color:black;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);               border-radius:10px;padding-right:15px;padding-left:20px;padding-top:5px;padding-bottom:5px;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"color:rgb(85, 170, 255);\n"
+"}")
+        self.btn_auto_di_28VDIN3.setCheckable(True)
+        self.btn_auto_di_28VDIN3.setAutoExclusive(False)
+        self.btn_auto_di_28VDIN3.setObjectName("btn_auto_di_28VDIN3")
+        self.verticalLayout_67.addWidget(self.btn_auto_di_28VDIN3)
+        spacerItem57 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_67.addItem(spacerItem57)
+        self.horizontalLayout_38.addLayout(self.verticalLayout_67)
+        spacerItem58 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_38.addItem(spacerItem58)
+        self.verticalLayout_68.addLayout(self.horizontalLayout_38)
+        self.gridLayout_2.addLayout(self.verticalLayout_68, 2, 0, 1, 1)
         self.verticalLayout_146 = QtWidgets.QVBoxLayout()
         self.verticalLayout_146.setObjectName("verticalLayout_146")
-        spacerItem11 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_146.addItem(spacerItem11)
+        spacerItem59 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_146.addItem(spacerItem59)
         self.label_63 = QtWidgets.QLabel(self.tab_2)
         self.label_63.setStyleSheet("color:white;\n"
 "font: 75 14pt \"Arial\";")
         self.label_63.setObjectName("label_63")
         self.verticalLayout_146.addWidget(self.label_63)
-        spacerItem12 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_146.addItem(spacerItem12)
+        spacerItem60 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_146.addItem(spacerItem60)
         self.horizontalLayout_13 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_13.setObjectName("horizontalLayout_13")
-        spacerItem13 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_13.addItem(spacerItem13)
+        spacerItem61 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_13.addItem(spacerItem61)
+        spacerItem62 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_13.addItem(spacerItem62)
         self.verticalLayout_132 = QtWidgets.QVBoxLayout()
         self.verticalLayout_132.setObjectName("verticalLayout_132")
         self.verticalLayout_46 = QtWidgets.QVBoxLayout()
@@ -806,8 +2939,8 @@ class Ui_MainWindow(object):
         self.btn_auto_di_DKIN1.setAutoExclusive(False)
         self.btn_auto_di_DKIN1.setObjectName("btn_auto_di_DKIN1")
         self.verticalLayout_46.addWidget(self.btn_auto_di_DKIN1)
-        spacerItem14 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_46.addItem(spacerItem14)
+        spacerItem63 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_46.addItem(spacerItem63)
         self.verticalLayout_132.addLayout(self.verticalLayout_46)
         self.verticalLayout_54 = QtWidgets.QVBoxLayout()
         self.verticalLayout_54.setObjectName("verticalLayout_54")
@@ -838,8 +2971,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_54.addWidget(self.btn_auto_di_DKIN9)
         self.verticalLayout_132.addLayout(self.verticalLayout_54)
         self.horizontalLayout_13.addLayout(self.verticalLayout_132)
-        spacerItem15 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_13.addItem(spacerItem15)
+        spacerItem64 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_13.addItem(spacerItem64)
         self.verticalLayout_133 = QtWidgets.QVBoxLayout()
         self.verticalLayout_133.setObjectName("verticalLayout_133")
         self.verticalLayout_47 = QtWidgets.QVBoxLayout()
@@ -870,8 +3003,8 @@ class Ui_MainWindow(object):
         self.btn_auto_di_DKIN2.setAutoExclusive(False)
         self.btn_auto_di_DKIN2.setObjectName("btn_auto_di_DKIN2")
         self.verticalLayout_47.addWidget(self.btn_auto_di_DKIN2)
-        spacerItem16 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_47.addItem(spacerItem16)
+        spacerItem65 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_47.addItem(spacerItem65)
         self.verticalLayout_133.addLayout(self.verticalLayout_47)
         self.verticalLayout_55 = QtWidgets.QVBoxLayout()
         self.verticalLayout_55.setObjectName("verticalLayout_55")
@@ -903,8 +3036,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_55.addWidget(self.btn_auto_di_DKIN10, 0, QtCore.Qt.AlignHCenter)
         self.verticalLayout_133.addLayout(self.verticalLayout_55)
         self.horizontalLayout_13.addLayout(self.verticalLayout_133)
-        spacerItem17 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_13.addItem(spacerItem17)
+        spacerItem66 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_13.addItem(spacerItem66)
         self.verticalLayout_140 = QtWidgets.QVBoxLayout()
         self.verticalLayout_140.setObjectName("verticalLayout_140")
         self.verticalLayout_48 = QtWidgets.QVBoxLayout()
@@ -936,8 +3069,8 @@ class Ui_MainWindow(object):
         self.btn_auto_di_DKIN3.setAutoExclusive(False)
         self.btn_auto_di_DKIN3.setObjectName("btn_auto_di_DKIN3")
         self.verticalLayout_48.addWidget(self.btn_auto_di_DKIN3, 0, QtCore.Qt.AlignHCenter)
-        spacerItem18 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_48.addItem(spacerItem18)
+        spacerItem67 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_48.addItem(spacerItem67)
         self.verticalLayout_140.addLayout(self.verticalLayout_48)
         self.verticalLayout_56 = QtWidgets.QVBoxLayout()
         self.verticalLayout_56.setObjectName("verticalLayout_56")
@@ -969,8 +3102,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_56.addWidget(self.btn_auto_di_DKIN11, 0, QtCore.Qt.AlignHCenter)
         self.verticalLayout_140.addLayout(self.verticalLayout_56)
         self.horizontalLayout_13.addLayout(self.verticalLayout_140)
-        spacerItem19 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_13.addItem(spacerItem19)
+        spacerItem68 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_13.addItem(spacerItem68)
         self.verticalLayout_141 = QtWidgets.QVBoxLayout()
         self.verticalLayout_141.setObjectName("verticalLayout_141")
         self.verticalLayout_49 = QtWidgets.QVBoxLayout()
@@ -1000,8 +3133,8 @@ class Ui_MainWindow(object):
         self.btn_auto_di_DKIN4.setAutoExclusive(False)
         self.btn_auto_di_DKIN4.setObjectName("btn_auto_di_DKIN4")
         self.verticalLayout_49.addWidget(self.btn_auto_di_DKIN4, 0, QtCore.Qt.AlignHCenter)
-        spacerItem20 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_49.addItem(spacerItem20)
+        spacerItem69 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_49.addItem(spacerItem69)
         self.verticalLayout_141.addLayout(self.verticalLayout_49)
         self.verticalLayout_57 = QtWidgets.QVBoxLayout()
         self.verticalLayout_57.setObjectName("verticalLayout_57")
@@ -1033,8 +3166,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_57.addWidget(self.btn_auto_di_DKIN12, 0, QtCore.Qt.AlignHCenter)
         self.verticalLayout_141.addLayout(self.verticalLayout_57)
         self.horizontalLayout_13.addLayout(self.verticalLayout_141)
-        spacerItem21 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_13.addItem(spacerItem21)
+        spacerItem70 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_13.addItem(spacerItem70)
         self.verticalLayout_142 = QtWidgets.QVBoxLayout()
         self.verticalLayout_142.setObjectName("verticalLayout_142")
         self.verticalLayout_50 = QtWidgets.QVBoxLayout()
@@ -1065,8 +3198,8 @@ class Ui_MainWindow(object):
         self.btn_auto_di_DKIN5.setAutoExclusive(False)
         self.btn_auto_di_DKIN5.setObjectName("btn_auto_di_DKIN5")
         self.verticalLayout_50.addWidget(self.btn_auto_di_DKIN5)
-        spacerItem22 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_50.addItem(spacerItem22)
+        spacerItem71 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_50.addItem(spacerItem71)
         self.verticalLayout_142.addLayout(self.verticalLayout_50)
         self.verticalLayout_58 = QtWidgets.QVBoxLayout()
         self.verticalLayout_58.setObjectName("verticalLayout_58")
@@ -1098,8 +3231,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_58.addWidget(self.btn_auto_di_DKIN13)
         self.verticalLayout_142.addLayout(self.verticalLayout_58)
         self.horizontalLayout_13.addLayout(self.verticalLayout_142)
-        spacerItem23 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_13.addItem(spacerItem23)
+        spacerItem72 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_13.addItem(spacerItem72)
         self.verticalLayout_145 = QtWidgets.QVBoxLayout()
         self.verticalLayout_145.setObjectName("verticalLayout_145")
         self.verticalLayout_53 = QtWidgets.QVBoxLayout()
@@ -1129,8 +3262,8 @@ class Ui_MainWindow(object):
         self.btn_auto_di_DKIN6.setAutoExclusive(False)
         self.btn_auto_di_DKIN6.setObjectName("btn_auto_di_DKIN6")
         self.verticalLayout_53.addWidget(self.btn_auto_di_DKIN6)
-        spacerItem24 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_53.addItem(spacerItem24)
+        spacerItem73 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_53.addItem(spacerItem73)
         self.verticalLayout_145.addLayout(self.verticalLayout_53)
         self.verticalLayout_61 = QtWidgets.QVBoxLayout()
         self.verticalLayout_61.setObjectName("verticalLayout_61")
@@ -1161,8 +3294,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_61.addWidget(self.btn_auto_di_RDKIN1)
         self.verticalLayout_145.addLayout(self.verticalLayout_61)
         self.horizontalLayout_13.addLayout(self.verticalLayout_145)
-        spacerItem25 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_13.addItem(spacerItem25)
+        spacerItem74 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_13.addItem(spacerItem74)
         self.verticalLayout_143 = QtWidgets.QVBoxLayout()
         self.verticalLayout_143.setObjectName("verticalLayout_143")
         self.verticalLayout_51 = QtWidgets.QVBoxLayout()
@@ -1193,8 +3326,8 @@ class Ui_MainWindow(object):
         self.btn_auto_di_DKIN7.setAutoExclusive(False)
         self.btn_auto_di_DKIN7.setObjectName("btn_auto_di_DKIN7")
         self.verticalLayout_51.addWidget(self.btn_auto_di_DKIN7)
-        spacerItem26 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_51.addItem(spacerItem26)
+        spacerItem75 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_51.addItem(spacerItem75)
         self.verticalLayout_143.addLayout(self.verticalLayout_51)
         self.verticalLayout_59 = QtWidgets.QVBoxLayout()
         self.verticalLayout_59.setObjectName("verticalLayout_59")
@@ -1226,8 +3359,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_59.addWidget(self.btn_auto_di_RDKIN2)
         self.verticalLayout_143.addLayout(self.verticalLayout_59)
         self.horizontalLayout_13.addLayout(self.verticalLayout_143)
-        spacerItem27 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_13.addItem(spacerItem27)
+        spacerItem76 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_13.addItem(spacerItem76)
         self.verticalLayout_144 = QtWidgets.QVBoxLayout()
         self.verticalLayout_144.setObjectName("verticalLayout_144")
         self.verticalLayout_52 = QtWidgets.QVBoxLayout()
@@ -1258,8 +3391,8 @@ class Ui_MainWindow(object):
         self.btn_auto_di_DKIN8.setAutoExclusive(False)
         self.btn_auto_di_DKIN8.setObjectName("btn_auto_di_DKIN8")
         self.verticalLayout_52.addWidget(self.btn_auto_di_DKIN8, 0, QtCore.Qt.AlignHCenter)
-        spacerItem28 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_52.addItem(spacerItem28)
+        spacerItem77 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_52.addItem(spacerItem77)
         self.verticalLayout_144.addLayout(self.verticalLayout_52)
         self.verticalLayout_60 = QtWidgets.QVBoxLayout()
         self.verticalLayout_60.setObjectName("verticalLayout_60")
@@ -1291,285 +3424,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_60.addWidget(self.btn_auto_di_APU, 0, QtCore.Qt.AlignHCenter)
         self.verticalLayout_144.addLayout(self.verticalLayout_60)
         self.horizontalLayout_13.addLayout(self.verticalLayout_144)
-        spacerItem29 = QtWidgets.QSpacerItem(200, 20, QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_13.addItem(spacerItem29)
+        spacerItem78 = QtWidgets.QSpacerItem(200, 20, QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_13.addItem(spacerItem78)
         self.verticalLayout_146.addLayout(self.horizontalLayout_13)
         self.gridLayout_2.addLayout(self.verticalLayout_146, 0, 0, 1, 1)
-        self.verticalLayout_148 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_148.setObjectName("verticalLayout_148")
-        self.label_162 = QtWidgets.QLabel(self.tab_2)
-        self.label_162.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";")
-        self.label_162.setObjectName("label_162")
-        self.verticalLayout_148.addWidget(self.label_162)
-        spacerItem30 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_148.addItem(spacerItem30)
-        self.horizontalLayout_15 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_15.setObjectName("horizontalLayout_15")
-        spacerItem31 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_15.addItem(spacerItem31)
-        self.verticalLayout_62 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_62.setObjectName("verticalLayout_62")
-        spacerItem32 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_62.addItem(spacerItem32)
-        self.label_79 = QtWidgets.QLabel(self.tab_2)
-        self.label_79.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_79.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_79.setObjectName("label_79")
-        self.verticalLayout_62.addWidget(self.label_79)
-        self.btn_auto_di_28VKIN1 = QtWidgets.QPushButton(self.tab_2)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btn_auto_di_28VKIN1.sizePolicy().hasHeightForWidth())
-        self.btn_auto_di_28VKIN1.setSizePolicy(sizePolicy)
-        self.btn_auto_di_28VKIN1.setMinimumSize(QtCore.QSize(110, 0))
-        self.btn_auto_di_28VKIN1.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.btn_auto_di_28VKIN1.setStyleSheet("QPushButton{\n"
-"text-align : left;background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, \n"
-"stop:0 white, stop:0.495 white, stop:0.505 red, \n"
-"stop:1 red);color:black;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);               border-radius:10px;padding-right:15px;padding-left:20px;padding-top:5px;padding-bottom:5px;\n"
-"}\n"
-"QPushButton:pressed{\n"
-"color:rgb(85, 170, 255);\n"
-"}")
-        self.btn_auto_di_28VKIN1.setCheckable(True)
-        self.btn_auto_di_28VKIN1.setAutoExclusive(False)
-        self.btn_auto_di_28VKIN1.setObjectName("btn_auto_di_28VKIN1")
-        self.verticalLayout_62.addWidget(self.btn_auto_di_28VKIN1)
-        spacerItem33 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_62.addItem(spacerItem33)
-        self.horizontalLayout_15.addLayout(self.verticalLayout_62)
-        spacerItem34 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_15.addItem(spacerItem34)
-        self.verticalLayout_63 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_63.setObjectName("verticalLayout_63")
-        spacerItem35 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_63.addItem(spacerItem35)
-        self.label_82 = QtWidgets.QLabel(self.tab_2)
-        self.label_82.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_82.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_82.setObjectName("label_82")
-        self.verticalLayout_63.addWidget(self.label_82)
-        self.btn_auto_di_28VKIN2 = QtWidgets.QPushButton(self.tab_2)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btn_auto_di_28VKIN2.sizePolicy().hasHeightForWidth())
-        self.btn_auto_di_28VKIN2.setSizePolicy(sizePolicy)
-        self.btn_auto_di_28VKIN2.setMinimumSize(QtCore.QSize(110, 0))
-        self.btn_auto_di_28VKIN2.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.btn_auto_di_28VKIN2.setStyleSheet("QPushButton{\n"
-"text-align : left;background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, \n"
-"stop:0 white, stop:0.495 white, stop:0.505 red, \n"
-"stop:1 red);color:black;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);               border-radius:10px;padding-right:15px;padding-left:20px;padding-top:5px;padding-bottom:5px;\n"
-"}\n"
-"QPushButton:pressed{\n"
-"color:rgb(85, 170, 255);\n"
-"}")
-        self.btn_auto_di_28VKIN2.setCheckable(True)
-        self.btn_auto_di_28VKIN2.setAutoExclusive(False)
-        self.btn_auto_di_28VKIN2.setObjectName("btn_auto_di_28VKIN2")
-        self.verticalLayout_63.addWidget(self.btn_auto_di_28VKIN2)
-        spacerItem36 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_63.addItem(spacerItem36)
-        self.horizontalLayout_15.addLayout(self.verticalLayout_63)
-        spacerItem37 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_15.addItem(spacerItem37)
-        self.verticalLayout_69 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_69.setObjectName("verticalLayout_69")
-        spacerItem38 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_69.addItem(spacerItem38)
-        self.label_83 = QtWidgets.QLabel(self.tab_2)
-        self.label_83.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_83.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_83.setObjectName("label_83")
-        self.verticalLayout_69.addWidget(self.label_83)
-        self.btn_auto_di_28VKIN3 = QtWidgets.QPushButton(self.tab_2)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btn_auto_di_28VKIN3.sizePolicy().hasHeightForWidth())
-        self.btn_auto_di_28VKIN3.setSizePolicy(sizePolicy)
-        self.btn_auto_di_28VKIN3.setMinimumSize(QtCore.QSize(110, 0))
-        self.btn_auto_di_28VKIN3.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.btn_auto_di_28VKIN3.setStyleSheet("QPushButton{\n"
-"text-align : left;background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, \n"
-"stop:0 white, stop:0.495 white, stop:0.505 red, \n"
-"stop:1 red);color:black;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);               border-radius:10px;padding-right:15px;padding-left:20px;padding-top:5px;padding-bottom:5px;\n"
-"}\n"
-"QPushButton:pressed{\n"
-"color:rgb(85, 170, 255);\n"
-"}")
-        self.btn_auto_di_28VKIN3.setCheckable(True)
-        self.btn_auto_di_28VKIN3.setAutoExclusive(False)
-        self.btn_auto_di_28VKIN3.setObjectName("btn_auto_di_28VKIN3")
-        self.verticalLayout_69.addWidget(self.btn_auto_di_28VKIN3)
-        spacerItem39 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_69.addItem(spacerItem39)
-        self.horizontalLayout_15.addLayout(self.verticalLayout_69)
-        spacerItem40 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_15.addItem(spacerItem40)
-        self.verticalLayout_64 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_64.setObjectName("verticalLayout_64")
-        spacerItem41 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_64.addItem(spacerItem41)
-        self.label_80 = QtWidgets.QLabel(self.tab_2)
-        self.label_80.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_80.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_80.setObjectName("label_80")
-        self.verticalLayout_64.addWidget(self.label_80)
-        self.btn_auto_di_28VDIN1 = QtWidgets.QPushButton(self.tab_2)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btn_auto_di_28VDIN1.sizePolicy().hasHeightForWidth())
-        self.btn_auto_di_28VDIN1.setSizePolicy(sizePolicy)
-        self.btn_auto_di_28VDIN1.setMinimumSize(QtCore.QSize(110, 0))
-        self.btn_auto_di_28VDIN1.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.btn_auto_di_28VDIN1.setStyleSheet("QPushButton{\n"
-"text-align : left;background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, \n"
-"stop:0 white, stop:0.495 white, stop:0.505 red, \n"
-"stop:1 red);color:black;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);               border-radius:10px;padding-right:15px;padding-left:20px;padding-top:5px;padding-bottom:5px;\n"
-"}\n"
-"QPushButton:pressed{\n"
-"color:rgb(85, 170, 255);\n"
-"}")
-        self.btn_auto_di_28VDIN1.setCheckable(True)
-        self.btn_auto_di_28VDIN1.setAutoExclusive(True)
-        self.btn_auto_di_28VDIN1.setObjectName("btn_auto_di_28VDIN1")
-        self.verticalLayout_64.addWidget(self.btn_auto_di_28VDIN1)
-        spacerItem42 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_64.addItem(spacerItem42)
-        self.horizontalLayout_15.addLayout(self.verticalLayout_64)
-        spacerItem43 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_15.addItem(spacerItem43)
-        self.verticalLayout_147 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_147.setObjectName("verticalLayout_147")
-        spacerItem44 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_147.addItem(spacerItem44)
-        self.label_81 = QtWidgets.QLabel(self.tab_2)
-        self.label_81.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_81.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_81.setObjectName("label_81")
-        self.verticalLayout_147.addWidget(self.label_81)
-        self.btn_auto_di_28VKIN4 = QtWidgets.QPushButton(self.tab_2)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btn_auto_di_28VKIN4.sizePolicy().hasHeightForWidth())
-        self.btn_auto_di_28VKIN4.setSizePolicy(sizePolicy)
-        self.btn_auto_di_28VKIN4.setMinimumSize(QtCore.QSize(110, 0))
-        self.btn_auto_di_28VKIN4.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.btn_auto_di_28VKIN4.setStyleSheet("QPushButton{\n"
-"text-align : left;background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, \n"
-"stop:0 white, stop:0.495 white, stop:0.505 red, \n"
-"stop:1 red);color:black;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);               border-radius:10px;padding-right:15px;padding-left:20px;padding-top:5px;padding-bottom:5px;\n"
-"}\n"
-"QPushButton:pressed{\n"
-"color:rgb(85, 170, 255);\n"
-"}")
-        self.btn_auto_di_28VKIN4.setCheckable(True)
-        self.btn_auto_di_28VKIN4.setAutoExclusive(False)
-        self.btn_auto_di_28VKIN4.setObjectName("btn_auto_di_28VKIN4")
-        self.verticalLayout_147.addWidget(self.btn_auto_di_28VKIN4)
-        spacerItem45 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_147.addItem(spacerItem45)
-        self.horizontalLayout_15.addLayout(self.verticalLayout_147)
-        spacerItem46 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_15.addItem(spacerItem46)
-        self.verticalLayout_148.addLayout(self.horizontalLayout_15)
-        self.gridLayout_2.addLayout(self.verticalLayout_148, 1, 0, 1, 1)
-        self.verticalLayout_68 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_68.setObjectName("verticalLayout_68")
-        self.label_161 = QtWidgets.QLabel(self.tab_2)
-        self.label_161.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";")
-        self.label_161.setObjectName("label_161")
-        self.verticalLayout_68.addWidget(self.label_161)
-        spacerItem47 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_68.addItem(spacerItem47)
-        self.horizontalLayout_38 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_38.setObjectName("horizontalLayout_38")
-        spacerItem48 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_38.addItem(spacerItem48)
-        self.verticalLayout_66 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_66.setObjectName("verticalLayout_66")
-        spacerItem49 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_66.addItem(spacerItem49)
-        self.label_84 = QtWidgets.QLabel(self.tab_2)
-        self.label_84.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_84.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_84.setObjectName("label_84")
-        self.verticalLayout_66.addWidget(self.label_84)
-        self.btn_auto_di_28VDIN4 = QtWidgets.QPushButton(self.tab_2)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btn_auto_di_28VDIN4.sizePolicy().hasHeightForWidth())
-        self.btn_auto_di_28VDIN4.setSizePolicy(sizePolicy)
-        self.btn_auto_di_28VDIN4.setMinimumSize(QtCore.QSize(110, 0))
-        self.btn_auto_di_28VDIN4.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.btn_auto_di_28VDIN4.setStyleSheet("QPushButton{\n"
-"text-align : left;background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, \n"
-"stop:0 white, stop:0.495 white, stop:0.505 red, \n"
-"stop:1 red);color:black;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);               border-radius:10px;padding-right:15px;padding-left:20px;padding-top:5px;padding-bottom:5px;\n"
-"}\n"
-"QPushButton:pressed{\n"
-"color:rgb(85, 170, 255);\n"
-"}")
-        self.btn_auto_di_28VDIN4.setCheckable(True)
-        self.btn_auto_di_28VDIN4.setAutoExclusive(False)
-        self.btn_auto_di_28VDIN4.setObjectName("btn_auto_di_28VDIN4")
-        self.verticalLayout_66.addWidget(self.btn_auto_di_28VDIN4)
-        spacerItem50 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_66.addItem(spacerItem50)
-        self.horizontalLayout_38.addLayout(self.verticalLayout_66)
-        spacerItem51 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_38.addItem(spacerItem51)
-        self.verticalLayout_67 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_67.setObjectName("verticalLayout_67")
-        spacerItem52 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_67.addItem(spacerItem52)
-        self.label_85 = QtWidgets.QLabel(self.tab_2)
-        self.label_85.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_85.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_85.setObjectName("label_85")
-        self.verticalLayout_67.addWidget(self.label_85)
-        self.btn_auto_di_28VDIN3 = QtWidgets.QPushButton(self.tab_2)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btn_auto_di_28VDIN3.sizePolicy().hasHeightForWidth())
-        self.btn_auto_di_28VDIN3.setSizePolicy(sizePolicy)
-        self.btn_auto_di_28VDIN3.setMinimumSize(QtCore.QSize(110, 0))
-        self.btn_auto_di_28VDIN3.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.btn_auto_di_28VDIN3.setStyleSheet("QPushButton{\n"
-"text-align : left;background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, \n"
-"stop:0 white, stop:0.495 white, stop:0.505 red, \n"
-"stop:1 red);color:black;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);               border-radius:10px;padding-right:15px;padding-left:20px;padding-top:5px;padding-bottom:5px;\n"
-"}\n"
-"QPushButton:pressed{\n"
-"color:rgb(85, 170, 255);\n"
-"}")
-        self.btn_auto_di_28VDIN3.setCheckable(True)
-        self.btn_auto_di_28VDIN3.setAutoExclusive(False)
-        self.btn_auto_di_28VDIN3.setObjectName("btn_auto_di_28VDIN3")
-        self.verticalLayout_67.addWidget(self.btn_auto_di_28VDIN3)
-        spacerItem53 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_67.addItem(spacerItem53)
-        self.horizontalLayout_38.addLayout(self.verticalLayout_67)
-        spacerItem54 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_38.addItem(spacerItem54)
-        self.verticalLayout_68.addLayout(self.horizontalLayout_38)
-        self.gridLayout_2.addLayout(self.verticalLayout_68, 2, 0, 1, 1)
         self.verticalLayout_149.addLayout(self.gridLayout_2)
         self.horizontalLayout_9 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_9.setObjectName("horizontalLayout_9")
@@ -1654,8 +3512,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_10.addWidget(self.groupBox)
         self.verticalLayout.addLayout(self.horizontalLayout_10)
         self.horizontalLayout_9.addLayout(self.verticalLayout)
-        spacerItem55 = QtWidgets.QSpacerItem(98, 17, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_9.addItem(spacerItem55)
+        spacerItem79 = QtWidgets.QSpacerItem(98, 17, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_9.addItem(spacerItem79)
         self.verticalLayout_2 = QtWidgets.QVBoxLayout()
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.label_27 = QtWidgets.QLabel(self.tab_2)
@@ -1738,8 +3596,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.addLayout(self.horizontalLayout_11)
         self.horizontalLayout_9.addLayout(self.verticalLayout_2)
         self.verticalLayout_149.addLayout(self.horizontalLayout_9)
-        spacerItem56 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_149.addItem(spacerItem56)
+        spacerItem80 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_149.addItem(spacerItem80)
         self.gridLayout_3 = QtWidgets.QGridLayout()
         self.gridLayout_3.setObjectName("gridLayout_3")
         self.horizontalLayout_12 = QtWidgets.QHBoxLayout()
@@ -2162,7 +4020,7 @@ class Ui_MainWindow(object):
         self.label_11.setObjectName("label_11")
         self.verticalLayout_72.addWidget(self.label_11)
         self.pte_di_insIn = QtWidgets.QPlainTextEdit(self.tab_2)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Maximum)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.pte_di_insIn.sizePolicy().hasHeightForWidth())
@@ -2174,21 +4032,6 @@ class Ui_MainWindow(object):
         self.pte_di_insIn.setObjectName("pte_di_insIn")
         self.verticalLayout_72.addWidget(self.pte_di_insIn)
         self.horizontalLayout_48.addLayout(self.verticalLayout_72)
-        self.pb_auto_di_insSend = QtWidgets.QPushButton(self.tab_2)
-        self.pb_auto_di_insSend.setStyleSheet("\n"
-"QPushButton:checked{background-color:rgb(33,37,43);color:red;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
-"\n"
-"\n"
-"\n"
-"QPushButton{background-color:rgb(33,37,43);color:white;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
-"\n"
-"QPushButton:hover{font-weight:bold;background-color:rgb(33,37,43);color:white;font: 16pt \"Arial\";border:3px solid rgb(39,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
-"\n"
-"\n"
-"QPushButton:pressed{color: red;}")
-        self.pb_auto_di_insSend.setCheckable(False)
-        self.pb_auto_di_insSend.setObjectName("pb_auto_di_insSend")
-        self.horizontalLayout_48.addWidget(self.pb_auto_di_insSend)
         self.verticalLayout_73 = QtWidgets.QVBoxLayout()
         self.verticalLayout_73.setObjectName("verticalLayout_73")
         self.label_18 = QtWidgets.QLabel(self.tab_2)
@@ -2197,6 +4040,11 @@ class Ui_MainWindow(object):
         self.label_18.setObjectName("label_18")
         self.verticalLayout_73.addWidget(self.label_18)
         self.pte_di_insOut = QtWidgets.QPlainTextEdit(self.tab_2)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pte_di_insOut.sizePolicy().hasHeightForWidth())
+        self.pte_di_insOut.setSizePolicy(sizePolicy)
         self.pte_di_insOut.setStyleSheet("color:white;\n"
 "background-color: rgb(0, 0, 0);\n"
 "font: 65 14pt \"Arial\";")
@@ -2205,8 +4053,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_73.addWidget(self.pte_di_insOut)
         self.horizontalLayout_48.addLayout(self.verticalLayout_73)
         self.gridLayout_3.addLayout(self.horizontalLayout_48, 2, 0, 1, 1)
-        spacerItem57 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_3.addItem(spacerItem57, 1, 0, 1, 1)
+        spacerItem81 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_3.addItem(spacerItem81, 1, 0, 1, 1)
         self.verticalLayout_149.addLayout(self.gridLayout_3)
         self.horizontalLayout_21.addLayout(self.verticalLayout_149)
         self.auto_tabWidget.addTab(self.tab_2, "")
@@ -2216,23 +4064,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_26.setObjectName("verticalLayout_26")
         self.verticalLayout_25 = QtWidgets.QVBoxLayout()
         self.verticalLayout_25.setObjectName("verticalLayout_25")
-        spacerItem58 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_25.addItem(spacerItem58)
-        self.label_113 = QtWidgets.QLabel(self.tab_3)
-        font = QtGui.QFont()
-        font.setFamily("Arial")
-        font.setPointSize(16)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(9)
-        self.label_113.setFont(font)
-        self.label_113.setStyleSheet("color:white;\n"
-"font: 75 16pt \"Arial\";")
-        self.label_113.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_113.setObjectName("label_113")
-        self.verticalLayout_25.addWidget(self.label_113)
-        spacerItem59 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_25.addItem(spacerItem59)
+        spacerItem82 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_25.addItem(spacerItem82)
         self.gridLayout_4 = QtWidgets.QGridLayout()
         self.gridLayout_4.setObjectName("gridLayout_4")
         self.pb_auto_do_28VKOUT2 = QtWidgets.QPushButton(self.tab_3)
@@ -2251,8 +4084,8 @@ class Ui_MainWindow(object):
         self.pb_auto_do_28VKOUT2.setCheckable(True)
         self.pb_auto_do_28VKOUT2.setObjectName("pb_auto_do_28VKOUT2")
         self.gridLayout_4.addWidget(self.pb_auto_do_28VKOUT2, 0, 8, 1, 1)
-        spacerItem60 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_4.addItem(spacerItem60, 11, 0, 1, 1)
+        spacerItem83 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_4.addItem(spacerItem83, 11, 0, 1, 1)
         self.lable255 = QtWidgets.QLabel(self.tab_3)
         self.lable255.setStyleSheet("color:white;\n"
 "font: 75 10pt \"Arial\";")
@@ -2307,8 +4140,8 @@ class Ui_MainWindow(object):
         self.le_auto_do_DKOUT5.setReadOnly(True)
         self.le_auto_do_DKOUT5.setObjectName("le_auto_do_DKOUT5")
         self.gridLayout_4.addWidget(self.le_auto_do_DKOUT5, 12, 1, 1, 1)
-        spacerItem61 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_4.addItem(spacerItem61, 3, 0, 1, 1)
+        spacerItem84 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_4.addItem(spacerItem84, 3, 0, 1, 1)
         self.le_auto_do_28VKOUT11 = QtWidgets.QLineEdit(self.tab_3)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -2385,8 +4218,8 @@ class Ui_MainWindow(object):
         self.label_134.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_134.setObjectName("label_134")
         self.gridLayout_4.addWidget(self.label_134, 8, 10, 1, 1)
-        spacerItem62 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_4.addItem(spacerItem62, 1, 0, 1, 1)
+        spacerItem85 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_4.addItem(spacerItem85, 1, 0, 1, 1)
         self.le_auto_do_28VKOUT1 = QtWidgets.QLineEdit(self.tab_3)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -2437,8 +4270,8 @@ class Ui_MainWindow(object):
         self.label_222.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_222.setObjectName("label_222")
         self.gridLayout_4.addWidget(self.label_222, 10, 10, 1, 1)
-        spacerItem63 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_4.addItem(spacerItem63, 0, 9, 1, 1)
+        spacerItem86 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_4.addItem(spacerItem86, 0, 9, 1, 1)
         self.label_167 = QtWidgets.QLabel(self.tab_3)
         self.label_167.setStyleSheet("color:white;\n"
 "font: 75 10pt \"Arial\";")
@@ -2523,8 +4356,8 @@ class Ui_MainWindow(object):
 "font: 75 10pt \"Arial\";")
         self.label_110.setObjectName("label_110")
         self.gridLayout_4.addWidget(self.label_110, 0, 2, 1, 1)
-        spacerItem64 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_4.addItem(spacerItem64, 7, 0, 1, 1)
+        spacerItem87 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_4.addItem(spacerItem87, 7, 0, 1, 1)
         self.pb_auto_do_28VKOUT9 = QtWidgets.QPushButton(self.tab_3)
         self.pb_auto_do_28VKOUT9.setMinimumSize(QtCore.QSize(50, 50))
         self.pb_auto_do_28VKOUT9.setStyleSheet("\n"
@@ -2608,8 +4441,8 @@ class Ui_MainWindow(object):
 "font: 75 10pt \"Arial\";")
         self.label_142.setObjectName("label_142")
         self.gridLayout_4.addWidget(self.label_142, 6, 2, 1, 1)
-        spacerItem65 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_4.addItem(spacerItem65, 0, 4, 1, 1)
+        spacerItem88 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_4.addItem(spacerItem88, 0, 4, 1, 1)
         self.le_auto_do_DKOUT6 = QtWidgets.QLineEdit(self.tab_3)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -2895,8 +4728,8 @@ class Ui_MainWindow(object):
         self.pb_auto_do_DKOUT1.setCheckable(True)
         self.pb_auto_do_DKOUT1.setObjectName("pb_auto_do_DKOUT1")
         self.gridLayout_4.addWidget(self.pb_auto_do_DKOUT1, 8, 13, 1, 1)
-        spacerItem66 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_4.addItem(spacerItem66, 9, 0, 1, 1)
+        spacerItem89 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_4.addItem(spacerItem89, 9, 0, 1, 1)
         self.label_132 = QtWidgets.QLabel(self.tab_3)
         self.label_132.setStyleSheet("color:white;\n"
 "font: 75 10pt \"Arial\";")
@@ -2973,8 +4806,8 @@ class Ui_MainWindow(object):
         self.pb_auto_do_28VKOUT11.setCheckable(True)
         self.pb_auto_do_28VKOUT11.setObjectName("pb_auto_do_28VKOUT11")
         self.gridLayout_4.addWidget(self.pb_auto_do_28VKOUT11, 6, 8, 1, 1)
-        spacerItem67 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_4.addItem(spacerItem67, 6, 14, 1, 1)
+        spacerItem90 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_4.addItem(spacerItem90, 6, 14, 1, 1)
         self.le_auto_do_DKOUT4 = QtWidgets.QLineEdit(self.tab_3)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -2995,8 +4828,8 @@ class Ui_MainWindow(object):
         self.label_223.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_223.setObjectName("label_223")
         self.gridLayout_4.addWidget(self.label_223, 12, 0, 1, 1)
-        spacerItem68 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_4.addItem(spacerItem68, 5, 0, 1, 1)
+        spacerItem91 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_4.addItem(spacerItem91, 5, 0, 1, 1)
         self.label_218 = QtWidgets.QLabel(self.tab_3)
         self.label_218.setStyleSheet("color:white;\n"
 "font: 75 10pt \"Arial\";")
@@ -3114,12 +4947,12 @@ class Ui_MainWindow(object):
         self.pb_auto_do_DKOUT2.setCheckable(True)
         self.pb_auto_do_DKOUT2.setObjectName("pb_auto_do_DKOUT2")
         self.gridLayout_4.addWidget(self.pb_auto_do_DKOUT2, 10, 3, 1, 1)
-        spacerItem69 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_4.addItem(spacerItem69, 13, 0, 1, 1)
+        spacerItem92 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_4.addItem(spacerItem92, 13, 0, 1, 1)
         self.verticalLayout_25.addLayout(self.gridLayout_4)
         self.verticalLayout_26.addLayout(self.verticalLayout_25)
-        spacerItem70 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_26.addItem(spacerItem70)
+        spacerItem93 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_26.addItem(spacerItem93)
         self.horizontalLayout_52 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_52.setObjectName("horizontalLayout_52")
         self.verticalLayout_76 = QtWidgets.QVBoxLayout()
@@ -3173,1027 +5006,1559 @@ class Ui_MainWindow(object):
         self.verticalLayout_77.addWidget(self.pte_auto_do_insOUT)
         self.horizontalLayout_52.addLayout(self.verticalLayout_77)
         self.verticalLayout_26.addLayout(self.horizontalLayout_52)
-        spacerItem71 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_26.addItem(spacerItem71)
         self.auto_tabWidget.addTab(self.tab_3, "")
         self.tab_4 = QtWidgets.QWidget()
         self.tab_4.setObjectName("tab_4")
-        self.verticalLayout_28 = QtWidgets.QVBoxLayout(self.tab_4)
-        self.verticalLayout_28.setObjectName("verticalLayout_28")
-        self.verticalLayout_27 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_27.setObjectName("verticalLayout_27")
-        spacerItem72 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_27.addItem(spacerItem72)
-        self.label_28 = QtWidgets.QLabel(self.tab_4)
-        self.label_28.setStyleSheet("color:white;\n"
-"font: 75 16pt \"Arial\";")
-        self.label_28.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_28.setObjectName("label_28")
-        self.verticalLayout_27.addWidget(self.label_28)
-        spacerItem73 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_27.addItem(spacerItem73)
-        spacerItem74 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_27.addItem(spacerItem74)
-        self.gridLayout_6 = QtWidgets.QGridLayout()
+        self.horizontalLayout_20 = QtWidgets.QHBoxLayout(self.tab_4)
+        self.horizontalLayout_20.setObjectName("horizontalLayout_20")
+        self.frame_4 = QtWidgets.QFrame(self.tab_4)
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.frame_4.setFont(font)
+        self.frame_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_4.setObjectName("frame_4")
+        self.gridLayout_6 = QtWidgets.QGridLayout(self.frame_4)
         self.gridLayout_6.setObjectName("gridLayout_6")
-        self.dsb_auto_ai_AIN_KTM_3 = QtWidgets.QDoubleSpinBox(self.tab_4)
-        self.dsb_auto_ai_AIN_KTM_3.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.dsb_auto_ai_AIN_KTM_3.setAlignment(QtCore.Qt.AlignCenter)
-        self.dsb_auto_ai_AIN_KTM_3.setDecimals(4)
-        self.dsb_auto_ai_AIN_KTM_3.setMinimum(-4.0)
-        self.dsb_auto_ai_AIN_KTM_3.setMaximum(41.0)
-        self.dsb_auto_ai_AIN_KTM_3.setObjectName("dsb_auto_ai_AIN_KTM_3")
-        self.gridLayout_6.addWidget(self.dsb_auto_ai_AIN_KTM_3, 2, 6, 1, 1)
-        self.label_371 = QtWidgets.QLabel(self.tab_4)
-        self.label_371.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_371.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_371.setObjectName("label_371")
-        self.gridLayout_6.addWidget(self.label_371, 6, 5, 1, 1)
-        self.label_378 = QtWidgets.QLabel(self.tab_4)
-        self.label_378.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_378.setObjectName("label_378")
-        self.gridLayout_6.addWidget(self.label_378, 0, 11, 1, 1)
-        self.dsb_auto_ai_AIN_EDT = QtWidgets.QDoubleSpinBox(self.tab_4)
-        self.dsb_auto_ai_AIN_EDT.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.dsb_auto_ai_AIN_EDT.setAlignment(QtCore.Qt.AlignCenter)
-        self.dsb_auto_ai_AIN_EDT.setDecimals(4)
-        self.dsb_auto_ai_AIN_EDT.setMaximum(5.0)
-        self.dsb_auto_ai_AIN_EDT.setObjectName("dsb_auto_ai_AIN_EDT")
-        self.gridLayout_6.addWidget(self.dsb_auto_ai_AIN_EDT, 0, 2, 1, 1)
-        self.label_391 = QtWidgets.QLabel(self.tab_4)
-        self.label_391.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_391.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_391.setObjectName("label_391")
-        self.gridLayout_6.addWidget(self.label_391, 4, 5, 1, 1)
-        self.label_383 = QtWidgets.QLabel(self.tab_4)
-        self.label_383.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_383.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_383.setObjectName("label_383")
-        self.gridLayout_6.addWidget(self.label_383, 6, 1, 1, 1)
-        spacerItem75 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_6.addItem(spacerItem75, 6, 16, 1, 1)
-        self.dsb_auto_ai_AIN_FRE_N1_2 = QtWidgets.QDoubleSpinBox(self.tab_4)
-        self.dsb_auto_ai_AIN_FRE_N1_2.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.dsb_auto_ai_AIN_FRE_N1_2.setAlignment(QtCore.Qt.AlignCenter)
-        self.dsb_auto_ai_AIN_FRE_N1_2.setDecimals(4)
-        self.dsb_auto_ai_AIN_FRE_N1_2.setMaximum(1500.0)
-        self.dsb_auto_ai_AIN_FRE_N1_2.setObjectName("dsb_auto_ai_AIN_FRE_N1_2")
-        self.gridLayout_6.addWidget(self.dsb_auto_ai_AIN_FRE_N1_2, 6, 6, 1, 1)
-        self.label_387 = QtWidgets.QLabel(self.tab_4)
-        self.label_387.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_387.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_387.setObjectName("label_387")
-        self.gridLayout_6.addWidget(self.label_387, 8, 9, 1, 1)
-        self.label_402 = QtWidgets.QLabel(self.tab_4)
-        self.label_402.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_402.setObjectName("label_402")
-        self.gridLayout_6.addWidget(self.label_402, 2, 11, 1, 1)
-        spacerItem76 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_6.addItem(spacerItem76, 1, 1, 1, 1)
-        self.label_388 = QtWidgets.QLabel(self.tab_4)
-        self.label_388.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_388.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_388.setObjectName("label_388")
-        self.gridLayout_6.addWidget(self.label_388, 8, 13, 1, 1)
-        self.label_397 = QtWidgets.QLabel(self.tab_4)
-        self.label_397.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_397.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_397.setObjectName("label_397")
-        self.gridLayout_6.addWidget(self.label_397, 2, 1, 1, 1)
-        self.cm_auto_ai_AIN_PT100_1 = QtWidgets.QComboBox(self.tab_4)
-        self.cm_auto_ai_AIN_PT100_1.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.cm_auto_ai_AIN_PT100_1.setEditable(True)
-        self.cm_auto_ai_AIN_PT100_1.setObjectName("cm_auto_ai_AIN_PT100_1")
-        self.cm_auto_ai_AIN_PT100_1.addItem("")
-        self.cm_auto_ai_AIN_PT100_1.addItem("")
-        self.cm_auto_ai_AIN_PT100_1.addItem("")
-        self.cm_auto_ai_AIN_PT100_1.addItem("")
-        self.gridLayout_6.addWidget(self.cm_auto_ai_AIN_PT100_1, 4, 2, 1, 1)
-        spacerItem77 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_6.addItem(spacerItem77, 6, 8, 1, 1)
-        self.label_389 = QtWidgets.QLabel(self.tab_4)
-        self.label_389.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_389.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_389.setObjectName("label_389")
-        self.gridLayout_6.addWidget(self.label_389, 4, 1, 1, 1)
-        self.label_377 = QtWidgets.QLabel(self.tab_4)
-        self.label_377.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_377.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_377.setObjectName("label_377")
-        self.gridLayout_6.addWidget(self.label_377, 0, 9, 1, 1)
-        spacerItem78 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_6.addItem(spacerItem78, 2, 0, 1, 1)
-        self.dsb_auto_ai_AIN_KTM_5 = QtWidgets.QDoubleSpinBox(self.tab_4)
-        self.dsb_auto_ai_AIN_KTM_5.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.dsb_auto_ai_AIN_KTM_5.setAlignment(QtCore.Qt.AlignCenter)
-        self.dsb_auto_ai_AIN_KTM_5.setDecimals(4)
-        self.dsb_auto_ai_AIN_KTM_5.setMaximum(40.0)
-        self.dsb_auto_ai_AIN_KTM_5.setObjectName("dsb_auto_ai_AIN_KTM_5")
-        self.gridLayout_6.addWidget(self.dsb_auto_ai_AIN_KTM_5, 2, 14, 1, 1)
-        self.label_374 = QtWidgets.QLabel(self.tab_4)
-        self.label_374.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_374.setObjectName("label_374")
-        self.gridLayout_6.addWidget(self.label_374, 0, 3, 1, 1)
-        self.dsb_auto_ai_AIN_KTM_4 = QtWidgets.QDoubleSpinBox(self.tab_4)
-        self.dsb_auto_ai_AIN_KTM_4.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.dsb_auto_ai_AIN_KTM_4.setAlignment(QtCore.Qt.AlignCenter)
-        self.dsb_auto_ai_AIN_KTM_4.setDecimals(4)
-        self.dsb_auto_ai_AIN_KTM_4.setMinimum(-13.0)
-        self.dsb_auto_ai_AIN_KTM_4.setMaximum(124.0)
-        self.dsb_auto_ai_AIN_KTM_4.setObjectName("dsb_auto_ai_AIN_KTM_4")
-        self.gridLayout_6.addWidget(self.dsb_auto_ai_AIN_KTM_4, 2, 10, 1, 1)
-        self.cm_auto_ai_AIN_PT100_3 = QtWidgets.QComboBox(self.tab_4)
-        self.cm_auto_ai_AIN_PT100_3.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.cm_auto_ai_AIN_PT100_3.setEditable(True)
-        self.cm_auto_ai_AIN_PT100_3.setObjectName("cm_auto_ai_AIN_PT100_3")
-        self.cm_auto_ai_AIN_PT100_3.addItem("")
-        self.cm_auto_ai_AIN_PT100_3.addItem("")
-        self.cm_auto_ai_AIN_PT100_3.addItem("")
-        self.cm_auto_ai_AIN_PT100_3.addItem("")
-        self.gridLayout_6.addWidget(self.cm_auto_ai_AIN_PT100_3, 4, 10, 1, 1)
-        self.label_399 = QtWidgets.QLabel(self.tab_4)
-        self.label_399.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_399.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_399.setObjectName("label_399")
-        self.gridLayout_6.addWidget(self.label_399, 2, 5, 1, 1)
-        self.label_457 = QtWidgets.QLabel(self.tab_4)
-        self.label_457.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_457.setObjectName("label_457")
-        self.gridLayout_6.addWidget(self.label_457, 6, 3, 1, 1)
-        self.label_456 = QtWidgets.QLabel(self.tab_4)
-        self.label_456.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_456.setObjectName("label_456")
-        self.gridLayout_6.addWidget(self.label_456, 6, 11, 1, 1)
-        self.label_404 = QtWidgets.QLabel(self.tab_4)
-        self.label_404.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_404.setObjectName("label_404")
-        self.gridLayout_6.addWidget(self.label_404, 2, 15, 1, 1)
-        self.label_394 = QtWidgets.QLabel(self.tab_4)
-        self.label_394.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_394.setObjectName("label_394")
-        self.gridLayout_6.addWidget(self.label_394, 4, 11, 1, 1)
-        self.le_auto_ai_RVDT_incentive = QtWidgets.QLineEdit(self.tab_4)
-        self.le_auto_ai_RVDT_incentive.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_auto_ai_RVDT_incentive.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_RVDT_incentive.setObjectName("le_auto_ai_RVDT_incentive")
-        self.gridLayout_6.addWidget(self.le_auto_ai_RVDT_incentive, 10, 6, 1, 1)
-        self.le_auto_ai_SCVIN = QtWidgets.QLineEdit(self.tab_4)
-        self.le_auto_ai_SCVIN.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_auto_ai_SCVIN.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_SCVIN.setObjectName("le_auto_ai_SCVIN")
-        self.gridLayout_6.addWidget(self.le_auto_ai_SCVIN, 8, 2, 1, 1)
-        self.label_401 = QtWidgets.QLabel(self.tab_4)
-        self.label_401.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_401.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_401.setObjectName("label_401")
-        self.gridLayout_6.addWidget(self.label_401, 2, 9, 1, 1)
-        spacerItem79 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_6.addItem(spacerItem79, 5, 1, 1, 1)
-        self.label_390 = QtWidgets.QLabel(self.tab_4)
-        self.label_390.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_390.setObjectName("label_390")
-        self.gridLayout_6.addWidget(self.label_390, 4, 3, 1, 1)
-        self.dsb_auto_ai_AIN_SVM = QtWidgets.QDoubleSpinBox(self.tab_4)
-        self.dsb_auto_ai_AIN_SVM.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.dsb_auto_ai_AIN_SVM.setAlignment(QtCore.Qt.AlignCenter)
-        self.dsb_auto_ai_AIN_SVM.setDecimals(4)
-        self.dsb_auto_ai_AIN_SVM.setMaximum(30.0)
-        self.dsb_auto_ai_AIN_SVM.setObjectName("dsb_auto_ai_AIN_SVM")
-        self.gridLayout_6.addWidget(self.dsb_auto_ai_AIN_SVM, 0, 10, 1, 1)
-        self.label_375 = QtWidgets.QLabel(self.tab_4)
-        self.label_375.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_375.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_375.setObjectName("label_375")
-        self.gridLayout_6.addWidget(self.label_375, 0, 5, 1, 1)
-        self.label_373 = QtWidgets.QLabel(self.tab_4)
-        self.label_373.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_373.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_373.setObjectName("label_373")
-        self.gridLayout_6.addWidget(self.label_373, 0, 1, 1, 1)
-        self.le_auto_ai_LGV_incentive = QtWidgets.QLineEdit(self.tab_4)
-        self.le_auto_ai_LGV_incentive.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_auto_ai_LGV_incentive.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_LGV_incentive.setObjectName("le_auto_ai_LGV_incentive")
-        self.gridLayout_6.addWidget(self.le_auto_ai_LGV_incentive, 8, 14, 1, 1)
-        self.le_auto_ai_IGV_IN = QtWidgets.QLineEdit(self.tab_4)
-        self.le_auto_ai_IGV_IN.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_auto_ai_IGV_IN.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_IGV_IN.setObjectName("le_auto_ai_IGV_IN")
-        self.gridLayout_6.addWidget(self.le_auto_ai_IGV_IN, 8, 10, 1, 1)
-        self.label_392 = QtWidgets.QLabel(self.tab_4)
-        self.label_392.setStyleSheet("color:white;\n"
+        self.label = QtWidgets.QLabel(self.frame_4)
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(9)
+        self.label.setFont(font)
+        self.label.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.label.setStyleSheet("color:white;\n"
+"background-color: rgb(127, 140, 141);\n"
+"background-color: #535c68;\n"
+"\n"
+"\n"
+"\n"
 "font: 75 14pt \"Arial\";\n"
-"")
-        self.label_392.setObjectName("label_392")
-        self.gridLayout_6.addWidget(self.label_392, 4, 7, 1, 1)
-        self.dsb_auto_ai_AIN_FRE_N = QtWidgets.QDoubleSpinBox(self.tab_4)
-        self.dsb_auto_ai_AIN_FRE_N.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.dsb_auto_ai_AIN_FRE_N.setAlignment(QtCore.Qt.AlignCenter)
-        self.dsb_auto_ai_AIN_FRE_N.setDecimals(4)
-        self.dsb_auto_ai_AIN_FRE_N.setMaximum(5.0)
-        self.dsb_auto_ai_AIN_FRE_N.setObjectName("dsb_auto_ai_AIN_FRE_N")
-        self.gridLayout_6.addWidget(self.dsb_auto_ai_AIN_FRE_N, 6, 10, 1, 1)
-        self.label_380 = QtWidgets.QLabel(self.tab_4)
-        self.label_380.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_380.setObjectName("label_380")
-        self.gridLayout_6.addWidget(self.label_380, 0, 15, 1, 1)
-        self.label_379 = QtWidgets.QLabel(self.tab_4)
-        self.label_379.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_379.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_379.setObjectName("label_379")
-        self.gridLayout_6.addWidget(self.label_379, 0, 13, 1, 1)
-        self.label_403 = QtWidgets.QLabel(self.tab_4)
-        self.label_403.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_403.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_403.setObjectName("label_403")
-        self.gridLayout_6.addWidget(self.label_403, 2, 13, 1, 1)
-        spacerItem80 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_6.addItem(spacerItem80, 6, 4, 1, 1)
-        self.le_auto_ai_SCV_incentive = QtWidgets.QLineEdit(self.tab_4)
-        self.le_auto_ai_SCV_incentive.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_auto_ai_SCV_incentive.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_SCV_incentive.setObjectName("le_auto_ai_SCV_incentive")
-        self.gridLayout_6.addWidget(self.le_auto_ai_SCV_incentive, 8, 6, 1, 1)
-        self.cm_auto_ai_AIN_PT100_2 = QtWidgets.QComboBox(self.tab_4)
-        self.cm_auto_ai_AIN_PT100_2.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.cm_auto_ai_AIN_PT100_2.setEditable(True)
-        self.cm_auto_ai_AIN_PT100_2.setObjectName("cm_auto_ai_AIN_PT100_2")
-        self.cm_auto_ai_AIN_PT100_2.addItem("")
-        self.cm_auto_ai_AIN_PT100_2.addItem("")
-        self.cm_auto_ai_AIN_PT100_2.addItem("")
-        self.cm_auto_ai_AIN_PT100_2.addItem("")
-        self.gridLayout_6.addWidget(self.cm_auto_ai_AIN_PT100_2, 4, 6, 1, 1)
-        self.dsb_auto_ai_AIN_NVT = QtWidgets.QDoubleSpinBox(self.tab_4)
-        self.dsb_auto_ai_AIN_NVT.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.dsb_auto_ai_AIN_NVT.setAlignment(QtCore.Qt.AlignCenter)
-        self.dsb_auto_ai_AIN_NVT.setDecimals(4)
-        self.dsb_auto_ai_AIN_NVT.setMaximum(5.0)
-        self.dsb_auto_ai_AIN_NVT.setObjectName("dsb_auto_ai_AIN_NVT")
-        self.gridLayout_6.addWidget(self.dsb_auto_ai_AIN_NVT, 0, 6, 1, 1)
-        self.le_auto_ai_RVDTIN = QtWidgets.QLineEdit(self.tab_4)
-        self.le_auto_ai_RVDTIN.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_auto_ai_RVDTIN.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_RVDTIN.setObjectName("le_auto_ai_RVDTIN")
-        self.gridLayout_6.addWidget(self.le_auto_ai_RVDTIN, 10, 2, 1, 1)
-        self.dsb_auto_ai_AIN_KTM_1 = QtWidgets.QDoubleSpinBox(self.tab_4)
-        self.dsb_auto_ai_AIN_KTM_1.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.dsb_auto_ai_AIN_KTM_1.setAlignment(QtCore.Qt.AlignCenter)
-        self.dsb_auto_ai_AIN_KTM_1.setDecimals(4)
-        self.dsb_auto_ai_AIN_KTM_1.setMinimum(-3.0)
-        self.dsb_auto_ai_AIN_KTM_1.setMaximum(53.0)
-        self.dsb_auto_ai_AIN_KTM_1.setObjectName("dsb_auto_ai_AIN_KTM_1")
-        self.gridLayout_6.addWidget(self.dsb_auto_ai_AIN_KTM_1, 0, 14, 1, 1)
-        self.label_381 = QtWidgets.QLabel(self.tab_4)
-        self.label_381.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_381.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_381.setObjectName("label_381")
-        self.gridLayout_6.addWidget(self.label_381, 6, 9, 1, 1)
-        self.dsb_auto_ai_AIN_FRE_N1 = QtWidgets.QDoubleSpinBox(self.tab_4)
-        self.dsb_auto_ai_AIN_FRE_N1.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.dsb_auto_ai_AIN_FRE_N1.setAlignment(QtCore.Qt.AlignCenter)
-        self.dsb_auto_ai_AIN_FRE_N1.setDecimals(4)
-        self.dsb_auto_ai_AIN_FRE_N1.setMaximum(1500.0)
-        self.dsb_auto_ai_AIN_FRE_N1.setObjectName("dsb_auto_ai_AIN_FRE_N1")
-        self.gridLayout_6.addWidget(self.dsb_auto_ai_AIN_FRE_N1, 6, 2, 1, 1)
-        self.cm_auto_ai_AIN_CTSENSOR = QtWidgets.QComboBox(self.tab_4)
-        self.cm_auto_ai_AIN_CTSENSOR.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.cm_auto_ai_AIN_CTSENSOR.setEditable(True)
-        self.cm_auto_ai_AIN_CTSENSOR.setObjectName("cm_auto_ai_AIN_CTSENSOR")
-        self.cm_auto_ai_AIN_CTSENSOR.addItem("")
-        self.cm_auto_ai_AIN_CTSENSOR.addItem("")
-        self.gridLayout_6.addWidget(self.cm_auto_ai_AIN_CTSENSOR, 4, 14, 1, 1)
-        self.label_395 = QtWidgets.QLabel(self.tab_4)
-        self.label_395.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_395.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_395.setObjectName("label_395")
-        self.gridLayout_6.addWidget(self.label_395, 4, 13, 1, 1)
-        self.label_434 = QtWidgets.QLabel(self.tab_4)
-        self.label_434.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_434.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_434.setObjectName("label_434")
-        self.gridLayout_6.addWidget(self.label_434, 10, 5, 1, 1)
-        spacerItem81 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_6.addItem(spacerItem81, 7, 1, 1, 1)
-        self.label_396 = QtWidgets.QLabel(self.tab_4)
-        self.label_396.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_396.setObjectName("label_396")
-        self.gridLayout_6.addWidget(self.label_396, 4, 15, 1, 1)
-        self.label_386 = QtWidgets.QLabel(self.tab_4)
-        self.label_386.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_386.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_386.setObjectName("label_386")
-        self.gridLayout_6.addWidget(self.label_386, 8, 5, 1, 1)
-        self.label_393 = QtWidgets.QLabel(self.tab_4)
-        self.label_393.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_393.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_393.setObjectName("label_393")
-        self.gridLayout_6.addWidget(self.label_393, 4, 9, 1, 1)
-        self.label_376 = QtWidgets.QLabel(self.tab_4)
-        self.label_376.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_376.setObjectName("label_376")
-        self.gridLayout_6.addWidget(self.label_376, 0, 7, 1, 1)
-        self.dsb_auto_ai_AIN_KTM_2 = QtWidgets.QDoubleSpinBox(self.tab_4)
-        self.dsb_auto_ai_AIN_KTM_2.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.dsb_auto_ai_AIN_KTM_2.setAlignment(QtCore.Qt.AlignCenter)
-        self.dsb_auto_ai_AIN_KTM_2.setDecimals(4)
-        self.dsb_auto_ai_AIN_KTM_2.setMinimum(-3.0)
-        self.dsb_auto_ai_AIN_KTM_2.setMaximum(53.0)
-        self.dsb_auto_ai_AIN_KTM_2.setObjectName("dsb_auto_ai_AIN_KTM_2")
-        self.gridLayout_6.addWidget(self.dsb_auto_ai_AIN_KTM_2, 2, 2, 1, 1)
-        self.label_454 = QtWidgets.QLabel(self.tab_4)
-        self.label_454.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_454.setObjectName("label_454")
-        self.gridLayout_6.addWidget(self.label_454, 6, 7, 1, 1)
-        self.label_433 = QtWidgets.QLabel(self.tab_4)
-        self.label_433.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_433.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_433.setObjectName("label_433")
-        self.gridLayout_6.addWidget(self.label_433, 10, 1, 1, 1)
-        spacerItem82 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_6.addItem(spacerItem82, 3, 1, 1, 1)
-        spacerItem83 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_6.addItem(spacerItem83, 9, 1, 1, 1)
-        spacerItem84 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_6.addItem(spacerItem84, 6, 12, 1, 1)
-        self.label_400 = QtWidgets.QLabel(self.tab_4)
-        self.label_400.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_400.setObjectName("label_400")
-        self.gridLayout_6.addWidget(self.label_400, 2, 7, 1, 1)
-        self.label_398 = QtWidgets.QLabel(self.tab_4)
-        self.label_398.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_398.setObjectName("label_398")
-        self.gridLayout_6.addWidget(self.label_398, 2, 3, 1, 1)
-        self.label_385 = QtWidgets.QLabel(self.tab_4)
-        self.label_385.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_385.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_385.setObjectName("label_385")
-        self.gridLayout_6.addWidget(self.label_385, 8, 1, 1, 1)
-        spacerItem85 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_6.addItem(spacerItem85, 11, 1, 1, 1)
-        self.verticalLayout_27.addLayout(self.gridLayout_6)
-        spacerItem86 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_27.addItem(spacerItem86)
-        spacerItem87 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_27.addItem(spacerItem87)
-        spacerItem88 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_27.addItem(spacerItem88)
-        self.verticalLayout_107 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_107.setObjectName("verticalLayout_107")
-        self.horizontalLayout_49 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_49.setObjectName("horizontalLayout_49")
-        self.verticalLayout_108 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_108.setObjectName("verticalLayout_108")
-        self.label_10 = QtWidgets.QLabel(self.tab_4)
-        self.label_10.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";")
-        self.label_10.setObjectName("label_10")
-        self.verticalLayout_108.addWidget(self.label_10)
-        self.pte_auto_ai_insIN = QtWidgets.QPlainTextEdit(self.tab_4)
-        self.pte_auto_ai_insIN.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.pte_auto_ai_insIN.setObjectName("pte_auto_ai_insIN")
-        self.verticalLayout_108.addWidget(self.pte_auto_ai_insIN)
-        spacerItem89 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_108.addItem(spacerItem89)
-        self.horizontalLayout_49.addLayout(self.verticalLayout_108)
-        self.pb_auto_ai_insSend = QtWidgets.QPushButton(self.tab_4)
-        self.pb_auto_ai_insSend.setStyleSheet("\n"
-"QPushButton:checked{background-color:rgb(33,37,43);color:red;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
-"\n"
-"\n"
-"\n"
-"QPushButton{background-color:rgb(33,37,43);color:white;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
-"\n"
-"QPushButton:hover{font-weight:bold;background-color:rgb(33,37,43);color:white;font: 16pt \"Arial\";border:3px solid rgb(39,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
-"\n"
-"\n"
-"QPushButton:pressed{color: red;}")
-        self.pb_auto_ai_insSend.setCheckable(False)
-        self.pb_auto_ai_insSend.setObjectName("pb_auto_ai_insSend")
-        self.horizontalLayout_49.addWidget(self.pb_auto_ai_insSend)
-        self.verticalLayout_107.addLayout(self.horizontalLayout_49)
-        self.verticalLayout_109 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_109.setObjectName("verticalLayout_109")
-        self.label_22 = QtWidgets.QLabel(self.tab_4)
-        self.label_22.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";")
-        self.label_22.setObjectName("label_22")
-        self.verticalLayout_109.addWidget(self.label_22)
-        self.pte_auto_ai_insOUT = QtWidgets.QPlainTextEdit(self.tab_4)
-        self.pte_auto_ai_insOUT.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.pte_auto_ai_insOUT.setReadOnly(True)
-        self.pte_auto_ai_insOUT.setObjectName("pte_auto_ai_insOUT")
-        self.verticalLayout_109.addWidget(self.pte_auto_ai_insOUT)
-        spacerItem90 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_109.addItem(spacerItem90)
-        spacerItem91 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_109.addItem(spacerItem91)
-        self.verticalLayout_107.addLayout(self.verticalLayout_109)
-        self.verticalLayout_27.addLayout(self.verticalLayout_107)
-        self.verticalLayout_28.addLayout(self.verticalLayout_27)
-        self.gridLayout_7 = QtWidgets.QGridLayout()
-        self.gridLayout_7.setObjectName("gridLayout_7")
-        self.label_384 = QtWidgets.QLabel(self.tab_4)
-        self.label_384.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_384.setObjectName("label_384")
-        self.gridLayout_7.addWidget(self.label_384, 0, 11, 1, 1)
-        self.le_auto_ai_AIN_KTM_4r = QtWidgets.QLineEdit(self.tab_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_KTM_4r.sizePolicy().hasHeightForWidth())
-        self.le_auto_ai_AIN_KTM_4r.setSizePolicy(sizePolicy)
-        self.le_auto_ai_AIN_KTM_4r.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.le_auto_ai_AIN_KTM_4r.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_auto_ai_AIN_KTM_4r.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_AIN_KTM_4r.setReadOnly(True)
-        self.le_auto_ai_AIN_KTM_4r.setObjectName("le_auto_ai_AIN_KTM_4r")
-        self.gridLayout_7.addWidget(self.le_auto_ai_AIN_KTM_4r, 2, 10, 1, 1)
-        self.le_auto_ai_AIN_PT100_1r = QtWidgets.QLineEdit(self.tab_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_PT100_1r.sizePolicy().hasHeightForWidth())
-        self.le_auto_ai_AIN_PT100_1r.setSizePolicy(sizePolicy)
-        self.le_auto_ai_AIN_PT100_1r.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.le_auto_ai_AIN_PT100_1r.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_auto_ai_AIN_PT100_1r.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_AIN_PT100_1r.setReadOnly(True)
-        self.le_auto_ai_AIN_PT100_1r.setObjectName("le_auto_ai_AIN_PT100_1r")
-        self.gridLayout_7.addWidget(self.le_auto_ai_AIN_PT100_1r, 4, 2, 1, 1)
-        self.label_413 = QtWidgets.QLabel(self.tab_4)
-        self.label_413.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_413.setObjectName("label_413")
-        self.gridLayout_7.addWidget(self.label_413, 4, 3, 1, 1)
-        self.le_auto_ai_AIN_FRE_N2r = QtWidgets.QLineEdit(self.tab_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_FRE_N2r.sizePolicy().hasHeightForWidth())
-        self.le_auto_ai_AIN_FRE_N2r.setSizePolicy(sizePolicy)
-        self.le_auto_ai_AIN_FRE_N2r.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.le_auto_ai_AIN_FRE_N2r.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_auto_ai_AIN_FRE_N2r.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_AIN_FRE_N2r.setReadOnly(True)
-        self.le_auto_ai_AIN_FRE_N2r.setObjectName("le_auto_ai_AIN_FRE_N2r")
-        self.gridLayout_7.addWidget(self.le_auto_ai_AIN_FRE_N2r, 6, 6, 1, 1)
-        self.le_auto_ai_SCV_incentiveOUT = QtWidgets.QLineEdit(self.tab_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.le_auto_ai_SCV_incentiveOUT.sizePolicy().hasHeightForWidth())
-        self.le_auto_ai_SCV_incentiveOUT.setSizePolicy(sizePolicy)
-        self.le_auto_ai_SCV_incentiveOUT.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.le_auto_ai_SCV_incentiveOUT.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_auto_ai_SCV_incentiveOUT.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_SCV_incentiveOUT.setReadOnly(True)
-        self.le_auto_ai_SCV_incentiveOUT.setObjectName("le_auto_ai_SCV_incentiveOUT")
-        self.gridLayout_7.addWidget(self.le_auto_ai_SCV_incentiveOUT, 8, 6, 1, 1)
-        self.label_372 = QtWidgets.QLabel(self.tab_4)
-        self.label_372.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_372.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_372.setObjectName("label_372")
-        self.gridLayout_7.addWidget(self.label_372, 8, 1, 1, 1)
-        self.label_406 = QtWidgets.QLabel(self.tab_4)
-        self.label_406.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_406.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_406.setObjectName("label_406")
-        self.gridLayout_7.addWidget(self.label_406, 6, 5, 1, 1)
-        spacerItem92 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_7.addItem(spacerItem92, 6, 8, 1, 1)
-        self.label_426 = QtWidgets.QLabel(self.tab_4)
-        self.label_426.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_426.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_426.setObjectName("label_426")
-        self.gridLayout_7.addWidget(self.label_426, 2, 9, 1, 1)
-        self.label_458 = QtWidgets.QLabel(self.tab_4)
-        self.label_458.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_458.setObjectName("label_458")
-        self.gridLayout_7.addWidget(self.label_458, 6, 11, 1, 1)
-        spacerItem93 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_7.addItem(spacerItem93, 5, 1, 1, 1)
+"    border-radius: 15px;\n"
+"padding :2px")
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        self.label.setObjectName("label")
+        self.gridLayout_6.addWidget(self.label, 0, 0, 1, 2)
         spacerItem94 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_7.addItem(spacerItem94, 7, 1, 1, 1)
-        self.label_421 = QtWidgets.QLabel(self.tab_4)
-        self.label_421.setStyleSheet("color:white;\n"
+        self.gridLayout_6.addItem(spacerItem94, 1, 0, 2, 16)
+        self.pushButton_2 = QtWidgets.QPushButton(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_2.sizePolicy().hasHeightForWidth())
+        self.pushButton_2.setSizePolicy(sizePolicy)
+        self.pushButton_2.setMinimumSize(QtCore.QSize(0, 37))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pushButton_2.setFont(font)
+        self.pushButton_2.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"\n"
+"    background-color: transparent;\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.gridLayout_6.addWidget(self.pushButton_2, 2, 1, 2, 1)
+        self.label_536 = QtWidgets.QLabel(self.frame_4)
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(9)
+        self.label_536.setFont(font)
+        self.label_536.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_536.setObjectName("label_536")
+        self.gridLayout_6.addWidget(self.label_536, 2, 3, 2, 1)
+        self.pushButton_3 = QtWidgets.QPushButton(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_3.sizePolicy().hasHeightForWidth())
+        self.pushButton_3.setSizePolicy(sizePolicy)
+        self.pushButton_3.setMinimumSize(QtCore.QSize(0, 37))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pushButton_3.setFont(font)
+        self.pushButton_3.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"\n"
+"    background-color: transparent;\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.gridLayout_6.addWidget(self.pushButton_3, 2, 5, 2, 1)
+        self.label_559 = QtWidgets.QLabel(self.frame_4)
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(9)
+        self.label_559.setFont(font)
+        self.label_559.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_559.setObjectName("label_559")
+        self.gridLayout_6.addWidget(self.label_559, 2, 7, 2, 1)
+        self.pushButton_4 = QtWidgets.QPushButton(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_4.sizePolicy().hasHeightForWidth())
+        self.pushButton_4.setSizePolicy(sizePolicy)
+        self.pushButton_4.setMinimumSize(QtCore.QSize(0, 37))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pushButton_4.setFont(font)
+        self.pushButton_4.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"\n"
+"    background-color: transparent;\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.pushButton_4.setObjectName("pushButton_4")
+        self.gridLayout_6.addWidget(self.pushButton_4, 2, 9, 2, 1)
+        self.label_560 = QtWidgets.QLabel(self.frame_4)
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(9)
+        self.label_560.setFont(font)
+        self.label_560.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_560.setObjectName("label_560")
+        self.gridLayout_6.addWidget(self.label_560, 2, 11, 2, 1)
+        self.pushButton_5 = QtWidgets.QPushButton(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_5.sizePolicy().hasHeightForWidth())
+        self.pushButton_5.setSizePolicy(sizePolicy)
+        self.pushButton_5.setMinimumSize(QtCore.QSize(0, 37))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pushButton_5.setFont(font)
+        self.pushButton_5.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"\n"
+"    background-color: transparent;\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.pushButton_5.setObjectName("pushButton_5")
+        self.gridLayout_6.addWidget(self.pushButton_5, 2, 13, 2, 1)
+        self.label_541 = QtWidgets.QLabel(self.frame_4)
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(9)
+        self.label_541.setFont(font)
+        self.label_541.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_541.setObjectName("label_541")
+        self.gridLayout_6.addWidget(self.label_541, 2, 15, 2, 1)
+        self.dsb_auto_ai_AIN_EDT_3 = QtWidgets.QDoubleSpinBox(self.frame_4)
+        self.dsb_auto_ai_AIN_EDT_3.setStyleSheet("\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.dsb_auto_ai_AIN_EDT_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.dsb_auto_ai_AIN_EDT_3.setDecimals(1)
+        self.dsb_auto_ai_AIN_EDT_3.setMinimum(0.0)
+        self.dsb_auto_ai_AIN_EDT_3.setMaximum(4.5)
+        self.dsb_auto_ai_AIN_EDT_3.setSingleStep(0.5)
+        self.dsb_auto_ai_AIN_EDT_3.setProperty("value", 0.0)
+        self.dsb_auto_ai_AIN_EDT_3.setObjectName("dsb_auto_ai_AIN_EDT_3")
+        self.gridLayout_6.addWidget(self.dsb_auto_ai_AIN_EDT_3, 3, 2, 1, 1)
+        self.dsb_auto_ai_AIN_NVT_3 = QtWidgets.QDoubleSpinBox(self.frame_4)
+        self.dsb_auto_ai_AIN_NVT_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.dsb_auto_ai_AIN_NVT_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.dsb_auto_ai_AIN_NVT_3.setDecimals(1)
+        self.dsb_auto_ai_AIN_NVT_3.setMaximum(4.5)
+        self.dsb_auto_ai_AIN_NVT_3.setSingleStep(0.5)
+        self.dsb_auto_ai_AIN_NVT_3.setObjectName("dsb_auto_ai_AIN_NVT_3")
+        self.gridLayout_6.addWidget(self.dsb_auto_ai_AIN_NVT_3, 3, 6, 1, 1)
+        self.dsb_auto_ai_AIN_SVM_3 = QtWidgets.QDoubleSpinBox(self.frame_4)
+        self.dsb_auto_ai_AIN_SVM_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.dsb_auto_ai_AIN_SVM_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.dsb_auto_ai_AIN_SVM_3.setDecimals(0)
+        self.dsb_auto_ai_AIN_SVM_3.setMaximum(28.0)
+        self.dsb_auto_ai_AIN_SVM_3.setObjectName("dsb_auto_ai_AIN_SVM_3")
+        self.gridLayout_6.addWidget(self.dsb_auto_ai_AIN_SVM_3, 3, 10, 1, 1)
+        self.dsb_auto_ai_AIN_KTM_15 = QtWidgets.QDoubleSpinBox(self.frame_4)
+        self.dsb_auto_ai_AIN_KTM_15.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.dsb_auto_ai_AIN_KTM_15.setAlignment(QtCore.Qt.AlignCenter)
+        self.dsb_auto_ai_AIN_KTM_15.setDecimals(1)
+        self.dsb_auto_ai_AIN_KTM_15.setMinimum(-3.0)
+        self.dsb_auto_ai_AIN_KTM_15.setMaximum(52.4)
+        self.dsb_auto_ai_AIN_KTM_15.setSingleStep(0.1)
+        self.dsb_auto_ai_AIN_KTM_15.setObjectName("dsb_auto_ai_AIN_KTM_15")
+        self.gridLayout_6.addWidget(self.dsb_auto_ai_AIN_KTM_15, 3, 14, 1, 1)
+        self.pushButton_6 = QtWidgets.QPushButton(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_6.sizePolicy().hasHeightForWidth())
+        self.pushButton_6.setSizePolicy(sizePolicy)
+        self.pushButton_6.setMinimumSize(QtCore.QSize(0, 37))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pushButton_6.setFont(font)
+        self.pushButton_6.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"\n"
+"    background-color: transparent;\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.pushButton_6.setObjectName("pushButton_6")
+        self.gridLayout_6.addWidget(self.pushButton_6, 4, 1, 1, 1)
+        self.dsb_auto_ai_AIN_KTM_13 = QtWidgets.QDoubleSpinBox(self.frame_4)
+        self.dsb_auto_ai_AIN_KTM_13.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.dsb_auto_ai_AIN_KTM_13.setAlignment(QtCore.Qt.AlignCenter)
+        self.dsb_auto_ai_AIN_KTM_13.setDecimals(1)
+        self.dsb_auto_ai_AIN_KTM_13.setMinimum(-3.0)
+        self.dsb_auto_ai_AIN_KTM_13.setMaximum(53.0)
+        self.dsb_auto_ai_AIN_KTM_13.setSingleStep(0.1)
+        self.dsb_auto_ai_AIN_KTM_13.setObjectName("dsb_auto_ai_AIN_KTM_13")
+        self.gridLayout_6.addWidget(self.dsb_auto_ai_AIN_KTM_13, 4, 2, 1, 1)
+        self.label_555 = QtWidgets.QLabel(self.frame_4)
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(9)
+        self.label_555.setFont(font)
+        self.label_555.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_555.setObjectName("label_555")
+        self.gridLayout_6.addWidget(self.label_555, 4, 3, 1, 1)
+        self.pushButton_7 = QtWidgets.QPushButton(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_7.sizePolicy().hasHeightForWidth())
+        self.pushButton_7.setSizePolicy(sizePolicy)
+        self.pushButton_7.setMinimumSize(QtCore.QSize(0, 37))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pushButton_7.setFont(font)
+        self.pushButton_7.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"\n"
+"    background-color: transparent;\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.pushButton_7.setObjectName("pushButton_7")
+        self.gridLayout_6.addWidget(self.pushButton_7, 4, 5, 1, 1)
+        self.dsb_auto_ai_AIN_KTM_12 = QtWidgets.QDoubleSpinBox(self.frame_4)
+        self.dsb_auto_ai_AIN_KTM_12.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.dsb_auto_ai_AIN_KTM_12.setAlignment(QtCore.Qt.AlignCenter)
+        self.dsb_auto_ai_AIN_KTM_12.setDecimals(1)
+        self.dsb_auto_ai_AIN_KTM_12.setMinimum(0.0)
+        self.dsb_auto_ai_AIN_KTM_12.setMaximum(40.0)
+        self.dsb_auto_ai_AIN_KTM_12.setObjectName("dsb_auto_ai_AIN_KTM_12")
+        self.gridLayout_6.addWidget(self.dsb_auto_ai_AIN_KTM_12, 4, 6, 1, 1)
+        self.label_537 = QtWidgets.QLabel(self.frame_4)
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(9)
+        self.label_537.setFont(font)
+        self.label_537.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_537.setObjectName("label_537")
+        self.gridLayout_6.addWidget(self.label_537, 4, 7, 1, 1)
+        self.pushButton_8 = QtWidgets.QPushButton(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_8.sizePolicy().hasHeightForWidth())
+        self.pushButton_8.setSizePolicy(sizePolicy)
+        self.pushButton_8.setMinimumSize(QtCore.QSize(0, 37))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pushButton_8.setFont(font)
+        self.pushButton_8.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"\n"
+"    background-color: transparent;\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.pushButton_8.setObjectName("pushButton_8")
+        self.gridLayout_6.addWidget(self.pushButton_8, 4, 9, 1, 1)
+        self.dsb_auto_ai_AIN_KTM_11 = QtWidgets.QDoubleSpinBox(self.frame_4)
+        self.dsb_auto_ai_AIN_KTM_11.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.dsb_auto_ai_AIN_KTM_11.setAlignment(QtCore.Qt.AlignCenter)
+        self.dsb_auto_ai_AIN_KTM_11.setDecimals(1)
+        self.dsb_auto_ai_AIN_KTM_11.setMinimum(0.0)
+        self.dsb_auto_ai_AIN_KTM_11.setMaximum(40.0)
+        self.dsb_auto_ai_AIN_KTM_11.setObjectName("dsb_auto_ai_AIN_KTM_11")
+        self.gridLayout_6.addWidget(self.dsb_auto_ai_AIN_KTM_11, 4, 10, 1, 1)
+        self.label_534 = QtWidgets.QLabel(self.frame_4)
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(9)
+        self.label_534.setFont(font)
+        self.label_534.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_534.setObjectName("label_534")
+        self.gridLayout_6.addWidget(self.label_534, 4, 11, 1, 1)
+        self.pushButton_9 = QtWidgets.QPushButton(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_9.sizePolicy().hasHeightForWidth())
+        self.pushButton_9.setSizePolicy(sizePolicy)
+        self.pushButton_9.setMinimumSize(QtCore.QSize(0, 37))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pushButton_9.setFont(font)
+        self.pushButton_9.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"\n"
+"    background-color: transparent;\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.pushButton_9.setObjectName("pushButton_9")
+        self.gridLayout_6.addWidget(self.pushButton_9, 4, 13, 1, 1)
+        self.dsb_auto_ai_AIN_KTM_14 = QtWidgets.QDoubleSpinBox(self.frame_4)
+        self.dsb_auto_ai_AIN_KTM_14.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.dsb_auto_ai_AIN_KTM_14.setAlignment(QtCore.Qt.AlignCenter)
+        self.dsb_auto_ai_AIN_KTM_14.setDecimals(1)
+        self.dsb_auto_ai_AIN_KTM_14.setMaximum(40.0)
+        self.dsb_auto_ai_AIN_KTM_14.setObjectName("dsb_auto_ai_AIN_KTM_14")
+        self.gridLayout_6.addWidget(self.dsb_auto_ai_AIN_KTM_14, 4, 14, 1, 1)
+        self.label_549 = QtWidgets.QLabel(self.frame_4)
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(9)
+        self.label_549.setFont(font)
+        self.label_549.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_549.setObjectName("label_549")
+        self.gridLayout_6.addWidget(self.label_549, 4, 15, 1, 1)
+        self.pushButton_12 = QtWidgets.QPushButton(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_12.sizePolicy().hasHeightForWidth())
+        self.pushButton_12.setSizePolicy(sizePolicy)
+        self.pushButton_12.setMinimumSize(QtCore.QSize(0, 37))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pushButton_12.setFont(font)
+        self.pushButton_12.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"\n"
+"    background-color: transparent;\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.pushButton_12.setObjectName("pushButton_12")
+        self.gridLayout_6.addWidget(self.pushButton_12, 5, 1, 1, 1)
+        self.cm_auto_ai_AIN_PT100_9 = QtWidgets.QComboBox(self.frame_4)
+        self.cm_auto_ai_AIN_PT100_9.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.cm_auto_ai_AIN_PT100_9.setEditable(True)
+        self.cm_auto_ai_AIN_PT100_9.setObjectName("cm_auto_ai_AIN_PT100_9")
+        self.cm_auto_ai_AIN_PT100_9.addItem("")
+        self.cm_auto_ai_AIN_PT100_9.addItem("")
+        self.cm_auto_ai_AIN_PT100_9.addItem("")
+        self.cm_auto_ai_AIN_PT100_9.addItem("")
+        self.gridLayout_6.addWidget(self.cm_auto_ai_AIN_PT100_9, 5, 2, 1, 1)
+        self.label_538 = QtWidgets.QLabel(self.frame_4)
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(9)
+        self.label_538.setFont(font)
+        self.label_538.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_538.setObjectName("label_538")
+        self.gridLayout_6.addWidget(self.label_538, 5, 3, 1, 1)
+        self.pushButton_10 = QtWidgets.QPushButton(self.frame_4)
+        self.pushButton_10.setMinimumSize(QtCore.QSize(0, 37))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pushButton_10.setFont(font)
+        self.pushButton_10.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"\n"
+"    background-color: transparent;\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.pushButton_10.setObjectName("pushButton_10")
+        self.gridLayout_6.addWidget(self.pushButton_10, 5, 5, 1, 1)
+        self.cm_auto_ai_AIN_PT100_8 = QtWidgets.QComboBox(self.frame_4)
+        self.cm_auto_ai_AIN_PT100_8.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.cm_auto_ai_AIN_PT100_8.setEditable(True)
+        self.cm_auto_ai_AIN_PT100_8.setObjectName("cm_auto_ai_AIN_PT100_8")
+        self.cm_auto_ai_AIN_PT100_8.addItem("")
+        self.cm_auto_ai_AIN_PT100_8.addItem("")
+        self.cm_auto_ai_AIN_PT100_8.addItem("")
+        self.cm_auto_ai_AIN_PT100_8.addItem("")
+        self.gridLayout_6.addWidget(self.cm_auto_ai_AIN_PT100_8, 5, 6, 1, 1)
+        self.label_544 = QtWidgets.QLabel(self.frame_4)
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(9)
+        self.label_544.setFont(font)
+        self.label_544.setStyleSheet("color:white;\n"
 "font: 75 14pt \"Arial\";\n"
 "")
-        self.label_421.setObjectName("label_421")
-        self.gridLayout_7.addWidget(self.label_421, 0, 7, 1, 1)
-        self.label_408 = QtWidgets.QLabel(self.tab_4)
-        self.label_408.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_408.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_408.setObjectName("label_408")
-        self.gridLayout_7.addWidget(self.label_408, 4, 1, 1, 1)
-        self.le_auto_ai_AIN_PT100_3r = QtWidgets.QLineEdit(self.tab_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_PT100_3r.sizePolicy().hasHeightForWidth())
-        self.le_auto_ai_AIN_PT100_3r.setSizePolicy(sizePolicy)
-        self.le_auto_ai_AIN_PT100_3r.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.le_auto_ai_AIN_PT100_3r.setStyleSheet("color:white;\n"
+        self.label_544.setObjectName("label_544")
+        self.gridLayout_6.addWidget(self.label_544, 5, 7, 1, 1)
+        self.pushButton_11 = QtWidgets.QPushButton(self.frame_4)
+        self.pushButton_11.setMinimumSize(QtCore.QSize(0, 37))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pushButton_11.setFont(font)
+        self.pushButton_11.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"\n"
+"    background-color: transparent;\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.pushButton_11.setObjectName("pushButton_11")
+        self.gridLayout_6.addWidget(self.pushButton_11, 5, 9, 1, 1)
+        self.cm_auto_ai_AIN_PT100_7 = QtWidgets.QComboBox(self.frame_4)
+        self.cm_auto_ai_AIN_PT100_7.setStyleSheet("color:white;\n"
 "background-color: rgb(0, 0, 0);\n"
 "font: 65 14pt \"Arial\";")
-        self.le_auto_ai_AIN_PT100_3r.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_AIN_PT100_3r.setReadOnly(True)
-        self.le_auto_ai_AIN_PT100_3r.setObjectName("le_auto_ai_AIN_PT100_3r")
-        self.gridLayout_7.addWidget(self.le_auto_ai_AIN_PT100_3r, 4, 10, 1, 1)
-        self.le_auto_ai_AIN_PT100_2r = QtWidgets.QLineEdit(self.tab_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_PT100_2r.sizePolicy().hasHeightForWidth())
-        self.le_auto_ai_AIN_PT100_2r.setSizePolicy(sizePolicy)
-        self.le_auto_ai_AIN_PT100_2r.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.le_auto_ai_AIN_PT100_2r.setStyleSheet("color:white;\n"
+        self.cm_auto_ai_AIN_PT100_7.setEditable(True)
+        self.cm_auto_ai_AIN_PT100_7.setObjectName("cm_auto_ai_AIN_PT100_7")
+        self.cm_auto_ai_AIN_PT100_7.addItem("")
+        self.cm_auto_ai_AIN_PT100_7.addItem("")
+        self.cm_auto_ai_AIN_PT100_7.addItem("")
+        self.cm_auto_ai_AIN_PT100_7.addItem("")
+        self.gridLayout_6.addWidget(self.cm_auto_ai_AIN_PT100_7, 5, 10, 1, 1)
+        self.label_557 = QtWidgets.QLabel(self.frame_4)
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(9)
+        self.label_557.setFont(font)
+        self.label_557.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_557.setObjectName("label_557")
+        self.gridLayout_6.addWidget(self.label_557, 5, 11, 1, 1)
+        self.pushButton_13 = QtWidgets.QPushButton(self.frame_4)
+        self.pushButton_13.setMinimumSize(QtCore.QSize(0, 37))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pushButton_13.setFont(font)
+        self.pushButton_13.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"\n"
+"    background-color: transparent;\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.pushButton_13.setObjectName("pushButton_13")
+        self.gridLayout_6.addWidget(self.pushButton_13, 5, 13, 1, 1)
+        self.cm_auto_ai_AIN_CTSENSOR_3 = QtWidgets.QComboBox(self.frame_4)
+        self.cm_auto_ai_AIN_CTSENSOR_3.setStyleSheet("color:white;\n"
 "background-color: rgb(0, 0, 0);\n"
 "font: 65 14pt \"Arial\";")
-        self.le_auto_ai_AIN_PT100_2r.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_AIN_PT100_2r.setReadOnly(True)
-        self.le_auto_ai_AIN_PT100_2r.setObjectName("le_auto_ai_AIN_PT100_2r")
-        self.gridLayout_7.addWidget(self.le_auto_ai_AIN_PT100_2r, 4, 6, 1, 1)
-        self.label_405 = QtWidgets.QLabel(self.tab_4)
-        self.label_405.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_405.setObjectName("label_405")
-        self.gridLayout_7.addWidget(self.label_405, 4, 11, 1, 1)
-        spacerItem95 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_7.addItem(spacerItem95, 9, 1, 1, 1)
-        self.label_417 = QtWidgets.QLabel(self.tab_4)
-        self.label_417.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_417.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_417.setObjectName("label_417")
-        self.gridLayout_7.addWidget(self.label_417, 6, 1, 1, 1)
-        self.label_415 = QtWidgets.QLabel(self.tab_4)
-        self.label_415.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_415.setObjectName("label_415")
-        self.gridLayout_7.addWidget(self.label_415, 0, 15, 1, 1)
-        self.le_auto_ai_AIN_KTM_2r = QtWidgets.QLineEdit(self.tab_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
+        self.cm_auto_ai_AIN_CTSENSOR_3.setEditable(True)
+        self.cm_auto_ai_AIN_CTSENSOR_3.setObjectName("cm_auto_ai_AIN_CTSENSOR_3")
+        self.cm_auto_ai_AIN_CTSENSOR_3.addItem("")
+        self.cm_auto_ai_AIN_CTSENSOR_3.addItem("")
+        self.gridLayout_6.addWidget(self.cm_auto_ai_AIN_CTSENSOR_3, 5, 14, 1, 1)
+        self.label_543 = QtWidgets.QLabel(self.frame_4)
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(9)
+        self.label_543.setFont(font)
+        self.label_543.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_543.setObjectName("label_543")
+        self.gridLayout_6.addWidget(self.label_543, 5, 15, 1, 1)
+        self.pushButton_14 = QtWidgets.QPushButton(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_KTM_2r.sizePolicy().hasHeightForWidth())
-        self.le_auto_ai_AIN_KTM_2r.setSizePolicy(sizePolicy)
-        self.le_auto_ai_AIN_KTM_2r.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.le_auto_ai_AIN_KTM_2r.setStyleSheet("color:white;\n"
+        sizePolicy.setHeightForWidth(self.pushButton_14.sizePolicy().hasHeightForWidth())
+        self.pushButton_14.setSizePolicy(sizePolicy)
+        self.pushButton_14.setMinimumSize(QtCore.QSize(0, 37))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pushButton_14.setFont(font)
+        self.pushButton_14.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"\n"
+"    background-color: transparent;\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.pushButton_14.setObjectName("pushButton_14")
+        self.gridLayout_6.addWidget(self.pushButton_14, 6, 1, 1, 1)
+        self.dsb_auto_ai_AIN_FRE_N1_6 = QtWidgets.QDoubleSpinBox(self.frame_4)
+        self.dsb_auto_ai_AIN_FRE_N1_6.setStyleSheet("color:white;\n"
 "background-color: rgb(0, 0, 0);\n"
 "font: 65 14pt \"Arial\";")
-        self.le_auto_ai_AIN_KTM_2r.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_AIN_KTM_2r.setReadOnly(True)
-        self.le_auto_ai_AIN_KTM_2r.setObjectName("le_auto_ai_AIN_KTM_2r")
-        self.gridLayout_7.addWidget(self.le_auto_ai_AIN_KTM_2r, 2, 2, 1, 1)
-        self.le_auto_ai_AIN_SVMr = QtWidgets.QLineEdit(self.tab_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
+        self.dsb_auto_ai_AIN_FRE_N1_6.setAlignment(QtCore.Qt.AlignCenter)
+        self.dsb_auto_ai_AIN_FRE_N1_6.setDecimals(4)
+        self.dsb_auto_ai_AIN_FRE_N1_6.setMaximum(1500.0)
+        self.dsb_auto_ai_AIN_FRE_N1_6.setObjectName("dsb_auto_ai_AIN_FRE_N1_6")
+        self.gridLayout_6.addWidget(self.dsb_auto_ai_AIN_FRE_N1_6, 6, 2, 1, 1)
+        self.label_551 = QtWidgets.QLabel(self.frame_4)
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(9)
+        self.label_551.setFont(font)
+        self.label_551.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_551.setObjectName("label_551")
+        self.gridLayout_6.addWidget(self.label_551, 6, 3, 1, 1)
+        spacerItem95 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_6.addItem(spacerItem95, 6, 4, 1, 1)
+        self.pushButton_15 = QtWidgets.QPushButton(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_SVMr.sizePolicy().hasHeightForWidth())
-        self.le_auto_ai_AIN_SVMr.setSizePolicy(sizePolicy)
-        self.le_auto_ai_AIN_SVMr.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.le_auto_ai_AIN_SVMr.setStyleSheet("color:white;\n"
+        sizePolicy.setHeightForWidth(self.pushButton_15.sizePolicy().hasHeightForWidth())
+        self.pushButton_15.setSizePolicy(sizePolicy)
+        self.pushButton_15.setMinimumSize(QtCore.QSize(0, 37))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pushButton_15.setFont(font)
+        self.pushButton_15.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"\n"
+"    background-color: transparent;\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.pushButton_15.setObjectName("pushButton_15")
+        self.gridLayout_6.addWidget(self.pushButton_15, 6, 5, 1, 1)
+        self.dsb_auto_ai_AIN_FRE_N1_5 = QtWidgets.QDoubleSpinBox(self.frame_4)
+        self.dsb_auto_ai_AIN_FRE_N1_5.setStyleSheet("color:white;\n"
 "background-color: rgb(0, 0, 0);\n"
 "font: 65 14pt \"Arial\";")
-        self.le_auto_ai_AIN_SVMr.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_AIN_SVMr.setReadOnly(True)
-        self.le_auto_ai_AIN_SVMr.setObjectName("le_auto_ai_AIN_SVMr")
-        self.gridLayout_7.addWidget(self.le_auto_ai_AIN_SVMr, 0, 10, 1, 1)
-        self.label_430 = QtWidgets.QLabel(self.tab_4)
-        self.label_430.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_430.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_430.setObjectName("label_430")
-        self.gridLayout_7.addWidget(self.label_430, 8, 9, 1, 1)
-        self.le_auto_ai_IGVOUT = QtWidgets.QLineEdit(self.tab_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.le_auto_ai_IGVOUT.sizePolicy().hasHeightForWidth())
-        self.le_auto_ai_IGVOUT.setSizePolicy(sizePolicy)
-        self.le_auto_ai_IGVOUT.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.le_auto_ai_IGVOUT.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_auto_ai_IGVOUT.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_IGVOUT.setReadOnly(True)
-        self.le_auto_ai_IGVOUT.setObjectName("le_auto_ai_IGVOUT")
-        self.gridLayout_7.addWidget(self.le_auto_ai_IGVOUT, 8, 10, 1, 1)
-        self.le_auto_ai_SCVOUT = QtWidgets.QLineEdit(self.tab_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.le_auto_ai_SCVOUT.sizePolicy().hasHeightForWidth())
-        self.le_auto_ai_SCVOUT.setSizePolicy(sizePolicy)
-        self.le_auto_ai_SCVOUT.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.le_auto_ai_SCVOUT.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_auto_ai_SCVOUT.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_SCVOUT.setReadOnly(True)
-        self.le_auto_ai_SCVOUT.setObjectName("le_auto_ai_SCVOUT")
-        self.gridLayout_7.addWidget(self.le_auto_ai_SCVOUT, 8, 2, 1, 1)
-        self.le_auto_ai_AIN_EDTr = QtWidgets.QLineEdit(self.tab_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_EDTr.sizePolicy().hasHeightForWidth())
-        self.le_auto_ai_AIN_EDTr.setSizePolicy(sizePolicy)
-        self.le_auto_ai_AIN_EDTr.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.le_auto_ai_AIN_EDTr.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_auto_ai_AIN_EDTr.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_AIN_EDTr.setReadOnly(True)
-        self.le_auto_ai_AIN_EDTr.setObjectName("le_auto_ai_AIN_EDTr")
-        self.gridLayout_7.addWidget(self.le_auto_ai_AIN_EDTr, 0, 2, 1, 1)
+        self.dsb_auto_ai_AIN_FRE_N1_5.setAlignment(QtCore.Qt.AlignCenter)
+        self.dsb_auto_ai_AIN_FRE_N1_5.setDecimals(4)
+        self.dsb_auto_ai_AIN_FRE_N1_5.setMaximum(1500.0)
+        self.dsb_auto_ai_AIN_FRE_N1_5.setObjectName("dsb_auto_ai_AIN_FRE_N1_5")
+        self.gridLayout_6.addWidget(self.dsb_auto_ai_AIN_FRE_N1_5, 6, 6, 1, 1)
+        self.label_545 = QtWidgets.QLabel(self.frame_4)
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(9)
+        self.label_545.setFont(font)
+        self.label_545.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_545.setObjectName("label_545")
+        self.gridLayout_6.addWidget(self.label_545, 6, 7, 1, 1)
         spacerItem96 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_7.addItem(spacerItem96, 6, 16, 1, 1)
-        self.label_409 = QtWidgets.QLabel(self.tab_4)
-        self.label_409.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_409.setObjectName("label_409")
-        self.gridLayout_7.addWidget(self.label_409, 2, 11, 1, 1)
-        self.le_auto_ai_RVDT_incentiveOUT = QtWidgets.QLineEdit(self.tab_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
+        self.gridLayout_6.addItem(spacerItem96, 6, 8, 1, 1)
+        self.pushButton_16 = QtWidgets.QPushButton(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.le_auto_ai_RVDT_incentiveOUT.sizePolicy().hasHeightForWidth())
-        self.le_auto_ai_RVDT_incentiveOUT.setSizePolicy(sizePolicy)
-        self.le_auto_ai_RVDT_incentiveOUT.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.le_auto_ai_RVDT_incentiveOUT.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_auto_ai_RVDT_incentiveOUT.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_RVDT_incentiveOUT.setReadOnly(True)
-        self.le_auto_ai_RVDT_incentiveOUT.setObjectName("le_auto_ai_RVDT_incentiveOUT")
-        self.gridLayout_7.addWidget(self.le_auto_ai_RVDT_incentiveOUT, 10, 6, 1, 1)
-        spacerItem97 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_7.addItem(spacerItem97, 6, 12, 1, 1)
-        self.le_auto_ai_AIN_CTSENSORr = QtWidgets.QLineEdit(self.tab_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_CTSENSORr.sizePolicy().hasHeightForWidth())
-        self.le_auto_ai_AIN_CTSENSORr.setSizePolicy(sizePolicy)
-        self.le_auto_ai_AIN_CTSENSORr.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.le_auto_ai_AIN_CTSENSORr.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_auto_ai_AIN_CTSENSORr.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_AIN_CTSENSORr.setReadOnly(True)
-        self.le_auto_ai_AIN_CTSENSORr.setObjectName("le_auto_ai_AIN_CTSENSORr")
-        self.gridLayout_7.addWidget(self.le_auto_ai_AIN_CTSENSORr, 4, 14, 1, 1)
-        self.le_ai_LGV_incentiveOUT = QtWidgets.QLineEdit(self.tab_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.le_ai_LGV_incentiveOUT.sizePolicy().hasHeightForWidth())
-        self.le_ai_LGV_incentiveOUT.setSizePolicy(sizePolicy)
-        self.le_ai_LGV_incentiveOUT.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.le_ai_LGV_incentiveOUT.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_ai_LGV_incentiveOUT.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_ai_LGV_incentiveOUT.setReadOnly(True)
-        self.le_ai_LGV_incentiveOUT.setObjectName("le_ai_LGV_incentiveOUT")
-        self.gridLayout_7.addWidget(self.le_ai_LGV_incentiveOUT, 8, 14, 1, 1)
-        self.le_auto_ai_AIN_KTM_5r = QtWidgets.QLineEdit(self.tab_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_KTM_5r.sizePolicy().hasHeightForWidth())
-        self.le_auto_ai_AIN_KTM_5r.setSizePolicy(sizePolicy)
-        self.le_auto_ai_AIN_KTM_5r.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.le_auto_ai_AIN_KTM_5r.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_auto_ai_AIN_KTM_5r.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_AIN_KTM_5r.setReadOnly(True)
-        self.le_auto_ai_AIN_KTM_5r.setObjectName("le_auto_ai_AIN_KTM_5r")
-        self.gridLayout_7.addWidget(self.le_auto_ai_AIN_KTM_5r, 2, 14, 1, 1)
-        self.label_412 = QtWidgets.QLabel(self.tab_4)
-        self.label_412.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_412.setObjectName("label_412")
-        self.gridLayout_7.addWidget(self.label_412, 4, 15, 1, 1)
-        self.label_419 = QtWidgets.QLabel(self.tab_4)
-        self.label_419.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_419.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_419.setObjectName("label_419")
-        self.gridLayout_7.addWidget(self.label_419, 4, 13, 1, 1)
-        self.label_432 = QtWidgets.QLabel(self.tab_4)
-        self.label_432.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_432.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_432.setObjectName("label_432")
-        self.gridLayout_7.addWidget(self.label_432, 0, 9, 1, 1)
-        spacerItem98 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_7.addItem(spacerItem98, 3, 1, 1, 1)
-        self.label_414 = QtWidgets.QLabel(self.tab_4)
-        self.label_414.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
+        sizePolicy.setHeightForWidth(self.pushButton_16.sizePolicy().hasHeightForWidth())
+        self.pushButton_16.setSizePolicy(sizePolicy)
+        self.pushButton_16.setMinimumSize(QtCore.QSize(0, 37))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pushButton_16.setFont(font)
+        self.pushButton_16.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"\n"
+"    background-color: transparent;\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
 "")
-        self.label_414.setObjectName("label_414")
-        self.gridLayout_7.addWidget(self.label_414, 2, 7, 1, 1)
-        self.label_429 = QtWidgets.QLabel(self.tab_4)
-        self.label_429.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_429.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_429.setObjectName("label_429")
-        self.gridLayout_7.addWidget(self.label_429, 4, 5, 1, 1)
-        self.label_427 = QtWidgets.QLabel(self.tab_4)
-        self.label_427.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_427.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_427.setObjectName("label_427")
-        self.gridLayout_7.addWidget(self.label_427, 4, 9, 1, 1)
-        self.le_auto_ai_RVDTOUT = QtWidgets.QLineEdit(self.tab_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.le_auto_ai_RVDTOUT.sizePolicy().hasHeightForWidth())
-        self.le_auto_ai_RVDTOUT.setSizePolicy(sizePolicy)
-        self.le_auto_ai_RVDTOUT.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.le_auto_ai_RVDTOUT.setStyleSheet("color:white;\n"
+        self.pushButton_16.setObjectName("pushButton_16")
+        self.gridLayout_6.addWidget(self.pushButton_16, 6, 9, 1, 1)
+        self.dsb_auto_ai_AIN_FRE_N_3 = QtWidgets.QDoubleSpinBox(self.frame_4)
+        self.dsb_auto_ai_AIN_FRE_N_3.setStyleSheet("color:white;\n"
 "background-color: rgb(0, 0, 0);\n"
 "font: 65 14pt \"Arial\";")
-        self.le_auto_ai_RVDTOUT.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_RVDTOUT.setReadOnly(True)
-        self.le_auto_ai_RVDTOUT.setObjectName("le_auto_ai_RVDTOUT")
-        self.gridLayout_7.addWidget(self.le_auto_ai_RVDTOUT, 10, 2, 1, 1)
-        self.label_436 = QtWidgets.QLabel(self.tab_4)
-        self.label_436.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_436.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_436.setObjectName("label_436")
-        self.gridLayout_7.addWidget(self.label_436, 10, 5, 1, 1)
-        self.label_422 = QtWidgets.QLabel(self.tab_4)
-        self.label_422.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
+        self.dsb_auto_ai_AIN_FRE_N_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.dsb_auto_ai_AIN_FRE_N_3.setDecimals(4)
+        self.dsb_auto_ai_AIN_FRE_N_3.setMaximum(5.0)
+        self.dsb_auto_ai_AIN_FRE_N_3.setObjectName("dsb_auto_ai_AIN_FRE_N_3")
+        self.gridLayout_6.addWidget(self.dsb_auto_ai_AIN_FRE_N_3, 6, 10, 1, 1)
+        self.label_529 = QtWidgets.QLabel(self.frame_4)
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(9)
+        self.label_529.setFont(font)
+        self.label_529.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_529.setObjectName("label_529")
+        self.gridLayout_6.addWidget(self.label_529, 6, 11, 1, 1)
+        spacerItem97 = QtWidgets.QSpacerItem(182, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_6.addItem(spacerItem97, 6, 12, 1, 2)
+        spacerItem98 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_6.addItem(spacerItem98, 6, 16, 1, 1)
+        self.pushButton_17 = QtWidgets.QPushButton(self.frame_4)
+        self.pushButton_17.setMinimumSize(QtCore.QSize(0, 39))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pushButton_17.setFont(font)
+        self.pushButton_17.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"\n"
+"    background-color: transparent;\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
 "")
-        self.label_422.setObjectName("label_422")
-        self.gridLayout_7.addWidget(self.label_422, 4, 7, 1, 1)
-        self.le_auto_ai_AIN_KTM_1r = QtWidgets.QLineEdit(self.tab_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_KTM_1r.sizePolicy().hasHeightForWidth())
-        self.le_auto_ai_AIN_KTM_1r.setSizePolicy(sizePolicy)
-        self.le_auto_ai_AIN_KTM_1r.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.le_auto_ai_AIN_KTM_1r.setStyleSheet("color:white;\n"
+        self.pushButton_17.setObjectName("pushButton_17")
+        self.gridLayout_6.addWidget(self.pushButton_17, 7, 1, 1, 1)
+        self.le_auto_ai_SCVIN_3 = QtWidgets.QLineEdit(self.frame_4)
+        self.le_auto_ai_SCVIN_3.setStyleSheet("color:white;\n"
 "background-color: rgb(0, 0, 0);\n"
 "font: 65 14pt \"Arial\";")
-        self.le_auto_ai_AIN_KTM_1r.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_AIN_KTM_1r.setReadOnly(True)
-        self.le_auto_ai_AIN_KTM_1r.setObjectName("le_auto_ai_AIN_KTM_1r")
-        self.gridLayout_7.addWidget(self.le_auto_ai_AIN_KTM_1r, 0, 14, 1, 1)
-        self.label_423 = QtWidgets.QLabel(self.tab_4)
-        self.label_423.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_423.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_423.setObjectName("label_423")
-        self.gridLayout_7.addWidget(self.label_423, 0, 13, 1, 1)
-        self.label_431 = QtWidgets.QLabel(self.tab_4)
-        self.label_431.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_431.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_431.setObjectName("label_431")
-        self.gridLayout_7.addWidget(self.label_431, 8, 13, 1, 1)
-        self.label_435 = QtWidgets.QLabel(self.tab_4)
-        self.label_435.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_435.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_435.setObjectName("label_435")
-        self.gridLayout_7.addWidget(self.label_435, 10, 1, 1, 1)
-        self.label_411 = QtWidgets.QLabel(self.tab_4)
-        self.label_411.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_411.setObjectName("label_411")
-        self.gridLayout_7.addWidget(self.label_411, 2, 15, 1, 1)
-        self.label_418 = QtWidgets.QLabel(self.tab_4)
-        self.label_418.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_418.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_418.setObjectName("label_418")
-        self.gridLayout_7.addWidget(self.label_418, 6, 9, 1, 1)
-        self.label_410 = QtWidgets.QLabel(self.tab_4)
-        self.label_410.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_410.setObjectName("label_410")
-        self.gridLayout_7.addWidget(self.label_410, 2, 3, 1, 1)
-        spacerItem99 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_7.addItem(spacerItem99, 2, 0, 1, 1)
-        self.label_416 = QtWidgets.QLabel(self.tab_4)
-        self.label_416.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_416.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_416.setObjectName("label_416")
-        self.gridLayout_7.addWidget(self.label_416, 2, 5, 1, 1)
-        self.label_428 = QtWidgets.QLabel(self.tab_4)
-        self.label_428.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_428.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_428.setObjectName("label_428")
-        self.gridLayout_7.addWidget(self.label_428, 2, 13, 1, 1)
-        self.le_auto_ai_AIN_KTM_3r = QtWidgets.QLineEdit(self.tab_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_KTM_3r.sizePolicy().hasHeightForWidth())
-        self.le_auto_ai_AIN_KTM_3r.setSizePolicy(sizePolicy)
-        self.le_auto_ai_AIN_KTM_3r.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.le_auto_ai_AIN_KTM_3r.setStyleSheet("color:white;\n"
+        self.le_auto_ai_SCVIN_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_SCVIN_3.setObjectName("le_auto_ai_SCVIN_3")
+        self.gridLayout_6.addWidget(self.le_auto_ai_SCVIN_3, 7, 2, 1, 1)
+        self.pushButton_18 = QtWidgets.QPushButton(self.frame_4)
+        self.pushButton_18.setMinimumSize(QtCore.QSize(0, 39))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pushButton_18.setFont(font)
+        self.pushButton_18.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"\n"
+"    background-color: transparent;\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.pushButton_18.setObjectName("pushButton_18")
+        self.gridLayout_6.addWidget(self.pushButton_18, 7, 5, 1, 1)
+        self.le_auto_ai_SCV_incentive_3 = QtWidgets.QLineEdit(self.frame_4)
+        self.le_auto_ai_SCV_incentive_3.setStyleSheet("color:white;\n"
 "background-color: rgb(0, 0, 0);\n"
 "font: 65 14pt \"Arial\";")
-        self.le_auto_ai_AIN_KTM_3r.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_AIN_KTM_3r.setReadOnly(True)
-        self.le_auto_ai_AIN_KTM_3r.setObjectName("le_auto_ai_AIN_KTM_3r")
-        self.gridLayout_7.addWidget(self.le_auto_ai_AIN_KTM_3r, 2, 6, 1, 1)
-        self.label_382 = QtWidgets.QLabel(self.tab_4)
-        self.label_382.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_382.setObjectName("label_382")
-        self.gridLayout_7.addWidget(self.label_382, 0, 3, 1, 1)
-        self.le_auto_ai_AIN_NVTr = QtWidgets.QLineEdit(self.tab_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_NVTr.sizePolicy().hasHeightForWidth())
-        self.le_auto_ai_AIN_NVTr.setSizePolicy(sizePolicy)
-        self.le_auto_ai_AIN_NVTr.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.le_auto_ai_AIN_NVTr.setStyleSheet("color:white;\n"
+        self.le_auto_ai_SCV_incentive_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_SCV_incentive_3.setObjectName("le_auto_ai_SCV_incentive_3")
+        self.gridLayout_6.addWidget(self.le_auto_ai_SCV_incentive_3, 7, 6, 1, 1)
+        self.pushButton_19 = QtWidgets.QPushButton(self.frame_4)
+        self.pushButton_19.setMinimumSize(QtCore.QSize(0, 39))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pushButton_19.setFont(font)
+        self.pushButton_19.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"\n"
+"    background-color: transparent;\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.pushButton_19.setObjectName("pushButton_19")
+        self.gridLayout_6.addWidget(self.pushButton_19, 7, 9, 1, 1)
+        self.le_auto_ai_IGV_IN_3 = QtWidgets.QLineEdit(self.frame_4)
+        self.le_auto_ai_IGV_IN_3.setStyleSheet("color:white;\n"
 "background-color: rgb(0, 0, 0);\n"
 "font: 65 14pt \"Arial\";")
-        self.le_auto_ai_AIN_NVTr.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_AIN_NVTr.setReadOnly(True)
-        self.le_auto_ai_AIN_NVTr.setObjectName("le_auto_ai_AIN_NVTr")
-        self.gridLayout_7.addWidget(self.le_auto_ai_AIN_NVTr, 0, 6, 1, 1)
-        self.le_auto_ai_AIN_FRE_N1r = QtWidgets.QLineEdit(self.tab_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_FRE_N1r.sizePolicy().hasHeightForWidth())
-        self.le_auto_ai_AIN_FRE_N1r.setSizePolicy(sizePolicy)
-        self.le_auto_ai_AIN_FRE_N1r.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.le_auto_ai_AIN_FRE_N1r.setStyleSheet("color:white;\n"
+        self.le_auto_ai_IGV_IN_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_IGV_IN_3.setObjectName("le_auto_ai_IGV_IN_3")
+        self.gridLayout_6.addWidget(self.le_auto_ai_IGV_IN_3, 7, 10, 1, 1)
+        self.pushButton_20 = QtWidgets.QPushButton(self.frame_4)
+        self.pushButton_20.setMinimumSize(QtCore.QSize(0, 39))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pushButton_20.setFont(font)
+        self.pushButton_20.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"\n"
+"    background-color: transparent;\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.pushButton_20.setObjectName("pushButton_20")
+        self.gridLayout_6.addWidget(self.pushButton_20, 7, 13, 1, 1)
+        self.le_auto_ai_LGV_incentive_3 = QtWidgets.QLineEdit(self.frame_4)
+        self.le_auto_ai_LGV_incentive_3.setStyleSheet("color:white;\n"
 "background-color: rgb(0, 0, 0);\n"
 "font: 65 14pt \"Arial\";")
-        self.le_auto_ai_AIN_FRE_N1r.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_AIN_FRE_N1r.setReadOnly(True)
-        self.le_auto_ai_AIN_FRE_N1r.setObjectName("le_auto_ai_AIN_FRE_N1r")
-        self.gridLayout_7.addWidget(self.le_auto_ai_AIN_FRE_N1r, 6, 2, 1, 1)
+        self.le_auto_ai_LGV_incentive_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_LGV_incentive_3.setObjectName("le_auto_ai_LGV_incentive_3")
+        self.gridLayout_6.addWidget(self.le_auto_ai_LGV_incentive_3, 7, 14, 1, 1)
+        self.pushButton_21 = QtWidgets.QPushButton(self.frame_4)
+        self.pushButton_21.setMinimumSize(QtCore.QSize(0, 39))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pushButton_21.setFont(font)
+        self.pushButton_21.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"\n"
+"    background-color: transparent;\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.pushButton_21.setObjectName("pushButton_21")
+        self.gridLayout_6.addWidget(self.pushButton_21, 8, 1, 1, 1)
+        self.le_auto_ai_RVDTIN_3 = QtWidgets.QLineEdit(self.frame_4)
+        self.le_auto_ai_RVDTIN_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_auto_ai_RVDTIN_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_RVDTIN_3.setObjectName("le_auto_ai_RVDTIN_3")
+        self.gridLayout_6.addWidget(self.le_auto_ai_RVDTIN_3, 8, 2, 1, 1)
+        self.pushButton_22 = QtWidgets.QPushButton(self.frame_4)
+        self.pushButton_22.setMinimumSize(QtCore.QSize(0, 39))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pushButton_22.setFont(font)
+        self.pushButton_22.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"\n"
+"    background-color: transparent;\n"
+"    border-radius: 10px;\n"
+"    padding: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.pushButton_22.setObjectName("pushButton_22")
+        self.gridLayout_6.addWidget(self.pushButton_22, 8, 5, 1, 1)
+        self.le_auto_ai_RVDT_incentive_3 = QtWidgets.QLineEdit(self.frame_4)
+        self.le_auto_ai_RVDT_incentive_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_auto_ai_RVDT_incentive_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_RVDT_incentive_3.setObjectName("le_auto_ai_RVDT_incentive_3")
+        self.gridLayout_6.addWidget(self.le_auto_ai_RVDT_incentive_3, 8, 6, 1, 1)
+        spacerItem99 = QtWidgets.QSpacerItem(133, 13, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_6.addItem(spacerItem99, 9, 2, 1, 1)
         spacerItem100 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_7.addItem(spacerItem100, 1, 1, 1, 1)
-        spacerItem101 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_7.addItem(spacerItem101, 6, 4, 1, 1)
-        self.label_407 = QtWidgets.QLabel(self.tab_4)
-        self.label_407.setStyleSheet("color:white;\n"
+        self.gridLayout_6.addItem(spacerItem100, 10, 0, 1, 16)
+        spacerItem101 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_6.addItem(spacerItem101, 11, 0, 1, 16)
+        self.label_3 = QtWidgets.QLabel(self.frame_4)
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(14)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(9)
+        self.label_3.setFont(font)
+        self.label_3.setStyleSheet("color:white;\n"
+"background-color: rgb(127, 140, 141);\n"
+"background-color: #535c68;\n"
+"\n"
+"\n"
+"\n"
+"font: 75 14pt \"Arial\";\n"
+"    border-radius: 15px;\n"
+"padding :2px")
+        self.label_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_3.setObjectName("label_3")
+        self.gridLayout_6.addWidget(self.label_3, 12, 0, 1, 2)
+        spacerItem102 = QtWidgets.QSpacerItem(20, 7, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.gridLayout_6.addItem(spacerItem102, 13, 0, 1, 1)
+        spacerItem103 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_6.addItem(spacerItem103, 14, 0, 1, 16)
+        self.gridLayout_14 = QtWidgets.QGridLayout()
+        self.gridLayout_14.setObjectName("gridLayout_14")
+        self.label_563 = QtWidgets.QLabel(self.frame_4)
+        self.label_563.setStyleSheet("color:white;\n"
 "font: 75 10pt \"Arial\";")
-        self.label_407.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_407.setObjectName("label_407")
-        self.gridLayout_7.addWidget(self.label_407, 0, 1, 1, 1)
-        self.label_424 = QtWidgets.QLabel(self.tab_4)
-        self.label_424.setStyleSheet("color:white;\n"
+        self.label_563.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_563.setObjectName("label_563")
+        self.gridLayout_14.addWidget(self.label_563, 10, 1, 1, 1)
+        spacerItem104 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_14.addItem(spacerItem104, 3, 1, 1, 1)
+        self.label_564 = QtWidgets.QLabel(self.frame_4)
+        self.label_564.setMinimumSize(QtCore.QSize(186, 0))
+        self.label_564.setMaximumSize(QtCore.QSize(186, 16777215))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(9)
+        self.label_564.setFont(font)
+        self.label_564.setStyleSheet("color:white;\n"
 "font: 75 10pt \"Arial\";")
-        self.label_424.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_424.setObjectName("label_424")
-        self.gridLayout_7.addWidget(self.label_424, 0, 5, 1, 1)
-        self.label_420 = QtWidgets.QLabel(self.tab_4)
-        self.label_420.setStyleSheet("color:white;\n"
-"font: 75 10pt \"Arial\";")
-        self.label_420.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_420.setObjectName("label_420")
-        self.gridLayout_7.addWidget(self.label_420, 2, 1, 1, 1)
-        self.le_auto_ai_AIN_FRE_Nr = QtWidgets.QLineEdit(self.tab_4)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
+        self.label_564.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_564.setObjectName("label_564")
+        self.gridLayout_14.addWidget(self.label_564, 0, 1, 1, 1)
+        self.le_auto_ai_AIN_FRE_Nr_3 = QtWidgets.QLineEdit(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_FRE_Nr.sizePolicy().hasHeightForWidth())
-        self.le_auto_ai_AIN_FRE_Nr.setSizePolicy(sizePolicy)
-        self.le_auto_ai_AIN_FRE_Nr.setMaximumSize(QtCore.QSize(110, 16777215))
-        self.le_auto_ai_AIN_FRE_Nr.setStyleSheet("color:white;\n"
+        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_FRE_Nr_3.sizePolicy().hasHeightForWidth())
+        self.le_auto_ai_AIN_FRE_Nr_3.setSizePolicy(sizePolicy)
+        self.le_auto_ai_AIN_FRE_Nr_3.setMinimumSize(QtCore.QSize(136, 0))
+        self.le_auto_ai_AIN_FRE_Nr_3.setMaximumSize(QtCore.QSize(136, 16777215))
+        self.le_auto_ai_AIN_FRE_Nr_3.setStyleSheet("color:white;\n"
 "background-color: rgb(0, 0, 0);\n"
 "font: 65 14pt \"Arial\";")
-        self.le_auto_ai_AIN_FRE_Nr.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_auto_ai_AIN_FRE_Nr.setReadOnly(True)
-        self.le_auto_ai_AIN_FRE_Nr.setObjectName("le_auto_ai_AIN_FRE_Nr")
-        self.gridLayout_7.addWidget(self.le_auto_ai_AIN_FRE_Nr, 6, 10, 1, 1)
-        self.label_425 = QtWidgets.QLabel(self.tab_4)
-        self.label_425.setStyleSheet("color:white;\n"
+        self.le_auto_ai_AIN_FRE_Nr_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_AIN_FRE_Nr_3.setReadOnly(True)
+        self.le_auto_ai_AIN_FRE_Nr_3.setObjectName("le_auto_ai_AIN_FRE_Nr_3")
+        self.gridLayout_14.addWidget(self.le_auto_ai_AIN_FRE_Nr_3, 6, 10, 1, 1)
+        self.le_auto_ai_AIN_CTSENSORr_3 = QtWidgets.QLineEdit(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_CTSENSORr_3.sizePolicy().hasHeightForWidth())
+        self.le_auto_ai_AIN_CTSENSORr_3.setSizePolicy(sizePolicy)
+        self.le_auto_ai_AIN_CTSENSORr_3.setMinimumSize(QtCore.QSize(136, 0))
+        self.le_auto_ai_AIN_CTSENSORr_3.setMaximumSize(QtCore.QSize(136, 16777215))
+        self.le_auto_ai_AIN_CTSENSORr_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_auto_ai_AIN_CTSENSORr_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_AIN_CTSENSORr_3.setReadOnly(True)
+        self.le_auto_ai_AIN_CTSENSORr_3.setObjectName("le_auto_ai_AIN_CTSENSORr_3")
+        self.gridLayout_14.addWidget(self.le_auto_ai_AIN_CTSENSORr_3, 4, 14, 1, 1)
+        self.label_565 = QtWidgets.QLabel(self.frame_4)
+        self.label_565.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_565.setObjectName("label_565")
+        self.gridLayout_14.addWidget(self.label_565, 0, 15, 1, 1)
+        self.label_566 = QtWidgets.QLabel(self.frame_4)
+        self.label_566.setStyleSheet("color:white;\n"
 "font: 75 10pt \"Arial\";")
-        self.label_425.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_425.setObjectName("label_425")
-        self.gridLayout_7.addWidget(self.label_425, 8, 5, 1, 1)
-        spacerItem102 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_7.addItem(spacerItem102, 11, 1, 1, 1)
-        self.verticalLayout_28.addLayout(self.gridLayout_7)
-        spacerItem103 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_28.addItem(spacerItem103)
+        self.label_566.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_566.setObjectName("label_566")
+        self.gridLayout_14.addWidget(self.label_566, 0, 5, 1, 1)
+        self.le_auto_ai_AIN_NVTr_3 = QtWidgets.QLineEdit(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_NVTr_3.sizePolicy().hasHeightForWidth())
+        self.le_auto_ai_AIN_NVTr_3.setSizePolicy(sizePolicy)
+        self.le_auto_ai_AIN_NVTr_3.setMinimumSize(QtCore.QSize(136, 0))
+        self.le_auto_ai_AIN_NVTr_3.setMaximumSize(QtCore.QSize(136, 16777215))
+        self.le_auto_ai_AIN_NVTr_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_auto_ai_AIN_NVTr_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_AIN_NVTr_3.setReadOnly(True)
+        self.le_auto_ai_AIN_NVTr_3.setObjectName("le_auto_ai_AIN_NVTr_3")
+        self.gridLayout_14.addWidget(self.le_auto_ai_AIN_NVTr_3, 0, 6, 1, 1)
+        self.le_auto_ai_AIN_KTM_4r_3 = QtWidgets.QLineEdit(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_KTM_4r_3.sizePolicy().hasHeightForWidth())
+        self.le_auto_ai_AIN_KTM_4r_3.setSizePolicy(sizePolicy)
+        self.le_auto_ai_AIN_KTM_4r_3.setMinimumSize(QtCore.QSize(136, 0))
+        self.le_auto_ai_AIN_KTM_4r_3.setMaximumSize(QtCore.QSize(136, 16777215))
+        self.le_auto_ai_AIN_KTM_4r_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_auto_ai_AIN_KTM_4r_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_AIN_KTM_4r_3.setReadOnly(True)
+        self.le_auto_ai_AIN_KTM_4r_3.setObjectName("le_auto_ai_AIN_KTM_4r_3")
+        self.gridLayout_14.addWidget(self.le_auto_ai_AIN_KTM_4r_3, 2, 10, 1, 1)
+        self.label_567 = QtWidgets.QLabel(self.frame_4)
+        self.label_567.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_567.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_567.setObjectName("label_567")
+        self.gridLayout_14.addWidget(self.label_567, 2, 9, 1, 1)
+        spacerItem105 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_14.addItem(spacerItem105, 6, 12, 1, 1)
+        self.label_568 = QtWidgets.QLabel(self.frame_4)
+        self.label_568.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_568.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_568.setObjectName("label_568")
+        self.gridLayout_14.addWidget(self.label_568, 4, 9, 1, 1)
+        self.label_569 = QtWidgets.QLabel(self.frame_4)
+        self.label_569.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_569.setObjectName("label_569")
+        self.gridLayout_14.addWidget(self.label_569, 2, 11, 1, 1)
+        spacerItem106 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_14.addItem(spacerItem106, 6, 16, 1, 1)
+        self.label_570 = QtWidgets.QLabel(self.frame_4)
+        self.label_570.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_570.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_570.setObjectName("label_570")
+        self.gridLayout_14.addWidget(self.label_570, 2, 13, 1, 1)
+        spacerItem107 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_14.addItem(spacerItem107, 5, 1, 1, 1)
+        self.le_auto_ai_AIN_KTM_3r_3 = QtWidgets.QLineEdit(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_KTM_3r_3.sizePolicy().hasHeightForWidth())
+        self.le_auto_ai_AIN_KTM_3r_3.setSizePolicy(sizePolicy)
+        self.le_auto_ai_AIN_KTM_3r_3.setMinimumSize(QtCore.QSize(136, 0))
+        self.le_auto_ai_AIN_KTM_3r_3.setMaximumSize(QtCore.QSize(136, 16777215))
+        self.le_auto_ai_AIN_KTM_3r_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_auto_ai_AIN_KTM_3r_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_AIN_KTM_3r_3.setReadOnly(True)
+        self.le_auto_ai_AIN_KTM_3r_3.setObjectName("le_auto_ai_AIN_KTM_3r_3")
+        self.gridLayout_14.addWidget(self.le_auto_ai_AIN_KTM_3r_3, 2, 6, 1, 1)
+        self.label_571 = QtWidgets.QLabel(self.frame_4)
+        self.label_571.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_571.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_571.setObjectName("label_571")
+        self.gridLayout_14.addWidget(self.label_571, 8, 13, 1, 1)
+        self.label_572 = QtWidgets.QLabel(self.frame_4)
+        self.label_572.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_572.setObjectName("label_572")
+        self.gridLayout_14.addWidget(self.label_572, 2, 7, 1, 1)
+        self.le_ai_LGV_incentiveOUT_3 = QtWidgets.QLineEdit(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.le_ai_LGV_incentiveOUT_3.sizePolicy().hasHeightForWidth())
+        self.le_ai_LGV_incentiveOUT_3.setSizePolicy(sizePolicy)
+        self.le_ai_LGV_incentiveOUT_3.setMinimumSize(QtCore.QSize(136, 0))
+        self.le_ai_LGV_incentiveOUT_3.setMaximumSize(QtCore.QSize(136, 16777215))
+        self.le_ai_LGV_incentiveOUT_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_ai_LGV_incentiveOUT_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_ai_LGV_incentiveOUT_3.setReadOnly(True)
+        self.le_ai_LGV_incentiveOUT_3.setObjectName("le_ai_LGV_incentiveOUT_3")
+        self.gridLayout_14.addWidget(self.le_ai_LGV_incentiveOUT_3, 8, 14, 1, 1)
+        self.le_auto_ai_AIN_FRE_N2r_3 = QtWidgets.QLineEdit(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_FRE_N2r_3.sizePolicy().hasHeightForWidth())
+        self.le_auto_ai_AIN_FRE_N2r_3.setSizePolicy(sizePolicy)
+        self.le_auto_ai_AIN_FRE_N2r_3.setMinimumSize(QtCore.QSize(136, 0))
+        self.le_auto_ai_AIN_FRE_N2r_3.setMaximumSize(QtCore.QSize(136, 16777215))
+        self.le_auto_ai_AIN_FRE_N2r_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_auto_ai_AIN_FRE_N2r_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_AIN_FRE_N2r_3.setReadOnly(True)
+        self.le_auto_ai_AIN_FRE_N2r_3.setObjectName("le_auto_ai_AIN_FRE_N2r_3")
+        self.gridLayout_14.addWidget(self.le_auto_ai_AIN_FRE_N2r_3, 6, 6, 1, 1)
+        self.le_auto_ai_RVDTOUT_3 = QtWidgets.QLineEdit(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.le_auto_ai_RVDTOUT_3.sizePolicy().hasHeightForWidth())
+        self.le_auto_ai_RVDTOUT_3.setSizePolicy(sizePolicy)
+        self.le_auto_ai_RVDTOUT_3.setMinimumSize(QtCore.QSize(136, 0))
+        self.le_auto_ai_RVDTOUT_3.setMaximumSize(QtCore.QSize(136, 16777215))
+        self.le_auto_ai_RVDTOUT_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_auto_ai_RVDTOUT_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_RVDTOUT_3.setReadOnly(True)
+        self.le_auto_ai_RVDTOUT_3.setObjectName("le_auto_ai_RVDTOUT_3")
+        self.gridLayout_14.addWidget(self.le_auto_ai_RVDTOUT_3, 10, 2, 1, 1)
+        self.label_573 = QtWidgets.QLabel(self.frame_4)
+        self.label_573.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_573.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_573.setObjectName("label_573")
+        self.gridLayout_14.addWidget(self.label_573, 8, 5, 1, 1)
+        self.label_574 = QtWidgets.QLabel(self.frame_4)
+        self.label_574.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_574.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_574.setObjectName("label_574")
+        self.gridLayout_14.addWidget(self.label_574, 2, 5, 1, 1)
+        self.le_auto_ai_AIN_SVMr_3 = QtWidgets.QLineEdit(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_SVMr_3.sizePolicy().hasHeightForWidth())
+        self.le_auto_ai_AIN_SVMr_3.setSizePolicy(sizePolicy)
+        self.le_auto_ai_AIN_SVMr_3.setMinimumSize(QtCore.QSize(136, 0))
+        self.le_auto_ai_AIN_SVMr_3.setMaximumSize(QtCore.QSize(136, 16777215))
+        self.le_auto_ai_AIN_SVMr_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_auto_ai_AIN_SVMr_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_AIN_SVMr_3.setReadOnly(True)
+        self.le_auto_ai_AIN_SVMr_3.setObjectName("le_auto_ai_AIN_SVMr_3")
+        self.gridLayout_14.addWidget(self.le_auto_ai_AIN_SVMr_3, 0, 10, 1, 1)
+        self.le_auto_ai_AIN_KTM_5r_3 = QtWidgets.QLineEdit(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_KTM_5r_3.sizePolicy().hasHeightForWidth())
+        self.le_auto_ai_AIN_KTM_5r_3.setSizePolicy(sizePolicy)
+        self.le_auto_ai_AIN_KTM_5r_3.setMinimumSize(QtCore.QSize(136, 0))
+        self.le_auto_ai_AIN_KTM_5r_3.setMaximumSize(QtCore.QSize(136, 16777215))
+        self.le_auto_ai_AIN_KTM_5r_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_auto_ai_AIN_KTM_5r_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_AIN_KTM_5r_3.setReadOnly(True)
+        self.le_auto_ai_AIN_KTM_5r_3.setObjectName("le_auto_ai_AIN_KTM_5r_3")
+        self.gridLayout_14.addWidget(self.le_auto_ai_AIN_KTM_5r_3, 2, 14, 1, 1)
+        spacerItem108 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_14.addItem(spacerItem108, 6, 8, 1, 1)
+        self.le_auto_ai_AIN_FRE_N1r_3 = QtWidgets.QLineEdit(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_FRE_N1r_3.sizePolicy().hasHeightForWidth())
+        self.le_auto_ai_AIN_FRE_N1r_3.setSizePolicy(sizePolicy)
+        self.le_auto_ai_AIN_FRE_N1r_3.setMinimumSize(QtCore.QSize(136, 0))
+        self.le_auto_ai_AIN_FRE_N1r_3.setMaximumSize(QtCore.QSize(136, 16777215))
+        self.le_auto_ai_AIN_FRE_N1r_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_auto_ai_AIN_FRE_N1r_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_AIN_FRE_N1r_3.setReadOnly(True)
+        self.le_auto_ai_AIN_FRE_N1r_3.setObjectName("le_auto_ai_AIN_FRE_N1r_3")
+        self.gridLayout_14.addWidget(self.le_auto_ai_AIN_FRE_N1r_3, 6, 2, 1, 1)
+        spacerItem109 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_14.addItem(spacerItem109, 2, 0, 1, 1)
+        self.label_575 = QtWidgets.QLabel(self.frame_4)
+        self.label_575.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_575.setObjectName("label_575")
+        self.gridLayout_14.addWidget(self.label_575, 6, 11, 1, 1)
+        self.le_auto_ai_AIN_KTM_1r_3 = QtWidgets.QLineEdit(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_KTM_1r_3.sizePolicy().hasHeightForWidth())
+        self.le_auto_ai_AIN_KTM_1r_3.setSizePolicy(sizePolicy)
+        self.le_auto_ai_AIN_KTM_1r_3.setMinimumSize(QtCore.QSize(136, 0))
+        self.le_auto_ai_AIN_KTM_1r_3.setMaximumSize(QtCore.QSize(136, 16777215))
+        self.le_auto_ai_AIN_KTM_1r_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_auto_ai_AIN_KTM_1r_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_AIN_KTM_1r_3.setReadOnly(True)
+        self.le_auto_ai_AIN_KTM_1r_3.setObjectName("le_auto_ai_AIN_KTM_1r_3")
+        self.gridLayout_14.addWidget(self.le_auto_ai_AIN_KTM_1r_3, 0, 14, 1, 1)
+        self.le_auto_ai_AIN_PT100_2r_3 = QtWidgets.QLineEdit(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_PT100_2r_3.sizePolicy().hasHeightForWidth())
+        self.le_auto_ai_AIN_PT100_2r_3.setSizePolicy(sizePolicy)
+        self.le_auto_ai_AIN_PT100_2r_3.setMinimumSize(QtCore.QSize(136, 0))
+        self.le_auto_ai_AIN_PT100_2r_3.setMaximumSize(QtCore.QSize(136, 16777215))
+        self.le_auto_ai_AIN_PT100_2r_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_auto_ai_AIN_PT100_2r_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_AIN_PT100_2r_3.setReadOnly(True)
+        self.le_auto_ai_AIN_PT100_2r_3.setObjectName("le_auto_ai_AIN_PT100_2r_3")
+        self.gridLayout_14.addWidget(self.le_auto_ai_AIN_PT100_2r_3, 4, 6, 1, 1)
+        self.label_576 = QtWidgets.QLabel(self.frame_4)
+        self.label_576.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_576.setObjectName("label_576")
+        self.gridLayout_14.addWidget(self.label_576, 4, 15, 1, 1)
+        self.label_577 = QtWidgets.QLabel(self.frame_4)
+        self.label_577.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_577.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_577.setObjectName("label_577")
+        self.gridLayout_14.addWidget(self.label_577, 0, 9, 1, 1)
+        self.label_578 = QtWidgets.QLabel(self.frame_4)
+        self.label_578.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_578.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_578.setObjectName("label_578")
+        self.gridLayout_14.addWidget(self.label_578, 4, 13, 1, 1)
+        self.label_579 = QtWidgets.QLabel(self.frame_4)
+        self.label_579.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_579.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_579.setObjectName("label_579")
+        self.gridLayout_14.addWidget(self.label_579, 6, 1, 1, 1)
+        self.le_auto_ai_IGVOUT_3 = QtWidgets.QLineEdit(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.le_auto_ai_IGVOUT_3.sizePolicy().hasHeightForWidth())
+        self.le_auto_ai_IGVOUT_3.setSizePolicy(sizePolicy)
+        self.le_auto_ai_IGVOUT_3.setMinimumSize(QtCore.QSize(136, 0))
+        self.le_auto_ai_IGVOUT_3.setMaximumSize(QtCore.QSize(136, 16777215))
+        self.le_auto_ai_IGVOUT_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_auto_ai_IGVOUT_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_IGVOUT_3.setReadOnly(True)
+        self.le_auto_ai_IGVOUT_3.setObjectName("le_auto_ai_IGVOUT_3")
+        self.gridLayout_14.addWidget(self.le_auto_ai_IGVOUT_3, 8, 10, 1, 1)
+        self.label_580 = QtWidgets.QLabel(self.frame_4)
+        self.label_580.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_580.setObjectName("label_580")
+        self.gridLayout_14.addWidget(self.label_580, 0, 3, 1, 1)
+        self.label_581 = QtWidgets.QLabel(self.frame_4)
+        self.label_581.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_581.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_581.setObjectName("label_581")
+        self.gridLayout_14.addWidget(self.label_581, 8, 9, 1, 1)
+        self.label_582 = QtWidgets.QLabel(self.frame_4)
+        self.label_582.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_582.setObjectName("label_582")
+        self.gridLayout_14.addWidget(self.label_582, 0, 11, 1, 1)
+        spacerItem110 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_14.addItem(spacerItem110, 1, 1, 1, 1)
+        self.le_auto_ai_RVDT_incentiveOUT_3 = QtWidgets.QLineEdit(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.le_auto_ai_RVDT_incentiveOUT_3.sizePolicy().hasHeightForWidth())
+        self.le_auto_ai_RVDT_incentiveOUT_3.setSizePolicy(sizePolicy)
+        self.le_auto_ai_RVDT_incentiveOUT_3.setMinimumSize(QtCore.QSize(136, 0))
+        self.le_auto_ai_RVDT_incentiveOUT_3.setMaximumSize(QtCore.QSize(136, 16777215))
+        self.le_auto_ai_RVDT_incentiveOUT_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_auto_ai_RVDT_incentiveOUT_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_RVDT_incentiveOUT_3.setReadOnly(True)
+        self.le_auto_ai_RVDT_incentiveOUT_3.setObjectName("le_auto_ai_RVDT_incentiveOUT_3")
+        self.gridLayout_14.addWidget(self.le_auto_ai_RVDT_incentiveOUT_3, 10, 6, 1, 1)
+        self.le_auto_ai_SCVOUT_3 = QtWidgets.QLineEdit(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.le_auto_ai_SCVOUT_3.sizePolicy().hasHeightForWidth())
+        self.le_auto_ai_SCVOUT_3.setSizePolicy(sizePolicy)
+        self.le_auto_ai_SCVOUT_3.setMinimumSize(QtCore.QSize(136, 0))
+        self.le_auto_ai_SCVOUT_3.setMaximumSize(QtCore.QSize(136, 16777215))
+        self.le_auto_ai_SCVOUT_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_auto_ai_SCVOUT_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_SCVOUT_3.setReadOnly(True)
+        self.le_auto_ai_SCVOUT_3.setObjectName("le_auto_ai_SCVOUT_3")
+        self.gridLayout_14.addWidget(self.le_auto_ai_SCVOUT_3, 8, 2, 1, 1)
+        self.label_583 = QtWidgets.QLabel(self.frame_4)
+        self.label_583.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_583.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_583.setObjectName("label_583")
+        self.gridLayout_14.addWidget(self.label_583, 2, 1, 1, 1)
+        spacerItem111 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_14.addItem(spacerItem111, 11, 1, 1, 1)
+        self.label_584 = QtWidgets.QLabel(self.frame_4)
+        self.label_584.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_584.setObjectName("label_584")
+        self.gridLayout_14.addWidget(self.label_584, 4, 11, 1, 1)
+        self.le_auto_ai_AIN_PT100_1r_3 = QtWidgets.QLineEdit(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_PT100_1r_3.sizePolicy().hasHeightForWidth())
+        self.le_auto_ai_AIN_PT100_1r_3.setSizePolicy(sizePolicy)
+        self.le_auto_ai_AIN_PT100_1r_3.setMinimumSize(QtCore.QSize(136, 0))
+        self.le_auto_ai_AIN_PT100_1r_3.setMaximumSize(QtCore.QSize(136, 16777215))
+        self.le_auto_ai_AIN_PT100_1r_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_auto_ai_AIN_PT100_1r_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_AIN_PT100_1r_3.setReadOnly(True)
+        self.le_auto_ai_AIN_PT100_1r_3.setObjectName("le_auto_ai_AIN_PT100_1r_3")
+        self.gridLayout_14.addWidget(self.le_auto_ai_AIN_PT100_1r_3, 4, 2, 1, 1)
+        self.le_auto_ai_AIN_PT100_3r_3 = QtWidgets.QLineEdit(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_PT100_3r_3.sizePolicy().hasHeightForWidth())
+        self.le_auto_ai_AIN_PT100_3r_3.setSizePolicy(sizePolicy)
+        self.le_auto_ai_AIN_PT100_3r_3.setMinimumSize(QtCore.QSize(136, 0))
+        self.le_auto_ai_AIN_PT100_3r_3.setMaximumSize(QtCore.QSize(136, 16777215))
+        self.le_auto_ai_AIN_PT100_3r_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_auto_ai_AIN_PT100_3r_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_AIN_PT100_3r_3.setReadOnly(True)
+        self.le_auto_ai_AIN_PT100_3r_3.setObjectName("le_auto_ai_AIN_PT100_3r_3")
+        self.gridLayout_14.addWidget(self.le_auto_ai_AIN_PT100_3r_3, 4, 10, 1, 1)
+        self.le_auto_ai_AIN_KTM_2r_3 = QtWidgets.QLineEdit(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_KTM_2r_3.sizePolicy().hasHeightForWidth())
+        self.le_auto_ai_AIN_KTM_2r_3.setSizePolicy(sizePolicy)
+        self.le_auto_ai_AIN_KTM_2r_3.setMinimumSize(QtCore.QSize(136, 0))
+        self.le_auto_ai_AIN_KTM_2r_3.setMaximumSize(QtCore.QSize(136, 16777215))
+        self.le_auto_ai_AIN_KTM_2r_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_auto_ai_AIN_KTM_2r_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_AIN_KTM_2r_3.setReadOnly(True)
+        self.le_auto_ai_AIN_KTM_2r_3.setObjectName("le_auto_ai_AIN_KTM_2r_3")
+        self.gridLayout_14.addWidget(self.le_auto_ai_AIN_KTM_2r_3, 2, 2, 1, 1)
+        spacerItem112 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_14.addItem(spacerItem112, 9, 1, 1, 1)
+        self.label_585 = QtWidgets.QLabel(self.frame_4)
+        self.label_585.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_585.setObjectName("label_585")
+        self.gridLayout_14.addWidget(self.label_585, 0, 7, 1, 1)
+        self.label_586 = QtWidgets.QLabel(self.frame_4)
+        self.label_586.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_586.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_586.setObjectName("label_586")
+        self.gridLayout_14.addWidget(self.label_586, 6, 9, 1, 1)
+        spacerItem113 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_14.addItem(spacerItem113, 6, 4, 1, 1)
+        self.label_587 = QtWidgets.QLabel(self.frame_4)
+        self.label_587.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_587.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_587.setObjectName("label_587")
+        self.gridLayout_14.addWidget(self.label_587, 4, 1, 1, 1)
+        self.label_588 = QtWidgets.QLabel(self.frame_4)
+        self.label_588.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_588.setObjectName("label_588")
+        self.gridLayout_14.addWidget(self.label_588, 4, 3, 1, 1, QtCore.Qt.AlignHCenter)
+        self.label_589 = QtWidgets.QLabel(self.frame_4)
+        self.label_589.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_589.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_589.setObjectName("label_589")
+        self.gridLayout_14.addWidget(self.label_589, 6, 5, 1, 1)
+        self.label_590 = QtWidgets.QLabel(self.frame_4)
+        self.label_590.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_590.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_590.setObjectName("label_590")
+        self.gridLayout_14.addWidget(self.label_590, 0, 13, 1, 1)
+        self.label_591 = QtWidgets.QLabel(self.frame_4)
+        self.label_591.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_591.setObjectName("label_591")
+        self.gridLayout_14.addWidget(self.label_591, 2, 15, 1, 1)
+        self.le_auto_ai_AIN_EDTr_3 = QtWidgets.QLineEdit(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.le_auto_ai_AIN_EDTr_3.sizePolicy().hasHeightForWidth())
+        self.le_auto_ai_AIN_EDTr_3.setSizePolicy(sizePolicy)
+        self.le_auto_ai_AIN_EDTr_3.setMinimumSize(QtCore.QSize(136, 0))
+        self.le_auto_ai_AIN_EDTr_3.setMaximumSize(QtCore.QSize(136, 16777215))
+        self.le_auto_ai_AIN_EDTr_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_auto_ai_AIN_EDTr_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_AIN_EDTr_3.setReadOnly(True)
+        self.le_auto_ai_AIN_EDTr_3.setObjectName("le_auto_ai_AIN_EDTr_3")
+        self.gridLayout_14.addWidget(self.le_auto_ai_AIN_EDTr_3, 0, 2, 1, 1)
+        spacerItem114 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_14.addItem(spacerItem114, 7, 1, 1, 1)
+        self.label_592 = QtWidgets.QLabel(self.frame_4)
+        self.label_592.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_592.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_592.setObjectName("label_592")
+        self.gridLayout_14.addWidget(self.label_592, 4, 5, 1, 1)
+        self.label_593 = QtWidgets.QLabel(self.frame_4)
+        self.label_593.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_593.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_593.setObjectName("label_593")
+        self.gridLayout_14.addWidget(self.label_593, 10, 5, 1, 1)
+        self.le_auto_ai_SCV_incentiveOUT_3 = QtWidgets.QLineEdit(self.frame_4)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.le_auto_ai_SCV_incentiveOUT_3.sizePolicy().hasHeightForWidth())
+        self.le_auto_ai_SCV_incentiveOUT_3.setSizePolicy(sizePolicy)
+        self.le_auto_ai_SCV_incentiveOUT_3.setMinimumSize(QtCore.QSize(136, 0))
+        self.le_auto_ai_SCV_incentiveOUT_3.setMaximumSize(QtCore.QSize(136, 16777215))
+        self.le_auto_ai_SCV_incentiveOUT_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.le_auto_ai_SCV_incentiveOUT_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.le_auto_ai_SCV_incentiveOUT_3.setReadOnly(True)
+        self.le_auto_ai_SCV_incentiveOUT_3.setObjectName("le_auto_ai_SCV_incentiveOUT_3")
+        self.gridLayout_14.addWidget(self.le_auto_ai_SCV_incentiveOUT_3, 8, 6, 1, 1)
+        self.label_594 = QtWidgets.QLabel(self.frame_4)
+        self.label_594.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";\n"
+"")
+        self.label_594.setObjectName("label_594")
+        self.gridLayout_14.addWidget(self.label_594, 4, 7, 1, 1)
+        self.label_595 = QtWidgets.QLabel(self.frame_4)
+        self.label_595.setStyleSheet("color:white;\n"
+"font: 75 10pt \"Arial\";")
+        self.label_595.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_595.setObjectName("label_595")
+        self.gridLayout_14.addWidget(self.label_595, 8, 1, 1, 1)
+        self.label_596 = QtWidgets.QLabel(self.frame_4)
+        self.label_596.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_596.setObjectName("label_596")
+        self.gridLayout_14.addWidget(self.label_596, 2, 3, 1, 1)
+        self.gridLayout_6.addLayout(self.gridLayout_14, 15, 0, 1, 16)
+        self.widget_3 = QtWidgets.QWidget(self.frame_4)
+        self.widget_3.setObjectName("widget_3")
+        self.horizontalLayout_19 = QtWidgets.QHBoxLayout(self.widget_3)
+        self.horizontalLayout_19.setObjectName("horizontalLayout_19")
+        self.verticalLayout_86 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_86.setObjectName("verticalLayout_86")
+        self.label_36 = QtWidgets.QLabel(self.widget_3)
+        self.label_36.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_36.setObjectName("label_36")
+        self.verticalLayout_86.addWidget(self.label_36)
+        self.pte_auto_ai_insIN_3 = QtWidgets.QPlainTextEdit(self.widget_3)
+        self.pte_auto_ai_insIN_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.pte_auto_ai_insIN_3.setReadOnly(True)
+        self.pte_auto_ai_insIN_3.setObjectName("pte_auto_ai_insIN_3")
+        self.verticalLayout_86.addWidget(self.pte_auto_ai_insIN_3)
+        self.horizontalLayout_19.addLayout(self.verticalLayout_86)
+        self.verticalLayout_87 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_87.setObjectName("verticalLayout_87")
+        self.label_37 = QtWidgets.QLabel(self.widget_3)
+        self.label_37.setStyleSheet("color:white;\n"
+"font: 75 14pt \"Arial\";")
+        self.label_37.setObjectName("label_37")
+        self.verticalLayout_87.addWidget(self.label_37)
+        self.pte_auto_ai_insOUT_3 = QtWidgets.QPlainTextEdit(self.widget_3)
+        self.pte_auto_ai_insOUT_3.setStyleSheet("color:white;\n"
+"background-color: rgb(0, 0, 0);\n"
+"font: 65 14pt \"Arial\";")
+        self.pte_auto_ai_insOUT_3.setObjectName("pte_auto_ai_insOUT_3")
+        self.verticalLayout_87.addWidget(self.pte_auto_ai_insOUT_3)
+        self.horizontalLayout_19.addLayout(self.verticalLayout_87)
+        self.gridLayout_6.addWidget(self.widget_3, 16, 0, 1, 16)
+        self.horizontalLayout_20.addWidget(self.frame_4)
         self.auto_tabWidget.addTab(self.tab_4, "")
         self.tab_5 = QtWidgets.QWidget()
         self.tab_5.setObjectName("tab_5")
-        self.verticalLayout_34 = QtWidgets.QVBoxLayout(self.tab_5)
-        self.verticalLayout_34.setObjectName("verticalLayout_34")
-        self.verticalLayout_29 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_29 = QtWidgets.QVBoxLayout(self.tab_5)
         self.verticalLayout_29.setObjectName("verticalLayout_29")
         self.label_34 = QtWidgets.QLabel(self.tab_5)
         self.label_34.setStyleSheet("color:white;\n"
@@ -4201,8 +6566,8 @@ class Ui_MainWindow(object):
         self.label_34.setAlignment(QtCore.Qt.AlignCenter)
         self.label_34.setObjectName("label_34")
         self.verticalLayout_29.addWidget(self.label_34)
-        spacerItem104 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_29.addItem(spacerItem104)
+        spacerItem115 = QtWidgets.QSpacerItem(1455, 30, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
+        self.verticalLayout_29.addItem(spacerItem115)
         self.gridLayout_5 = QtWidgets.QGridLayout()
         self.gridLayout_5.setObjectName("gridLayout_5")
         self.label_471 = QtWidgets.QLabel(self.tab_5)
@@ -4279,27 +6644,27 @@ class Ui_MainWindow(object):
 "font: 75 10pt \"Arial\";")
         self.label_473.setObjectName("label_473")
         self.gridLayout_5.addWidget(self.label_473, 3, 11, 1, 1)
-        spacerItem105 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_5.addItem(spacerItem105, 3, 0, 1, 1)
+        spacerItem116 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_5.addItem(spacerItem116, 3, 0, 1, 1)
         self.label_475 = QtWidgets.QLabel(self.tab_5)
         self.label_475.setStyleSheet("color:white;\n"
 "font: 75 10pt \"Arial\";")
         self.label_475.setObjectName("label_475")
         self.gridLayout_5.addWidget(self.label_475, 7, 7, 1, 1)
-        spacerItem106 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_5.addItem(spacerItem106, 7, 8, 1, 1)
+        spacerItem117 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_5.addItem(spacerItem117, 7, 8, 1, 1)
         self.label_472 = QtWidgets.QLabel(self.tab_5)
         self.label_472.setStyleSheet("color:white;\n"
 "font: 75 10pt \"Arial\";")
         self.label_472.setAlignment(QtCore.Qt.AlignCenter)
         self.label_472.setObjectName("label_472")
         self.gridLayout_5.addWidget(self.label_472, 3, 9, 1, 1)
-        spacerItem107 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_5.addItem(spacerItem107, 7, 4, 1, 1)
-        spacerItem108 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_5.addItem(spacerItem108, 6, 1, 1, 1)
-        spacerItem109 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_5.addItem(spacerItem109, 3, 12, 1, 1)
+        spacerItem118 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_5.addItem(spacerItem118, 7, 4, 1, 1)
+        spacerItem119 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_5.addItem(spacerItem119, 6, 1, 1, 1)
+        spacerItem120 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_5.addItem(spacerItem120, 3, 12, 1, 1)
         self.label_447 = QtWidgets.QLabel(self.tab_5)
         self.label_447.setStyleSheet("color:white;\n"
 "font: 75 10pt \"Arial\";")
@@ -4323,8 +6688,8 @@ class Ui_MainWindow(object):
         self.label_470.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_470.setObjectName("label_470")
         self.gridLayout_5.addWidget(self.label_470, 3, 5, 1, 1)
-        spacerItem110 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_5.addItem(spacerItem110, 4, 1, 1, 1)
+        spacerItem121 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_5.addItem(spacerItem121, 4, 1, 1, 1)
         self.label_474 = QtWidgets.QLabel(self.tab_5)
         self.label_474.setStyleSheet("color:white;\n"
 "font: 75 10pt \"Arial\";")
@@ -4381,8 +6746,8 @@ class Ui_MainWindow(object):
         self.label_446.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_446.setObjectName("label_446")
         self.gridLayout_5.addWidget(self.label_446, 1, 1, 1, 1)
-        spacerItem111 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_5.addItem(spacerItem111, 2, 1, 1, 1)
+        spacerItem122 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_5.addItem(spacerItem122, 2, 1, 1, 1)
         self.label_453 = QtWidgets.QLabel(self.tab_5)
         self.label_453.setStyleSheet("color:white;\n"
 "font: 75 10pt \"Arial\";")
@@ -4486,74 +6851,51 @@ class Ui_MainWindow(object):
         self.le_auto_ao_AOUT_FLPPS.setAlignment(QtCore.Qt.AlignCenter)
         self.le_auto_ao_AOUT_FLPPS.setObjectName("le_auto_ao_AOUT_FLPPS")
         self.gridLayout_5.addWidget(self.le_auto_ao_AOUT_FLPPS, 1, 6, 1, 1)
-        spacerItem112 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_5.addItem(spacerItem112, 8, 4, 1, 1)
-        spacerItem113 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_5.addItem(spacerItem113, 0, 1, 1, 1)
+        spacerItem123 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_5.addItem(spacerItem123, 8, 4, 1, 1)
+        spacerItem124 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_5.addItem(spacerItem124, 0, 1, 1, 1)
         self.verticalLayout_29.addLayout(self.gridLayout_5)
-        spacerItem114 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_29.addItem(spacerItem114)
-        self.verticalLayout_134 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_134.setObjectName("verticalLayout_134")
-        self.horizontalLayout_50 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_50.setObjectName("horizontalLayout_50")
-        self.verticalLayout_135 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_135.setObjectName("verticalLayout_135")
-        self.label_12 = QtWidgets.QLabel(self.tab_5)
-        self.label_12.setStyleSheet("color:white;\n"
+        spacerItem125 = QtWidgets.QSpacerItem(1455, 350, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_29.addItem(spacerItem125)
+        self.widget_11 = QtWidgets.QWidget(self.tab_5)
+        self.widget_11.setObjectName("widget_11")
+        self.horizontalLayout_35 = QtWidgets.QHBoxLayout(self.widget_11)
+        self.horizontalLayout_35.setObjectName("horizontalLayout_35")
+        self.verticalLayout_97 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_97.setObjectName("verticalLayout_97")
+        self.label_38 = QtWidgets.QLabel(self.widget_11)
+        self.label_38.setStyleSheet("color:white;\n"
 "font: 75 14pt \"Arial\";")
-        self.label_12.setObjectName("label_12")
-        self.verticalLayout_135.addWidget(self.label_12)
-        self.pte_auto_ao_insIN = QtWidgets.QPlainTextEdit(self.tab_5)
-        self.pte_auto_ao_insIN.setStyleSheet("color:white;\n"
+        self.label_38.setObjectName("label_38")
+        self.verticalLayout_97.addWidget(self.label_38)
+        self.pte_auto_ai_insIN_4 = QtWidgets.QPlainTextEdit(self.widget_11)
+        self.pte_auto_ai_insIN_4.setStyleSheet("color:white;\n"
 "background-color: rgb(0, 0, 0);\n"
 "font: 65 14pt \"Arial\";")
-        self.pte_auto_ao_insIN.setObjectName("pte_auto_ao_insIN")
-        self.verticalLayout_135.addWidget(self.pte_auto_ao_insIN)
-        spacerItem115 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_135.addItem(spacerItem115)
-        self.horizontalLayout_50.addLayout(self.verticalLayout_135)
-        self.pte_auto_ao_insSend = QtWidgets.QPushButton(self.tab_5)
-        self.pte_auto_ao_insSend.setStyleSheet("\n"
-"QPushButton:checked{background-color:rgb(33,37,43);color:red;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
-"\n"
-"\n"
-"\n"
-"QPushButton{background-color:rgb(33,37,43);color:white;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
-"\n"
-"QPushButton:hover{font-weight:bold;background-color:rgb(33,37,43);color:white;font: 16pt \"Arial\";border:3px solid rgb(39,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
-"\n"
-"\n"
-"QPushButton:pressed{color: red;}")
-        self.pte_auto_ao_insSend.setCheckable(False)
-        self.pte_auto_ao_insSend.setObjectName("pte_auto_ao_insSend")
-        self.horizontalLayout_50.addWidget(self.pte_auto_ao_insSend)
-        self.verticalLayout_134.addLayout(self.horizontalLayout_50)
-        self.verticalLayout_136 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_136.setObjectName("verticalLayout_136")
-        self.label_23 = QtWidgets.QLabel(self.tab_5)
-        self.label_23.setStyleSheet("color:white;\n"
+        self.pte_auto_ai_insIN_4.setReadOnly(True)
+        self.pte_auto_ai_insIN_4.setObjectName("pte_auto_ai_insIN_4")
+        self.verticalLayout_97.addWidget(self.pte_auto_ai_insIN_4)
+        self.horizontalLayout_35.addLayout(self.verticalLayout_97)
+        self.verticalLayout_99 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_99.setObjectName("verticalLayout_99")
+        self.label_39 = QtWidgets.QLabel(self.widget_11)
+        self.label_39.setStyleSheet("color:white;\n"
 "font: 75 14pt \"Arial\";")
-        self.label_23.setObjectName("label_23")
-        self.verticalLayout_136.addWidget(self.label_23)
-        self.pte_auto_ao_insOUT = QtWidgets.QPlainTextEdit(self.tab_5)
-        self.pte_auto_ao_insOUT.setStyleSheet("color:white;\n"
+        self.label_39.setObjectName("label_39")
+        self.verticalLayout_99.addWidget(self.label_39)
+        self.pte_auto_ai_insOUT_4 = QtWidgets.QPlainTextEdit(self.widget_11)
+        self.pte_auto_ai_insOUT_4.setStyleSheet("color:white;\n"
 "background-color: rgb(0, 0, 0);\n"
 "font: 65 14pt \"Arial\";")
-        self.pte_auto_ao_insOUT.setReadOnly(True)
-        self.pte_auto_ao_insOUT.setObjectName("pte_auto_ao_insOUT")
-        self.verticalLayout_136.addWidget(self.pte_auto_ao_insOUT)
-        spacerItem116 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_136.addItem(spacerItem116)
-        self.verticalLayout_134.addLayout(self.verticalLayout_136)
-        self.verticalLayout_29.addLayout(self.verticalLayout_134)
-        self.verticalLayout_34.addLayout(self.verticalLayout_29)
+        self.pte_auto_ai_insOUT_4.setObjectName("pte_auto_ai_insOUT_4")
+        self.verticalLayout_99.addWidget(self.pte_auto_ai_insOUT_4)
+        self.horizontalLayout_35.addLayout(self.verticalLayout_99)
+        self.verticalLayout_29.addWidget(self.widget_11)
         self.auto_tabWidget.addTab(self.tab_5, "")
         self.tab_6 = QtWidgets.QWidget()
         self.tab_6.setObjectName("tab_6")
-        self.verticalLayout_35 = QtWidgets.QVBoxLayout(self.tab_6)
-        self.verticalLayout_35.setObjectName("verticalLayout_35")
-        self.verticalLayout_33 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_33 = QtWidgets.QVBoxLayout(self.tab_6)
         self.verticalLayout_33.setObjectName("verticalLayout_33")
         self.label_35 = QtWidgets.QLabel(self.tab_6)
         self.label_35.setStyleSheet("color:white;\n"
@@ -4561,14 +6903,14 @@ class Ui_MainWindow(object):
         self.label_35.setAlignment(QtCore.Qt.AlignCenter)
         self.label_35.setObjectName("label_35")
         self.verticalLayout_33.addWidget(self.label_35)
-        spacerItem117 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_33.addItem(spacerItem117)
+        spacerItem126 = QtWidgets.QSpacerItem(20, 345, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_33.addItem(spacerItem126)
         self.horizontalLayout_14 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_14.setObjectName("horizontalLayout_14")
         self.gridLayout_8 = QtWidgets.QGridLayout()
         self.gridLayout_8.setObjectName("gridLayout_8")
-        spacerItem118 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_8.addItem(spacerItem118, 0, 4, 1, 1)
+        spacerItem127 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_8.addItem(spacerItem127, 0, 4, 1, 1)
         self.le_auto_op_Overspeed_Protect = QtWidgets.QLineEdit(self.tab_6)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -4633,8 +6975,8 @@ class Ui_MainWindow(object):
         self.btn_over_Stop.setObjectName("btn_over_Stop")
         self.verticalLayout_30.addWidget(self.btn_over_Stop)
         self.horizontalLayout_16.addLayout(self.verticalLayout_30)
-        spacerItem119 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_16.addItem(spacerItem119)
+        spacerItem128 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_16.addItem(spacerItem128)
         self.verticalLayout_31 = QtWidgets.QVBoxLayout()
         self.verticalLayout_31.setObjectName("verticalLayout_31")
         self.label_19 = QtWidgets.QLabel(self.tab_6)
@@ -4656,8 +6998,8 @@ class Ui_MainWindow(object):
         self.btn_over_Emergency.setObjectName("btn_over_Emergency")
         self.verticalLayout_31.addWidget(self.btn_over_Emergency)
         self.horizontalLayout_16.addLayout(self.verticalLayout_31)
-        spacerItem120 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_16.addItem(spacerItem120)
+        spacerItem129 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_16.addItem(spacerItem129)
         self.verticalLayout_32 = QtWidgets.QVBoxLayout()
         self.verticalLayout_32.setObjectName("verticalLayout_32")
         self.label_20 = QtWidgets.QLabel(self.tab_6)
@@ -4679,582 +7021,100 @@ class Ui_MainWindow(object):
         self.btn_over_Reset.setObjectName("btn_over_Reset")
         self.verticalLayout_32.addWidget(self.btn_over_Reset)
         self.horizontalLayout_16.addLayout(self.verticalLayout_32)
-        spacerItem121 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.horizontalLayout_16.addItem(spacerItem121)
+        spacerItem130 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_16.addItem(spacerItem130)
         self.horizontalLayout_14.addLayout(self.horizontalLayout_16)
         self.verticalLayout_33.addLayout(self.horizontalLayout_14)
-        spacerItem122 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_33.addItem(spacerItem122)
-        self.verticalLayout_137 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_137.setObjectName("verticalLayout_137")
-        self.horizontalLayout_51 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_51.setObjectName("horizontalLayout_51")
-        self.verticalLayout_138 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_138.setObjectName("verticalLayout_138")
-        self.label_13 = QtWidgets.QLabel(self.tab_6)
-        self.label_13.setStyleSheet("color:white;\n"
+        spacerItem131 = QtWidgets.QSpacerItem(20, 344, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout_33.addItem(spacerItem131)
+        self.widget_12 = QtWidgets.QWidget(self.tab_6)
+        self.widget_12.setObjectName("widget_12")
+        self.horizontalLayout_36 = QtWidgets.QHBoxLayout(self.widget_12)
+        self.horizontalLayout_36.setObjectName("horizontalLayout_36")
+        self.verticalLayout_100 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_100.setObjectName("verticalLayout_100")
+        self.label_40 = QtWidgets.QLabel(self.widget_12)
+        self.label_40.setStyleSheet("color:white;\n"
 "font: 75 14pt \"Arial\";")
-        self.label_13.setObjectName("label_13")
-        self.verticalLayout_138.addWidget(self.label_13)
-        self.pte_auto_op_insIN = QtWidgets.QPlainTextEdit(self.tab_6)
-        self.pte_auto_op_insIN.setStyleSheet("color:white;\n"
+        self.label_40.setObjectName("label_40")
+        self.verticalLayout_100.addWidget(self.label_40)
+        self.pte_auto_ai_insIN_5 = QtWidgets.QPlainTextEdit(self.widget_12)
+        self.pte_auto_ai_insIN_5.setStyleSheet("color:white;\n"
 "background-color: rgb(0, 0, 0);\n"
 "font: 65 14pt \"Arial\";")
-        self.pte_auto_op_insIN.setObjectName("pte_auto_op_insIN")
-        self.verticalLayout_138.addWidget(self.pte_auto_op_insIN)
-        spacerItem123 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_138.addItem(spacerItem123)
-        self.horizontalLayout_51.addLayout(self.verticalLayout_138)
-        self.pte_auto_op_insSend = QtWidgets.QPushButton(self.tab_6)
-        self.pte_auto_op_insSend.setStyleSheet("\n"
-"QPushButton:checked{background-color:rgb(33,37,43);color:red;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
-"\n"
-"\n"
-"\n"
-"QPushButton{background-color:rgb(33,37,43);color:white;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
-"\n"
-"QPushButton:hover{font-weight:bold;background-color:rgb(33,37,43);color:white;font: 16pt \"Arial\";border:3px solid rgb(39,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
-"\n"
-"\n"
-"QPushButton:pressed{color: red;}")
-        self.pte_auto_op_insSend.setCheckable(False)
-        self.pte_auto_op_insSend.setObjectName("pte_auto_op_insSend")
-        self.horizontalLayout_51.addWidget(self.pte_auto_op_insSend)
-        self.verticalLayout_137.addLayout(self.horizontalLayout_51)
-        self.verticalLayout_139 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_139.setObjectName("verticalLayout_139")
-        self.label_25 = QtWidgets.QLabel(self.tab_6)
-        self.label_25.setStyleSheet("color:white;\n"
+        self.pte_auto_ai_insIN_5.setReadOnly(True)
+        self.pte_auto_ai_insIN_5.setObjectName("pte_auto_ai_insIN_5")
+        self.verticalLayout_100.addWidget(self.pte_auto_ai_insIN_5)
+        self.horizontalLayout_36.addLayout(self.verticalLayout_100)
+        self.verticalLayout_101 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_101.setObjectName("verticalLayout_101")
+        self.label_41 = QtWidgets.QLabel(self.widget_12)
+        self.label_41.setStyleSheet("color:white;\n"
 "font: 75 14pt \"Arial\";")
-        self.label_25.setObjectName("label_25")
-        self.verticalLayout_139.addWidget(self.label_25)
-        self.pte_auto_op_insOUT = QtWidgets.QPlainTextEdit(self.tab_6)
-        self.pte_auto_op_insOUT.setStyleSheet("color:white;\n"
+        self.label_41.setObjectName("label_41")
+        self.verticalLayout_101.addWidget(self.label_41)
+        self.pte_auto_ai_insOUT_5 = QtWidgets.QPlainTextEdit(self.widget_12)
+        self.pte_auto_ai_insOUT_5.setStyleSheet("color:white;\n"
 "background-color: rgb(0, 0, 0);\n"
 "font: 65 14pt \"Arial\";")
-        self.pte_auto_op_insOUT.setReadOnly(True)
-        self.pte_auto_op_insOUT.setObjectName("pte_auto_op_insOUT")
-        self.verticalLayout_139.addWidget(self.pte_auto_op_insOUT)
-        spacerItem124 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_139.addItem(spacerItem124)
-        self.verticalLayout_137.addLayout(self.verticalLayout_139)
-        self.verticalLayout_33.addLayout(self.verticalLayout_137)
-        self.verticalLayout_35.addLayout(self.verticalLayout_33)
+        self.pte_auto_ai_insOUT_5.setObjectName("pte_auto_ai_insOUT_5")
+        self.verticalLayout_101.addWidget(self.pte_auto_ai_insOUT_5)
+        self.horizontalLayout_36.addLayout(self.verticalLayout_101)
+        self.verticalLayout_33.addWidget(self.widget_12)
         self.auto_tabWidget.addTab(self.tab_6, "")
-        self.tab_7 = QtWidgets.QWidget()
-        self.tab_7.setObjectName("tab_7")
-        self.horizontalLayout_6 = QtWidgets.QHBoxLayout(self.tab_7)
-        self.horizontalLayout_6.setObjectName("horizontalLayout_6")
-        self.verticalLayout_80 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_80.setObjectName("verticalLayout_80")
-        self.label_29 = QtWidgets.QLabel(self.tab_7)
-        self.label_29.setStyleSheet("color:white;\n"
-"font: 75 18pt \"Arial\";")
-        self.label_29.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_29.setObjectName("label_29")
-        self.verticalLayout_80.addWidget(self.label_29)
-        spacerItem125 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_80.addItem(spacerItem125)
-        self.horizontalLayout_5 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
-        self.gridLayout_10 = QtWidgets.QGridLayout()
-        self.gridLayout_10.setObjectName("gridLayout_10")
-        self.label_258 = QtWidgets.QLabel(self.tab_7)
-        self.label_258.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_258.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_258.setObjectName("label_258")
-        self.gridLayout_10.addWidget(self.label_258, 1, 4, 1, 1)
-        self.label_257 = QtWidgets.QLabel(self.tab_7)
-        self.label_257.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_257.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_257.setObjectName("label_257")
-        self.gridLayout_10.addWidget(self.label_257, 1, 0, 1, 1)
-        self.label_247 = QtWidgets.QLabel(self.tab_7)
-        self.label_247.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_247.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_247.setObjectName("label_247")
-        self.gridLayout_10.addWidget(self.label_247, 6, 2, 1, 1)
-        self.le_man_115v_fIN = QtWidgets.QLineEdit(self.tab_7)
-        self.le_man_115v_fIN.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_man_115v_fIN.setText("")
-        self.le_man_115v_fIN.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_man_115v_fIN.setReadOnly(False)
-        self.le_man_115v_fIN.setObjectName("le_man_115v_fIN")
-        self.gridLayout_10.addWidget(self.le_man_115v_fIN, 1, 9, 1, 1)
-        self.label_244 = QtWidgets.QLabel(self.tab_7)
-        self.label_244.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_244.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_244.setObjectName("label_244")
-        self.gridLayout_10.addWidget(self.label_244, 8, 2, 1, 1)
-        self.le_man_28v_cIN = QtWidgets.QLineEdit(self.tab_7)
-        self.le_man_28v_cIN.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_man_28v_cIN.setText("")
-        self.le_man_28v_cIN.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_man_28v_cIN.setReadOnly(False)
-        self.le_man_28v_cIN.setObjectName("le_man_28v_cIN")
-        self.gridLayout_10.addWidget(self.le_man_28v_cIN, 6, 5, 1, 1)
-        self.label_267 = QtWidgets.QLabel(self.tab_7)
-        self.label_267.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_267.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_267.setObjectName("label_267")
-        self.gridLayout_10.addWidget(self.label_267, 6, 0, 1, 1)
-        self.label_290 = QtWidgets.QLabel(self.tab_7)
-        self.label_290.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_290.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_290.setObjectName("label_290")
-        self.gridLayout_10.addWidget(self.label_290, 13, 6, 1, 1)
-        self.label_235 = QtWidgets.QLabel(self.tab_7)
-        self.label_235.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_235.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_235.setObjectName("label_235")
-        self.gridLayout_10.addWidget(self.label_235, 1, 2, 1, 1)
-        self.label_4 = QtWidgets.QLabel(self.tab_7)
-        self.label_4.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";")
-        self.label_4.setObjectName("label_4")
-        self.gridLayout_10.addWidget(self.label_4, 5, 0, 1, 1)
-        self.label_269 = QtWidgets.QLabel(self.tab_7)
-        self.label_269.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_269.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_269.setObjectName("label_269")
-        self.gridLayout_10.addWidget(self.label_269, 6, 4, 1, 1)
-        self.le_man_28v_vIN = QtWidgets.QLineEdit(self.tab_7)
-        self.le_man_28v_vIN.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_man_28v_vIN.setText("")
-        self.le_man_28v_vIN.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_man_28v_vIN.setReadOnly(False)
-        self.le_man_28v_vIN.setObjectName("le_man_28v_vIN")
-        self.gridLayout_10.addWidget(self.le_man_28v_vIN, 6, 1, 1, 1)
-        self.label_246 = QtWidgets.QLabel(self.tab_7)
-        self.label_246.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_246.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_246.setObjectName("label_246")
-        self.gridLayout_10.addWidget(self.label_246, 8, 6, 1, 1)
-        spacerItem126 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_10.addItem(spacerItem126, 1, 7, 1, 1)
-        self.label_236 = QtWidgets.QLabel(self.tab_7)
-        self.label_236.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_236.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_236.setObjectName("label_236")
-        self.gridLayout_10.addWidget(self.label_236, 1, 6, 1, 1)
-        self.label_288 = QtWidgets.QLabel(self.tab_7)
-        self.label_288.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_288.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_288.setObjectName("label_288")
-        self.gridLayout_10.addWidget(self.label_288, 11, 6, 1, 1)
-        self.label_242 = QtWidgets.QLabel(self.tab_7)
-        self.label_242.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_242.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_242.setObjectName("label_242")
-        self.gridLayout_10.addWidget(self.label_242, 3, 2, 1, 1)
-        self.label_263 = QtWidgets.QLabel(self.tab_7)
-        self.label_263.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_263.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_263.setObjectName("label_263")
-        self.gridLayout_10.addWidget(self.label_263, 3, 0, 1, 1)
-        self.label_243 = QtWidgets.QLabel(self.tab_7)
-        self.label_243.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_243.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_243.setObjectName("label_243")
-        self.gridLayout_10.addWidget(self.label_243, 3, 10, 1, 1)
-        spacerItem127 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_10.addItem(spacerItem127, 4, 0, 1, 1)
-        self.label_268 = QtWidgets.QLabel(self.tab_7)
-        self.label_268.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_268.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_268.setObjectName("label_268")
-        self.gridLayout_10.addWidget(self.label_268, 8, 4, 1, 1)
-        self.le_man_28v_vOUT = QtWidgets.QLineEdit(self.tab_7)
-        self.le_man_28v_vOUT.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_man_28v_vOUT.setText("")
-        self.le_man_28v_vOUT.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_man_28v_vOUT.setReadOnly(True)
-        self.le_man_28v_vOUT.setObjectName("le_man_28v_vOUT")
-        self.gridLayout_10.addWidget(self.le_man_28v_vOUT, 8, 1, 1, 1)
-        self.label_284 = QtWidgets.QLabel(self.tab_7)
-        self.label_284.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_284.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_284.setObjectName("label_284")
-        self.gridLayout_10.addWidget(self.label_284, 11, 2, 1, 1)
-        self.label_287 = QtWidgets.QLabel(self.tab_7)
-        self.label_287.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_287.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_287.setObjectName("label_287")
-        self.gridLayout_10.addWidget(self.label_287, 11, 4, 1, 1)
-        self.label_265 = QtWidgets.QLabel(self.tab_7)
-        self.label_265.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_265.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_265.setObjectName("label_265")
-        self.gridLayout_10.addWidget(self.label_265, 3, 8, 1, 1)
-        self.label_2 = QtWidgets.QLabel(self.tab_7)
-        self.label_2.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";")
-        self.label_2.setObjectName("label_2")
-        self.gridLayout_10.addWidget(self.label_2, 0, 0, 1, 1)
-        self.label_264 = QtWidgets.QLabel(self.tab_7)
-        self.label_264.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_264.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_264.setObjectName("label_264")
-        self.gridLayout_10.addWidget(self.label_264, 3, 4, 1, 1)
-        self.le_man_115v_vIN = QtWidgets.QLineEdit(self.tab_7)
-        self.le_man_115v_vIN.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_man_115v_vIN.setText("")
-        self.le_man_115v_vIN.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_man_115v_vIN.setReadOnly(False)
-        self.le_man_115v_vIN.setObjectName("le_man_115v_vIN")
-        self.gridLayout_10.addWidget(self.le_man_115v_vIN, 1, 1, 1, 1)
-        self.le_man_speed_fOUT = QtWidgets.QLineEdit(self.tab_7)
-        self.le_man_speed_fOUT.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_man_speed_fOUT.setText("")
-        self.le_man_speed_fOUT.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_man_speed_fOUT.setReadOnly(True)
-        self.le_man_speed_fOUT.setObjectName("le_man_speed_fOUT")
-        self.gridLayout_10.addWidget(self.le_man_speed_fOUT, 13, 5, 1, 1)
-        self.le_man_115v_fOUT = QtWidgets.QLineEdit(self.tab_7)
-        self.le_man_115v_fOUT.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_man_115v_fOUT.setText("")
-        self.le_man_115v_fOUT.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_man_115v_fOUT.setReadOnly(True)
-        self.le_man_115v_fOUT.setObjectName("le_man_115v_fOUT")
-        self.gridLayout_10.addWidget(self.le_man_115v_fOUT, 3, 9, 1, 1)
-        self.label_289 = QtWidgets.QLabel(self.tab_7)
-        self.label_289.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_289.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_289.setObjectName("label_289")
-        self.gridLayout_10.addWidget(self.label_289, 13, 4, 1, 1)
-        self.le_man_115v_vOUT = QtWidgets.QLineEdit(self.tab_7)
-        self.le_man_115v_vOUT.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_man_115v_vOUT.setText("")
-        self.le_man_115v_vOUT.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_man_115v_vOUT.setReadOnly(True)
-        self.le_man_115v_vOUT.setObjectName("le_man_115v_vOUT")
-        self.gridLayout_10.addWidget(self.le_man_115v_vOUT, 3, 1, 1, 1)
-        self.label_285 = QtWidgets.QLabel(self.tab_7)
-        self.label_285.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_285.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_285.setObjectName("label_285")
-        self.gridLayout_10.addWidget(self.label_285, 13, 0, 1, 1)
-        spacerItem128 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_10.addItem(spacerItem128, 14, 0, 1, 1)
-        self.label_286 = QtWidgets.QLabel(self.tab_7)
-        self.label_286.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_286.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_286.setObjectName("label_286")
-        self.gridLayout_10.addWidget(self.label_286, 13, 2, 1, 1)
-        self.le_man_115v_cOUT = QtWidgets.QLineEdit(self.tab_7)
-        self.le_man_115v_cOUT.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_man_115v_cOUT.setText("")
-        self.le_man_115v_cOUT.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_man_115v_cOUT.setReadOnly(True)
-        self.le_man_115v_cOUT.setObjectName("le_man_115v_cOUT")
-        self.gridLayout_10.addWidget(self.le_man_115v_cOUT, 3, 5, 1, 1)
-        self.label_5 = QtWidgets.QLabel(self.tab_7)
-        self.label_5.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";")
-        self.label_5.setObjectName("label_5")
-        self.gridLayout_10.addWidget(self.label_5, 10, 0, 1, 1)
-        self.le_man_speed_ampIN = QtWidgets.QLineEdit(self.tab_7)
-        self.le_man_speed_ampIN.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_man_speed_ampIN.setText("")
-        self.le_man_speed_ampIN.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_man_speed_ampIN.setReadOnly(False)
-        self.le_man_speed_ampIN.setObjectName("le_man_speed_ampIN")
-        self.gridLayout_10.addWidget(self.le_man_speed_ampIN, 11, 1, 1, 1)
-        self.le_man_speed_ampOUT = QtWidgets.QLineEdit(self.tab_7)
-        self.le_man_speed_ampOUT.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_man_speed_ampOUT.setText("")
-        self.le_man_speed_ampOUT.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_man_speed_ampOUT.setReadOnly(True)
-        self.le_man_speed_ampOUT.setObjectName("le_man_speed_ampOUT")
-        self.gridLayout_10.addWidget(self.le_man_speed_ampOUT, 13, 1, 1, 1)
-        self.le_man_speed_fIN = QtWidgets.QLineEdit(self.tab_7)
-        self.le_man_speed_fIN.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_man_speed_fIN.setText("")
-        self.le_man_speed_fIN.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_man_speed_fIN.setReadOnly(False)
-        self.le_man_speed_fIN.setObjectName("le_man_speed_fIN")
-        self.gridLayout_10.addWidget(self.le_man_speed_fIN, 11, 5, 1, 1)
-        spacerItem129 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_10.addItem(spacerItem129, 12, 0, 1, 1)
-        spacerItem130 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_10.addItem(spacerItem130, 2, 0, 1, 1)
-        self.label_283 = QtWidgets.QLabel(self.tab_7)
-        self.label_283.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_283.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_283.setObjectName("label_283")
-        self.gridLayout_10.addWidget(self.label_283, 11, 0, 1, 1)
-        self.label_241 = QtWidgets.QLabel(self.tab_7)
-        self.label_241.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_241.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_241.setObjectName("label_241")
-        self.gridLayout_10.addWidget(self.label_241, 3, 6, 1, 1)
-        self.label_266 = QtWidgets.QLabel(self.tab_7)
-        self.label_266.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_266.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_266.setObjectName("label_266")
-        self.gridLayout_10.addWidget(self.label_266, 8, 0, 1, 1)
-        spacerItem131 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_10.addItem(spacerItem131, 9, 0, 1, 1)
-        self.le_man_28v_cOUT = QtWidgets.QLineEdit(self.tab_7)
-        self.le_man_28v_cOUT.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_man_28v_cOUT.setText("")
-        self.le_man_28v_cOUT.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_man_28v_cOUT.setReadOnly(True)
-        self.le_man_28v_cOUT.setObjectName("le_man_28v_cOUT")
-        self.gridLayout_10.addWidget(self.le_man_28v_cOUT, 8, 5, 1, 1)
-        self.label_259 = QtWidgets.QLabel(self.tab_7)
-        self.label_259.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_259.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_259.setObjectName("label_259")
-        self.gridLayout_10.addWidget(self.label_259, 1, 8, 1, 1)
-        self.label_245 = QtWidgets.QLabel(self.tab_7)
-        self.label_245.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_245.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_245.setObjectName("label_245")
-        self.gridLayout_10.addWidget(self.label_245, 6, 6, 1, 1)
-        self.label_237 = QtWidgets.QLabel(self.tab_7)
-        self.label_237.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";\n"
-"")
-        self.label_237.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_237.setObjectName("label_237")
-        self.gridLayout_10.addWidget(self.label_237, 1, 10, 1, 1)
-        spacerItem132 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_10.addItem(spacerItem132, 1, 3, 1, 1)
-        self.le_man_115v_cIN = QtWidgets.QLineEdit(self.tab_7)
-        self.le_man_115v_cIN.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.le_man_115v_cIN.setText("")
-        self.le_man_115v_cIN.setAlignment(QtCore.Qt.AlignCenter)
-        self.le_man_115v_cIN.setReadOnly(False)
-        self.le_man_115v_cIN.setObjectName("le_man_115v_cIN")
-        self.gridLayout_10.addWidget(self.le_man_115v_cIN, 1, 5, 1, 1)
-        spacerItem133 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.gridLayout_10.addItem(spacerItem133, 7, 0, 1, 1)
-        spacerItem134 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_10.addItem(spacerItem134, 1, 11, 1, 1)
-        self.horizontalLayout_5.addLayout(self.gridLayout_10)
-        self.verticalLayout_44 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_44.setObjectName("verticalLayout_44")
-        self.pb_man_115v_start = QtWidgets.QPushButton(self.tab_7)
-        self.pb_man_115v_start.setStyleSheet("\n"
-"QPushButton:checked{background-color:rgb(33,37,43);color:red;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
-"\n"
-"\n"
-"\n"
-"QPushButton{background-color:rgb(33,37,43);color:white;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
-"")
-        self.pb_man_115v_start.setCheckable(True)
-        self.pb_man_115v_start.setObjectName("pb_man_115v_start")
-        self.verticalLayout_44.addWidget(self.pb_man_115v_start)
-        self.pb_man_28v_start = QtWidgets.QPushButton(self.tab_7)
-        self.pb_man_28v_start.setStyleSheet("QPushButton:checked{background-color:rgb(33,37,43);color:red;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
-"\n"
-"\n"
-"\n"
-"QPushButton{background-color:rgb(33,37,43);color:white;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
-"")
-        self.pb_man_28v_start.setCheckable(True)
-        self.pb_man_28v_start.setObjectName("pb_man_28v_start")
-        self.verticalLayout_44.addWidget(self.pb_man_28v_start)
-        self.pb_man_speed_start = QtWidgets.QPushButton(self.tab_7)
-        self.pb_man_speed_start.setStyleSheet("\n"
-"QPushButton:checked{background-color:rgb(33,37,43);color:red;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
-"\n"
-"\n"
-"\n"
-"QPushButton{background-color:rgb(33,37,43);color:white;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
-"")
-        self.pb_man_speed_start.setCheckable(True)
-        self.pb_man_speed_start.setObjectName("pb_man_speed_start")
-        self.verticalLayout_44.addWidget(self.pb_man_speed_start)
-        self.horizontalLayout_5.addLayout(self.verticalLayout_44)
-        self.verticalLayout_80.addLayout(self.horizontalLayout_5)
-        spacerItem135 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_80.addItem(spacerItem135)
-        spacerItem136 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_80.addItem(spacerItem136)
-        self.verticalLayout_45 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_45.setObjectName("verticalLayout_45")
-        self.horizontalLayout_53 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_53.setObjectName("horizontalLayout_53")
-        self.verticalLayout_78 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_78.setObjectName("verticalLayout_78")
-        self.label_9 = QtWidgets.QLabel(self.tab_7)
-        self.label_9.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";")
-        self.label_9.setObjectName("label_9")
-        self.verticalLayout_78.addWidget(self.label_9)
-        self.pte_man_insIN = QtWidgets.QPlainTextEdit(self.tab_7)
-        self.pte_man_insIN.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.pte_man_insIN.setObjectName("pte_man_insIN")
-        self.verticalLayout_78.addWidget(self.pte_man_insIN)
-        spacerItem137 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        self.verticalLayout_78.addItem(spacerItem137)
-        self.horizontalLayout_53.addLayout(self.verticalLayout_78)
-        self.pb_man_insSend = QtWidgets.QPushButton(self.tab_7)
-        self.pb_man_insSend.setStyleSheet("\n"
-"QPushButton:checked{background-color:rgb(33,37,43);color:red;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
-"\n"
-"\n"
-"\n"
-"QPushButton{background-color:rgb(33,37,43);color:white;font: 14pt \"Arial\";border:3px solid rgb(29,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
-"\n"
-"QPushButton:hover{font-weight:bold;background-color:rgb(33,37,43);color:white;font: 16pt \"Arial\";border:3px solid rgb(39,63,91);border-radius:5px;padding-right:20px;padding-left:20px;padding-top:5px;padding-bottom:5px;}\n"
-"\n"
-"\n"
-"QPushButton:pressed{color: red;}")
-        self.pb_man_insSend.setCheckable(False)
-        self.pb_man_insSend.setObjectName("pb_man_insSend")
-        self.horizontalLayout_53.addWidget(self.pb_man_insSend)
-        self.verticalLayout_45.addLayout(self.horizontalLayout_53)
-        self.verticalLayout_79 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_79.setObjectName("verticalLayout_79")
-        self.label_17 = QtWidgets.QLabel(self.tab_7)
-        self.label_17.setStyleSheet("color:white;\n"
-"font: 75 14pt \"Arial\";")
-        self.label_17.setObjectName("label_17")
-        self.verticalLayout_79.addWidget(self.label_17)
-        self.pte_man_insOUT = QtWidgets.QPlainTextEdit(self.tab_7)
-        self.pte_man_insOUT.setStyleSheet("color:white;\n"
-"background-color: rgb(0, 0, 0);\n"
-"font: 65 14pt \"Arial\";")
-        self.pte_man_insOUT.setReadOnly(True)
-        self.pte_man_insOUT.setObjectName("pte_man_insOUT")
-        self.verticalLayout_79.addWidget(self.pte_man_insOUT)
-        self.verticalLayout_45.addLayout(self.verticalLayout_79)
-        self.verticalLayout_80.addLayout(self.verticalLayout_45)
-        self.horizontalLayout_6.addLayout(self.verticalLayout_80)
-        self.auto_tabWidget.addTab(self.tab_7, "")
         self.verticalLayout_39.addWidget(self.auto_tabWidget)
         self.verticalLayout_41.addLayout(self.verticalLayout_39)
-        self.horizontalLayout_17.addWidget(self.frame)
-        self.horizontalLayout_17.setStretch(0, 2)
-        self.horizontalLayout_17.setStretch(1, 7)
+        self.lineedit_error_state = QtWidgets.QPlainTextEdit(self.frame)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lineedit_error_state.sizePolicy().hasHeightForWidth())
+        self.lineedit_error_state.setSizePolicy(sizePolicy)
+        self.lineedit_error_state.setMinimumSize(QtCore.QSize(0, 30))
+        self.lineedit_error_state.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.lineedit_error_state.setObjectName("lineedit_error_state")
+        self.verticalLayout_41.addWidget(self.lineedit_error_state)
+        self.horizontalLayout_8.addWidget(self.frame)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.auto_tabWidget.setCurrentIndex(0)
+        self.auto_tabWidget.setCurrentIndex(1)
         self.pb_auto_close_item.clicked.connect(self.test_auto_treeWidget.collapseAll) # type: ignore
         self.pb_auto_open_item.clicked.connect(self.test_auto_treeWidget.expandAll) # type: ignore
         self.test_auto_treeWidget.itemDoubleClicked['QTreeWidgetItem*','int'].connect(MainWindow.clickedToTabWidget) # type: ignore
-        self.pb_auto_con_switch.clicked.connect(MainWindow.switch) # type: ignore
-        self.btn_auto_di_DKIN12.clicked.connect(MainWindow.switch) # type: ignore
-        self.btn_auto_di_28VDIN4.clicked.connect(MainWindow.switch) # type: ignore
-        self.btn_auto_di_APU.clicked.connect(MainWindow.switch) # type: ignore
-        self.btn_auto_di_28VDIN1.clicked.connect(MainWindow.switch28) # type: ignore
-        self.btn_auto_di_28VKIN2.clicked.connect(MainWindow.switch28) # type: ignore
-        self.btn_auto_di_DKIN1.clicked.connect(MainWindow.switch) # type: ignore
-        self.btn_auto_di_RDKIN2.clicked.connect(MainWindow.switch) # type: ignore
-        self.btn_auto_di_DKIN2.clicked.connect(MainWindow.switch) # type: ignore
-        self.btn_auto_di_DKIN3.clicked.connect(MainWindow.switch) # type: ignore
-        self.btn_auto_di_DKIN6.clicked.connect(MainWindow.switch) # type: ignore
-        self.btn_auto_di_DKIN8.clicked.connect(MainWindow.switch) # type: ignore
-        self.btn_auto_di_DKIN4.clicked.connect(MainWindow.switch) # type: ignore
-        self.btn_auto_di_DKIN10.clicked.connect(MainWindow.switch) # type: ignore
-        self.btn_auto_di_DKIN9.clicked.connect(MainWindow.switch) # type: ignore
-        self.btn_auto_di_DKIN7.clicked.connect(MainWindow.switch) # type: ignore
-        self.btn_auto_di_28VDIN3.clicked.connect(MainWindow.switch) # type: ignore
         self.btn_auto_di_28VKIN3.clicked.connect(MainWindow.switch28) # type: ignore
-        self.btn_auto_di_DKIN13.clicked.connect(MainWindow.switch) # type: ignore
-        self.btn_auto_di_DKIN11.clicked.connect(MainWindow.switch) # type: ignore
-        self.btn_auto_di_RDKIN1.clicked.connect(MainWindow.switch) # type: ignore
-        self.btn_auto_di_28VKIN1.clicked.connect(MainWindow.switch28) # type: ignore
-        self.btn_auto_di_28VKIN4.clicked.connect(MainWindow.switch28) # type: ignore
         self.btn_auto_di_DKIN5.clicked.connect(MainWindow.switch) # type: ignore
-        self.btn_over_Stop.clicked.connect(MainWindow.switch) # type: ignore
+        self.btn_auto_di_DKIN12.clicked.connect(MainWindow.switch) # type: ignore
+        self.btn_auto_di_28VKIN2.clicked.connect(MainWindow.switch28) # type: ignore
+        self.btn_auto_di_DKIN6.clicked.connect(MainWindow.switch) # type: ignore
+        self.btn_auto_di_APU.clicked.connect(MainWindow.switch) # type: ignore
+        self.btn_auto_di_DKIN3.clicked.connect(MainWindow.switch) # type: ignore
+        self.btn_auto_di_28VDIN1.clicked.connect(MainWindow.switch28) # type: ignore
+        self.btn_auto_di_28VDIN4.clicked.connect(MainWindow.switch) # type: ignore
+        self.btn_auto_di_DKIN7.clicked.connect(MainWindow.switch) # type: ignore
         self.btn_over_Reset.clicked.connect(MainWindow.switch) # type: ignore
+        self.btn_auto_di_28VKIN4.clicked.connect(MainWindow.switch28) # type: ignore
+        self.btn_auto_di_DKIN4.clicked.connect(MainWindow.switch) # type: ignore
+        self.btn_auto_di_DKIN2.clicked.connect(MainWindow.switch) # type: ignore
         self.btn_over_Emergency.clicked.connect(MainWindow.switch) # type: ignore
+        self.btn_auto_di_DKIN10.clicked.connect(MainWindow.switch) # type: ignore
+        self.btn_auto_di_RDKIN2.clicked.connect(MainWindow.switch) # type: ignore
+        self.btn_auto_di_DKIN9.clicked.connect(MainWindow.switch) # type: ignore
+        self.btn_auto_di_DKIN13.clicked.connect(MainWindow.switch) # type: ignore
+        self.btn_auto_di_DKIN8.clicked.connect(MainWindow.switch) # type: ignore
+        self.btn_auto_di_DKIN11.clicked.connect(MainWindow.switch) # type: ignore
+        self.pb_auto_con_switch.clicked.connect(MainWindow.switch) # type: ignore
+        self.btn_auto_di_28VDIN3.clicked.connect(MainWindow.switch) # type: ignore
+        self.btn_over_Stop.clicked.connect(MainWindow.switch) # type: ignore
+        self.btn_auto_di_RDKIN1.clicked.connect(MainWindow.switch) # type: ignore
+        self.btn_auto_di_DKIN1.clicked.connect(MainWindow.switch) # type: ignore
+        self.btn_auto_di_28VKIN1.clicked.connect(MainWindow.switch28) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "手动测试"))
         self.pb_auto_open_item.setText(_translate("MainWindow", "打开"))
-        self.pb_auto_close_item.setText(_translate("MainWindow", "关闭"))
         self.test_auto_treeWidget.headerItem().setText(0, _translate("MainWindow", "测试项"))
         self.test_auto_treeWidget.headerItem().setText(1, _translate("MainWindow", "结果"))
         __sortingEnabled = self.test_auto_treeWidget.isSortingEnabled()
@@ -5323,10 +7183,61 @@ class Ui_MainWindow(object):
         self.test_auto_treeWidget.topLevelItem(5).child(2).setText(0, _translate("MainWindow", "通道2"))
         self.test_auto_treeWidget.topLevelItem(5).child(3).setText(0, _translate("MainWindow", "通道3"))
         self.test_auto_treeWidget.setSortingEnabled(__sortingEnabled)
+        self.pb_auto_close_item.setText(_translate("MainWindow", "关闭"))
         self.label_24.setText(_translate("MainWindow", "手动测试"))
         self.pb_auto_test.setText(_translate("MainWindow", "TEST\n"
 "ON"))
-        self.label_61.setText(_translate("MainWindow", "控制指令测试"))
+        self.label_4.setText(_translate("MainWindow", "115V供电："))
+        self.label_260.setText(_translate("MainWindow", "电压设置："))
+        self.le_man_115v_vIN_2.setText(_translate("MainWindow", "115"))
+        self.label_238.setText(_translate("MainWindow", "V"))
+        self.label_261.setText(_translate("MainWindow", "电流设置："))
+        self.label_239.setText(_translate("MainWindow", "A"))
+        self.label_262.setText(_translate("MainWindow", "频率设置："))
+        self.le_man_115v_fIN_2.setText(_translate("MainWindow", "400"))
+        self.label_240.setText(_translate("MainWindow", "Hz"))
+        self.label_270.setText(_translate("MainWindow", "电压回读："))
+        self.label_248.setText(_translate("MainWindow", "V"))
+        self.label_271.setText(_translate("MainWindow", "电流回读："))
+        self.label_249.setText(_translate("MainWindow", "A"))
+        self.label_272.setText(_translate("MainWindow", "频率回读："))
+        self.label_250.setText(_translate("MainWindow", "Hz"))
+        self.PushButton_115.setText(_translate("MainWindow", "Output OFF"))
+        self.label_29.setText(_translate("MainWindow", "28V供电："))
+        self.label_273.setText(_translate("MainWindow", "电压设置："))
+        self.le_man_28v_vIN_2.setText(_translate("MainWindow", "28"))
+        self.label_251.setText(_translate("MainWindow", "V"))
+        self.label_274.setText(_translate("MainWindow", "电流设置："))
+        self.label_252.setText(_translate("MainWindow", "A"))
+        self.label_275.setText(_translate("MainWindow", "电压回读："))
+        self.label_253.setText(_translate("MainWindow", "V"))
+        self.label_276.setText(_translate("MainWindow", "电流回读："))
+        self.label_254.setText(_translate("MainWindow", "A"))
+        self.PushButton_28.setText(_translate("MainWindow", "Output OFF"))
+        self.label_6.setText(_translate("MainWindow", "测试交流电："))
+        self.label_291.setText(_translate("MainWindow", "幅值设置："))
+        self.le_man_speed_ampIN_2.setText(_translate("MainWindow", "0.5"))
+        self.label_292.setText(_translate("MainWindow", "V"))
+        self.label_293.setText(_translate("MainWindow", "频率设置："))
+        self.le_man_speed_fIN_2.setText(_translate("MainWindow", "1000"))
+        self.label_294.setText(_translate("MainWindow", "Hz"))
+        self.label_295.setText(_translate("MainWindow", "幅值回读："))
+        self.label_296.setText(_translate("MainWindow", "V"))
+        self.label_297.setText(_translate("MainWindow", "频率回读："))
+        self.label_298.setText(_translate("MainWindow", "Hz"))
+        self.PushButton_signal_generaor.setText(_translate("MainWindow", "Output OFF"))
+        self.label_7.setText(_translate("MainWindow", "测试28V："))
+        self.label_299.setText(_translate("MainWindow", "幅值设置："))
+        self.le_man_speed_ampIN_3.setText(_translate("MainWindow", "0"))
+        self.label_300.setText(_translate("MainWindow", "V"))
+        self.label_277.setText(_translate("MainWindow", "电流设置："))
+        self.label_255.setText(_translate("MainWindow", "A"))
+        self.label_303.setText(_translate("MainWindow", "幅值回读："))
+        self.label_304.setText(_translate("MainWindow", "V"))
+        self.label_278.setText(_translate("MainWindow", "电流回读："))
+        self.label_256.setText(_translate("MainWindow", "A"))
+        self.PushButton_28_test.setText(_translate("MainWindow", "Output OFF"))
+        self.auto_tabWidget.setTabText(self.auto_tabWidget.indexOf(self.tab_8), _translate("MainWindow", "供电设备上电"))
         item = self.auto_cor_ins_table.verticalHeaderItem(0)
         item.setText(_translate("MainWindow", "1"))
         item = self.auto_cor_ins_table.verticalHeaderItem(1)
@@ -5419,10 +7330,24 @@ class Ui_MainWindow(object):
         self.pb_auto_con_switch.setText(_translate("MainWindow", "开"))
         self.label_158.setText(_translate("MainWindow", "+15V输出："))
         self.label_8.setText(_translate("MainWindow", "指令输入："))
-        self.pb_auto_con_insSend.setText(_translate("MainWindow", "send"))
         self.label_15.setText(_translate("MainWindow", "指令输出："))
         self.auto_tabWidget.setTabText(self.auto_tabWidget.indexOf(self.tab), _translate("MainWindow", "控制指令测试"))
-        self.label_62.setText(_translate("MainWindow", "离散量输入测试"))
+        self.label_162.setText(_translate("MainWindow", "28V/开信号"))
+        self.label_79.setText(_translate("MainWindow", "起动指令"))
+        self.btn_auto_di_28VKIN1.setText(_translate("MainWindow", "开"))
+        self.label_82.setText(_translate("MainWindow", "大发起动模式"))
+        self.btn_auto_di_28VKIN2.setText(_translate("MainWindow", "开"))
+        self.label_83.setText(_translate("MainWindow", "进气门移动"))
+        self.btn_auto_di_28VKIN3.setText(_translate("MainWindow", "开"))
+        self.label_80.setText(_translate("MainWindow", "SCV测试开关"))
+        self.btn_auto_di_28VDIN1.setText(_translate("MainWindow", "开"))
+        self.label_81.setText(_translate("MainWindow", "起动活门指令"))
+        self.btn_auto_di_28VKIN4.setText(_translate("MainWindow", "开"))
+        self.label_161.setText(_translate("MainWindow", "28V/地信号"))
+        self.label_84.setText(_translate("MainWindow", "进气门打开"))
+        self.btn_auto_di_28VDIN4.setText(_translate("MainWindow", "开"))
+        self.label_85.setText(_translate("MainWindow", "进气门关闭"))
+        self.btn_auto_di_28VDIN3.setText(_translate("MainWindow", "开"))
         self.label_63.setText(_translate("MainWindow", "地/开信号"))
         self.label_64.setText(_translate("MainWindow", "空中/地面"))
         self.btn_auto_di_DKIN1.setText(_translate("MainWindow", "开"))
@@ -5456,22 +7381,6 @@ class Ui_MainWindow(object):
         self.btn_auto_di_DKIN8.setText(_translate("MainWindow", "开"))
         self.label_107.setText(_translate("MainWindow", "APU停车指令"))
         self.btn_auto_di_APU.setText(_translate("MainWindow", "开"))
-        self.label_162.setText(_translate("MainWindow", "28V/开信号"))
-        self.label_79.setText(_translate("MainWindow", "起动指令"))
-        self.btn_auto_di_28VKIN1.setText(_translate("MainWindow", "开"))
-        self.label_82.setText(_translate("MainWindow", "大发起动模式"))
-        self.btn_auto_di_28VKIN2.setText(_translate("MainWindow", "开"))
-        self.label_83.setText(_translate("MainWindow", "进气门移动"))
-        self.btn_auto_di_28VKIN3.setText(_translate("MainWindow", "开"))
-        self.label_80.setText(_translate("MainWindow", "SCV测试开关"))
-        self.btn_auto_di_28VDIN1.setText(_translate("MainWindow", "开"))
-        self.label_81.setText(_translate("MainWindow", "起动活门指令"))
-        self.btn_auto_di_28VKIN4.setText(_translate("MainWindow", "开"))
-        self.label_161.setText(_translate("MainWindow", "28V/地信号"))
-        self.label_84.setText(_translate("MainWindow", "进气门打开"))
-        self.btn_auto_di_28VDIN4.setText(_translate("MainWindow", "开"))
-        self.label_85.setText(_translate("MainWindow", "进气门关闭"))
-        self.btn_auto_di_28VDIN3.setText(_translate("MainWindow", "开"))
         self.label_26.setText(_translate("MainWindow", "启动监视器监视_1"))
         self.pb_auto_di_28VKIN5_1.setText(_translate("MainWindow", "28V"))
         self.pb_auto_di_28VKIN5_2.setText(_translate("MainWindow", "开"))
@@ -5503,10 +7412,8 @@ class Ui_MainWindow(object):
         self.label_101.setText(_translate("MainWindow", "滑油加热自检有效"))
         self.label_106.setText(_translate("MainWindow", "进气门关闭"))
         self.label_11.setText(_translate("MainWindow", "指令输入："))
-        self.pb_auto_di_insSend.setText(_translate("MainWindow", "send"))
         self.label_18.setText(_translate("MainWindow", "指令输出："))
         self.auto_tabWidget.setTabText(self.auto_tabWidget.indexOf(self.tab_2), _translate("MainWindow", "离散量输入测试"))
-        self.label_113.setText(_translate("MainWindow", "离散量输出驱动测试测试"))
         self.lable255.setText(_translate("MainWindow", "故障接触器驱动："))
         self.label_137.setText(_translate("MainWindow", "减油电磁阀驱动："))
         self.label_164.setText(_translate("MainWindow", "V"))
@@ -5553,94 +7460,94 @@ class Ui_MainWindow(object):
         self.pb_auto_do_insSend.setText(_translate("MainWindow", "send"))
         self.label_21.setText(_translate("MainWindow", "指令输出："))
         self.auto_tabWidget.setTabText(self.auto_tabWidget.indexOf(self.tab_3), _translate("MainWindow", "离散量输出驱动测试"))
-        self.label_28.setText(_translate("MainWindow", "模拟量输入测试"))
-        self.label_371.setText(_translate("MainWindow", "转速2："))
-        self.label_378.setText(_translate("MainWindow", "V"))
-        self.label_391.setText(_translate("MainWindow", "APU进口温度："))
-        self.label_383.setText(_translate("MainWindow", "转速1："))
-        self.label_387.setText(_translate("MainWindow", "IGV LVDT次级输入："))
-        self.label_402.setText(_translate("MainWindow", "mv"))
-        self.label_388.setText(_translate("MainWindow", "IGV LVDT次级激励："))
-        self.label_397.setText(_translate("MainWindow", "排气温度2："))
-        self.cm_auto_ai_AIN_PT100_1.setItemText(0, _translate("MainWindow", "68"))
-        self.cm_auto_ai_AIN_PT100_1.setItemText(1, _translate("MainWindow", "110"))
-        self.cm_auto_ai_AIN_PT100_1.setItemText(2, _translate("MainWindow", "160"))
-        self.cm_auto_ai_AIN_PT100_1.setItemText(3, _translate("MainWindow", "208"))
-        self.label_389.setText(_translate("MainWindow", "滑油温度："))
-        self.label_377.setText(_translate("MainWindow", "起动电压监视："))
-        self.label_374.setText(_translate("MainWindow", "V"))
-        self.cm_auto_ai_AIN_PT100_3.setItemText(0, _translate("MainWindow", "68"))
-        self.cm_auto_ai_AIN_PT100_3.setItemText(1, _translate("MainWindow", "110"))
-        self.cm_auto_ai_AIN_PT100_3.setItemText(2, _translate("MainWindow", "160"))
-        self.cm_auto_ai_AIN_PT100_3.setItemText(3, _translate("MainWindow", "208"))
-        self.label_399.setText(_translate("MainWindow", "环境压力传感器："))
-        self.label_457.setText(_translate("MainWindow", "Hz"))
-        self.label_456.setText(_translate("MainWindow", "Vpp"))
-        self.label_404.setText(_translate("MainWindow", "mv"))
-        self.label_394.setText(_translate("MainWindow", "Ω"))
-        self.label_401.setText(_translate("MainWindow", "总压传感器："))
-        self.label_390.setText(_translate("MainWindow", "Ω"))
-        self.label_375.setText(_translate("MainWindow", "转速变化测试："))
-        self.label_373.setText(_translate("MainWindow", "ECS指令测试输入："))
-        self.label_392.setText(_translate("MainWindow", "Ω"))
-        self.label_380.setText(_translate("MainWindow", "mv"))
-        self.label_379.setText(_translate("MainWindow", "排气温度1："))
-        self.label_403.setText(_translate("MainWindow", "压差传感器："))
-        self.cm_auto_ai_AIN_PT100_2.setItemText(0, _translate("MainWindow", "68"))
-        self.cm_auto_ai_AIN_PT100_2.setItemText(1, _translate("MainWindow", "110"))
-        self.cm_auto_ai_AIN_PT100_2.setItemText(2, _translate("MainWindow", "160"))
-        self.cm_auto_ai_AIN_PT100_2.setItemText(3, _translate("MainWindow", "208"))
-        self.label_381.setText(_translate("MainWindow", "转速："))
-        self.cm_auto_ai_AIN_CTSENSOR.setItemText(0, _translate("MainWindow", "1000"))
-        self.cm_auto_ai_AIN_CTSENSOR.setItemText(1, _translate("MainWindow", "1155"))
-        self.label_395.setText(_translate("MainWindow", "冷端补偿温度："))
-        self.label_434.setText(_translate("MainWindow", "RVDT FCU次级激励："))
-        self.label_396.setText(_translate("MainWindow", "Ω"))
-        self.label_386.setText(_translate("MainWindow", "SCV LVDT次级激励："))
-        self.label_393.setText(_translate("MainWindow", "燃油温度："))
-        self.label_376.setText(_translate("MainWindow", "V"))
-        self.label_454.setText(_translate("MainWindow", "Hz"))
-        self.label_433.setText(_translate("MainWindow", "RVDT FCU次级输入："))
-        self.label_400.setText(_translate("MainWindow", "mv"))
-        self.label_398.setText(_translate("MainWindow", "mv"))
-        self.label_385.setText(_translate("MainWindow", "SCV LVDT次级输入："))
-        self.label_10.setText(_translate("MainWindow", "指令输入："))
-        self.pb_auto_ai_insSend.setText(_translate("MainWindow", "send"))
-        self.label_22.setText(_translate("MainWindow", "指令输出："))
-        self.label_384.setText(_translate("MainWindow", "V"))
-        self.label_413.setText(_translate("MainWindow", "Ω"))
-        self.label_372.setText(_translate("MainWindow", "SCV LVDT次级输入："))
-        self.label_406.setText(_translate("MainWindow", "转速2："))
-        self.label_426.setText(_translate("MainWindow", "总压传感器："))
-        self.label_458.setText(_translate("MainWindow", "Vpp"))
-        self.label_421.setText(_translate("MainWindow", "V"))
-        self.label_408.setText(_translate("MainWindow", "滑油温度："))
-        self.label_405.setText(_translate("MainWindow", "Ω"))
-        self.label_417.setText(_translate("MainWindow", "转速1："))
-        self.label_415.setText(_translate("MainWindow", "mv"))
-        self.label_430.setText(_translate("MainWindow", "IGV LVDT次级输入："))
-        self.label_409.setText(_translate("MainWindow", "mv"))
-        self.label_412.setText(_translate("MainWindow", "Ω"))
-        self.label_419.setText(_translate("MainWindow", "冷端补偿温度："))
-        self.label_432.setText(_translate("MainWindow", "起动电压监视："))
-        self.label_414.setText(_translate("MainWindow", "mv"))
-        self.label_429.setText(_translate("MainWindow", "APU进口温度："))
-        self.label_427.setText(_translate("MainWindow", "燃油温度："))
-        self.label_436.setText(_translate("MainWindow", "RVDT FCU次级激励："))
-        self.label_422.setText(_translate("MainWindow", "Ω"))
-        self.label_423.setText(_translate("MainWindow", "排气温度1："))
-        self.label_431.setText(_translate("MainWindow", "IGV LVDT次级激励"))
-        self.label_435.setText(_translate("MainWindow", "RVDT FCU次级输入："))
-        self.label_411.setText(_translate("MainWindow", "mv"))
-        self.label_418.setText(_translate("MainWindow", "转速："))
-        self.label_410.setText(_translate("MainWindow", "mv"))
-        self.label_416.setText(_translate("MainWindow", "环境压力传感器："))
-        self.label_428.setText(_translate("MainWindow", "压差传感器："))
-        self.label_382.setText(_translate("MainWindow", "V"))
-        self.label_407.setText(_translate("MainWindow", "ECS指令测试输入："))
-        self.label_424.setText(_translate("MainWindow", "转速变化测试："))
-        self.label_420.setText(_translate("MainWindow", "排气温度2："))
-        self.label_425.setText(_translate("MainWindow", "SCV LVDT次级激励："))
+        self.label.setText(_translate("MainWindow", "输出设定值："))
+        self.pushButton_2.setText(_translate("MainWindow", "ECS指令测试输入"))
+        self.label_536.setText(_translate("MainWindow", "V"))
+        self.pushButton_3.setText(_translate("MainWindow", "转速变化测试："))
+        self.label_559.setText(_translate("MainWindow", "V"))
+        self.pushButton_4.setText(_translate("MainWindow", "起动电压监视："))
+        self.label_560.setText(_translate("MainWindow", "V"))
+        self.pushButton_5.setText(_translate("MainWindow", "排气温度1："))
+        self.label_541.setText(_translate("MainWindow", "mv"))
+        self.pushButton_6.setText(_translate("MainWindow", "排气温度2："))
+        self.label_555.setText(_translate("MainWindow", "mv"))
+        self.pushButton_7.setText(_translate("MainWindow", "环境压力传感器："))
+        self.label_537.setText(_translate("MainWindow", "mv"))
+        self.pushButton_8.setText(_translate("MainWindow", "总压传感器："))
+        self.label_534.setText(_translate("MainWindow", "mv"))
+        self.pushButton_9.setText(_translate("MainWindow", "压差传感器："))
+        self.label_549.setText(_translate("MainWindow", "mv"))
+        self.pushButton_12.setText(_translate("MainWindow", "滑油温度："))
+        self.cm_auto_ai_AIN_PT100_9.setItemText(0, _translate("MainWindow", "68"))
+        self.cm_auto_ai_AIN_PT100_9.setItemText(1, _translate("MainWindow", "110"))
+        self.cm_auto_ai_AIN_PT100_9.setItemText(2, _translate("MainWindow", "160"))
+        self.cm_auto_ai_AIN_PT100_9.setItemText(3, _translate("MainWindow", "208"))
+        self.label_538.setText(_translate("MainWindow", "Ω"))
+        self.pushButton_10.setText(_translate("MainWindow", "APU进口温度："))
+        self.cm_auto_ai_AIN_PT100_8.setItemText(0, _translate("MainWindow", "68"))
+        self.cm_auto_ai_AIN_PT100_8.setItemText(1, _translate("MainWindow", "110"))
+        self.cm_auto_ai_AIN_PT100_8.setItemText(2, _translate("MainWindow", "160"))
+        self.cm_auto_ai_AIN_PT100_8.setItemText(3, _translate("MainWindow", "208"))
+        self.label_544.setText(_translate("MainWindow", "Ω"))
+        self.pushButton_11.setText(_translate("MainWindow", "燃油温度："))
+        self.cm_auto_ai_AIN_PT100_7.setItemText(0, _translate("MainWindow", "68"))
+        self.cm_auto_ai_AIN_PT100_7.setItemText(1, _translate("MainWindow", "110"))
+        self.cm_auto_ai_AIN_PT100_7.setItemText(2, _translate("MainWindow", "160"))
+        self.cm_auto_ai_AIN_PT100_7.setItemText(3, _translate("MainWindow", "208"))
+        self.label_557.setText(_translate("MainWindow", "Ω"))
+        self.pushButton_13.setText(_translate("MainWindow", "冷端补偿温度："))
+        self.cm_auto_ai_AIN_CTSENSOR_3.setItemText(0, _translate("MainWindow", "1000"))
+        self.cm_auto_ai_AIN_CTSENSOR_3.setItemText(1, _translate("MainWindow", "1155"))
+        self.label_543.setText(_translate("MainWindow", "Ω"))
+        self.pushButton_14.setText(_translate("MainWindow", "转速1："))
+        self.label_551.setText(_translate("MainWindow", "Hz"))
+        self.pushButton_15.setText(_translate("MainWindow", "转速2："))
+        self.label_545.setText(_translate("MainWindow", "Hz"))
+        self.pushButton_16.setText(_translate("MainWindow", "转速："))
+        self.label_529.setText(_translate("MainWindow", "Vpp"))
+        self.pushButton_17.setText(_translate("MainWindow", "SCV LVDT次级输入："))
+        self.pushButton_18.setText(_translate("MainWindow", "SCV LVDT次级激励："))
+        self.pushButton_19.setText(_translate("MainWindow", "IGV LVDT次级输入："))
+        self.pushButton_20.setText(_translate("MainWindow", "IGV LVDT次级激励："))
+        self.pushButton_21.setText(_translate("MainWindow", "RVDT FCU次级输入："))
+        self.pushButton_22.setText(_translate("MainWindow", "RVDT FCU次级激励："))
+        self.label_3.setText(_translate("MainWindow", "输出回读值："))
+        self.label_563.setText(_translate("MainWindow", "RVDT FCU次级输入："))
+        self.label_564.setText(_translate("MainWindow", "ECS指令测试输入："))
+        self.label_565.setText(_translate("MainWindow", "mv"))
+        self.label_566.setText(_translate("MainWindow", "转速变化测试："))
+        self.label_567.setText(_translate("MainWindow", "总压传感器："))
+        self.label_568.setText(_translate("MainWindow", "燃油温度："))
+        self.label_569.setText(_translate("MainWindow", "mv"))
+        self.label_570.setText(_translate("MainWindow", "压差传感器："))
+        self.label_571.setText(_translate("MainWindow", "IGV LVDT次级激励"))
+        self.label_572.setText(_translate("MainWindow", "mv"))
+        self.label_573.setText(_translate("MainWindow", "SCV LVDT次级激励："))
+        self.label_574.setText(_translate("MainWindow", "环境压力传感器："))
+        self.label_575.setText(_translate("MainWindow", "Vpp"))
+        self.label_576.setText(_translate("MainWindow", "Ω"))
+        self.label_577.setText(_translate("MainWindow", "起动电压监视："))
+        self.label_578.setText(_translate("MainWindow", "冷端补偿温度："))
+        self.label_579.setText(_translate("MainWindow", "转速1："))
+        self.label_580.setText(_translate("MainWindow", "V"))
+        self.label_581.setText(_translate("MainWindow", "IGV LVDT次级输入："))
+        self.label_582.setText(_translate("MainWindow", "V"))
+        self.label_583.setText(_translate("MainWindow", "排气温度2："))
+        self.label_584.setText(_translate("MainWindow", "Ω"))
+        self.label_585.setText(_translate("MainWindow", "V"))
+        self.label_586.setText(_translate("MainWindow", "转速："))
+        self.label_587.setText(_translate("MainWindow", "滑油温度："))
+        self.label_588.setText(_translate("MainWindow", "Ω"))
+        self.label_589.setText(_translate("MainWindow", "转速2："))
+        self.label_590.setText(_translate("MainWindow", "排气温度1："))
+        self.label_591.setText(_translate("MainWindow", "mv"))
+        self.label_592.setText(_translate("MainWindow", "APU进口温度："))
+        self.label_593.setText(_translate("MainWindow", "RVDT FCU次级激励："))
+        self.label_594.setText(_translate("MainWindow", "Ω"))
+        self.label_595.setText(_translate("MainWindow", "SCV LVDT次级输入："))
+        self.label_596.setText(_translate("MainWindow", "mv"))
+        self.label_36.setText(_translate("MainWindow", "指令输入："))
+        self.label_37.setText(_translate("MainWindow", "指令输出："))
         self.auto_tabWidget.setTabText(self.auto_tabWidget.indexOf(self.tab_4), _translate("MainWindow", "模拟量输入测试"))
         self.label_34.setText(_translate("MainWindow", "模拟量输出测试"))
         self.label_471.setText(_translate("MainWindow", "Vrms"))
@@ -5665,9 +7572,8 @@ class Ui_MainWindow(object):
         self.label_466.setText(_translate("MainWindow", "燃油力矩马达电流驱动："))
         self.label_462.setText(_translate("MainWindow", "FCU旋变初级激励："))
         self.label_463.setText(_translate("MainWindow", "Vrms"))
-        self.label_12.setText(_translate("MainWindow", "指令输入："))
-        self.pte_auto_ao_insSend.setText(_translate("MainWindow", "send"))
-        self.label_23.setText(_translate("MainWindow", "指令输出："))
+        self.label_38.setText(_translate("MainWindow", "指令输入："))
+        self.label_39.setText(_translate("MainWindow", "指令输出："))
         self.auto_tabWidget.setTabText(self.auto_tabWidget.indexOf(self.tab_5), _translate("MainWindow", "模拟量输出测试"))
         self.label_35.setText(_translate("MainWindow", "超转保护与停车测试"))
         self.label_163.setText(_translate("MainWindow", "V"))
@@ -5678,49 +7584,7 @@ class Ui_MainWindow(object):
         self.btn_over_Emergency.setText(_translate("MainWindow", "开"))
         self.label_20.setText(_translate("MainWindow", "外部复位"))
         self.btn_over_Reset.setText(_translate("MainWindow", "开"))
-        self.label_13.setText(_translate("MainWindow", "指令输入："))
-        self.pte_auto_op_insSend.setText(_translate("MainWindow", "send"))
-        self.label_25.setText(_translate("MainWindow", "指令输出："))
+        self.label_40.setText(_translate("MainWindow", "指令输入："))
+        self.label_41.setText(_translate("MainWindow", "指令输出："))
         self.auto_tabWidget.setTabText(self.auto_tabWidget.indexOf(self.tab_6), _translate("MainWindow", "超转保护与停车测试"))
-        self.label_29.setText(_translate("MainWindow", "手动测试"))
-        self.label_258.setText(_translate("MainWindow", "电流设置："))
-        self.label_257.setText(_translate("MainWindow", "电压设置："))
-        self.label_247.setText(_translate("MainWindow", "V"))
-        self.label_244.setText(_translate("MainWindow", "V"))
-        self.label_267.setText(_translate("MainWindow", "电压设置："))
-        self.label_290.setText(_translate("MainWindow", "Hz"))
-        self.label_235.setText(_translate("MainWindow", "V"))
-        self.label_4.setText(_translate("MainWindow", "28V供电："))
-        self.label_269.setText(_translate("MainWindow", "电流设置："))
-        self.label_246.setText(_translate("MainWindow", "A"))
-        self.label_236.setText(_translate("MainWindow", "A"))
-        self.label_288.setText(_translate("MainWindow", "Hz"))
-        self.label_242.setText(_translate("MainWindow", "V"))
-        self.label_263.setText(_translate("MainWindow", "电压回读："))
-        self.label_243.setText(_translate("MainWindow", "Hz"))
-        self.label_268.setText(_translate("MainWindow", "电流回读："))
-        self.label_284.setText(_translate("MainWindow", "V"))
-        self.label_287.setText(_translate("MainWindow", "频率设置："))
-        self.label_265.setText(_translate("MainWindow", "频率回读："))
-        self.label_2.setText(_translate("MainWindow", "115V供电："))
-        self.label_264.setText(_translate("MainWindow", "电流回读："))
-        self.label_289.setText(_translate("MainWindow", "频率回读："))
-        self.label_285.setText(_translate("MainWindow", "幅值回读："))
-        self.label_286.setText(_translate("MainWindow", "V"))
-        self.label_5.setText(_translate("MainWindow", "转速注入："))
-        self.label_283.setText(_translate("MainWindow", "幅值设置："))
-        self.label_241.setText(_translate("MainWindow", "A"))
-        self.label_266.setText(_translate("MainWindow", "电压回读："))
-        self.label_259.setText(_translate("MainWindow", "频率设置："))
-        self.label_245.setText(_translate("MainWindow", "A"))
-        self.label_237.setText(_translate("MainWindow", "Hz"))
-        self.pb_man_115v_start.setText(_translate("MainWindow", "TEST\n"
-"ON"))
-        self.pb_man_28v_start.setText(_translate("MainWindow", "TEST\n"
-"ON"))
-        self.pb_man_speed_start.setText(_translate("MainWindow", "TEST\n"
-"ON"))
-        self.label_9.setText(_translate("MainWindow", "指令输入："))
-        self.pb_man_insSend.setText(_translate("MainWindow", "send"))
-        self.label_17.setText(_translate("MainWindow", "指令输出："))
-        self.auto_tabWidget.setTabText(self.auto_tabWidget.indexOf(self.tab_7), _translate("MainWindow", "手动测试"))
+from qfluentwidgets import PixmapLabel, PushButton
