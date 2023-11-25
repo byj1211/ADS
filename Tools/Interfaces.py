@@ -103,6 +103,8 @@ class JDK23:
     # 5：    备用
     # 6：    备用
     # 7：    校验和
+    def __init__(self):
+        pass
     class HandShake:  # 0x00
         STRING = SendString("AA 55 08 00 00 00 00 xx")  # AA 55 08 00 00 00 00 F9
 

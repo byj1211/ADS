@@ -22,7 +22,7 @@ class delay_data:
     DI["4"] = DI_4
     DI["5"] = DI_5
 #chan表示通道，delay_num是继电器的卡号
-#结构为 chan:delay_num
+#结构为 chan:delay_numd
     AI={"0":15,"1":16,"2":14,"3":9,"4":10,"5":13,"6":11,"7":12,"15":41,"16":42}
 class delay:
     # signal_read=pyqtSignal(str)

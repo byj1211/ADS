@@ -4,13 +4,13 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QMainWindow
 
 from UI.py import UI_ManualTest as UI
-
+from Tools.data_all import tab_change, all_data
 
 class ManualTestWindow(QMainWindow, UI.Ui_MainWindow):
     def __init__(self, parent=None):
         super(ManualTestWindow, self).__init__(parent)
         self.setupUi(self)  # 设置UI
-
+        self.tab_name=None
         self.showMaximized()
         self.pb_auto_test.setVisible(False)
 
@@ -18,22 +18,22 @@ class ManualTestWindow(QMainWindow, UI.Ui_MainWindow):
         # 绑定电源上电的按钮
         self.PushButton_115.setEnabled(True)
         self.PushButton_115.setCheckable(True)
-        self.PushButton_115.toggled.connect(self.on_clicked_pb_115_test)
+        self.PushButton_115.toggled.connect(self.power_on_style)
 
         self.PushButton_28.setEnabled(True)
         self.PushButton_28.setCheckable(True)
-        self.PushButton_28.toggled.connect(self.on_clicked_pb_115_test)
+        self.PushButton_28.toggled.connect(self.power_on_style)
         self.PushButton_signal_generaor.setEnabled(True)
         self.PushButton_signal_generaor.setCheckable(True)
-        self.PushButton_signal_generaor.toggled.connect(self.on_clicked_pb_115_test)
+        self.PushButton_signal_generaor.toggled.connect(self.power_on_style)
         self.PushButton_28_test.setEnabled(True)
         self.PushButton_28_test.setCheckable(True)
-        self.PushButton_28_test.toggled.connect(self.on_clicked_pb_115_test)
+        self.PushButton_28_test.toggled.connect(self.power_on_style)
         # self.PushButton_115.clicked.connect(self.on_clicked_pb_115_test)
         # self.PushButton_28.clicked.connect(self.on_clicked_pb_man_test)
         # self.PushButton_signal_generaor.clicked.connect(self.on_clicked_pb_man_test)
         # self.PushButton_28_test.clicked.connect(self.on_clicked_pb_man_test)
-
+        self.auto_tabWidget.currentChanged.connect(self.on_click_tabChange)
         # 启动器默认为开
         self.pb_auto_di_28VKIN5_2.click()
         self.pb_auto_di_28VDIN2_2.click()
@@ -52,39 +52,20 @@ class ManualTestWindow(QMainWindow, UI.Ui_MainWindow):
         # 设置树的列宽
         self.test_auto_treeWidget.setColumnWidth(0, 200)
         self.test_auto_treeWidget.setColumnWidth(1, 100)
-
+        self.button_init()
         # 表格设置为只读
         for row in range(self.auto_cor_ins_table.rowCount()):
             for col in range(4):  # Columns 0 and 1
                 item = self.auto_cor_ins_table.item(row, col)
                 item.setFlags(item.flags() & ~Qt.ItemIsEditable)
-
-        self.AI_button = {"esc_5vdc_0": [self.pushButton_2,self.dsb_auto_ai_AIN_EDT_3,self.le_auto_ai_AIN_EDTr_3],
-                          "speedChange_5vdv_1": [self.pushButton_3,self.dsb_auto_ai_AIN_NVT_3,self.le_auto_ai_AIN_NVTr_3],
-                          "ivoltMon_28vdc_2": [self.pushButton_4,self.dsb_auto_ai_AIN_SVM_3,self.le_auto_ai_AIN_SVMr_3],
-                         "exhaustTem1_mvdc_3": [self.pushButton_5,self.dsb_auto_ai_AIN_KTM_15,self.le_auto_ai_AIN_KTM_1r_3],
-                          "exhaustTem2_mvdc_4": [self.pushButton_6,self.dsb_auto_ai_AIN_KTM_13,self.le_auto_ai_AIN_KTM_2r_3],
-                          "envirPressSen_mvdc_5": [self.pushButton_7,self.dsb_auto_ai_AIN_KTM_12,self.le_auto_ai_AIN_KTM_3r_3],
-                          "totalPressSensor_mvdc_6": [self.pushButton_8,self.dsb_auto_ai_AIN_KTM_11,self.le_auto_ai_AIN_KTM_4r_3],
-                          "differentPressSensor_mvdc_7": [self.pushButton_9,self.dsb_auto_ai_AIN_KTM_14,self.le_auto_ai_AIN_KTM_5r_3],
-                          "oilTem_r_8": [self.pushButton_12,self.cm_auto_ai_AIN_PT100_9,self.le_auto_ai_AIN_PT100_1r_3],
-                          "apuTem_r_9": [self.pushButton_10,self.cm_auto_ai_AIN_PT100_8,self.le_auto_ai_AIN_PT100_2r_3],
-                          "fuelTem_r_10": [self.pushButton_11,self.cm_auto_ai_AIN_PT100_7,self.le_auto_ai_AIN_PT100_3r_3],
-                          "coldConpenstateTem_r_11": [self.pushButton_13,self.cm_auto_ai_AIN_CTSENSOR_3,self.le_auto_ai_AIN_CTSENSORr_3],
-                          "scvLvdt_ac_12": [self.pushButton_17,self.le_auto_ai_SCVIN_3,self.le_auto_ai_SCVOUT_3],
-                          "igvLvdt_ac_13": [self.pushButton_19,self.le_auto_ai_IGV_IN_3,self.le_auto_ai_IGVOUT_3],
-                          "fcuRvdt_ac_14": [self.pushButton_21,self.le_auto_ai_RVDTIN_3,self.le_auto_ai_RVDTOUT_3],
-                          "speed1_ac_15": [self.pushButton_14,self.dsb_auto_ai_AIN_FRE_N1_6,self.le_auto_ai_AIN_FRE_N1r_3],
-                          "speed1_ac_16": [self.pushButton_15,self.dsb_auto_ai_AIN_FRE_N1_5,self.le_auto_ai_AIN_FRE_N2r_3]
-                          }
-        self.DI_button={
-
-        }
-        self.AI_set_linedit={0:self.dsb_auto_ai_AIN_EDT_3,1:self.dsb_auto_ai_AIN_NVT_3}
+        self.func_button_style_change=[self.power_on_style,self.sends_style_change,self.DI_style_change,self.DO_style_change,self.AI_style_change
+                                       ,self.AO_style_change,self.carProtect_style_change]
     def set_single_buttonOff_stylesheet(self,bt):
         current_style = bt.styleSheet()
         new_style = f"{current_style} QPushButton {{ background-color: transparent; }}"
-        for key, button in self.AI_button.items():
+        for item in all_data["AI"]["control_button"]:
+            name = all_data["AI"]["control_button"][item]
+            button = getattr(self, all_data["AI"]["control_button"][item])
             button.setCheckable(True)
             # 禁用所有标签页
         for i in range(self.auto_tabWidget.count()):
@@ -92,13 +73,16 @@ class ManualTestWindow(QMainWindow, UI.Ui_MainWindow):
         bt.setStyleSheet(new_style)
         bt.setChecked(False)
         bt.setCheckable(True)
-    def AI_button_style_change(self, checked):
+
+    def AI_style_change(self, checked):
         current_style = self.sender().styleSheet()
         if checked:
             new_style = f"{current_style} QPushButton {{ background-color: #c23616; color:white}}"
             self.sender().setStyleSheet(new_style)
             # 禁用剩余的按钮
-            for key, button in self.AI_button.items():
+            for item in all_data["AI"]["control_button"]:
+                name=all_data["AI"]["control_button"][item]
+                button = getattr(self, all_data["AI"]["control_button"][item])
                 if button != self.sender():
                     button.setCheckable(False)
             # 禁用所有标签页
@@ -106,17 +90,47 @@ class ManualTestWindow(QMainWindow, UI.Ui_MainWindow):
                 if i==4:
                     continue
                 self.auto_tabWidget.setTabEnabled(i, False)
-
+            self.test_auto_treeWidget.setEnabled(False)
         else:
             new_style = f"{current_style} QPushButton {{ background-color: transparent; }}"
-            for key, button in self.AI_button.items():
+            for item in all_data["AI"]["control_button"]:
+                button = getattr(self, all_data["AI"]["control_button"][item])
                 button.setCheckable(True)
             # 禁用所有标签页
             for i in range(self.auto_tabWidget.count()):
                 self.auto_tabWidget.setTabEnabled(i, True)
+                self.test_auto_treeWidget.setEnabled(True)
         self.sender().setStyleSheet(new_style)
     # 设置TEST ON按钮点击切换文本、颜色
-    def on_clicked_pb_115_test(self,checked):
+
+    # ------------以下仅是对AIbutton进行button绑定，DI、DO的button绑定已通过槽绑定
+    def button_init(self):
+        for item in all_data["AI"]["control_button"]:
+            button=getattr(self,all_data["AI"]["control_button"][item])
+            button.toggled.connect(self.AI_style_change)
+            button.setEnabled(True)
+            button.setCheckable(True)
+    def sends_style_change(self):
+        pass
+    def DI_style_change(self):
+        pass
+
+    def DO_style_change(self):
+        pass
+
+
+
+    def AO_style_change(self):
+        pass
+
+    def carProtect_style_change(self):
+        pass
+
+    def on_click_tabChange(self):
+        self.tab_name=tab_change[self.auto_tabWidget.currentIndex()][0]
+        print(self.tab_name)
+
+    def power_on_style(self,checked):
         print("have get into"+str(checked))
         current_style = self.sender().styleSheet()
         if checked:
@@ -129,25 +143,26 @@ class ManualTestWindow(QMainWindow, UI.Ui_MainWindow):
                 new_style = f"{current_style} QPushButton {{ background-color: white; color:black}}"
                 self.button_click = False
         self.sender().setStyleSheet(new_style)
-        # def on_clicked_pb_115_test(self):
-        # current_style = self.sender().styleSheet()
-        # if not self.button_click:
-        #     if self.sender().isChecked():
-        #         # self.sender().setChecked(True)
-        #         new_style = f"{current_style} QPushButton {{ background-color: red; color:white}}"
-        #
-        #         # self.sender().setStyleSheet("QPushButton{\n"
-        #         #               "        background-color: #ff6345;\n"
-        #         #               "}\n")
-        #         self.sender().setText('Output\nON')
-        #         self.button_click = True
-        #     else:
-        #         print("no clicked")
-        # else:
-        #     self.sender().setText('Output\nOFF')
-        #     new_style = f"{current_style} QPushButton {{ background-color: white; color:black}}"
-        #     self.button_click = False
-        # self.sender().setStyleSheet(new_style)
+
+    def on_clicked_pb_115_test(self):
+        current_style = self.sender().styleSheet()
+        if not self.button_click:
+            if self.sender().isChecked():
+                # self.sender().setChecked(True)
+                new_style = f"{current_style} QPushButton {{ background-color: red; color:white}}"
+
+                # self.sender().setStyleSheet("QPushButton{\n"
+                #               "        background-color: #ff6345;\n"
+                #               "}\n")
+                self.sender().setText('Output\nON')
+                self.button_click = True
+            else:
+                print("no clicked")
+        else:
+            self.sender().setText('Output\nOFF')
+            new_style = f"{current_style} QPushButton {{ background-color: white; color:black}}"
+            self.button_click = False
+        self.sender().setStyleSheet(new_style)
 
     # 开关按钮
     def switch(self):

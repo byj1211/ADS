@@ -12824,20 +12824,6 @@ font: 65 14pt &quot;Arial&quot;;</string>
             </attribute>
             <layout class="QVBoxLayout" name="verticalLayout_29">
              <item>
-              <widget class="QLabel" name="label_34">
-               <property name="styleSheet">
-                <string notr="true">color:white;
-font: 75 16pt &quot;Arial&quot;;</string>
-               </property>
-               <property name="text">
-                <string>模拟量输出测试</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item>
               <spacer name="verticalSpacer_35">
                <property name="orientation">
                 <enum>Qt::Vertical</enum>

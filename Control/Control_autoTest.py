@@ -303,7 +303,7 @@ class Control_autoTest(AutoTestWindow):
             self.btn_auto_di_DKIN7, self.btn_auto_di_DKIN8, self.btn_auto_di_DKIN9,
             self.btn_auto_di_DKIN10, self.btn_auto_di_DKIN11, self.btn_auto_di_DKIN12, self.btn_auto_di_DKIN13,
         }
-        self.groups['DI']['2'] = {
+        self.groups['DI']['2']   = {
             self.btn_auto_di_28VKIN1, self.btn_auto_di_28VKIN2, self.btn_auto_di_28VKIN3,
             self.btn_auto_di_28VDIN1, self.btn_auto_di_28VKIN4,
         }

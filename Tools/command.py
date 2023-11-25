@@ -31,6 +31,7 @@ class dc_ITCH:
     V_meas = "MEAS:VOLT?"
     A_fetc = "FETC:CURR?"
     V_fetc = "FETC:VOLT?"
+    query_set_volt="VOLT?"
 class ac_kikusui:
     set_ac115="VOLT 115"
     set_freq400="FREQ 400"

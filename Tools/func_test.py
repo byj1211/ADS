@@ -12,13 +12,16 @@ from Tools.delay import delay
 # global delay_baudrate=115200
 logging.basicConfig(level=logging.INFO)
 from Tools.delay import delay_data
+from Tools.Interfaces import SendString,RecvString
+from Tools.data_all import all_data
+import traceback
 class func_all_test:
     '''
     执行自动测试的所有设备
     '''
     def __init__(self):
         pass
-        self.test=autoTest_func()
+        self.test1=autoTest_func()
         # self.DI=DI(self)
         # self.DO=DO(self)
         # self.AI=AI(self)
@@ -290,18 +293,24 @@ class autoTest_func:
             # meas_volt = convert_voltage(meas_freq1)
             return meas_freq1
         except Exception as e:
-            logging.INFO("func-DO出出现错误 ：{}".format(e))
+            logging.info("func-DO出出现错误 ：{}".format(e))
             logging.error(e)
             print("func-DO出出现错误 ：{}".format(e))
+    def query_dc2_volt(self):
+        try:
+            power = self.devices["dc2"]
+            a=power.query(cd.dc_ITCH.V_meas)
+            return a
+        except Exception as e:
+            logging.info("func-AI_SetPower_volt出出现错误 ：{}".format(e))
+            logging.error(e)
     def Set_dc_volt(self,volt):
         try:
             power=self.devices["dc2"]
 
             power.write(cd.dc_ITCH.V_set+str(volt))
-            a=power.query(cd.dc_ITCH.V_meas)
-            return convert_voltage(a)
         except Exception as e:
-            logging.INFO("func-AI_SetPower_volt出出现错误 ：{}".format(e))
+            logging.info("func-AI_SetPower_volt出出现错误 ：{}".format(e))
             logging.error(e)
             print("func-AI_SetPower_volt出出现错误 ：{}".format(e))
     def meas_freq(self):
@@ -333,10 +342,13 @@ class autoTest_func:
             meas_volt = convert_voltage(meas_volt1)
             return meas_volt
         except Exception as e:
-            logging.INFO("func-DO出出现错误 ：{}".format(e))
+            logging.info("func-DO出出现错误 ：{}".format(e))
             logging.error(e)
             print("func-DO出出现错误 ：{}".format(e))
-
+    def query_set_volt_dc2(self):
+            dc=self.devices["dc2"]
+            re=dc.query(cd.dc_ITCH.query_set_volt)
+            return re.split("\n\n")[0]
     #实现上电后基础对被测件、信号调理箱供电
     def power_supply(self):
         ac = self.devices["ac"]
@@ -412,8 +424,9 @@ def convert_voltage(voltage):
             voltage_unit = 'm'
             voltage_main *= 10**(voltage_exponent + 3)
         else:
-            voltage_unit = 'u'
-            voltage_main *= 10**(voltage_exponent + 6)
+            voltage_unit = ''
+            # voltage_main *= 10**(voltage_exponent + 6)
+            voltage_main =0
         return str(round(voltage_main,3)) + voltage_unit
     else:
         return voltage + ""
@@ -438,6 +451,10 @@ def convert_current(current):
         return voltage + ""
 
 
+def scientific_to_decimal(number):
+    # 使用字符串格式化将科学计数法转换为十进制表示法
+    decimal_str = "{:f}".format(float(number))
+    return decimal_str
 
 #对发给被测件的数据报和被测件返回的数据包进行对比
 class compare:
@@ -464,7 +481,7 @@ class DO(func_all_test):
             }
             self.power_supply()
         except Exception as e:
-            logging.INFO("DI_func出现错误"+e)
+            logging.info("DI_func出现错误"+e)
             logging.error(e)
             print("DI_func出现错误"+e)
 
@@ -796,6 +813,93 @@ def convert_frequency_unit(value):
         return "{}{}".format(value, units[magnitude])
     except Exception as e:
         print(e)
+from PyQt5.QtCore import QObject
+#---------针对手动测试的AI测试的执行逻辑---------------------
+class AI_test(QObject):
+    signal_re_volt=pyqtSignal(str)
+    signal_re_sends=pyqtSignal(str,str)
+    '''
+    测试逻辑是：
+    1 向设备发送设定的输出电压
+    2 VOLT？会问电压设置值
+    3 打开outp on
+    4 MEAS VOLT? 回读设备实际输出电压
+    5 电压值与设定值进行对比，判断是否在误差范围内
+    '''
+
+    def __init__(self,all_func_test):
+        super(AI_test, self).__init__()
+        self.all_func=all_func_test
+        self.test = self.all_func.test1
+    def compare_voltage(self,voltage1:float,  voltage2:float, error_range:float):
+        error = abs(voltage1 - voltage2)
+        return error <= error_range
+
+    def AI_r_test(self):
+        pass
+    def AI_ac_test(self):
+        pass
+
+    def AI_mvdc_test(self):
+        pass
+
+    def AI_28vdc_test(self):
+        pass
+
+    def AI_5vdc_test(self,chan:int,choice:str):#  接线问题确认：  V级 mV 已经分开
+        try:
+            logging.info("hanve into AI 5vdc , chan{} volt {}".format(chan,choice))
+            #------------prepare sends-----------------------
+            sends = JDK23.AITest.CHES['{:02X}'.format(chan)]['tps'][0]  # 获取发送指令
+            ratio = JDK23.AITest.CHES['{:02X}'.format(chan)]["ratio_1"]
+            sd = SendString(str(sends))
+            # !!!   please pat attention to set_volt must chage to float
+            set_sends = sd.set_TestData(float(choice), ratio)
+            #--------------具体测试逻辑---------------------------
+            volt = choice
+            outp_error=JDK23.AITest.CHES['{:02X}'.format(chan)]["err"]   #float typr error
+
+            #  step1 把set_volt 发送给设备
+            self.test.Set_dc_volt(volt)
+            #  step2 回读设备设置电压
+            re_set_volt=self.test.query_set_volt_dc2()
+            if self.compare_voltage(float(choice),float(re_set_volt),float(0)):
+                pass
+            else:
+                raise Exception("设备状态出现问题，设定值未设置成功！")
+            #  step 3 若比较满足条件，则打开设备输出
+            self.test.set_equip_output_state("dc2",1)
+
+            # step 4 meas volt 询问设备实际输出电压、并进行精度误差判断
+            a=self.test.query_dc2_volt()
+            v1=scientific_to_decimal(a)
+            self.compare_voltage(float(v1), float(volt), outp_error)
+            print(convert_voltage(a))
+            self.signal_re_volt.emit(convert_voltage(a))
+            # if self.compare_voltage(v1,volt,outp_error):
+            #     pass
+            # else:
+            #     raise Exception("")-----5
+
+
+
+            # --------这里记得要添加继电器输出闭合的代码
+            delay_num = all_data["AI"]["delay_data"][chan]
+            logging.info("delay {} have close".format(delay_num))
+            self.signal_re_sends.emit(str(set_sends),"OK")
+        except Exception as e:
+            logging.info("AI test have occur error {}".format(e))
+            traceback.print_exc()
+
+            #
+
+        # choices = JDK23.AITest.CHES['{:02X}'.format(chan)]['tpvf']
+        # for choice in choices:
+        #     idx = JDK23.AITest.CHES['{:02X}'.format(chan)]['tpvf'].index(choice)
+        #     sends = JDK23.AITest.CHES['{:02X}'.format(chanel)]['tps'][idx]  # 获取发送指令
+        #     print(choice,sends)
+            #delay 设置为全关
+
 if __name__ == '__main__':
 
     a=ThreadPowerOn()

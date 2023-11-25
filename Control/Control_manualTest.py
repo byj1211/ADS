@@ -1,13 +1,16 @@
 import datetime
 import sys
-
+from Tools.data_all import all_data
 import pyvisa
 from PyQt5.QtWidgets import QApplication
 from Tools.Manual_test_Qthread import Manual_testQthread
 from Tools.DevicesPools import ACPower
 from UISet.UISet_ManualTest import ManualTestWindow
-from Tools.func_test import autoTest_func,ThreadPowerOn
-
+from Tools.func_test import autoTest_func,ThreadPowerOn,AI_test,func_all_test
+from Tools.Interfaces import JDK23,SendString
+import logging
+import traceback
+logging.basicConfig(level=logging.INFO)
 class Control_manualTest(ManualTestWindow):
     def __init__(self, parent=None):
         super(Control_manualTest, self).__init__(parent)
@@ -18,8 +21,13 @@ class Control_manualTest(ManualTestWindow):
         self.pushButton_equip_outp_on={"ac":self.PushButton_115,"dc1":self.PushButton_28,"generator":self.PushButton_signal_generaor,
                             "dc2":self.PushButton_28_test}
 #-----------这部分是自动上电线程的设置-----------------------------------
+        global all_func_test1 #包括设备、delay、ECB等所有func
+        self.all=func_all_test()
+        self.AI_test= AI_test(self.all)
+
         global autoTest_func1
         autoTest_func1=None
+
         # autoTest_func1 = autoTest_func()
         # self.thread_power_on= ThreadPowerOn(autoTest_func1)
         # self.thread_power_on.signal_send_data_UI.connect(self.write_power_on_return_data)
@@ -40,31 +48,65 @@ class Control_manualTest(ManualTestWindow):
         self.manuel_thread =None
 
     def AI_button_init(self):
-        for key, button in self.AI_button.items():
+        for item in all_data["AI"]["control_button"]:
+            print(all_data["AI"]["control_button"][item])
+            button=getattr(self,all_data["AI"]["control_button"][item])
+            button.toggled.connect(self.AI_style_change)
             button.setEnabled(True)
             button.setCheckable(True)
-            button.toggled.connect(self.AI_button_style_change)
             button.toggled.connect(self.AI_button_start_thread)
     def AI_button_init_all(self):
         self.AI_button_init()
-    def AI_thread_off(self):
-        bt=self.manuel_thread.stop_thread()
-        self.set_single_buttonOff_stylesheet(bt)
-        self.manuel_thread=None
+    def AI_thread_off(self,test_type,bt):
+        if test_type=="AI":
+            # self.manuel_thread.stop_thread()
+
+            self.set_single_buttonOff_stylesheet(self.control_button)
+            self.manuel_thread=None
     def AI_button_start_thread(self,checked):
-        if checked:
-            if self.manuel_thread==None:
-                reverse_dict = {val: key for key, val in self.AI_button.items()}
-                test_name=reverse_dict.get(self.sender())
-                para=self.dsb_auto_ai_AIN_EDT_3.text()
-                self.manuel_thread=Manual_testQthread(self.sender(),test_name,para)
-                self.manuel_thread.signal_thread_finished.connect(self.AI_thread_off)
-                self.manuel_thread.start()
-                self.sender().setCheckable(False)
-        # else:
-        #     if self.manuel_thread!=None:
-        #         self.manuel_thread.stop_thread()
-        #         self.manuel_thread=None
+        try:
+            if checked:
+                if self.manuel_thread==None:
+                    cntrol_button = all_data["AI"]["control_button"]
+                    control_lineedit = all_data["AI"]["control_lineedit"]
+                    re_lineedits = all_data["AI"]["control_relinedit"]
+
+                    reverse_dict = {val: key for key, val in cntrol_button.items()}
+                    chan=reverse_dict.get(self.sender().objectName())
+                    set_lineedit = getattr(self, control_lineedit[chan])
+                    set_volt = set_lineedit.text()
+
+                    re_lineedit=getattr(self,re_lineedits[chan])
+                    sends = JDK23.AITest.CHES['{:02X}'.format(chan)]['tps'][0]  # 获取发送指令
+                    ratio=JDK23.AITest.CHES['{:02X}'.format(chan)]["ratio_1"]
+                    sd=SendString(str(sends))
+                    # !!!   please pat attention to set_volt must chage to float
+                    set_sends=sd.set_TestData(float(set_volt), ratio)
+
+
+                    # !!!   please pat attention to  sends must chage to str
+
+                    button=getattr(self,cntrol_button[chan])
+                    self.control_button=button
+
+                    sends_linedit=getattr(self,all_data["AI"]["sends_input"])
+                    resends_lineedit=getattr(self,all_data["AI"]["sends_output"])
+                    sends_linedit.setPlainText(str(set_sends))
+                    self.manuel_thread=Manual_testQthread("AI",chan,set_volt,self.AI_test)
+                    self.manuel_thread.signal_thread_finished.connect(self.AI_thread_off)
+                    self.AI_test.signal_re_volt.connect(lambda re_volt:re_lineedit.setText(re_volt))
+                    # self.manuel_thread.signal_revolt.connect(lambda re_volt:re_lineedit.setText(re_volt))
+                    self.AI_test.signal_re_sends.connect(lambda re_sends,state:resends_lineedit.setPlainText(re_sends+state))
+                    # self.manuel_thread.signal_re_sends.connect(lambda re_sends:resends_lineedit.setText(re_sends))
+                    self.manuel_thread.start()
+            else:
+                if self.manuel_thread!=None:
+                    self.manuel_thread.stop_thread()
+                    self.manuel_thread=None
+        except Exception as e:
+            logging.info("AI thread have occur error {}".format(e))
+            logging.error(e)
+            traceback.print_exc()
     def stop_thread(self):
         print("guanbi")
         self.thread_power_on=None
